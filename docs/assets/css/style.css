@@ -454,6 +454,30 @@ code {
   width: 100%;
 }
 
+.checkbox-field {
+  align-items: end;
+  display: flex;
+}
+
+.checkbox-field label {
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  min-height: 42px;
+  padding: 8px 10px;
+  width: 100%;
+}
+
+.checkbox-field input {
+  min-height: 0;
+  width: auto;
+}
+
 .compare-summary {
   display: grid;
   gap: 12px;
@@ -630,6 +654,163 @@ code {
   white-space: pre-wrap;
 }
 
+.diff-report {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.diff-source-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-bottom: 16px;
+}
+
+.diff-metrics {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin-bottom: 14px;
+}
+
+.diff-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 16px;
+}
+
+.mark {
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 3px;
+}
+
+.mark-delete {
+  background: #ffe1e1;
+  color: #9f3030;
+  text-decoration: line-through;
+  text-decoration-thickness: 1.4px;
+}
+
+.mark-insert {
+  background: #ddf8e8;
+  color: #12633d;
+  text-decoration: underline;
+  text-decoration-thickness: 1.4px;
+}
+
+.mark-replace-a {
+  background: #fff0c2;
+  color: #8a4d00;
+  text-decoration: line-through;
+  text-decoration-thickness: 1.4px;
+}
+
+.mark-replace-b {
+  background: #dff0ff;
+  color: #155a8a;
+  text-decoration: underline;
+  text-decoration-thickness: 1.4px;
+}
+
+.mark-context {
+  color: #667085;
+}
+
+.diff-header {
+  background: rgba(255, 255, 255, 0.96);
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  display: grid;
+  font-size: 0.86rem;
+  font-weight: 800;
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 8px 0;
+  position: sticky;
+  top: 76px;
+  z-index: 8;
+}
+
+.diff-paragraph {
+  border-top: 1px solid var(--line);
+  margin-top: 18px;
+  padding-top: 14px;
+}
+
+.paragraph-label {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.diff-columns {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.diff-text {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 1rem;
+  line-height: 1.72;
+  min-width: 0;
+  padding: 14px;
+  word-break: break-word;
+}
+
+.diff-gap {
+  color: var(--muted);
+  display: block;
+  letter-spacing: 0;
+  margin: 10px 0;
+}
+
+.diff-table-wrap {
+  margin-top: 22px;
+}
+
+.diff-table-wrap summary {
+  color: var(--accent-strong);
+  cursor: pointer;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.diff-table {
+  table-layout: fixed;
+}
+
+.diff-table td:first-child,
+.diff-table th:first-child {
+  width: 128px;
+}
+
+.diff-table tr.delete td:nth-child(2) {
+  background: #ffe1e1;
+  text-decoration: line-through;
+}
+
+.diff-table tr.insert td:nth-child(3) {
+  background: #ddf8e8;
+  text-decoration: underline;
+}
+
+.diff-table tr.replace td:nth-child(2) {
+  background: #fff0c2;
+  text-decoration: line-through;
+}
+
+.diff-table tr.replace td:nth-child(3) {
+  background: #dff0ff;
+  text-decoration: underline;
+}
+
 .loading-text,
 .error-text {
   background: #f8fafc;
@@ -683,7 +864,11 @@ code {
   .run-summary,
   .compare-controls,
   .compare-summary,
-  .compare-output {
+  .compare-output,
+  .diff-source-grid,
+  .diff-metrics,
+  .diff-header,
+  .diff-columns {
     grid-template-columns: 1fr;
   }
 

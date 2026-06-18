@@ -44,6 +44,25 @@ description: 資料版本、篩選規則與存取位置。
       <label for="dataset-search">搜尋檔名</label>
       <input id="dataset-search" type="search" placeholder="輸入檔名或關鍵字">
     </div>
+    <div class="compare-field">
+      <label for="dataset-preview">預覽模式</label>
+      <select id="dataset-preview">
+        <option value="full">顯示完整左右比對</option>
+        <option value="diff">只顯示差異與前後文</option>
+      </select>
+    </div>
+    <div class="compare-field checkbox-field">
+      <label>
+        <input id="dataset-ignore-case" type="checkbox" checked>
+        忽略大小寫
+      </label>
+    </div>
+    <div class="compare-field checkbox-field">
+      <label>
+        <input id="dataset-ignore-punctuation" type="checkbox" checked>
+        忽略標點符號
+      </label>
+    </div>
   </div>
 
   <div id="dataset-summary" class="compare-summary"></div>
