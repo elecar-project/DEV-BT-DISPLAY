@@ -1,0 +1,50 @@
+For the e-tron project we had to incorporate every single bit of knowledge and expertise that we as a department had in both the fields of aerodynamics and aeroacoustics.
+My name is Moni Islam and I'm the head of aerodynamics and aeroacoustics development at Audi.
+In terms of aeroacoustics, an e-tron has similar problems than a conventional car and we have learned to solve these problems over many years.
+many years. My name is Gerhard Wickern. I'm doing aerodynamics at Audi for the e-tron project.
+Aerodynamics plays a key role in the case of electric vehicles, the driving distance of the
+vehicles, and aeroacoustics is very important because it's essential for the noise level
+inside the car. The Audi wind tunnel, when it was starting, it was an industrial wind tunnel with
+ground simulation, so a moving round underneath the car before only used in Formula One or
+because our wind tunnel is so silent we are able to develop more silent cars.
+The sound of silence is actually a really important concept for us in air acoustics
+development for the e-tron because it doesn't have a combustion engine it's extremely quiet
+so that means that all other noise sources will be all the more prominent so we set
+ourselves the target of making a really really quiet vehicle for the e-tron.
+The e-tron was a very interesting project for an aerodynamicist.
+It was a rare chance to start with a white paper
+and you get a lot of things as an aerodynamicist you always dream of.
+I think one of the unique things about the e-tron is that it has this very sporty,
+very coupe-like silhouette which is quite uncharacteristic of an SUV.
+One of the very fundamental reasons it has this shape
+is that the aerodynamics require it.
+Since the e-tron is a fully battery electric vehicle,
+it gives us, as aerodynamicists,
+quite a number of possibilities that we can work with
+to generate an aerodynamic optimum.
+First off is the fact that we have a closed
+and a flat underbody,
+which is the dream of every aerodynamicist.
+On an electric car, there's a large area
+which is smooth and flush anyway,
+because it's under shield of the battery and for the rest,
+so under the axles, we have designed nice covers
+which are equally flush to the battery underside.
+We have another feature like the active inlet shutters
+which allow us to restrict the flow of cooling air
+to configurations only where it's needed.
+An electric car needs much less cooling
+than a conventional car,
+so we have a cooling shutter which closes.
+We have the inlet ducts at the front side of the vehicle,
+which allow us to channel air in a very efficient way
+from the front to the side of the vehicle.
+We have included acoustic damping glass,
+which basically filters out the important frequencies
+of wind noise.
+We took the best of everything that we had in our toolbox
+and we developed it into this vehicle.
+and the result is what you see now,
+or actually better, what you hear now.
+It's an extremely quiet vehicle,
+and it's one of the quietest vehicles in its class.

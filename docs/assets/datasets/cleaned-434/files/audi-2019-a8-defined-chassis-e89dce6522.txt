@@ -1,0 +1,70 @@
+If you think about a new project, then the work starts pretty much five years ahead of
+it.
+So it's a very intensive early stage where you have to decide what do you want to achieve
+and what are the systems to achieve those goals.
+We thought about what is really an Audi comfort experience and we found some answers.
+Hi, my name is Christian Schimmel.
+I am in the chassis department, head of department that deals with the chassis tuning, which
+Which means adjusting the parameters and everything of steering systems, damping systems, tires
+to have a pleasant ride and high performance in the car.
+For two years within Audi, I had the mission to improve the critics for steering feel.
+Because we had a lot of articles and critics who said, well the steering feel is artificial.
+And consequently we did a lot of analysis there.
+And now we're able to have a new kind of approach using the electric power unit, which influences
+the amount of force that you're feeling at the steering wheel.
+While you're cruising, you won't feel the road because you're cruising and you want
+to have a pleasant ride.
+But once you want to have the car while you're really driving, while you want to feel the
+curves, while you want to feel vehicle dynamics, when the car reacts to that, it detects that
+you're going faster pace and then it lets you feel where you drive.
+The DAS system is much more than just steering feeling.
+It's reducing turning radius.
+So we have a rear wheel steering,
+which does up to five degrees.
+And consequently, the Audi A8 with the long wheelbase
+turns like an Audi A4.
+That's a great achievement.
+But if you have an all wheel steering system,
+then you can see, oh, the driver is steering.
+He wants to turn over there in the left lane
+and afterwards in the right lane.
+And you can react at the front
+and at the rear axle at the same time.
+So the car reacts instantaneously to the wish of the driver.
+So we kind of did some extra tuning.
+We changed the architecture of the air spring.
+The air spring is now moving in a one-to-one ratio
+with the car, so we did that.
+But the E-ABC is a completely different story.
+Well, when it comes to making something new,
+have an innovation in a car,
+then you have to do something different.
+And consequently, we had to build our own system,
+an electronic chassis system.
+And the new thing is we have four actuators.
+Each wheel may be actuated independently.
+We have a system which is fast
+and which kind of lets the wheel see the bump
+and move very fast away from the bump,
+which is not possible with the passive systems.
+But basically you have the modules
+that take care of the body movement,
+which are kind of slow movements
+like heaving or pitching or rolling.
+So there's modules that measure the roll movements
+and then they try to minimize that in a very fluent way,
+very comfortable way.
+And on the other side, there's fast modules,
+which are kind of controlling the wheel
+when it comes to vehicle dynamics.
+So they detect that the wheel is jumping at a bump,
+then it adjusts the chassis to have a smooth ride there.
+It's an all Audi system, so we know everything about it
+and we could tune everything in the way that we want it.
+That's kind of a key factor,
+but we wanted to have everything under control,
+especially as we have the most complex car in the world.
+Most of all, what you experience when you drive that car,
+it really makes us very proud,
+enables us to have an experience like the magic carpet
+that is always quoted when it comes to comfort.

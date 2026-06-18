@@ -18,3 +18,45 @@ description: 資料版本、篩選規則與存取位置。
 | 廠商去頭尾資料 | 237 個 `.txt`，每個廠商去除頭尾各 5 筆後保留 | `#TXT_DATA/06.03_廠商去頭尾各5家(237)/` | 已盤點 |
 | 車廠/車款詞表 | 用於品牌與型號移除或替換的詞表 | `#TXT_DATA/man-model.md` | 已盤點 |
 | EVcar URL SQLite | `ver.5.5`、`ver.5.6`、`ver.5.7` 等資料庫版本 | `#TXT_DATA/*.db` | 已盤點 |
+
+## 資料集左右比對
+
+<div class="dataset-compare">
+  <div class="compare-controls">
+    <div class="compare-field">
+      <label for="dataset-left">左側資料集</label>
+      <select id="dataset-left"></select>
+    </div>
+    <div class="compare-field">
+      <label for="dataset-right">右側資料集</label>
+      <select id="dataset-right"></select>
+    </div>
+    <div class="compare-field">
+      <label for="dataset-status">狀態</label>
+      <select id="dataset-status">
+        <option value="all">全部</option>
+        <option value="same">兩邊相同</option>
+        <option value="different">兩邊都有但不同</option>
+        <option value="missing">單側缺少</option>
+      </select>
+    </div>
+    <div class="compare-field">
+      <label for="dataset-search">搜尋檔名</label>
+      <input id="dataset-search" type="search" placeholder="輸入檔名或關鍵字">
+    </div>
+  </div>
+
+  <div id="dataset-summary" class="compare-summary"></div>
+
+  <div class="file-list-header">
+    <h3>檔案對照</h3>
+    <span id="dataset-file-count"></span>
+  </div>
+  <div id="dataset-file-list" class="file-list"></div>
+
+  <div id="dataset-compare-output" class="compare-output">
+    <p class="loading-text">載入資料集 manifest 中...</p>
+  </div>
+</div>
+
+<script src="{{ '/assets/js/dataset-compare.js' | relative_url }}"></script>
