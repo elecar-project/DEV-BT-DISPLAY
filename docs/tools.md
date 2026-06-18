@@ -25,14 +25,14 @@ description: Release 檔案、工作流程分組與流程圖展示。
 
 <div class="figure-gallery">
   <figure>
-    <img src="{{ '/assets/img/workflow-data-collection.svg' | relative_url }}" alt="資料蒐集架構圖">
+    <img src="{{ '/assets/img/115.06.05_資料蒐集架構圖（詳細）_ver.3.drawio.png' | relative_url }}" alt="資料蒐集架構圖">
     <figcaption>
       <strong>圖 1｜資料蒐集架構圖（詳細）ver.3</strong>
       <span>資料來源、篩選、轉錄與前處理流程</span>
     </figcaption>
   </figure>
   <figure>
-    <img src="{{ '/assets/img/workflow-bertopic.svg' | relative_url }}" alt="BERTopic流程">
+    <img src="{{ '/assets/img/115.06.05_BERTopic流程_ver.4_新增(產業與管理論壇).drawio.png' | relative_url }}" alt="BERTopic流程">
     <figcaption>
       <strong>圖 2｜BERTopic 主題建模流程</strong>
       <span>語意向量化、降維、分群、權重計算與主題命名</span>
