@@ -1,4 +1,6 @@
 (function () {
+  const ASSET_VERSION = "20260618-full-datasets";
+
   const state = {
     manifest: null,
     left: null,
@@ -487,7 +489,7 @@
 
     if (!els.leftSelect) return;
 
-    const response = await fetch(normalizeBase("assets/datasets/manifest.json"));
+    const response = await fetch(normalizeBase(`assets/datasets/manifest.json?v=${ASSET_VERSION}`));
     state.manifest = await response.json();
     renderDatasetOptions();
     refreshComparison();
