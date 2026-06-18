@@ -5,7 +5,41 @@ description: 整理後的 BERTopic 輸出與解釋筆記。
 
 # 結果
 
-本頁收集目前已盤點的 BERTopic 結果、前處理結果與資料篩選結果，供內部研究討論與檢視。
+<div class="results-layout" markdown="1">
+<aside class="results-sidebar" markdown="1">
+## 結果導覽
+
+<div class="result-nav-group" markdown="1">
+<a class="active" href="{{ '/results.html' | relative_url }}">結果總覽</a>
+<a href="{{ '/results/a08-no-brand-removal.html' | relative_url }}">A08 無刪除廠商車款</a>
+<a href="{{ '/results/a07-no-brand-removal.html' | relative_url }}">A07 無刪除廠商車款</a>
+<a href="{{ '/results/a07-brand-removed.html' | relative_url }}">A07 有刪除廠商車款</a>
+<a href="{{ '/results/a06-no-brand-removal.html' | relative_url }}">A06 無刪除廠商車款</a>
+<a href="{{ '/results/a06-brand-removed.html' | relative_url }}">A06 有刪除廠商車款</a>
+</div>
+
+<div class="result-nav-group" markdown="1">
+<a href="{{ '/results/pre-llm-a02.html' | relative_url }}">06.03 A02 LLM 前處理</a>
+<a href="{{ '/results/year-match-a02.html' | relative_url }}">06.13 A02 年份比對</a>
+<a href="{{ '/results/db-filter.html' | relative_url }}">DB Filter 篩選結果</a>
+<a href="{{ '/results/non-english-check.html' | relative_url }}">非英文與特殊符號檢查</a>
+</div>
+
+<div class="result-nav-group" markdown="1">
+<a href="{{ '/results/historical-index.html' | relative_url }}">歷史結果索引</a>
+</div>
+</aside>
+
+<section class="results-content" markdown="1">
+
+本頁收集目前已盤點的 BERTopic 結果、前處理結果與資料篩選結果，供內部研究討論與檢視。左側導覽列可切換到每一次 run 或資料處理結果的獨立頁面。
+
+<div class="run-summary">
+  <div class="run-stat"><strong>5</strong><span>BERTopic topic_info 結果組</span></div>
+  <div class="run-stat"><strong>434</strong><span>主要逐字稿資料數</span></div>
+  <div class="run-stat"><strong>26,978</strong><span>A06-A08 最終輸入句子數</span></div>
+  <div class="run-stat"><strong>A08</strong><span>目前最適合深入檢視的細粒度結果</span></div>
+</div>
 
 ## 結果整理原則
 
@@ -13,19 +47,6 @@ description: 整理後的 BERTopic 輸出與解釋筆記。
 Release bundle、資料集平台或封存資料夾，並由本站提供連結與說明。
 
 ## 結果清單
-
-| 結果組 | 說明 | 位置 | 狀態 |
-| --- | --- | --- | --- |
-| A06 有刪除廠商車款 | `min_cluster_size` 測試，topic_info 共 3 筆含 outlier | `Result/Result_06.02_A06-有刪除廠商車款*` | 已盤點 |
-| A06 無刪除廠商車款 | `min_cluster_size` 測試，topic_info 共 4 筆含 outlier | `Result/Result_06.02_A06-無刪除廠商車款*` | 已盤點 |
-| A07 有刪除廠商車款 | 固定 `min_cluster_size=200`，topic_info 共 3 筆含 outlier | `Result/Result_06.02_A07-有刪除廠商車款*` | 已盤點 |
-| A07 無刪除廠商車款 | 固定 `min_cluster_size=200`，topic_info 共 7 筆含 outlier | `Result/Result_06.02_A07-無刪除廠商車款*` | 已盤點 |
-| A08 無刪除廠商車款 | 固定 `min_cluster_size=150`，topic_info 共 32 筆含 outlier | `Result/Result_06.02_A08-無刪除廠商車款*` | 已盤點 |
-| 06.03 A02 LLM 前處理 | 434 筆逐字稿清理，成功 434 筆 | `Result/06.03_A02/` | 已盤點 |
-| 06.13 A02 年份比對 | 434 筆 dataset 與資料庫 upload year 對齊 | `Result/06.13_A02/` | 已盤點 |
-| DB Filter | 長度區間、廠商去頭尾、篩選明細與 copy manifest | `Result/DB_Filter/` | 已盤點 |
-
-## BERTopic 實驗摘要
 
 | 實驗 | 品牌/車款處理 | HDBSCAN `min_cluster_size` | topic_info 筆數 | 主要觀察 |
 | --- | --- | ---: | ---: | --- |
@@ -74,3 +95,6 @@ Release bundle、資料集平台或封存資料夾，並由本站提供連結與
 A07/A06 的結果則更像粗粒度 baseline。若目標是整理成投稿或公開版本，
 可以優先從 A08 挑選可解釋性較高的主題，再與「有刪除廠商車款」版本比對，
 確認主題不是單純由品牌名稱驅動。
+
+</section>
+</div>
