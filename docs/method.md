@@ -1,32 +1,31 @@
 ---
-title: Method
-description: Research workflow and processing pipeline for DEV-BT.
+title: 方法
+description: DEV-BT 的研究流程與處理管線。
 ---
 
-# Method
+# 方法
 
-This page documents the research workflow from raw transcript collection to
-topic modeling outputs.
+本頁整理從原始逐字稿收集、資料清理、資料切分到主題模型產出的研究流程。
 
-## Pipeline Overview
+## 流程總覽
 
-1. Collect or import transcript data.
-2. Clean transcripts for ASR artifacts and low-information text.
-3. Split transcripts into sentence-level records.
-4. Build BERTopic-friendly datasets.
-5. Run BERTopic experiments with controlled parameter settings.
-6. Compare topic quality, outliers, topic labels, and time/product groupings.
-7. Curate final outputs for internal review and public-facing summaries.
+1. 收集或匯入逐字稿資料。
+2. 清理 ASR 雜訊與低資訊量文字。
+3. 將逐字稿切分成句子層級資料。
+4. 建立適合 BERTopic 使用的資料集。
+5. 以可控參數設定執行 BERTopic 實驗。
+6. 比較主題品質、離群文件、主題標籤，以及時間或產品分組差異。
+7. 整理最終成果，供內部研究檢視與後續公開摘要使用。
 
-## Components To Migrate
+## 待搬移內容
 
-- ASR and transcript-processing notes from the mother repository.
-- Pre-process app usage and exported dataset rules.
-- BERTopic app parameters and experiment presets.
-- Decisions about stopwords, brand removal, sentence splitting, and topic labels.
+- 母倉庫中的 ASR 與逐字稿處理筆記。
+- Pre-process App 的使用方式與資料匯出規則。
+- BERTopic App 的參數設定與實驗預設值。
+- 停用詞、品牌移除、句子切分、主題標籤等研究決策。
 
-## Open Items
+## 待確認事項
 
-- Define the canonical preprocessing pipeline.
-- Define the final BERTopic parameter set or comparison matrix.
-- Link to reproducible scripts for the selected runs.
+- 定義正式採用的前處理流程。
+- 定義最終 BERTopic 參數組，或建立參數比較矩陣。
+- 連結可重現所選實驗的腳本與執行說明。

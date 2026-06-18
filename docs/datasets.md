@@ -1,33 +1,33 @@
 ---
-title: Datasets
-description: Dataset versions, filtering rules, and access locations.
+title: 資料集
+description: 資料版本、篩選規則與存取位置。
 ---
 
-# Datasets
+# 資料集
 
-This page tracks dataset versions used by the DEV-BT research workflow.
+本頁追蹤 DEV-BT 研究流程中使用的資料集版本與資料處理規則。
 
-## Dataset Policy
+## 資料集原則
 
-Large datasets should not be copied directly into this display repository.
-Instead, this site should document dataset versions and link to external storage
-such as Hugging Face Datasets, Zenodo, or GitHub Release assets.
+大型資料集不建議直接放進這個展示倉庫。本站應以紀錄資料版本、
+處理規則與外部連結為主，實際資料可放在 Hugging Face Datasets、Zenodo、
+GitHub Release 或其他合適的儲存位置。
 
-## Dataset Inventory
+## 資料集清單
 
-| Dataset | Description | Location | Status |
+| 資料集 | 說明 | 位置 | 狀態 |
 | --- | --- | --- | --- |
-| Raw transcripts | Original transcript text files | To be linked | Pending |
-| Clean transcript dataset | Transcript-level cleaned data | To be linked | Pending |
-| BERTopic sentence dataset | Sentence-level topic modeling input | To be linked | Pending |
-| Brand-removed dataset | Control dataset with brand/product terms removed | To be linked | Pending |
+| 原始逐字稿 | 原始逐字稿文字檔 | 待連結 | 待整理 |
+| 清理後逐字稿資料集 | 逐字稿層級的清理後資料 | 待連結 | 待整理 |
+| BERTopic 句子資料集 | 句子層級的主題模型輸入資料 | 待連結 | 待整理 |
+| 品牌移除資料集 | 移除品牌或產品詞後的控制組資料 | 待連結 | 待整理 |
 
-## Fields To Document
+## 建議紀錄欄位
 
-- Dataset name and version.
-- Number of documents or sentences.
-- Source date range.
-- Cleaning steps applied.
-- Included and excluded records.
-- Known limitations.
-- Download or access link.
+- 資料集名稱與版本。
+- 文件數或句子數。
+- 原始資料的時間範圍。
+- 已套用的清理步驟。
+- 納入與排除規則。
+- 已知限制。
+- 下載或存取連結。

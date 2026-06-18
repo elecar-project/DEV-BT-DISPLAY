@@ -1,27 +1,26 @@
 ---
-title: Appendix
-description: Extended records, run notes, and historical context.
+title: 附錄
+description: 延伸紀錄、實驗筆記與歷史脈絡。
 ---
 
-# Appendix
+# 附錄
 
-This page is for extended records that are useful to internal researchers but
-too detailed for the public or paper-facing version.
+本頁放置對內部研究者有用、但對公開或投稿版本來說過於詳細的延伸紀錄。
 
-## Suggested Content
+## 建議收錄內容
 
-- Experiment run logs.
-- Parameter tables.
-- Excluded or failed runs.
-- Historical folder mappings from the mother repository.
-- Notes about release packaging and dataset migration.
+- 實驗執行紀錄。
+- 參數表。
+- 被排除或執行失敗的實驗。
+- 母倉庫中的歷史資料夾對照。
+- Release 封裝與資料搬遷筆記。
 
-## Mother Repository Mapping
+## 母倉庫對照
 
-| Mother Repo Area | Intended Destination |
+| 母倉庫區域 | 預計整理位置 |
 | --- | --- |
-| `Pre-process/` | Method, tools, and reproducibility notes |
-| `BERTopic/` | Method, tools, and BERTopic configuration notes |
-| `Result/` | Curated result pages and external bundles |
-| `#TXT_DATA/` and `TXT_DATA/` | Dataset inventory and external dataset links |
-| Historical tool folders | Tools page and appendix notes |
+| `Pre-process/` | 方法、工具與可重現性筆記 |
+| `BERTopic/` | 方法、工具與 BERTopic 設定筆記 |
+| `Result/` | 整理後的結果頁面與外部成果包 |
+| `#TXT_DATA/` 與 `TXT_DATA/` | 資料集清單與外部資料連結 |
+| 歷史工具資料夾 | 工具頁與附錄筆記 |

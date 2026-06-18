@@ -1,31 +1,29 @@
 ---
-title: Results
-description: Curated BERTopic outputs and interpretation notes.
+title: 結果
+description: 整理後的 BERTopic 輸出與解釋筆記。
 ---
 
-# Results
+# 結果
 
-This page will collect curated BERTopic results and interpretation notes for
-internal research review.
+本頁收集經整理後的 BERTopic 結果與解釋筆記，供內部研究討論與檢視。
 
-## Result Policy
+## 結果整理原則
 
-This display repo should show selected, readable result summaries. Full
-generated artifacts should be linked as release bundles, dataset assets, or
-archived result folders.
+這個展示倉庫應呈現經篩選、可閱讀的結果摘要。完整產出檔可放在
+Release bundle、資料集平台或封存資料夾，並由本站提供連結與說明。
 
-## Result Inventory
+## 結果清單
 
-| Result Set | Description | Location | Status |
+| 結果組 | 說明 | 位置 | 狀態 |
 | --- | --- | --- | --- |
-| Main BERTopic run | Canonical topic model output | To be linked | Pending |
-| Parameter comparison | UMAP/HDBSCAN/min cluster comparisons | To be linked | Pending |
-| Brand-removal comparison | Original vs brand-removed topic structure | To be linked | Pending |
-| Time-split comparison | Year or period-based topic comparison | To be linked | Pending |
+| 主要 BERTopic 實驗 | 作為基準版本的主題模型輸出 | 待連結 | 待整理 |
+| 參數比較 | UMAP、HDBSCAN、min cluster 等參數比較 | 待連結 | 待整理 |
+| 品牌移除比較 | 原始資料與品牌移除資料的主題結構比較 | 待連結 | 待整理 |
+| 時間切分比較 | 依年份或時段切分後的主題比較 | 待連結 | 待整理 |
 
-## Suggested Review Questions
+## 建議檢視問題
 
-- Which run should be treated as the main result?
-- Which topics are stable across parameter settings?
-- Which topics are artifacts of ASR noise or brand/product terms?
-- Which charts should move into the public/paper-facing repo later?
+- 哪一次實驗應被視為主要結果？
+- 哪些主題在不同參數設定下仍然穩定？
+- 哪些主題可能受到 ASR 雜訊或品牌／產品詞影響？
+- 哪些圖表之後適合移到公開或投稿用倉庫？
