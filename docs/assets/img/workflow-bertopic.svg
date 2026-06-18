@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1480" viewBox="0 0 1600 1480" role="img" aria-labelledby="title desc">
+  <title id="title">BERTopic 主題建模流程</title>
+  <desc id="desc">語意向量化、降維、分群、權重計算與主題命名</desc>
+  <style>
+    .bg { fill: #fff; }
+    .box { fill: #fff; stroke: #111; stroke-width: 3; }
+    .arrow { stroke: #111; stroke-width: 3; marker-end: url(#arrowhead); }
+    .box-text { fill: #111; font-family: "Noto Serif TC", "PMingLiU", serif; font-size: 32px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+    .bullet { fill: #111; font-family: "Noto Serif TC", "PMingLiU", serif; font-size: 32px; }
+    .mono { font-family: "Courier New", monospace; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#111" />
+    </marker>
+  </defs>
+  <rect class="bg" width="1600" height="1480" />
+
+  <g>
+    <rect class="box" x="28" y="40" width="340" height="128" />
+    <text class="box-text" x="198" y="104">語意向量建立</text>
+    <line class="arrow" x1="198" y1="168" x2="198" y2="280" />
+    <text class="bullet" x="420" y="84">• 使用 <tspan class="mono">all-MiniLM-L6-v2</tspan> 模型進行 embedding</text>
+    <text class="bullet" x="420" y="138">• 將文字轉為 384 維語意向量</text>
+  </g>
+
+  <g>
+    <rect class="box" x="28" y="302" width="340" height="128" />
+    <text class="box-text" x="198" y="366">語意降維處理</text>
+    <line class="arrow" x1="198" y1="430" x2="198" y2="542" />
+    <text class="bullet" x="420" y="346">• 使用 <tspan class="mono">UMAP</tspan> 進行降維，將高維語意向量壓縮</text>
+    <text class="bullet" x="420" y="400">• 設定參考的鄰近文本數、資料點緊密程度、相似度判斷方法等參數</text>
+  </g>
+
+  <g>
+    <rect class="box" x="28" y="564" width="340" height="128" />
+    <text class="box-text" x="198" y="628">主題分群</text>
+    <line class="arrow" x1="198" y1="692" x2="198" y2="804" />
+    <text class="bullet" x="420" y="608">• 使用 <tspan class="mono">HDBSCAN</tspan> 演算法根據語意向量進行密度式分群</text>
+    <text class="bullet" x="420" y="662">• 設定分群方式與嚴格度，以及相鄰群及是否合併等參數</text>
+  </g>
+
+  <g>
+    <rect class="box" x="28" y="826" width="340" height="128" />
+    <text class="box-text" x="198" y="890">主題詞權重計算</text>
+    <line class="arrow" x1="198" y1="954" x2="198" y2="1066" />
+    <text class="bullet" x="420" y="870">• 移除停用詞，降低常見但缺乏主題意義詞彙的干擾</text>
+    <text class="bullet" x="420" y="924">• <tspan class="mono">c-TF-IDF</tspan> 根據各主題內的詞頻與跨主題差異，計算主題詞權重</text>
+  </g>
+
+  <g>
+    <rect class="box" x="28" y="1088" width="340" height="128" />
+    <text class="box-text" x="198" y="1152">主題表示優化</text>
+    <line class="arrow" x1="198" y1="1216" x2="198" y2="1328" />
+    <text class="bullet" x="420" y="1132">• 優化主題關鍵字，篩選更具代表性且較不重複的主題詞，有三種方式</text>
+    <text class="bullet" x="420" y="1186">• <tspan class="mono">KeyBERTInspired</tspan> 偏向語意代表性、<tspan class="mono">POS</tspan> 以詞性過濾、<tspan class="mono">MMR</tspan> 著重多元化</text>
+  </g>
+
+  <g>
+    <rect class="box" x="28" y="1350" width="340" height="100" />
+    <text class="box-text" x="198" y="1400">LLM 主題命名</text>
+    <text class="bullet" x="420" y="1384">• <tspan class="mono">BERTopic</tspan> 為集群分析，結果只會顯示主題群編號與關鍵字，不會呈現主題名稱</text>
+    <text class="bullet" x="420" y="1438">• 利用 <tspan class="mono">LLM</tspan>，根據主題代表詞與文本進行語意判讀，產生可讀性較強的主題名。</text>
+  </g>
+</svg>

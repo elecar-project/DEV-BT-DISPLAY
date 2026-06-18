@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+  <title id="title">資料蒐集架構圖（詳細）ver.3</title>
+  <desc id="desc">資料來源、篩選、轉錄與前處理流程</desc>
+  <style>
+    .bg { fill: #fff; }
+    .box { fill: #fff; stroke: #111; stroke-width: 3; }
+    .arrow { stroke: #111; stroke-width: 3; marker-end: url(#arrowhead); }
+    .box-text { fill: #111; font-family: "Noto Serif TC", "PMingLiU", serif; font-size: 34px; font-weight: 700; text-anchor: middle; dominant-baseline: middle; }
+    .bullet { fill: #111; font-family: "Noto Serif TC", "PMingLiU", serif; font-size: 34px; }
+    .mono { font-family: "Courier New", monospace; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 Z" fill="#111" />
+    </marker>
+  </defs>
+  <rect class="bg" width="1600" height="1120" />
+
+  <g>
+    <rect class="box" x="28" y="52" width="330" height="128" />
+    <text class="box-text" x="193" y="116">確認車款與年份</text>
+    <line class="arrow" x1="193" y1="180" x2="193" y2="292" />
+    <text class="bullet" x="430" y="98">• 美國環保署資料</text>
+    <text class="bullet" x="430" y="152">• 篩選出純電、混合動力、插電車</text>
+    <text class="bullet" x="430" y="206">• 篩選出2008~2025車款</text>
+  </g>
+
+  <g>
+    <rect class="box" x="28" y="314" width="330" height="128" />
+    <text class="box-text" x="193" y="378">蒐集產品影片資料</text>
+    <line class="arrow" x1="193" y1="442" x2="193" y2="554" />
+    <text class="bullet" x="430" y="348">• 廠商網站、Youtube 下關鍵字搜尋，人工確認影片（內容、語言、語音長度等）</text>
+    <text class="bullet" x="430" y="402">• 建立 <tspan class="mono">SQLite DB</tspan> 儲存影片網址</text>
+    <text class="bullet" x="430" y="456">• 透過 <tspan class="mono">Youtube API</tspan> 爬取影片詳細資訊</text>
+  </g>
+
+  <g>
+    <rect class="box" x="28" y="576" width="330" height="128" />
+    <text class="box-text" x="193" y="640">影片轉音檔</text>
+    <line class="arrow" x1="193" y1="704" x2="193" y2="816" />
+    <text class="bullet" x="430" y="620">• 利用 <tspan class="mono">ffmpeg</tspan> 套件將影片轉為音檔</text>
+    <text class="bullet" x="430" y="674">• 以 <tspan class="mono">PyAV</tspan> 解碼、<tspan class="mono">NumPy</tspan> 檢測並解決部分音檔合併左右音軌時反相的雜訊問題</text>
+  </g>
+
+  <g>
+    <rect class="box" x="28" y="838" width="330" height="128" />
+    <text class="box-text" x="193" y="902">擷取文字檔</text>
+    <line class="arrow" x1="193" y1="966" x2="193" y2="1068" />
+    <text class="bullet" x="430" y="882">• 利用 <tspan class="mono">Whisper</tspan> 將影片轉為文字檔</text>
+    <text class="bullet" x="430" y="936">• 使用模型為 <tspan class="mono">medium.en</tspan>，對於英語系文本較為穩定</text>
+  </g>
+
+  <g>
+    <rect class="box" x="28" y="980" width="330" height="112" />
+    <text class="box-text" x="193" y="1036">文本前處理</text>
+    <text class="bullet" x="430" y="1014">• 串接 <tspan class="mono">LLM</tspan> 對文本進行補齊標點、刪除 whisper 模型幻覺重複語句的清理</text>
+    <text class="bullet" x="430" y="1068">• 利用 <tspan class="mono">NLTK</tspan> 套件將文檔拆分為段落，並儲存為 <tspan class="mono">Hugging Face Dataset</tspan> 格式</text>
+  </g>
+</svg>
