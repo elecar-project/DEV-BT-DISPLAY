@@ -1,3 +1,8 @@
+---
+title: Appendix
+description: Extended records, run notes, and historical context.
+---
+
 # Appendix
 
 This page is for extended records that are useful to internal researchers but
@@ -20,4 +25,3 @@ too detailed for the public or paper-facing version.
 | `Result/` | Curated result pages and external bundles |
 | `#TXT_DATA/` and `TXT_DATA/` | Dataset inventory and external dataset links |
 | Historical tool folders | Tools page and appendix notes |
-

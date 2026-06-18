@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+        <span class="brand-mark">DB</span>
+        <span>
+          <strong>DEV-BT</strong>
+          <small>Research Display</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="{{ '/' | relative_url }}">Overview</a>
+        <a href="{{ '/method.html' | relative_url }}">Method</a>
+        <a href="{{ '/datasets.html' | relative_url }}">Datasets</a>
+        <a href="{{ '/tools.html' | relative_url }}">Tools</a>
+        <a href="{{ '/results.html' | relative_url }}">Results</a>
+        <a href="{{ '/appendix.html' | relative_url }}">Appendix</a>
+      </nav>
+    </header>
+
+    <main class="page-shell">
+      {{ content }}
+    </main>
+
+    <footer class="site-footer">
+      <span>Internal research display for DEV-BT.</span>
+      <a href="https://github.com/elecar-project/DEV-BT/releases">Release assets</a>
+      <a href="https://github.com/elecar-project/DEV-BT">Mother repository</a>
+    </footer>
+  </body>
+</html>

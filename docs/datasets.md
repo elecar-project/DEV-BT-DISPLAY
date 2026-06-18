@@ -1,3 +1,8 @@
+---
+title: Datasets
+description: Dataset versions, filtering rules, and access locations.
+---
+
 # Datasets
 
 This page tracks dataset versions used by the DEV-BT research workflow.
@@ -26,4 +31,3 @@ such as Hugging Face Datasets, Zenodo, or GitHub Release assets.
 - Included and excluded records.
 - Known limitations.
 - Download or access link.
-

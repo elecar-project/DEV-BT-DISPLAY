@@ -1,3 +1,8 @@
+---
+title: Tools
+description: Python apps, Windows tools, release links, and usage notes.
+---
+
 # Tools
 
 This page lists runnable tools and apps related to the DEV-BT workflow.
@@ -25,4 +30,3 @@ Downloadable tools are published from the mother repository releases:
 - Use the mother repository only when source code or historical context is
   needed.
 - Keep new tool notes here concise and link to source documentation for details.
-

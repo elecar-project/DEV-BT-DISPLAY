@@ -1,3 +1,10 @@
 title: DEV-BT Research Display
 description: Internal research display site for the DEV-BT project.
-theme: minima
+baseurl: "/DEV-BT-DISPLAY"
+url: "https://elecar-project.github.io"
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

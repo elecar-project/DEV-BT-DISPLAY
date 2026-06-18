@@ -1,3 +1,8 @@
+---
+title: Method
+description: Research workflow and processing pipeline for DEV-BT.
+---
+
 # Method
 
 This page documents the research workflow from raw transcript collection to
@@ -25,4 +30,3 @@ topic modeling outputs.
 - Define the canonical preprocessing pipeline.
 - Define the final BERTopic parameter set or comparison matrix.
 - Link to reproducible scripts for the selected runs.
-

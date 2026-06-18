@@ -1,3 +1,8 @@
+---
+title: Results
+description: Curated BERTopic outputs and interpretation notes.
+---
+
 # Results
 
 This page will collect curated BERTopic results and interpretation notes for
@@ -24,4 +29,3 @@ archived result folders.
 - Which topics are stable across parameter settings?
 - Which topics are artifacts of ASR noise or brand/product terms?
 - Which charts should move into the public/paper-facing repo later?
-
