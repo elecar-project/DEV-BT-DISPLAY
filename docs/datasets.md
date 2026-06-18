@@ -12,7 +12,7 @@ description: 資料版本、篩選規則與存取位置。
 | 資料集 | 說明 | 位置 | 狀態 |
 | --- | --- | --- | --- |
 | 初始 txt | 454 個原始逐字稿 `.txt` | `#TXT_DATA/2. 文字稿－txt/` | 已載入比對器 |
-| 刪除 20 份無人聲 dataset | 434 個 `.txt`，刪除無人聲或不適用文本後的版本 | `#TXT_DATA/05.24_txt-test_deleted(434)/` | 已載入比對器 |
+| 刪除 20 份無人聲 dataset | 434 筆 HuggingFace dataset，刪除無人聲或不適用文本後的版本 | `#TXT_DATA/05.24_txt-test_deleted(434)_dataset/` | 已載入比對器 |
 | LLM 清理 del | 434 筆 Hugging Face Dataset；刪除廠商與款式名稱 | `Result/06.03_A02/R06.03_A02-pre_LLM(del)_dataset` | 已載入比對器 |
 | LLM 清理 repl | 434 筆 Hugging Face Dataset；廠商與款式名稱替換為 `Brand`、`Model` | `Result/06.03_A02/R06.03_A02-pre_LLM(repl)_dataset` | 已載入比對器 |
 | 年份切分 08-19 | 240 筆；以 2020 作為切分點的前段資料 | `Result/06.13_[A]/06.13_[A]-01-pre_LLM(orig)_08-19(240)_dataset` | 已載入比對器 |
@@ -85,4 +85,4 @@ description: 資料版本、篩選規則與存取位置。
   </div>
 </div>
 
-<script src="{{ '/assets/js/dataset-compare.js?v=20260618-full-datasets' | relative_url }}"></script>
+<script src="{{ '/assets/js/dataset-compare.js?v=20260618-dataset-keyfix' | relative_url }}"></script>

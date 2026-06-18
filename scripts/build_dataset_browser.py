@@ -27,9 +27,9 @@ DATASETS = [
     {
         "id": "deleted-20-no-voice",
         "label": "刪除 20 份無人聲 dataset",
-        "source": SOURCE_ROOT / "#TXT_DATA/05.24_txt-test_deleted(434)",
-        "description": "刪除 20 份無人聲後保留的 434 個 txt。",
-        "kind": "txt_folder",
+        "source": SOURCE_ROOT / "#TXT_DATA/05.24_txt-test_deleted(434)_dataset",
+        "description": "刪除 20 份無人聲後保留的 434 筆 HuggingFace dataset。",
+        "kind": "hf_dataset",
     },
     {
         "id": "llm-del",
@@ -118,15 +118,48 @@ DATASETS = [
 ]
 
 
-def normalize_name(name: str) -> str:
+def normalize_brand(name: str) -> str:
+    name = re.sub(r"[_;:,#'\"–—-]+", " ", name)
+    name = re.sub(r"[^0-9A-Za-z]+", " ", name)
+    return re.sub(r"\s+", " ", name).strip().lower()
+
+
+def collect_brand_prefixes() -> list[str]:
+    prefixes = set()
+    for dataset in DATASETS:
+        if dataset.get("kind") != "txt_folder":
+            continue
+        source = dataset["source"]
+        if not source.exists():
+            continue
+        for source_file in source.rglob("*.txt"):
+            stem = source_file.stem
+            if "__" in stem:
+                prefixes.add(normalize_brand(stem.split("__", 1)[0]))
+    return sorted((prefix for prefix in prefixes if prefix), key=len, reverse=True)
+
+
+def strip_dataset_brand_prefix(stem: str, brand_prefixes: list[str]) -> str:
+    for prefix in brand_prefixes:
+        if stem == prefix:
+            return stem
+        if stem.startswith(f"{prefix} "):
+            return stem[len(prefix) + 1 :].strip()
+    return stem
+
+
+def normalize_name(name: str, brand_prefixes: list[str] | None = None) -> str:
     stem = Path(name).stem
-    if "__" in stem:
+    has_file_brand_prefix = "__" in stem
+    if has_file_brand_prefix:
         stem = stem.split("__", 1)[1]
     stem = re.sub(r"\([^)]*(?:fps|H264|AV1|AAC|kbit|p_)[^)]*\)", " ", stem, flags=re.I)
     stem = stem.replace("¦", " ").replace("⁄", " ").replace("|", " ")
     stem = re.sub(r"[_;:,#'\"–—-]+", " ", stem)
     stem = re.sub(r"[^0-9A-Za-z]+", " ", stem)
     stem = re.sub(r"\s+", " ", stem).strip().lower()
+    if brand_prefixes and not has_file_brand_prefix:
+        stem = strip_dataset_brand_prefix(stem, brand_prefixes)
     return stem
 
 
@@ -203,6 +236,7 @@ def main() -> None:
         "matching": "normalized filename; manufacturer prefix and media suffix are ignored when possible",
         "datasets": [],
     }
+    brand_prefixes = collect_brand_prefixes()
 
     for dataset in DATASETS:
         dataset_dir = OUTPUT_ROOT / dataset["id"]
@@ -213,7 +247,7 @@ def main() -> None:
         seen_keys: dict[str, int] = {}
         for record in iter_dataset_records(dataset):
             text = record["text"]
-            key = normalize_name(record["key_source"])
+            key = normalize_name(record["key_source"], brand_prefixes)
             seen_keys[key] = seen_keys.get(key, 0) + 1
             if seen_keys[key] > 1:
                 key = f"{key} duplicate {seen_keys[key]}"

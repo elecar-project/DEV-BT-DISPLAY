@@ -1,5 +1,5 @@
 (function () {
-  const ASSET_VERSION = "20260618-full-datasets";
+  const ASSET_VERSION = "20260618-dataset-keyfix";
 
   const state = {
     manifest: null,
