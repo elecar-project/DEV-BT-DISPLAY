@@ -20,16 +20,16 @@ description: DEV-BT 專案的內部研究展示站。
   </div>
   <aside class="hero-panel" aria-label="專案狀態">
     <div class="metric">
-      <strong>內部版</strong>
-      <span>給研究者整理、檢視與討論</span>
+      <strong>434</strong>
+      <span>主要清理後逐字稿資料數</span>
     </div>
     <div class="metric">
-      <strong>靜態網站</strong>
-      <span>使用 GitHub Pages 發布</span>
+      <strong>26,978</strong>
+      <span>A06-A08 實驗的 BERTopic 輸入句數</span>
     </div>
     <div class="metric">
-      <strong>連結式整理</strong>
-      <span>大型檔案與 Release 保留在母倉庫</span>
+      <strong>5 組</strong>
+      <span>已建立 topic_info CSV 的 BERTopic 結果</span>
     </div>
   </aside>
 </section>
@@ -73,14 +73,26 @@ description: DEV-BT 專案的內部研究展示站。
 
 ## 目前狀態
 
-這個展示倉庫目前先作為結構化索引使用。後續可以逐步從母倉庫搬移內容，
-大型資料集與大量產出檔則保留在外部儲存、GitHub Release 或其他資料平台，
-並在本站建立清楚的說明與連結。
+這個展示倉庫已先放入一批來自母倉庫的真實研究索引，包括資料集版本、
+工具流程、BERTopic 實驗結果與資料品質檢查。大型資料集、`.db`、`.csv`、
+`.arrow` 與完整報告目前不直接複製到本站，而是保留在母倉庫或 Release，
+本站負責建立可讀的導覽層。
 
 <div class="callout">
   這個網站定位為內部研究版。之後若要建立公開或投稿用版本，可以再從這裡
   篩選出較精簡、較適合審查委員與一般讀者閱讀的內容。
 </div>
+
+## 快速索引
+
+| 類型 | 目前整理到的內容 | 主要來源 |
+| --- | --- | --- |
+| 原始與清理後逐字稿 | 454 筆原始逐字稿、434 筆主要清理後逐字稿 | `#TXT_DATA/` |
+| 篩選資料集 | 600-2159 秒區間 103 筆、廠商去頭尾各 5 家 237 筆 | `#TXT_DATA/`、`Result/DB_Filter/` |
+| 前處理結果 | OpenRouter/LLM 清理 434 筆，成功 434 筆 | `Result/06.03_A02/` |
+| BERTopic 結果 | A06、A07、A08 topic_info 與試跑報告 | `Result/` |
+| 時間切分比對 | 434 筆與資料庫 upload year 對齊的 match report | `Result/06.13_A02/` |
+| 工具與 App | Pre-process、BERTopic、A/B/C 系列工具 | 母倉庫各工具資料夾與 Release |
 
 ## 主要外部連結
 
