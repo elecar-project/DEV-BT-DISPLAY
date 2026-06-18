@@ -78,4 +78,4 @@ description: 資料版本、篩選規則與存取位置。
   </div>
 </div>
 
-<script src="{{ '/assets/js/dataset-compare.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/dataset-compare.js?v=20260618-diff' | relative_url }}"></script>
