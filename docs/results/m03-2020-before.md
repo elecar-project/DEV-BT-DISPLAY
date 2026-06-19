@@ -28,11 +28,14 @@ description: M03 年份切分後的 2008-2019 BERTopic 結果。
 
 ### LLM 命名
 
-| 項目 | 設定 |
-| --- | --- |
-| Provider / model | OpenRouter / `openai/gpt-5.5` |
-| 每個 topic 次數 | 50 |
-| 代表句 | 6 句 / topic |
+<table>
+  <thead><tr><th>項目</th><th>設定</th></tr></thead>
+  <tbody>
+    <tr><td>Provider / model</td><td>OpenRouter / <code>openai/gpt-5.5</code></td></tr>
+    <tr><td>每個 topic 次數</td><td>50</td></tr>
+    <tr><td>代表句</td><td>6 句 / topic</td></tr>
+  </tbody>
+</table>
 </aside>
 
 <section markdown="1">
