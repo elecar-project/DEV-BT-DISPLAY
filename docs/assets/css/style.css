@@ -451,7 +451,8 @@ code {
 
 .map-stage-source h2 { background: #d84a16; }
 .map-stage-process h2 { background: #5a31a5; }
-.map-stage-main h2 { background: #2f4052; }
+.map-stage-process h2.stopword-heading { background: #1769aa; }
+.map-stage-main h2 { background: #b42318; }
 .map-stage-validation h2 { background: #187547; }
 .map-stage .second-heading { margin-top: 14px; }
 
@@ -504,6 +505,42 @@ code {
   position: absolute;
   right: -1px;
   top: -5px;
+}
+
+.map-node[data-flow-target],
+.map-stage h2[data-flow-target] {
+  cursor: crosshair;
+}
+
+.map-node.is-flow-source {
+  border-color: #0f766e;
+  box-shadow: inset 4px 0 0 #0f766e, 0 0 0 2px rgba(15, 118, 110, 0.16);
+}
+
+.map-node.is-flow-target,
+.map-stage h2.is-flow-target {
+  box-shadow: 0 0 0 3px rgba(19, 124, 114, 0.26);
+  position: relative;
+  z-index: 2;
+}
+
+.map-arrow-column.is-flow-arrow span {
+  color: #0f766e;
+}
+
+.map-arrow-column.is-flow-arrow i {
+  animation: flow-arrow 0.9s linear infinite;
+  background: #0f766e;
+}
+
+.map-arrow-column.is-flow-arrow i::after {
+  border-left-color: #0f766e;
+}
+
+@keyframes flow-arrow {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(7px); }
+  100% { transform: translateX(0); }
 }
 
 .map-arrow-wide { padding-top: 158px; }
