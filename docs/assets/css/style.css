@@ -575,6 +575,70 @@ code {
 .result-settings table { box-shadow: none; font-size: 0.8rem; margin: 0; }
 .result-settings th, .result-settings td { padding: 8px; white-space: normal; }
 
+.result-figure-scroller {
+  display: flex;
+  gap: 16px;
+  margin: 18px 0 28px;
+  overflow-x: auto;
+  padding: 4px 2px 14px;
+  scroll-snap-type: x mandatory;
+}
+
+.result-figure-scroller figure {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  flex: 0 0 min(92%, 760px);
+  margin: 0;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.result-figure-scroller img { display: block; height: auto; width: 100%; }
+
+.result-figure-scroller figcaption {
+  color: var(--muted);
+  font-size: 0.86rem;
+  padding: 10px 12px;
+}
+
+.table-scroll { margin: 18px 0 28px; overflow-x: auto; }
+
+.table-scroll > table.scan-table,
+.table-scroll > table.topic-table {
+  display: table;
+  margin: 0;
+  table-layout: fixed;
+}
+
+.scan-table { min-width: 820px; width: 100%; }
+.scan-table th:nth-child(1) { width: 12%; }
+.scan-table th:nth-child(2) { width: 12%; }
+.scan-table th:nth-child(3) { width: 12%; }
+.scan-table th:nth-child(4) { width: 12%; }
+.scan-table th:nth-child(5), .scan-table th:nth-child(6) { width: 10%; }
+.scan-table th:nth-child(7) { width: 32%; }
+.scan-table th, .scan-table td { white-space: normal; }
+.scan-table td:not(:last-child), .scan-table th:not(:last-child) { text-align: right; }
+.scan-table .selection-row td { background: #e2f0e5; color: #165f4d; font-weight: 800; }
+
+.scan-badge {
+  background: #16805f;
+  border-radius: 4px;
+  color: #fff;
+  display: inline-block;
+  font-size: 0.78rem;
+  padding: 3px 7px;
+}
+
+.topic-table { min-width: 720px; width: 100%; }
+.topic-table th:nth-child(1) { width: 14%; }
+.topic-table th:nth-child(2) { width: 12%; }
+.topic-table th:nth-child(3) { width: 12%; }
+.topic-table th:nth-child(4) { width: 62%; }
+.topic-table th, .topic-table td { white-space: normal; }
+.topic-table td:nth-child(-n+3), .topic-table th:nth-child(-n+3) { text-align: right; }
+
 .dataset-compare {
   background: var(--panel);
   border: 1px solid var(--line);
