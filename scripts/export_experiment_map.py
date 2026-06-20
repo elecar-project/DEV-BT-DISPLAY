@@ -147,7 +147,9 @@ def main() -> None:
                 anchors.append((float(item.get("x", "0")), float(item.get("y", "0"))))
         # The confirmed map routes T02/T03 validation branches through an open
         # vertical lane before M01, rather than behind the downstream results.
-        if source["id"].endswith("-45") and target["id"].endswith(("-81", "-82")):
+        if source["id"].endswith("-45") and target["id"].endswith(("-49", "-50")):
+            anchors = [(615.0, start[1]), (615.0, end[1])]
+        elif source["id"].endswith("-45") and target["id"].endswith(("-81", "-82")):
             anchors = [(550.0, start[1]), (550.0, end[1])]
         elif source["id"].endswith("-45") and target["id"].endswith(("-89", "-90", "-91", "-92", "-93", "-94")):
             anchors = [(575.0, start[1]), (575.0, end[1])]
