@@ -9,23 +9,31 @@ description: B01｜2008-2019 min_cluster_size 掃描 的 HDBSCAN min_cluster_siz
 <aside class="result-settings" markdown="1">
 ## 實驗設定
 
-### 資料來源
+### 資料血緣
 
-| 項目 | 設定 |
-| --- | --- |
-| 資料集 | `Result/06.13_[B]tok/06.13_[B]01-pre_LLM(orig)_08-19(240)_tok(para12-80)_dataset` |
-| 使用欄位 | `sentence` |
-| 可用句子 | 11,160 |
-| 短句 | 0 筆少於 3 words |
+<table class="settings-table">
+  <thead><tr><th>項目</th><th>設定</th></tr></thead>
+  <tbody>
+    <tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]01-pre_LLM(orig)_08-19(240)_tok(para12-80)_dataset</code></td></tr>
+    <tr><td>使用欄位</td><td><code>sentence</code></td></tr>
+    <tr><td>可用句子</td><td>11,160</td></tr>
+    <tr><td>短句</td><td>0 筆少於 3 words</td></tr>
+  </tbody>
+</table>
 
 ### 固定模型設定
 
-| 項目 | 設定 |
-| --- | --- |
-| Embedding | `all-MiniLM-L6-v2` |
-| UMAP | neighbors 15 / components 5 / min dist 0 / cosine |
-| HDBSCAN | euclidean / eom / prediction data |
-| Vectorizer | English stop words / ngram 1-2 / min df 2 |
+
+
+<table class="settings-table">
+  <thead><tr><th>項目</th><th>設定</th></tr></thead>
+  <tbody>
+    <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>
+    <tr><td>UMAP</td><td>neighbors 15 / components 5 / min dist 0 / cosine</td></tr>
+    <tr><td>HDBSCAN</td><td>euclidean / eom / prediction data</td></tr>
+    <tr><td>Vectorizer</td><td>English stop words / ngram 1-2 / min df 2</td></tr>
+  </tbody>
+</table>
 </aside>
 
 <section markdown="1">

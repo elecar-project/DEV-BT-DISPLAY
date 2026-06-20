@@ -572,8 +572,14 @@ code {
 
 .result-settings h2 { border: 0; font-size: 1rem; margin: 0 0 12px; padding: 0; }
 .result-settings h3 { color: var(--muted); font-size: 0.78rem; margin: 18px 0 8px; text-transform: uppercase; }
-.result-settings table { box-shadow: none; font-size: 0.8rem; margin: 0; }
+.result-settings table { box-shadow: none; display: table; font-size: 0.8rem; margin: 0; table-layout: fixed; width: 100%; }
 .result-settings th, .result-settings td { padding: 8px; white-space: normal; }
+.result-settings th:first-child, .result-settings td:first-child { width: 30%; }
+.result-settings td:last-child { overflow-wrap: anywhere; word-break: normal; }
+.result-settings .settings-table { display: table; table-layout: fixed; width: 100%; }
+.result-settings .settings-table th:first-child,
+.result-settings .settings-table td:first-child { width: 30%; }
+.result-settings .settings-table td:last-child { overflow-wrap: anywhere; word-break: normal; }
 
 .result-figure-scroller {
   display: flex;

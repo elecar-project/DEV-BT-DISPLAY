@@ -92,6 +92,30 @@ def topic_table(rows: list[dict[str, str]]) -> str:
 </div>""".format("".join(body))
 
 
+def settings_table(dataset_source: str, meta: dict[str, object]) -> str:
+    source = html.escape(dataset_source)
+    text_col = html.escape(str(meta["text_col"]))
+    return f'''<table class="settings-table">
+  <thead><tr><th>項目</th><th>設定</th></tr></thead>
+  <tbody>
+    <tr><td>資料集</td><td><code>{source}</code></td></tr>
+    <tr><td>使用欄位</td><td><code>{text_col}</code></td></tr>
+    <tr><td>可用句子</td><td>{int(meta["used_rows"]):,}</td></tr>
+    <tr><td>短句</td><td>{int(meta["short_rows_lt_3_words_count"]):,} 筆少於 3 words</td></tr>
+  </tbody>
+</table>
+
+<table class="settings-table">
+  <thead><tr><th>項目</th><th>設定</th></tr></thead>
+  <tbody>
+    <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>
+    <tr><td>UMAP</td><td>neighbors 15 / components 5 / min dist 0 / cosine</td></tr>
+    <tr><td>HDBSCAN</td><td>euclidean / eom / prediction data</td></tr>
+    <tr><td>Vectorizer</td><td>English stop words / ngram 1-2 / min df 2</td></tr>
+  </tbody>
+</table>'''
+
+
 def run() -> None:
     for folder_name, (slug, title) in EXPERIMENTS.items():
         folder = SOURCE / folder_name
@@ -163,23 +187,13 @@ description: {title} 的 HDBSCAN min_cluster_size 敏感度分析。
 <aside class="result-settings" markdown="1">
 ## 實驗設定
 
-### 資料來源
+### 資料血緣
 
-| 項目 | 設定 |
-| --- | --- |
-| 資料集 | `{dataset_source}` |
-| 使用欄位 | `{meta['text_col']}` |
-| 可用句子 | {meta['used_rows']:,} |
-| 短句 | {meta['short_rows_lt_3_words_count']:,} 筆少於 3 words |
+{settings_table(dataset_source, meta).split('</table>')[0]}</table>
 
 ### 固定模型設定
 
-| 項目 | 設定 |
-| --- | --- |
-| Embedding | `all-MiniLM-L6-v2` |
-| UMAP | neighbors 15 / components 5 / min dist 0 / cosine |
-| HDBSCAN | euclidean / eom / prediction data |
-| Vectorizer | English stop words / ngram 1-2 / min df 2 |
+{settings_table(dataset_source, meta).split('</table>', 1)[1]}
 </aside>
 
 <section markdown="1">
