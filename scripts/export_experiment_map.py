@@ -170,20 +170,24 @@ def main() -> None:
     node_shapes: list[str] = []
     for node in nodes.values():
         safe_label = escape(node["label"])
-        classes = "node"
+        # A03 is the source-dataset column. Its variable-width boxes read more
+        # cleanly when every dataset number begins at the same left inset.
+        left_aligned = node["x"] == 47 and node["y"] < 550
+        classes = "node dataset-node" if left_aligned else "node"
         href = LINKS.get(node["label"])
         font_size, lines = fitted_text(node["label"], node["w"] - 12, node["h"], node["font"])
         line_height = font_size * 1.16
         text_y = node["y"] + (node["h"] - line_height * len(lines)) / 2 + font_size
+        text_x = node["x"] + 18 if left_aligned else node["x"] + node["w"] / 2
         tspans = "".join(
-            f'<tspan x="{node["x"] + node["w"] / 2:.1f}" dy="{0 if index == 0 else line_height:.1f}">{escape(line)}</tspan>'
+            f'<tspan x="{text_x:.1f}" dy="{0 if index == 0 else line_height:.1f}">{escape(line)}</tspan>'
             for index, line in enumerate(lines)
         )
         shape = (
             f'<g class="{classes}" data-id="{escape(node["id"])}" data-label="{safe_label}">'
             f'<rect x="{node["x"]:.1f}" y="{node["y"]:.1f}" width="{node["w"]:.1f}" height="{node["h"]:.1f}" '
             f'fill="{escape(node["fill"])}" stroke="{escape(node["stroke"])}"/>'
-            f'<text x="{node["x"] + node["w"] / 2:.1f}" y="{text_y:.1f}" fill="{escape(node["font_color"])}" '
+            f'<text x="{text_x:.1f}" y="{text_y:.1f}" fill="{escape(node["font_color"])}" '
             f'font-size="{font_size:.1f}">{tspans}</text></g>'
         )
         node_shapes.append(f'<a href="{escape(href)}">{shape}</a>' if href else shape)
@@ -224,6 +228,7 @@ def main() -> None:
     .edge.active {{ stroke-width: 2.4; stroke-dasharray: 7 5; animation: flow 0.9s linear infinite; }}
     .node rect {{ stroke-width: 1.1; }}
     .node text {{ font-family: "Noto Serif TC", "PMingLiU", serif; text-anchor: middle; dominant-baseline: alphabetic; }}
+    .dataset-node text {{ text-anchor: start; }}
     a .node:hover rect {{ stroke: #0f766e; stroke-width: 3; }}
     a .node:hover text {{ fill: #0f766e; font-weight: 700; }}
     .node:hover rect {{ stroke-width: 2.6; }}
