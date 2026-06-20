@@ -47,6 +47,12 @@
     document.querySelectorAll('.node').forEach((node) => {
       node.addEventListener('mouseenter', () => highlight(node.dataset.id));
       node.addEventListener('mouseleave', clear);
+      if (node.dataset.label === '2 (del)_tok') {
+        node.style.cursor = 'pointer';
+        node.addEventListener('click', () => {
+          window.top.location.href = '../../results/a03-2-del-tok.html';
+        });
+      }
     });
   ]]></script>
 </svg>

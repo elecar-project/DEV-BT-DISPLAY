@@ -8,8 +8,8 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 本頁依實驗的資料血緣與處理順序呈現。可點擊的綠色節點已有完整結果與設定摘要；灰色節點保留在地圖中，待後續整理後開放。
 
 <div class="experiment-map-scroll" aria-label="DEV-BT 完整實驗地圖">
-    <object class="experiment-map-full" type="image/svg+xml" data="{{ '/assets/img/experiment-map-full.svg?v=20260620-full-map-v7' | relative_url }}">
-    <img src="{{ '/assets/img/experiment-map-full.svg?v=20260620-full-map-v4' | relative_url }}" alt="DEV-BT 完整實驗運行架構圖">
+    <object class="experiment-map-full" type="image/svg+xml" data="{{ '/assets/img/experiment-map-full.svg?v=20260620-full-map-v8' | relative_url }}">
+    <img src="{{ '/assets/img/experiment-map-full.svg?v=20260620-full-map-v8' | relative_url }}" alt="DEV-BT 完整實驗運行架構圖">
   </object>
 </div>
 
@@ -21,6 +21,7 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 
 | 終點 | 實驗意義 | 目前狀態 |
 | --- | --- | --- |
+| [A03-2：del + tok min_cluster_size 掃描]({{ '/results/a03-2-del-tok.html' | relative_url }}) | 21 組 HDBSCAN 最小群集大小的敏感度分析 | 可檢視 |
 | 8New-LLM30 | 最佳參數模型，LLM 命名 30 次驗證 | 可檢視 |
 | 8New-LLM50 | 同一路徑以 50 次命名驗證，資料夾名稱歷史上誤標為 tp-30 | 可檢視 |
 | 2020 前 | 年份切分後的 2008-2019 主題模型 | 可檢視 |

@@ -12,6 +12,7 @@ from pathlib import Path
 SOURCE = Path("/workspaces/Dev-BT/實存圖.drawio")
 OUTPUT = Path(__file__).resolve().parents[1] / "docs/assets/img/experiment-map-full.svg"
 LINKS = {
+    "2 (del)_tok": "../../results/a03-2-del-tok.html",
     "8New-LLM30": "../../results/m02-llm30.html",
     "8New-LLM50": "../../results/m02-llm50.html",
     "2020 前": "../../results/m03-2020-before.html",
