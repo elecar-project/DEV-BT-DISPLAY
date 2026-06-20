@@ -55,13 +55,19 @@ def val(row: dict[str, object], key: str, default: str = "-") -> object:
 
 def candidate_table(rows: list[dict[str, object]]) -> str:
     labels = {"lowest_noise": "最低雜訊", "most_topics": "最多主題", "best_balance": "最佳平衡"}
+    methods = {
+        "lowest_noise": "有效結果中 noise ratio 最低；同分時優先較低最大主題比例與較多主題。",
+        "most_topics": "在可接受離群比例下，保留有效主題數最多者。",
+        "best_balance": "在預設平衡條件下，選取 balance score 最高者。",
+    }
     body = []
     for row in rows:
         label = str(val(row, "selection_label"))
         body.append(
-            "<tr class=\"{}\"><td>{}</td><td>n_neighbors {} / components {} / min dist {}</td>"
+            "<tr class=\"{}\"><td>{}</td><td>{}</td><td>n_neighbors {} / components {} / min dist {}</td>"
             "<td>cluster {} / samples {} / {} / eps {}</td><td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>".format(
                 f"candidate-{label}", labels.get(label, label),
+                methods.get(label, "依研究目標選取候選設定。"),
                 val(row, "umap_n_neighbors"), val(row, "umap_n_components"), val(row, "umap_min_dist"),
                 val(row, "hdbscan_min_cluster_size"), val(row, "hdbscan_min_samples"),
                 val(row, "hdbscan_cluster_selection_method"), val(row, "hdbscan_cluster_selection_epsilon"),
@@ -69,9 +75,8 @@ def candidate_table(rows: list[dict[str, object]]) -> str:
             )
         )
     return """<div class="table-scroll"><table class="candidate-table">
-<thead><tr><th>策略</th><th>UMAP</th><th>HDBSCAN</th><th>主題數</th><th>noise ratio</th><th>最大主題比例</th><th>balance score</th></tr></thead>
+<thead><tr><th>策略</th><th>選擇方法</th><th>UMAP</th><th>HDBSCAN</th><th>主題數</th><th>noise ratio</th><th>最大主題比例</th><th>balance score</th></tr></thead>
 <tbody>{}</tbody>
-<tfoot><tr><th>選擇方法</th><td colspan="6"><code>最低雜訊</code> 在有效結果中選取 noise ratio 最低的設定；若相同，優先較低的最大主題比例與較多主題。<code>最多主題</code> 在可接受的離群比例下，保留有效主題數最多的設定。<code>最佳平衡</code> 則在預設平衡條件下，選取 balance score 最高者；此分數同時考量離群比例、主題數與主題集中程度。</td></tr></tfoot>
 </table></div>""".format("".join(body))
 
 
@@ -154,9 +159,15 @@ description: {title} 的 UMAP 與 HDBSCAN 聯合參數搜尋。
 </aside>
 
 <section markdown="1">
+## UMAP 測試目的
+
+本測試在固定語意向量模型後，同時探索 UMAP 降維與 HDBSCAN 分群設定，尋找能兼顧主題區辨性、離群比例與主題大小分布的候選組合。UMAP 的 `n_neighbors` 調整局部與全域結構的取捨，`n_components` 決定降維後的維度數，`min_dist` 則控制群集在低維空間中的緊密程度；後續再搭配 HDBSCAN 的群集大小、保守程度與切分方式進行評估。
+
+所有候選皆使用 <code>all-MiniLM-L6-v2</code>、UMAP <code>metric=cosine</code> 與 <code>random_state=42</code>。第一階段進行廣泛搜尋，第二階段針對候選 UMAP 設定深入調整 HDBSCAN。
+
 ## 三種候選策略
 
-最低雜訊、最多主題與最佳平衡代表不同的研究取捨；本頁保留三者，避免以單一 noise ratio 取代語意品質判讀。各策略的選擇方法列於表格最後一列。
+最低雜訊、最多主題與最佳平衡代表不同的研究取捨；本頁保留三者，避免以單一 noise ratio 取代語意品質判讀。
 
 {candidate_table(rows)}
 

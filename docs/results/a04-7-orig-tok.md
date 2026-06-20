@@ -28,14 +28,19 @@ description: A04-7｜orig + tok 的 UMAP 與 HDBSCAN 聯合參數搜尋。
 </aside>
 
 <section markdown="1">
+## UMAP 測試目的
+
+本測試在固定語意向量模型後，同時探索 UMAP 降維與 HDBSCAN 分群設定，尋找能兼顧主題區辨性、離群比例與主題大小分布的候選組合。UMAP 的 `n_neighbors` 調整局部與全域結構的取捨，`n_components` 決定降維後的維度數，`min_dist` 則控制群集在低維空間中的緊密程度；後續再搭配 HDBSCAN 的群集大小、保守程度與切分方式進行評估。
+
+所有候選皆使用 <code>all-MiniLM-L6-v2</code>、UMAP <code>metric=cosine</code> 與 <code>random_state=42</code>。第一階段進行廣泛搜尋，第二階段針對候選 UMAP 設定深入調整 HDBSCAN。
+
 ## 三種候選策略
 
-最低雜訊、最多主題與最佳平衡代表不同的研究取捨；本頁保留三者，避免以單一 noise ratio 取代語意品質判讀。各策略的選擇方法列於表格最後一列。
+最低雜訊、最多主題與最佳平衡代表不同的研究取捨；本頁保留三者，避免以單一 noise ratio 取代語意品質判讀。
 
 <div class="table-scroll"><table class="candidate-table">
-<thead><tr><th>策略</th><th>UMAP</th><th>HDBSCAN</th><th>主題數</th><th>noise ratio</th><th>最大主題比例</th><th>balance score</th></tr></thead>
-<tbody><tr class="candidate-lowest_noise"><td>最低雜訊</td><td>n_neighbors 15 / components 5 / min dist 0.0</td><td>cluster 300 / samples 50.0 / eom / eps 0.0</td><td>2</td><td>0.84%</td><td>97.44%</td><td>0.3201833788121151</td></tr><tr class="candidate-most_topics"><td>最多主題</td><td>n_neighbors 5 / components 10 / min dist 0.0</td><td>cluster 50 / samples 5.0 / leaf / eps 0.0</td><td>183</td><td>39.43%</td><td>1.50%</td><td>0.8694006210206067</td></tr><tr class="candidate-best_balance"><td>最佳平衡</td><td>n_neighbors 5 / components 10 / min dist 0.0</td><td>cluster 50 / samples 10.0 / leaf / eps 0.2</td><td>130</td><td>31.36%</td><td>3.01%</td><td>0.8815293416554277</td></tr></tbody>
-<tfoot><tr><th>選擇方法</th><td colspan="6"><code>最低雜訊</code> 在有效結果中選取 noise ratio 最低的設定；若相同，優先較低的最大主題比例與較多主題。<code>最多主題</code> 在可接受的離群比例下，保留有效主題數最多的設定。<code>最佳平衡</code> 則在預設平衡條件下，選取 balance score 最高者；此分數同時考量離群比例、主題數與主題集中程度。</td></tr></tfoot>
+<thead><tr><th>策略</th><th>選擇方法</th><th>UMAP</th><th>HDBSCAN</th><th>主題數</th><th>noise ratio</th><th>最大主題比例</th><th>balance score</th></tr></thead>
+<tbody><tr class="candidate-lowest_noise"><td>最低雜訊</td><td>有效結果中 noise ratio 最低；同分時優先較低最大主題比例與較多主題。</td><td>n_neighbors 15 / components 5 / min dist 0.0</td><td>cluster 300 / samples 50.0 / eom / eps 0.0</td><td>2</td><td>0.84%</td><td>97.44%</td><td>0.3201833788121151</td></tr><tr class="candidate-most_topics"><td>最多主題</td><td>在可接受離群比例下，保留有效主題數最多者。</td><td>n_neighbors 5 / components 10 / min dist 0.0</td><td>cluster 50 / samples 5.0 / leaf / eps 0.0</td><td>183</td><td>39.43%</td><td>1.50%</td><td>0.8694006210206067</td></tr><tr class="candidate-best_balance"><td>最佳平衡</td><td>在預設平衡條件下，選取 balance score 最高者。</td><td>n_neighbors 5 / components 10 / min dist 0.0</td><td>cluster 50 / samples 10.0 / leaf / eps 0.2</td><td>130</td><td>31.36%</td><td>3.01%</td><td>0.8815293416554277</td></tr></tbody>
 </table></div>
 
 ## 圖表檢視

@@ -645,19 +645,17 @@ code {
 .topic-table th, .topic-table td { white-space: normal; }
 .topic-table td:nth-child(-n+3), .topic-table th:nth-child(-n+3) { text-align: right; }
 
-.candidate-table { min-width: 960px; table-layout: fixed; width: 100%; }
+.candidate-table { min-width: 1120px; table-layout: fixed; width: 100%; }
 .candidate-table th, .candidate-table td { white-space: normal; }
-.candidate-table th:nth-child(1) { width: 11%; }
-.candidate-table th:nth-child(2) { width: 22%; }
-.candidate-table th:nth-child(3) { width: 27%; }
-.candidate-table th:nth-child(4), .candidate-table th:nth-child(5), .candidate-table th:nth-child(6), .candidate-table th:nth-child(7) { width: 10%; }
+.candidate-table th:nth-child(1) { width: 10%; }
+.candidate-table th:nth-child(2) { width: 20%; }
+.candidate-table th:nth-child(3) { width: 17%; }
+.candidate-table th:nth-child(4) { width: 21%; }
+.candidate-table th:nth-child(5), .candidate-table th:nth-child(6), .candidate-table th:nth-child(7), .candidate-table th:nth-child(8) { width: 8%; }
 .candidate-table .candidate-lowest_noise td:first-child { color: #9a5a00; font-weight: 800; }
 .candidate-table .candidate-most_topics td:first-child { color: #155e75; font-weight: 800; }
 .candidate-table .candidate-best_balance td { background: #e2f0e5; }
 .candidate-table .candidate-best_balance td:first-child { color: #165f4d; font-weight: 800; }
-.candidate-table tfoot th,
-.candidate-table tfoot td { background: #f7f3e8; white-space: normal; }
-.candidate-table tfoot th { color: #745400; }
 
 .dataset-compare {
   background: var(--panel);
