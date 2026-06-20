@@ -190,7 +190,9 @@ def main() -> None:
             f'<text x="{text_x:.1f}" y="{text_y:.1f}" fill="{escape(node["font_color"])}" '
             f'font-size="{font_size:.1f}">{tspans}</text></g>'
         )
-        node_shapes.append(f'<a href="{escape(href)}">{shape}</a>' if href else shape)
+        # The map is embedded with <object>. _top prevents linked result pages
+        # from rendering inside the map's own viewport.
+        node_shapes.append(f'<a href="{escape(href)}" target="_top">{shape}</a>' if href else shape)
 
     interaction_script = '''<script><![CDATA[
     const edges = Array.from(document.querySelectorAll('.edge'));
