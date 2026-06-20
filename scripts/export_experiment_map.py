@@ -13,6 +13,7 @@ SOURCE = Path("/workspaces/Dev-BT/實存圖.drawio")
 OUTPUT = Path(__file__).resolve().parents[1] / "docs/assets/img/experiment-map-full.svg"
 LINKS = {
     "A03：min_cluster_size": "../../results/a03-min-cluster-overview.html",
+    "A04：UMAP": "../../results/a04-umap-overview.html",
     "2 (del)_tok": "../../results/a03-2-del-tok.html",
     "3 (del)_tok(para12-80)": "../../results/a03-3-del-tok-para12-80.html",
     "5 (repl)_tok": "../../results/a03-5-repl-tok.html",
@@ -26,6 +27,16 @@ LINKS = {
     "8New-LLM30": "../../results/m02-llm30.html",
     "8New-LLM50": "../../results/m02-llm50.html",
     "2020 前": "../../results/m03-2020-before.html",
+}
+NODE_LINKS = {
+    "mRq0KLDsOoRAvhbJz9B0-19": "../../results/a04-2-del-tok.html",
+    "mRq0KLDsOoRAvhbJz9B0-21": "../../results/a04-3-del-tok-para12-80.html",
+    "mRq0KLDsOoRAvhbJz9B0-27": "../../results/a04-5-repl-tok.html",
+    "mRq0KLDsOoRAvhbJz9B0-23": "../../results/a04-6-repl-tok-para12-80.html",
+    "mRq0KLDsOoRAvhbJz9B0-24": "../../results/a04-7-orig-tok.html",
+    "mRq0KLDsOoRAvhbJz9B0-26": "../../results/a04-8-orig-tok-para12-80.html",
+    "mRq0KLDsOoRAvhbJz9B0-75": "../../results/a04-b01-08-19.html",
+    "mRq0KLDsOoRAvhbJz9B0-80": "../../results/a04-b01-20-25.html",
 }
 EMPTY_NODE_LABELS = {
     "1 (del)", "4 (repl)", "0 (orig)", "8C", "2020 後",
@@ -193,7 +204,7 @@ def main() -> None:
         # cleanly when every dataset number begins at the same left inset.
         left_aligned = node["x"] == 47 and node["y"] < 550
         classes = "node dataset-node" if left_aligned else "node"
-        href = LINKS.get(node["label"])
+        href = NODE_LINKS.get(node["id"]) or LINKS.get(node["label"])
         if node["label"] in EMPTY_NODE_LABELS:
             classes += " is-empty"
         font_size, lines = fitted_text(node["label"], node["w"] - 12, node["h"], node["font"])

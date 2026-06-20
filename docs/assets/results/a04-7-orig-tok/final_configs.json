@@ -1,0 +1,47 @@
+[
+  {
+    "selection_label": "lowest_noise",
+    "selection_reason": "最低 noise_ratio，並以較低 largest_topic_ratio 與較高 n_clusters 作為 tie-break。",
+    "umap_n_neighbors": 15,
+    "umap_n_components": 5,
+    "umap_min_dist": 0.0,
+    "umap_metric": "cosine",
+    "umap_random_state": 42,
+    "hdbscan_min_cluster_size": 300,
+    "hdbscan_min_samples": 50,
+    "hdbscan_cluster_selection_method": "eom",
+    "hdbscan_cluster_selection_epsilon": 0.0,
+    "hdbscan_metric": "euclidean",
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  {
+    "selection_label": "most_topics",
+    "selection_reason": "在可接受 noise_ratio 下保留最多有效主題。",
+    "umap_n_neighbors": 5,
+    "umap_n_components": 10,
+    "umap_min_dist": 0.0,
+    "umap_metric": "cosine",
+    "umap_random_state": 42,
+    "hdbscan_min_cluster_size": 50,
+    "hdbscan_min_samples": 5,
+    "hdbscan_cluster_selection_method": "leaf",
+    "hdbscan_cluster_selection_epsilon": 0.0,
+    "hdbscan_metric": "euclidean",
+    "embedding_model": "all-MiniLM-L6-v2"
+  },
+  {
+    "selection_label": "best_balance",
+    "selection_reason": "符合嚴格平衡條件後取最高 balance_score。",
+    "umap_n_neighbors": 5,
+    "umap_n_components": 10,
+    "umap_min_dist": 0.0,
+    "umap_metric": "cosine",
+    "umap_random_state": 42,
+    "hdbscan_min_cluster_size": 50,
+    "hdbscan_min_samples": 10,
+    "hdbscan_cluster_selection_method": "leaf",
+    "hdbscan_cluster_selection_epsilon": 0.2,
+    "hdbscan_metric": "euclidean",
+    "embedding_model": "all-MiniLM-L6-v2"
+  }
+]

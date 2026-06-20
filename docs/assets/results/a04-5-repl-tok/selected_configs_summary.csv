@@ -1,0 +1,4 @@
+﻿umap_n_neighbors,umap_n_components,umap_min_dist,hdbscan_min_cluster_size,hdbscan_min_samples,hdbscan_cluster_selection_method,hdbscan_cluster_selection_epsilon,n_clusters,noise_ratio,topic_-1_count,topic_0_count,topic_1_count,largest_topic_count,largest_topic_ratio,top3_topic_ratio,topic_entropy,balance_score,status,note,selection
+15,5,0.25,50,75.0,eom,0.0,2,0.0,0,111,31392,31392,0.9964765260451386,1.0,0.0234189248404534,0.3143903755197917,ok,,lowest_noise
+5,15,0.0,50,5.0,leaf,0.0,181,0.4200234898263657,13232,51,53,586,0.0186014030409802,0.0353934545916262,5.066062380953007,0.861333841221471,ok,,most_topics
+5,5,0.0,50,5.0,eom,0.1,155,0.3430149509570517,10806,51,55,823,0.0261244960797384,0.0664381170047297,4.773856703916479,0.8759705424880171,ok,,best_balance

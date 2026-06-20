@@ -1,0 +1,11 @@
+{
+  "started_at": "2026-06-16T20:56:36.349917+00:00",
+  "finished_at": "2026-06-16T23:15:36.964079+00:00",
+  "dataset": "Result/06.13_[B]tok/06.13_[B]01-pre_LLM(orig)_20-25(194)_tok(para12-80)_dataset",
+  "output_dir": "Result/06.13_[D]UMAP/[B]01-(orig)_20-25_tok(para12-80)",
+  "stage1_rows": 2520,
+  "stage2_rows": 13440,
+  "selected_rows": 3,
+  "errors_count": 2,
+  "full_failures_count": 0
+}

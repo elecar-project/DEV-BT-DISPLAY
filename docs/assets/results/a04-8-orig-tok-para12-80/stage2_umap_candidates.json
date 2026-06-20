@@ -1,0 +1,62 @@
+[
+  {
+    "umap_n_neighbors": 5,
+    "umap_n_components": 5,
+    "umap_min_dist": 0.05,
+    "umap_random_state": 42
+  },
+  {
+    "umap_n_neighbors": 5,
+    "umap_n_components": 10,
+    "umap_min_dist": 0.0,
+    "umap_random_state": 42
+  },
+  {
+    "umap_n_neighbors": 5,
+    "umap_n_components": 10,
+    "umap_min_dist": 0.05,
+    "umap_random_state": 42
+  },
+  {
+    "umap_n_neighbors": 10,
+    "umap_n_components": 5,
+    "umap_min_dist": 0.0,
+    "umap_random_state": 42
+  },
+  {
+    "umap_n_neighbors": 5,
+    "umap_n_components": 5,
+    "umap_min_dist": 0.0,
+    "umap_random_state": 42
+  },
+  {
+    "umap_n_neighbors": 5,
+    "umap_n_components": 15,
+    "umap_min_dist": 0.05,
+    "umap_random_state": 42
+  },
+  {
+    "umap_n_neighbors": 10,
+    "umap_n_components": 10,
+    "umap_min_dist": 0.05,
+    "umap_random_state": 42
+  },
+  {
+    "umap_n_neighbors": 10,
+    "umap_n_components": 15,
+    "umap_min_dist": 0.0,
+    "umap_random_state": 42
+  },
+  {
+    "umap_n_neighbors": 10,
+    "umap_n_components": 5,
+    "umap_min_dist": 0.05,
+    "umap_random_state": 42
+  },
+  {
+    "umap_n_neighbors": 15,
+    "umap_n_components": 10,
+    "umap_min_dist": 0.05,
+    "umap_random_state": 42
+  }
+]

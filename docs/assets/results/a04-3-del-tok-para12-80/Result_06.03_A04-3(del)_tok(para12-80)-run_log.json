@@ -1,0 +1,202 @@
+{
+  "created_at": "2026-06-03 16:09:39 UTC",
+  "dataset": "Result/06.03_A02/R06.03_A02-pre_LLM(del)_tok(para12-80)_dataset",
+  "output_dir": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)",
+  "meta": {
+    "dataset_dir": "Result/06.03_A02/R06.03_A02-pre_LLM(del)_tok(para12-80)_dataset",
+    "columns": [
+      "title",
+      "source_row",
+      "paragraph_id",
+      "sentence_start_id",
+      "sentence_end_id",
+      "sentence_count",
+      "sentence",
+      "word_count",
+      "char_count"
+    ],
+    "text_col": "sentence",
+    "source_rows": 10945,
+    "used_rows": 10945,
+    "empty_rows_count": 0,
+    "empty_rows_sample": [],
+    "short_rows_lt_3_words_count": 16,
+    "short_rows_lt_3_words_sample": [
+      232,
+      374,
+      388,
+      3111,
+      3582,
+      5506,
+      6432,
+      6892,
+      6942,
+      7296,
+      7578,
+      8748,
+      9610,
+      10566,
+      10595,
+      10735
+    ],
+    "min_text_len": 4,
+    "avg_text_len": 245.9860210141617,
+    "max_text_len": 664,
+    "min_word_count": 1,
+    "avg_word_count": 42.86550936500685,
+    "max_word_count": 142
+  },
+  "errors": [
+    {
+      "流程": "環境開始運行",
+      "問題": "核心套件可載入，開始 UMAP + HDBSCAN 多參數搜尋。"
+    },
+    {
+      "流程": "資料載入",
+      "問題": "有 16 筆少於 3 words 的短文本保留，可能影響密度分群。"
+    },
+    {
+      "流程": "Embedding",
+      "問題": "使用 all-MiniLM-L6-v2；embeddings 只計算一次並快取。"
+    },
+    {
+      "流程": "Embedding",
+      "問題": "載入既有快取：Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/cache/embeddings_all-MiniLM-L6-v2.npy。"
+    },
+    {
+      "流程": "UMAP",
+      "問題": "第一階段 UMAP grid 完成，組合數：84。"
+    },
+    {
+      "流程": "HDBSCAN",
+      "問題": "第一階段 HDBSCAN 完成列數：2520。"
+    },
+    {
+      "流程": "HDBSCAN",
+      "問題": "第二階段深入測試完成列數：13440。"
+    },
+    {
+      "流程": "UMAP",
+      "問題": "前 10 組參數完成 5 個 random_state 穩定性檢測。"
+    },
+    {
+      "流程": "圖表輸出",
+      "問題": "已輸出 6 張圖表。"
+    },
+    {
+      "流程": "BERTopic",
+      "問題": "三種最佳設定正式訓練完成，輸出模型組數：3。"
+    }
+  ],
+  "failures": [],
+  "best": {
+    "lowest_noise": {
+      "stage": "stage1",
+      "umap_n_neighbors": 30,
+      "umap_n_components": 10,
+      "umap_min_dist": 0.1,
+      "umap_metric": "cosine",
+      "umap_random_state": 42,
+      "hdbscan_min_cluster_size": 50,
+      "hdbscan_min_samples": 10.0,
+      "hdbscan_cluster_selection_method": "eom",
+      "hdbscan_cluster_selection_epsilon": 0.0,
+      "hdbscan_metric": "euclidean",
+      "n_clusters": 2,
+      "noise_ratio": 0.0,
+      "topic_-1_count": 0,
+      "topic_0_count": 69,
+      "topic_1_count": 10876,
+      "largest_topic_count": 10876,
+      "largest_topic_ratio": 0.9936957514846962,
+      "top3_topic_ratio": 1.0,
+      "topic_entropy": 0.0551470303019325,
+      "balance_score": 0.3178912745545911,
+      "status": "ok",
+      "note": "完成"
+    },
+    "most_topics": {
+      "stage": "stage2",
+      "umap_n_neighbors": 5,
+      "umap_n_components": 5,
+      "umap_min_dist": 0.0,
+      "umap_metric": "cosine",
+      "umap_random_state": 42,
+      "hdbscan_min_cluster_size": 50,
+      "hdbscan_min_samples": 5.0,
+      "hdbscan_cluster_selection_method": "leaf",
+      "hdbscan_cluster_selection_epsilon": 0.0,
+      "hdbscan_metric": "euclidean",
+      "n_clusters": 61,
+      "noise_ratio": 0.441388761991777,
+      "topic_-1_count": 4831,
+      "topic_0_count": 50,
+      "topic_1_count": 75,
+      "largest_topic_count": 295,
+      "largest_topic_ratio": 0.0269529465509365,
+      "top3_topic_ratio": 0.0693467336683417,
+      "topic_entropy": 0.9762964451951278,
+      "balance_score": 0.8456281407035176,
+      "status": "ok",
+      "note": "完成"
+    },
+    "best_balance": {
+      "stage": "stage2",
+      "umap_n_neighbors": 5,
+      "umap_n_components": 5,
+      "umap_min_dist": 0.0,
+      "umap_metric": "cosine",
+      "umap_random_state": 42,
+      "hdbscan_min_cluster_size": 50,
+      "hdbscan_min_samples": 5.0,
+      "hdbscan_cluster_selection_method": "eom",
+      "hdbscan_cluster_selection_epsilon": 0.2,
+      "hdbscan_metric": "euclidean",
+      "n_clusters": 36,
+      "noise_ratio": 0.2680676107811786,
+      "topic_-1_count": 2934,
+      "topic_0_count": 50,
+      "topic_1_count": 75,
+      "largest_topic_count": 730,
+      "largest_topic_ratio": 0.0666971219735038,
+      "top3_topic_ratio": 0.1847418912745546,
+      "topic_entropy": 0.9149687743045162,
+      "balance_score": 0.8626222019186842,
+      "status": "ok",
+      "note": "完成",
+      "selection_note": "使用原始最佳平衡條件"
+    }
+  },
+  "final_outputs": [
+    {
+      "label": "lowest_noise",
+      "topic_info": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/lowest_noise/topic_info.csv",
+      "document_topics": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/lowest_noise/document_topics.csv",
+      "topic_words": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/lowest_noise/topic_words.csv",
+      "representative_docs": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/lowest_noise/topic_representative_docs.csv",
+      "topic_distribution_chart": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/lowest_noise/topic_distribution.png",
+      "final_config": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/lowest_noise/final_config.json",
+      "n_topic_info_rows": 2
+    },
+    {
+      "label": "most_topics",
+      "topic_info": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/most_topics/topic_info.csv",
+      "document_topics": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/most_topics/document_topics.csv",
+      "topic_words": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/most_topics/topic_words.csv",
+      "representative_docs": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/most_topics/topic_representative_docs.csv",
+      "topic_distribution_chart": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/most_topics/topic_distribution.png",
+      "final_config": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/most_topics/final_config.json",
+      "n_topic_info_rows": 62
+    },
+    {
+      "label": "best_balance",
+      "topic_info": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/best_balance/topic_info.csv",
+      "document_topics": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/best_balance/document_topics.csv",
+      "topic_words": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/best_balance/topic_words.csv",
+      "representative_docs": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/best_balance/topic_representative_docs.csv",
+      "topic_distribution_chart": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/best_balance/topic_distribution.png",
+      "final_config": "Result/06.03_A04_min-test/A04-3(del)_tok(para12-80)/final_models/best_balance/final_config.json",
+      "n_topic_info_rows": 37
+    }
+  ]
+}

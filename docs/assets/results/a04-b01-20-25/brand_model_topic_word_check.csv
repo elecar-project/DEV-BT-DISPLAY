@@ -1,0 +1,139 @@
+selection_label,topic,top_word_count,brand_word_hits,model_word_hits,brand_model_hit_count,brand_model_hit_ratio
+lowest_noise,-1,10,,,0,0.0
+lowest_noise,0,10,,,0,0.0
+lowest_noise,1,10,hyundai,"accord, camry, elantra, sonata",5,0.5
+lowest_noise,2,10,toyota,crown,2,0.2
+lowest_noise,3,10,genesis,"g90, gv60, xc40, xc90",5,0.5
+lowest_noise,4,10,,,0,0.0
+lowest_noise,5,10,nissan,"ariya, leaf",3,0.3
+most_topics,-1,10,,,0,0.0
+most_topics,0,10,bmw,i5,2,0.2
+most_topics,1,10,,,0,0.0
+most_topics,2,10,,,0,0.0
+most_topics,3,10,,,0,0.0
+most_topics,4,10,toyota,prius,2,0.2
+most_topics,5,10,,,0,0.0
+most_topics,6,10,,,0,0.0
+most_topics,7,10,hyundai,ioniq,2,0.2
+most_topics,8,10,,,0,0.0
+most_topics,9,10,,rav4,1,0.1
+most_topics,10,10,,,0,0.0
+most_topics,11,10,,,0,0.0
+most_topics,12,10,,,0,0.0
+most_topics,13,10,,electrified,1,0.1
+most_topics,14,10,,air,1,0.1
+most_topics,15,10,,,0,0.0
+most_topics,16,10,,,0,0.0
+most_topics,17,10,toyota,crown,2,0.2
+most_topics,18,10,,,0,0.0
+most_topics,19,10,,"air, eqe, eqs",3,0.3
+most_topics,20,10,,black,1,0.1
+most_topics,21,10,,,0,0.0
+most_topics,22,10,,,0,0.0
+most_topics,23,10,"genesis, volvo","g90, gv60, xc40, xc90",6,0.6
+most_topics,24,10,,,0,0.0
+most_topics,25,10,toyota,highlander,2,0.2
+most_topics,26,10,,,0,0.0
+most_topics,27,10,,,0,0.0
+most_topics,28,10,,,0,0.0
+most_topics,29,10,toyota,corolla,2,0.2
+most_topics,30,10,,,0,0.0
+most_topics,31,10,,,0,0.0
+most_topics,32,10,,,0,0.0
+most_topics,33,10,,,0,0.0
+most_topics,34,10,dodge,mustang,2,0.2
+most_topics,35,10,kia,ev6,2,0.2
+most_topics,36,10,,,0,0.0
+most_topics,37,10,,,0,0.0
+most_topics,38,10,,,0,0.0
+most_topics,39,10,,"accord, camry, sonata",3,0.3
+most_topics,40,10,"chrysler, fiat, maserati",500,4,0.4
+most_topics,41,10,,,0,0.0
+most_topics,42,10,,,0,0.0
+most_topics,43,10,,,0,0.0
+most_topics,44,10,toyota,camry,2,0.2
+most_topics,45,10,porsche,taycan,2,0.2
+most_topics,46,10,kia,"e6, ev6",3,0.3
+most_topics,47,10,mazda,volt,2,0.2
+most_topics,48,10,,,0,0.0
+most_topics,49,10,,life,1,0.1
+most_topics,50,10,,,0,0.0
+most_topics,51,10,hyundai,elantra,2,0.2
+most_topics,52,10,,,0,0.0
+most_topics,53,10,,"charger, volt",2,0.2
+most_topics,54,10,,,0,0.0
+most_topics,55,10,nissan,ariya,2,0.2
+most_topics,56,10,,,0,0.0
+most_topics,57,10,,,0,0.0
+most_topics,58,10,,,0,0.0
+most_topics,59,10,,,0,0.0
+most_topics,60,10,,,0,0.0
+most_topics,61,10,,,0,0.0
+most_topics,62,10,,,0,0.0
+most_topics,63,10,"hyundai, smart",,2,0.2
+most_topics,64,10,,,0,0.0
+most_topics,65,10,,,0,0.0
+most_topics,66,10,,air,1,0.1
+most_topics,67,10,,,0,0.0
+most_topics,68,10,,,0,0.0
+most_topics,69,10,,,0,0.0
+best_balance,-1,10,,,0,0.0
+best_balance,0,10,,"charger, volt",2,0.2
+best_balance,1,10,,black,1,0.1
+best_balance,2,10,,,0,0.0
+best_balance,3,10,,,0,0.0
+best_balance,4,10,bmw,i5,2,0.2
+best_balance,5,10,,,0,0.0
+best_balance,6,10,kia,"e6, ev6",3,0.3
+best_balance,7,10,,,0,0.0
+best_balance,8,10,,,0,0.0
+best_balance,9,10,toyota,prius,2,0.2
+best_balance,10,10,hyundai,"accord, camry, elantra, sonata",5,0.5
+best_balance,11,10,,,0,0.0
+best_balance,12,10,,,0,0.0
+best_balance,13,10,,,0,0.0
+best_balance,14,10,hyundai,ioniq,2,0.2
+best_balance,15,10,,,0,0.0
+best_balance,16,10,,rav4,1,0.1
+best_balance,17,10,,,0,0.0
+best_balance,18,10,,,0,0.0
+best_balance,19,10,,,0,0.0
+best_balance,20,10,,electrified,1,0.1
+best_balance,21,10,,air,1,0.1
+best_balance,22,10,toyota,crown,2,0.2
+best_balance,23,10,,,0,0.0
+best_balance,24,10,,"air, eqe, eqs",3,0.3
+best_balance,25,10,,black,1,0.1
+best_balance,26,10,,,0,0.0
+best_balance,27,10,"genesis, volvo","g90, gv60, xc40, xc90",6,0.6
+best_balance,28,10,,,0,0.0
+best_balance,29,10,toyota,highlander,2,0.2
+best_balance,30,10,,,0,0.0
+best_balance,31,10,,,0,0.0
+best_balance,32,10,,,0,0.0
+best_balance,33,10,toyota,corolla,2,0.2
+best_balance,34,10,,,0,0.0
+best_balance,35,10,,,0,0.0
+best_balance,36,10,dodge,mustang,2,0.2
+best_balance,37,10,,,0,0.0
+best_balance,38,10,,,0,0.0
+best_balance,39,10,"chrysler, fiat, maserati",500,4,0.4
+best_balance,40,10,toyota,camry,2,0.2
+best_balance,41,10,,,0,0.0
+best_balance,42,10,porsche,taycan,2,0.2
+best_balance,43,10,,,0,0.0
+best_balance,44,10,,life,1,0.1
+best_balance,45,10,,,0,0.0
+best_balance,46,10,,,0,0.0
+best_balance,47,10,,,0,0.0
+best_balance,48,10,nissan,ariya,2,0.2
+best_balance,49,10,,,0,0.0
+best_balance,50,10,,,0,0.0
+best_balance,51,10,,,0,0.0
+best_balance,52,10,,,0,0.0
+best_balance,53,10,,,0,0.0
+best_balance,54,10,,,0,0.0
+best_balance,55,10,"hyundai, smart",,2,0.2
+best_balance,56,10,,,0,0.0
+best_balance,57,10,,air,1,0.1
+best_balance,58,10,,,0,0.0

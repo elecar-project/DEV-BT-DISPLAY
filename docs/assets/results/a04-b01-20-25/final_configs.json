@@ -1,0 +1,86 @@
+[
+  {
+    "selection_label": "lowest_noise",
+    "selection_reason": "最低 noise_ratio，並以較低 largest_topic_ratio 與較高 n_clusters 作為 tie-break。",
+    "output_dir": "final_models/lowest_noise",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "umap": {
+      "n_neighbors": 10,
+      "n_components": 10,
+      "min_dist": 0.05,
+      "metric": "cosine",
+      "random_state": 42
+    },
+    "hdbscan": {
+      "min_cluster_size": 100,
+      "min_samples": 50,
+      "metric": "euclidean",
+      "cluster_selection_method": "eom",
+      "cluster_selection_epsilon": 0.0
+    },
+    "selection_metrics": {
+      "n_clusters": 6,
+      "noise_ratio": 0.0121722846441947,
+      "largest_topic_ratio": 0.9306179775280898,
+      "top3_topic_ratio": 0.9580524344569288,
+      "topic_entropy": 0.174786348787435,
+      "balance_score": 0.3735524344569288
+    }
+  },
+  {
+    "selection_label": "most_topics",
+    "selection_reason": "在可接受 noise_ratio 下保留最多有效主題。",
+    "output_dir": "final_models/most_topics",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "umap": {
+      "n_neighbors": 5,
+      "n_components": 15,
+      "min_dist": 0.0,
+      "metric": "cosine",
+      "random_state": 42
+    },
+    "hdbscan": {
+      "min_cluster_size": 50,
+      "min_samples": 5,
+      "metric": "euclidean",
+      "cluster_selection_method": "leaf",
+      "cluster_selection_epsilon": 0.0
+    },
+    "selection_metrics": {
+      "n_clusters": 70,
+      "noise_ratio": 0.2899812734082397,
+      "largest_topic_ratio": 0.0304307116104868,
+      "top3_topic_ratio": 0.0774344569288389,
+      "topic_entropy": 0.9775868166894744,
+      "balance_score": 0.8883895131086141
+    }
+  },
+  {
+    "selection_label": "best_balance",
+    "selection_reason": "符合指定最佳平衡條件後取最高 balance_score。",
+    "output_dir": "final_models/best_balance",
+    "embedding_model": "all-MiniLM-L6-v2",
+    "umap": {
+      "n_neighbors": 5,
+      "n_components": 15,
+      "min_dist": 0.0,
+      "metric": "cosine",
+      "random_state": 42
+    },
+    "hdbscan": {
+      "min_cluster_size": 50,
+      "min_samples": 5,
+      "metric": "euclidean",
+      "cluster_selection_method": "eom",
+      "cluster_selection_epsilon": 0.2
+    },
+    "selection_metrics": {
+      "n_clusters": 59,
+      "noise_ratio": 0.2160112359550561,
+      "largest_topic_ratio": 0.0448501872659176,
+      "top3_topic_ratio": 0.1275280898876404,
+      "topic_entropy": 0.9541440031290142,
+      "balance_score": 0.8962359550561798
+    }
+  }
+]

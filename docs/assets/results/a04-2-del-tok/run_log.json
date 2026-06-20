@@ -1,0 +1,11 @@
+{
+  "started_at": "2026-06-04T13:54:52.694942+00:00",
+  "finished_at": "2026-06-04T14:24:36.245713+00:00",
+  "dataset": "Result/06.03_A02/R06.03_A02-pre_LLM(del)_tok_dataset",
+  "output_dir": "Result/06.03_A04_min-test/A04-2(del)_tok",
+  "stage1_rows": 2520,
+  "stage2_rows": 13440,
+  "selected_rows": 3,
+  "errors_count": 3,
+  "full_failures_count": 0
+}

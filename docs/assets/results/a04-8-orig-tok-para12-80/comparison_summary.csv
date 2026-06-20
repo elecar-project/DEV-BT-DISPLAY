@@ -1,0 +1,4 @@
+selection_label,status,output_dir,topic_info_rows,n_topics_including_noise,n_clusters,noise_ratio,topic_-1_count,topic_0_count,topic_1_count,largest_topic_count,largest_topic_ratio,top3_topic_ratio,topic_entropy,balance_score
+lowest_noise,ok,final_models/lowest_noise,3,3,2,0.0054777298850574715,61,10803,272,10803,0.9700969827586207,0.9945222701149425,0.1663286329104796,0.32442313218390806
+most_topics,ok,final_models/most_topics,74,74,73,0.3336925287356322,3716,318,214,318,0.028556034482758622,0.06627155172413793,0.9742477780491059,0.8780711206896552
+best_balance,ok,final_models/best_balance,63,63,62,0.27684985632183906,3083,453,390,453,0.04067887931034483,0.10605244252873564,0.9523842404226046,0.8835308908045976

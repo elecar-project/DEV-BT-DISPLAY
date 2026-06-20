@@ -1,0 +1,137 @@
+{
+  "lowest_noise": {
+    "selection": "lowest_noise",
+    "umap": {
+      "n_neighbors": 15,
+      "n_components": 5,
+      "min_dist": 0.25,
+      "metric": "cosine",
+      "random_state": 42
+    },
+    "hdbscan": {
+      "min_cluster_size": 50,
+      "min_samples": 75,
+      "cluster_selection_method": "eom",
+      "cluster_selection_epsilon": 0.0,
+      "metric": "euclidean"
+    },
+    "embedding_model": "all-MiniLM-L6-v2",
+    "metrics": {
+      "umap_n_neighbors": 15,
+      "umap_n_components": 5,
+      "umap_min_dist": 0.25,
+      "hdbscan_min_cluster_size": 50,
+      "hdbscan_min_samples": 75.0,
+      "hdbscan_cluster_selection_method": "eom",
+      "hdbscan_cluster_selection_epsilon": 0.0,
+      "n_clusters": 2,
+      "noise_ratio": 0.0,
+      "topic_-1_count": 0,
+      "topic_0_count": 111,
+      "topic_1_count": 31392,
+      "largest_topic_count": 31392,
+      "largest_topic_ratio": 0.9964765260451386,
+      "top3_topic_ratio": 1.0,
+      "topic_entropy": 0.0234189248404534,
+      "balance_score": 0.3143903755197917,
+      "status": "ok",
+      "note": NaN
+    },
+    "outputs": {
+      "topic_info": "Result/06.03_A04_min-test/A04-5(repl)_tok/final_models/lowest_noise/topic_info.csv",
+      "document_topics": "Result/06.03_A04_min-test/A04-5(repl)_tok/final_models/lowest_noise/document_topics.csv",
+      "representative_docs": "Result/06.03_A04_min-test/A04-5(repl)_tok/final_models/lowest_noise/representative_docs.csv",
+      "topic_words": "Result/06.03_A04_min-test/A04-5(repl)_tok/final_models/lowest_noise/topic_words.csv"
+    }
+  },
+  "most_topics": {
+    "selection": "most_topics",
+    "umap": {
+      "n_neighbors": 5,
+      "n_components": 15,
+      "min_dist": 0.0,
+      "metric": "cosine",
+      "random_state": 42
+    },
+    "hdbscan": {
+      "min_cluster_size": 50,
+      "min_samples": 5,
+      "cluster_selection_method": "leaf",
+      "cluster_selection_epsilon": 0.0,
+      "metric": "euclidean"
+    },
+    "embedding_model": "all-MiniLM-L6-v2",
+    "metrics": {
+      "umap_n_neighbors": 5,
+      "umap_n_components": 15,
+      "umap_min_dist": 0.0,
+      "hdbscan_min_cluster_size": 50,
+      "hdbscan_min_samples": 5.0,
+      "hdbscan_cluster_selection_method": "leaf",
+      "hdbscan_cluster_selection_epsilon": 0.0,
+      "n_clusters": 181,
+      "noise_ratio": 0.4200234898263657,
+      "topic_-1_count": 13232,
+      "topic_0_count": 51,
+      "topic_1_count": 53,
+      "largest_topic_count": 586,
+      "largest_topic_ratio": 0.0186014030409802,
+      "top3_topic_ratio": 0.0353934545916262,
+      "topic_entropy": 5.066062380953007,
+      "balance_score": 0.861333841221471,
+      "status": "ok",
+      "note": NaN
+    },
+    "outputs": {
+      "topic_info": "Result/06.03_A04_min-test/A04-5(repl)_tok/final_models/most_topics/topic_info.csv",
+      "document_topics": "Result/06.03_A04_min-test/A04-5(repl)_tok/final_models/most_topics/document_topics.csv",
+      "representative_docs": "Result/06.03_A04_min-test/A04-5(repl)_tok/final_models/most_topics/representative_docs.csv",
+      "topic_words": "Result/06.03_A04_min-test/A04-5(repl)_tok/final_models/most_topics/topic_words.csv"
+    }
+  },
+  "best_balance": {
+    "selection": "best_balance",
+    "umap": {
+      "n_neighbors": 5,
+      "n_components": 5,
+      "min_dist": 0.0,
+      "metric": "cosine",
+      "random_state": 42
+    },
+    "hdbscan": {
+      "min_cluster_size": 50,
+      "min_samples": 5,
+      "cluster_selection_method": "eom",
+      "cluster_selection_epsilon": 0.1,
+      "metric": "euclidean"
+    },
+    "embedding_model": "all-MiniLM-L6-v2",
+    "metrics": {
+      "umap_n_neighbors": 5,
+      "umap_n_components": 5,
+      "umap_min_dist": 0.0,
+      "hdbscan_min_cluster_size": 50,
+      "hdbscan_min_samples": 5.0,
+      "hdbscan_cluster_selection_method": "eom",
+      "hdbscan_cluster_selection_epsilon": 0.1,
+      "n_clusters": 155,
+      "noise_ratio": 0.3430149509570517,
+      "topic_-1_count": 10806,
+      "topic_0_count": 51,
+      "topic_1_count": 55,
+      "largest_topic_count": 823,
+      "largest_topic_ratio": 0.0261244960797384,
+      "top3_topic_ratio": 0.0664381170047297,
+      "topic_entropy": 4.773856703916479,
+      "balance_score": 0.8759705424880171,
+      "status": "ok",
+      "note": NaN
+    },
+    "outputs": {
+      "topic_info": "Result/06.03_A04_min-test/A04-5(repl)_tok/final_models/best_balance/topic_info.csv",
+      "document_topics": "Result/06.03_A04_min-test/A04-5(repl)_tok/final_models/best_balance/document_topics.csv",
+      "representative_docs": "Result/06.03_A04_min-test/A04-5(repl)_tok/final_models/best_balance/representative_docs.csv",
+      "topic_words": "Result/06.03_A04_min-test/A04-5(repl)_tok/final_models/best_balance/topic_words.csv"
+    }
+  }
+}
