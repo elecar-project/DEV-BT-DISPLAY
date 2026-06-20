@@ -427,6 +427,12 @@ code {
   padding: 18px;
 }
 
+.experiment-map-full {
+  display: block;
+  height: 1169px;
+  width: 1654px;
+}
+
 .experiment-map {
   align-items: start;
   display: grid;

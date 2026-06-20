@@ -1,0 +1,151 @@
+#!/usr/bin/env python3
+"""Export the confirmed draw.io experiment map as a static SVG for GitHub Pages."""
+
+from __future__ import annotations
+
+import html
+import re
+import xml.etree.ElementTree as ET
+from pathlib import Path
+
+
+SOURCE = Path("/workspaces/Dev-BT/實存圖.drawio")
+OUTPUT = Path(__file__).resolve().parents[1] / "docs/assets/img/experiment-map-full.svg"
+LINKS = {
+    "8New-LLM30": "../../results/m02-llm30.html",
+    "8New-LLM50": "../../results/m02-llm50.html",
+    "2020 前": "../../results/m03-2020-before.html",
+}
+
+
+def style_value(style: str, name: str, default: str = "") -> str:
+    match = re.search(rf"(?:^|;){re.escape(name)}=([^;]+)", style)
+    value = match.group(1) if match else default
+    light_dark = re.match(r"light-dark\((#[0-9a-fA-F]{3,8})\s*,", value)
+    return light_dark.group(1) if light_dark else value
+
+
+def label(value: str) -> str:
+    text = html.unescape(value or "")
+    text = re.sub(r"<br\s*/?>", "\n", text, flags=re.I)
+    text = re.sub(r"</?(?:div|span)[^>]*>", "", text, flags=re.I)
+    return re.sub(r"<[^>]+>", "", text).strip()
+
+
+def point(node: dict, x_ratio: float, y_ratio: float) -> tuple[float, float]:
+    return node["x"] + node["w"] * x_ratio, node["y"] + node["h"] * y_ratio
+
+
+def escape(value: str) -> str:
+    return html.escape(value, quote=True)
+
+
+def text_lines(value: str, width: float) -> list[str]:
+    explicit = value.splitlines()
+    max_chars = max(8, int(width / 8.3))
+    lines: list[str] = []
+    for part in explicit:
+        while len(part) > max_chars:
+            cut = part.rfind(" ", 0, max_chars)
+            cut = cut if cut > max_chars // 2 else max_chars
+            lines.append(part[:cut].strip())
+            part = part[cut:].strip()
+        lines.append(part)
+    return lines or [""]
+
+
+def main() -> None:
+    root = ET.parse(SOURCE).getroot()
+    model = root.find(".//mxGraphModel")
+    if model is None:
+        raise RuntimeError("mxGraphModel not found")
+
+    cells = model.findall("./root/mxCell")
+    nodes: dict[str, dict] = {}
+    for cell in cells:
+        if cell.get("vertex") != "1":
+            continue
+        geometry = cell.find("mxGeometry")
+        if geometry is None:
+            continue
+        style = cell.get("style", "")
+        nodes[cell.get("id", "")] = {
+            "id": cell.get("id", ""),
+            "label": label(cell.get("value", "")),
+            "x": float(geometry.get("x", "0")),
+            "y": float(geometry.get("y", "0")),
+            "w": float(geometry.get("width", "110")),
+            "h": float(geometry.get("height", "32")),
+            "fill": style_value(style, "fillColor", "#ffffff"),
+            "stroke": style_value(style, "strokeColor", "#6b7280"),
+            "font": float(style_value(style, "fontSize", "14")),
+            "font_color": style_value(style, "fontColor", "#1f2937"),
+        }
+
+    edge_paths: list[str] = []
+    for cell in cells:
+        if cell.get("edge") != "1":
+            continue
+        source = nodes.get(cell.get("source", ""))
+        target = nodes.get(cell.get("target", ""))
+        if not source or not target:
+            continue
+        style = cell.get("style", "")
+        exit_x = float(style_value(style, "exitX", "1"))
+        exit_y = float(style_value(style, "exitY", "0.5"))
+        entry_x = float(style_value(style, "entryX", "0"))
+        entry_y = float(style_value(style, "entryY", "0.5"))
+        start = point(source, exit_x, exit_y)
+        end = point(target, entry_x, entry_y)
+        points = [start]
+        geometry = cell.find("mxGeometry")
+        if geometry is not None:
+            for item in geometry.findall(".//mxPoint"):
+                points.append((float(item.get("x", "0")), float(item.get("y", "0"))))
+        if len(points) == 1 and start[0] != end[0] and start[1] != end[1]:
+            points.append(((start[0] + end[0]) / 2, start[1]))
+            points.append(((start[0] + end[0]) / 2, end[1]))
+        points.append(end)
+        d = "M " + " L ".join(f"{x:.1f} {y:.1f}" for x, y in points)
+        color = style_value(style, "strokeColor", "#475569")
+        edge_paths.append(f'<path d="{d}" class="edge" stroke="{escape(color)}" marker-end="url(#arrow)"/>')
+
+    node_shapes: list[str] = []
+    for node in nodes.values():
+        safe_label = escape(node["label"])
+        classes = "node"
+        href = LINKS.get(node["label"])
+        lines = text_lines(node["label"], node["w"] - 12)
+        line_height = node["font"] * 1.22
+        text_y = node["y"] + (node["h"] - line_height * len(lines)) / 2 + node["font"]
+        tspans = "".join(
+            f'<tspan x="{node["x"] + node["w"] / 2:.1f}" dy="{0 if index == 0 else line_height:.1f}">{escape(line)}</tspan>'
+            for index, line in enumerate(lines)
+        )
+        shape = (
+            f'<g class="{classes}" data-label="{safe_label}">'
+            f'<rect x="{node["x"]:.1f}" y="{node["y"]:.1f}" width="{node["w"]:.1f}" height="{node["h"]:.1f}" '
+            f'fill="{escape(node["fill"])}" stroke="{escape(node["stroke"])}"/>'
+            f'<text x="{node["x"] + node["w"] / 2:.1f}" y="{text_y:.1f}" fill="{escape(node["font_color"])}" '
+            f'font-size="{node["font"]:.1f}">{tspans}</text></g>'
+        )
+        node_shapes.append(f'<a href="{escape(href)}">{shape}</a>' if href else shape)
+
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1654 1169" role="img" aria-label="DEV-BT 完整實驗運行架構圖">
+  <style>
+    .edge {{ fill: none; stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }}
+    .node rect {{ stroke-width: 1.1; }}
+    .node text {{ font-family: "Noto Serif TC", "PMingLiU", serif; text-anchor: middle; dominant-baseline: alphabetic; }}
+    a .node:hover rect {{ stroke: #0f766e; stroke-width: 3; }}
+    a .node:hover text {{ fill: #0f766e; font-weight: 700; }}
+  </style>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="context-stroke"/></marker></defs>
+  {''.join(edge_paths)}
+  {''.join(node_shapes)}
+</svg>'''
+    OUTPUT.write_text(svg, encoding="utf-8")
+    print(f"Wrote {OUTPUT} with {len(nodes)} nodes and {len(edge_paths)} edges")
+
+
+if __name__ == "__main__":
+    main()
