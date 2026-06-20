@@ -5,11 +5,11 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 
 # 結果
 
-本頁依實驗的資料血緣與處理順序呈現。可點擊的綠色節點已有完整結果與設定摘要；灰色節點保留在地圖中，待後續整理後開放。
+本頁依實驗的資料血緣與處理順序呈現。可點擊的節點已有完整結果與設定摘要；其他節點保留在地圖中，待後續整理後開放。
 
 <div class="experiment-map-scroll" aria-label="DEV-BT 完整實驗地圖">
-    <object class="experiment-map-full" type="image/svg+xml" data="{{ '/assets/img/experiment-map-full.svg?v=20260620-full-map-v8' | relative_url }}">
-    <img src="{{ '/assets/img/experiment-map-full.svg?v=20260620-full-map-v8' | relative_url }}" alt="DEV-BT 完整實驗運行架構圖">
+    <object class="experiment-map-full" type="image/svg+xml" data="{{ '/assets/img/experiment-map-full.svg?v=20260620-full-map-v9' | relative_url }}">
+    <img src="{{ '/assets/img/experiment-map-full.svg?v=20260620-full-map-v9' | relative_url }}" alt="DEV-BT 完整實驗運行架構圖">
   </object>
 </div>
 
@@ -26,3 +26,23 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 | 8New-LLM50 | 同一路徑以 50 次命名驗證，資料夾名稱歷史上誤標為 tp-30 | 可檢視 |
 | 2020 前 | 年份切分後的 2008-2019 主題模型 | 可檢視 |
 | 其他 T01-T04 節點 | 驗證與敏感度分析 | 待整理 |
+
+## A03 min_cluster_size 掃描
+
+| 節點 | 資料處理版本 | 目前狀態 |
+| --- | --- | --- |
+| [A03-2]({{ '/results/a03-2-del-tok.html' | relative_url }}) | del + tok | 可檢視 |
+| [A03-3]({{ '/results/a03-3-del-tok-para12-80.html' | relative_url }}) | del + tok + 段落 12-80 | 可檢視 |
+| [A03-5]({{ '/results/a03-5-repl-tok.html' | relative_url }}) | repl + tok | 可檢視 |
+| [A03-5.1]({{ '/results/a03-5-1-repl-y-tok.html' | relative_url }}) | repl-y + tok | 可檢視 |
+| [A03-6]({{ '/results/a03-6-repl-tok-para12-80.html' | relative_url }}) | repl + tok + 段落 12-80 | 可檢視 |
+| [A03-6.1]({{ '/results/a03-6-1-repl-y-tok-para12-80.html' | relative_url }}) | repl-y + tok + 段落 12-80 | 可檢視 |
+| [A03-7]({{ '/results/a03-7-orig-tok.html' | relative_url }}) | orig + tok | 可檢視 |
+| [A03-8]({{ '/results/a03-8-orig-tok-para12-80.html' | relative_url }}) | orig + tok + 段落 12-80 | 可檢視 |
+
+## 年份切分 min_cluster_size 掃描
+
+| 資料集 | 實驗頁面 | 目前狀態 |
+| --- | --- | --- |
+| 2008-2019，240 份資料 | [B01 2008-2019]({{ '/results/b01-08-19-min-cluster.html' | relative_url }}) | 可檢視 |
+| 2020-2025，194 份資料 | [B01 2020-2025]({{ '/results/b01-20-25-min-cluster.html' | relative_url }}) | 可檢視 |

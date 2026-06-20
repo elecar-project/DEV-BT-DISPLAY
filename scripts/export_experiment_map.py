@@ -13,6 +13,13 @@ SOURCE = Path("/workspaces/Dev-BT/實存圖.drawio")
 OUTPUT = Path(__file__).resolve().parents[1] / "docs/assets/img/experiment-map-full.svg"
 LINKS = {
     "2 (del)_tok": "../../results/a03-2-del-tok.html",
+    "3 (del)_tok(para12-80)": "../../results/a03-3-del-tok-para12-80.html",
+    "5 (repl)_tok": "../../results/a03-5-repl-tok.html",
+    "5.1 (repl-y)_tok": "../../results/a03-5-1-repl-y-tok.html",
+    "6 (repl)_tok(para12-80)": "../../results/a03-6-repl-tok-para12-80.html",
+    "6.1 (repl-y)_tok(para12-80)": "../../results/a03-6-1-repl-y-tok-para12-80.html",
+    "7 (orig)_tok": "../../results/a03-7-orig-tok.html",
+    "8 (orig)_tok(para12-80)": "../../results/a03-8-orig-tok-para12-80.html",
     "8New-LLM30": "../../results/m02-llm30.html",
     "8New-LLM50": "../../results/m02-llm50.html",
     "2020 前": "../../results/m03-2020-before.html",

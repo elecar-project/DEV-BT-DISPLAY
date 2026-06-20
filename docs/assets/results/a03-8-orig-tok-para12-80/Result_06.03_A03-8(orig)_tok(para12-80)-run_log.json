@@ -1,0 +1,287 @@
+{
+  "created_at": "2026-06-03T03:02:22.913038+00:00",
+  "dataset_meta": {
+    "dataset_dir": "Result/06.03_A02/R06.03_A02-pre_LLM(orig)_tok(para12-80)_dataset",
+    "columns": [
+      "title",
+      "source_row",
+      "paragraph_id",
+      "sentence_start_id",
+      "sentence_end_id",
+      "sentence_count",
+      "sentence",
+      "word_count",
+      "char_count"
+    ],
+    "text_col": "sentence",
+    "title_col": "title",
+    "source_rows": 11136,
+    "used_rows": 11136,
+    "empty_rows_count": 0,
+    "empty_rows_sample": [],
+    "short_rows_lt_3_words_count": 14,
+    "short_rows_lt_3_words_sample": [
+      4543,
+      5545,
+      5572,
+      6511,
+      7023,
+      7384,
+      7527,
+      7802,
+      8574,
+      8983,
+      9268,
+      9730,
+      10747,
+      10776
+    ],
+    "min_text_len": 4,
+    "max_text_len": 2044,
+    "avg_text_len": 249.11925287356323,
+    "min_word_count": 1,
+    "max_word_count": 389,
+    "avg_word_count": 43.40032327586207
+  },
+  "rows": [
+    {
+      "min_cluster_size": 50,
+      "n_clusters": 41,
+      "noise_ratio": 0.4084051724137931,
+      "topic_-1_count": 4548,
+      "topic_0_count": 254,
+      "topic_1_count": 204,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 75,
+      "n_clusters": 27,
+      "noise_ratio": 0.42852011494252873,
+      "topic_-1_count": 4772,
+      "topic_0_count": 254,
+      "topic_1_count": 204,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 100,
+      "n_clusters": 18,
+      "noise_ratio": 0.39762931034482757,
+      "topic_-1_count": 4428,
+      "topic_0_count": 254,
+      "topic_1_count": 204,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 125,
+      "n_clusters": 14,
+      "noise_ratio": 0.4177442528735632,
+      "topic_-1_count": 4652,
+      "topic_0_count": 254,
+      "topic_1_count": 204,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 150,
+      "n_clusters": 3,
+      "noise_ratio": 0.056483477011494254,
+      "topic_-1_count": 629,
+      "topic_0_count": 254,
+      "topic_1_count": 204,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 175,
+      "n_clusters": 3,
+      "noise_ratio": 0.057830459770114945,
+      "topic_-1_count": 644,
+      "topic_0_count": 254,
+      "topic_1_count": 204,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 200,
+      "n_clusters": 2,
+      "noise_ratio": 0.051544540229885055,
+      "topic_-1_count": 574,
+      "topic_0_count": 254,
+      "topic_1_count": 10308,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 225,
+      "n_clusters": 2,
+      "noise_ratio": 0.0766882183908046,
+      "topic_-1_count": 854,
+      "topic_0_count": 254,
+      "topic_1_count": 10028,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 250,
+      "n_clusters": 2,
+      "noise_ratio": 0.10515445402298851,
+      "topic_-1_count": 1171,
+      "topic_0_count": 254,
+      "topic_1_count": 9711,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 275,
+      "n_clusters": 2,
+      "noise_ratio": 0.29229525862068967,
+      "topic_-1_count": 3255,
+      "topic_0_count": 408,
+      "topic_1_count": 7473,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 300,
+      "n_clusters": 2,
+      "noise_ratio": 0.30872844827586204,
+      "topic_-1_count": 3438,
+      "topic_0_count": 393,
+      "topic_1_count": 7305,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 325,
+      "n_clusters": 2,
+      "noise_ratio": 0.32839439655172414,
+      "topic_-1_count": 3657,
+      "topic_0_count": 7107,
+      "topic_1_count": 372,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 350,
+      "n_clusters": 2,
+      "noise_ratio": 0.3373742816091954,
+      "topic_-1_count": 3757,
+      "topic_0_count": 393,
+      "topic_1_count": 6986,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 375,
+      "n_clusters": 2,
+      "noise_ratio": 0.3380028735632184,
+      "topic_-1_count": 3764,
+      "topic_0_count": 430,
+      "topic_1_count": 6942,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 400,
+      "n_clusters": 2,
+      "noise_ratio": 0.3510237068965517,
+      "topic_-1_count": 3909,
+      "topic_0_count": 406,
+      "topic_1_count": 6821,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 500,
+      "n_clusters": 0,
+      "noise_ratio": 1.0,
+      "topic_-1_count": 11136,
+      "topic_0_count": 0,
+      "topic_1_count": 0,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 600,
+      "n_clusters": 0,
+      "noise_ratio": 1.0,
+      "topic_-1_count": 11136,
+      "topic_0_count": 0,
+      "topic_1_count": 0,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 700,
+      "n_clusters": 0,
+      "noise_ratio": 1.0,
+      "topic_-1_count": 11136,
+      "topic_0_count": 0,
+      "topic_1_count": 0,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 800,
+      "n_clusters": 0,
+      "noise_ratio": 1.0,
+      "topic_-1_count": 11136,
+      "topic_0_count": 0,
+      "topic_1_count": 0,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 900,
+      "n_clusters": 0,
+      "noise_ratio": 1.0,
+      "topic_-1_count": 11136,
+      "topic_0_count": 0,
+      "topic_1_count": 0,
+      "status": "ok",
+      "note": "完成"
+    },
+    {
+      "min_cluster_size": 1000,
+      "n_clusters": 0,
+      "noise_ratio": 1.0,
+      "topic_-1_count": 11136,
+      "topic_0_count": 0,
+      "topic_1_count": 0,
+      "status": "ok",
+      "note": "完成"
+    }
+  ],
+  "errors": [
+    {
+      "流程": "環境開始運行",
+      "問題": "環境套件可載入，開始 BERTopic min_cluster_size 檢測。"
+    },
+    {
+      "流程": "前處理",
+      "問題": "有 14 筆少於 3 words 的短句保留在測試中，可能增加離群值。"
+    }
+  ],
+  "best": {
+    "best_min_cluster_size": 200,
+    "best_selection_rule": "優先選擇 n_clusters >= 2 且 noise_ratio 最低者；若並列，選 n_clusters 較多者，再選 min_cluster_size 較小者。",
+    "best_row": {
+      "min_cluster_size": 200,
+      "n_clusters": 2,
+      "noise_ratio": 0.051544540229885055,
+      "topic_-1_count": 574,
+      "topic_0_count": 254,
+      "topic_1_count": 10308,
+      "status": "ok",
+      "note": "完成"
+    }
+  },
+  "final_training_summary": {
+    "topic_count": 3,
+    "topic_info_rows": 3
+  },
+  "full_failures": []
+}
