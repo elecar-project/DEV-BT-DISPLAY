@@ -145,6 +145,16 @@ def main() -> None:
         if geometry is not None:
             for item in geometry.findall(".//mxPoint"):
                 anchors.append((float(item.get("x", "0")), float(item.get("y", "0"))))
+        # The confirmed map routes T02/T03 validation branches through an open
+        # vertical lane before M01, rather than behind the downstream results.
+        if source["id"].endswith("-45") and target["id"].endswith(("-89", "-90", "-91", "-92", "-93", "-94")):
+            anchors = [(575.0, start[1]), (575.0, end[1])]
+        elif source["id"].endswith("-45") and target["id"].endswith(("-96", "-97")):
+            anchors = [(600.0, start[1]), (600.0, end[1])]
+        # Draw.io stores a few one-digit routing nudges. Keeping them creates
+        # visible hooks in SVG, so collapse them onto the outgoing horizontal.
+        if anchors and abs(anchors[0][1] - start[1]) < 16:
+            anchors[0] = (anchors[0][0], start[1])
         points = orthogonal_points(start, end, anchors)
         d = "M " + " L ".join(f"{x:.1f} {y:.1f}" for x, y in points)
         color = style_value(style, "strokeColor", "#475569")
