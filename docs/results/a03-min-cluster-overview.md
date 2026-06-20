@@ -20,13 +20,4 @@ description: A03 資料處理分支的 min_cluster_size 掃描比較。
 
 ## 個別實驗
 
-| 節點 | 頁面 |
-| --- | --- |
-| A03-2 | [del + tok]({{ '/results/a03-2-del-tok.html' | relative_url }}) |
-| A03-3 | [del + tok + 段落 12-80]({{ '/results/a03-3-del-tok-para12-80.html' | relative_url }}) |
-| A03-5 | [repl + tok]({{ '/results/a03-5-repl-tok.html' | relative_url }}) |
-| A03-5.1 | [repl-y + tok]({{ '/results/a03-5-1-repl-y-tok.html' | relative_url }}) |
-| A03-6 | [repl + tok + 段落 12-80]({{ '/results/a03-6-repl-tok-para12-80.html' | relative_url }}) |
-| A03-6.1 | [repl-y + tok + 段落 12-80]({{ '/results/a03-6-1-repl-y-tok-para12-80.html' | relative_url }}) |
-| A03-7 | [orig + tok]({{ '/results/a03-7-orig-tok.html' | relative_url }}) |
-| A03-8 | [orig + tok + 段落 12-80]({{ '/results/a03-8-orig-tok-para12-80.html' | relative_url }}) |
+可直接查看：[A03-2｜del + tok]({{ '/results/a03-2-del-tok.html' | relative_url }})、[A03-3｜del + tok + 段落 12-80]({{ '/results/a03-3-del-tok-para12-80.html' | relative_url }})、[A03-5｜repl + tok]({{ '/results/a03-5-repl-tok.html' | relative_url }})、[A03-5.1｜repl-y + tok]({{ '/results/a03-5-1-repl-y-tok.html' | relative_url }})、[A03-6｜repl + tok + 段落 12-80]({{ '/results/a03-6-repl-tok-para12-80.html' | relative_url }})、[A03-6.1｜repl-y + tok + 段落 12-80]({{ '/results/a03-6-1-repl-y-tok-para12-80.html' | relative_url }})、[A03-7｜orig + tok]({{ '/results/a03-7-orig-tok.html' | relative_url }})、[A03-8｜orig + tok + 段落 12-80]({{ '/results/a03-8-orig-tok-para12-80.html' | relative_url }})。
