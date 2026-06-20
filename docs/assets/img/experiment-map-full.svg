@@ -5,6 +5,7 @@
     .node rect { stroke-width: 1.1; }
     .node text { font-family: "Noto Serif TC", "PMingLiU", serif; text-anchor: middle; dominant-baseline: alphabetic; }
     .dataset-node text { text-anchor: start; }
+    .node.is-empty { filter: grayscale(1); opacity: 0.58; }
     a .node:hover rect { stroke: #0f766e; stroke-width: 3; }
     a .node:hover text { fill: #0f766e; font-weight: 700; }
     .node:hover rect { stroke-width: 2.6; }
@@ -54,10 +55,12 @@
       '7 (orig)_tok': '../../results/a03-7-orig-tok.html',
       '8 (orig)_tok(para12-80)': '../../results/a03-8-orig-tok-para12-80.html'
     };
+    const emptyDatasetLabels = new Set(['1 (del)', '4 (repl)', '0 (orig)']);
     document.querySelectorAll('.node').forEach((node) => {
       node.addEventListener('mouseenter', () => highlight(node.dataset.id));
       node.addEventListener('mouseleave', clear);
       const destination = resultLinks[node.dataset.label];
+      if (emptyDatasetLabels.has(node.dataset.label)) node.classList.add('is-empty');
       if (destination) {
         node.style.cursor = 'pointer';
         node.addEventListener('click', () => {

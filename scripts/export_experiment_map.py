@@ -183,6 +183,8 @@ def main() -> None:
         left_aligned = node["x"] == 47 and node["y"] < 550
         classes = "node dataset-node" if left_aligned else "node"
         href = LINKS.get(node["label"])
+        if left_aligned and re.match(r"^\d+(?:\.\d+)? ", node["label"]) and not href:
+            classes += " is-empty"
         font_size, lines = fitted_text(node["label"], node["w"] - 12, node["h"], node["font"])
         line_height = font_size * 1.16
         text_y = node["y"] + (node["h"] - line_height * len(lines)) / 2 + font_size
@@ -239,6 +241,7 @@ def main() -> None:
     .node rect {{ stroke-width: 1.1; }}
     .node text {{ font-family: "Noto Serif TC", "PMingLiU", serif; text-anchor: middle; dominant-baseline: alphabetic; }}
     .dataset-node text {{ text-anchor: start; }}
+    .node.is-empty {{ filter: grayscale(1); opacity: 0.58; }}
     a .node:hover rect {{ stroke: #0f766e; stroke-width: 3; }}
     a .node:hover text {{ fill: #0f766e; font-weight: 700; }}
     .node:hover rect {{ stroke-width: 2.6; }}
