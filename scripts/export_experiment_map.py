@@ -21,9 +21,19 @@ LINKS = {
     "6.1 (repl-y)_tok(para12-80)": "../../results/a03-6-1-repl-y-tok-para12-80.html",
     "7 (orig)_tok": "../../results/a03-7-orig-tok.html",
     "8 (orig)_tok(para12-80)": "../../results/a03-8-orig-tok-para12-80.html",
+    "2020 前 (08-19)": "../../results/b01-08-19-min-cluster.html",
+    "2020 後 (20-25)": "../../results/b01-20-25-min-cluster.html",
     "8New-LLM30": "../../results/m02-llm30.html",
     "8New-LLM50": "../../results/m02-llm50.html",
     "2020 前": "../../results/m03-2020-before.html",
+}
+EMPTY_NODE_LABELS = {
+    "1 (del)", "4 (repl)", "0 (orig)", "8C", "2020 後",
+    "2018 前 (08-17)", "2018 後 (18-25)", "2019 前 (08-18)",
+    "2019 後 (19-25)", "2021 前 (08-20)", "2021 後 (21-25)",
+    "2018 前", "2018 後", "2019 前", "2019 後", "2021 前", "2021 後",
+    "8 (orig)_tok(para12-80)_影長1~35m", "8 (orig)_tok(para12-80)_去頭尾5廠",
+    "8New-影長1~35m", "8New-去頭尾5廠",
 }
 
 
@@ -184,7 +194,7 @@ def main() -> None:
         left_aligned = node["x"] == 47 and node["y"] < 550
         classes = "node dataset-node" if left_aligned else "node"
         href = LINKS.get(node["label"])
-        if left_aligned and re.match(r"^\d+(?:\.\d+)? ", node["label"]) and not href:
+        if node["label"] in EMPTY_NODE_LABELS:
             classes += " is-empty"
         font_size, lines = fitted_text(node["label"], node["w"] - 12, node["h"], node["font"])
         line_height = font_size * 1.16
