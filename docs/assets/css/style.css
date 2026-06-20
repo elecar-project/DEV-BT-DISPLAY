@@ -655,6 +655,9 @@ code {
 .candidate-table .candidate-most_topics td:first-child { color: #155e75; font-weight: 800; }
 .candidate-table .candidate-best_balance td { background: #e2f0e5; }
 .candidate-table .candidate-best_balance td:first-child { color: #165f4d; font-weight: 800; }
+.candidate-table tfoot th,
+.candidate-table tfoot td { background: #f7f3e8; white-space: normal; }
+.candidate-table tfoot th { color: #745400; }
 
 .dataset-compare {
   background: var(--panel);

@@ -70,7 +70,9 @@ def candidate_table(rows: list[dict[str, object]]) -> str:
         )
     return """<div class="table-scroll"><table class="candidate-table">
 <thead><tr><th>策略</th><th>UMAP</th><th>HDBSCAN</th><th>主題數</th><th>noise ratio</th><th>最大主題比例</th><th>balance score</th></tr></thead>
-<tbody>{}</tbody></table></div>""".format("".join(body))
+<tbody>{}</tbody>
+<tfoot><tr><th>選擇方法</th><td colspan="6"><code>最低雜訊</code> 在有效結果中選取 noise ratio 最低的設定；若相同，優先較低的最大主題比例與較多主題。<code>最多主題</code> 在可接受的離群比例下，保留有效主題數最多的設定。<code>最佳平衡</code> 則在預設平衡條件下，選取 balance score 最高者；此分數同時考量離群比例、主題數與主題集中程度。</td></tr></tfoot>
+</table></div>""".format("".join(body))
 
 
 def run() -> None:
@@ -154,9 +156,7 @@ description: {title} 的 UMAP 與 HDBSCAN 聯合參數搜尋。
 <section markdown="1">
 ## 三種候選策略
 
-最低雜訊、最多主題與最佳平衡代表不同的研究取捨；本頁保留三者，避免以單一 noise ratio 取代語意品質判讀。
-
-`最低雜訊` 在有效結果中選取 noise ratio 最低的設定；若相同，優先較低的最大主題比例與較多主題。`最多主題` 在可接受的離群比例下，保留有效主題數最多的設定。`最佳平衡` 則在預設平衡條件下，選取 balance score 最高者；此分數同時考量離群比例、主題數與主題集中程度。
+最低雜訊、最多主題與最佳平衡代表不同的研究取捨；本頁保留三者，避免以單一 noise ratio 取代語意品質判讀。各策略的選擇方法列於表格最後一列。
 
 {candidate_table(rows)}
 
