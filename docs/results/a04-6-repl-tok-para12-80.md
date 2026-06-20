@@ -32,11 +32,15 @@ description: A04-6｜repl + tok + 段落 12-80 的 UMAP 與 HDBSCAN 聯合參數
 
 最低雜訊、最多主題與最佳平衡代表不同的研究取捨；本頁保留三者，避免以單一 noise ratio 取代語意品質判讀。
 
+`最低雜訊` 在有效結果中選取 noise ratio 最低的設定；若相同，優先較低的最大主題比例與較多主題。`最多主題` 在可接受的離群比例下，保留有效主題數最多的設定。`最佳平衡` 則在預設平衡條件下，選取 balance score 最高者；此分數同時考量離群比例、主題數與主題集中程度。
+
 <div class="table-scroll"><table class="candidate-table">
 <thead><tr><th>策略</th><th>UMAP</th><th>HDBSCAN</th><th>主題數</th><th>noise ratio</th><th>最大主題比例</th><th>balance score</th></tr></thead>
 <tbody><tr class="candidate-lowest_noise"><td>最低雜訊</td><td>n_neighbors 75 / components 10 / min dist 0.0</td><td>cluster 50 / samples 5.0 / eom / eps 0.0</td><td>2</td><td>0.00%</td><td>99.43%</td><td>0.2680085625797049</td></tr><tr class="candidate-most_topics"><td>最多主題</td><td>n_neighbors 5 / components 5 / min dist 0.0</td><td>cluster 50 / samples 5.0 / leaf / eps 0.0</td><td>57</td><td>44.27%</td><td>2.51%</td><td>0.8661140462743668</td></tr><tr class="candidate-best_balance"><td>最佳平衡</td><td>n_neighbors 5 / components 5 / min dist 0.0</td><td>cluster 50 / samples 5.0 / eom / eps 0.2</td><td>40</td><td>28.38%</td><td>6.29%</td><td>0.8723902350154855</td></tr></tbody></table></div>
 
 ## 圖表檢視
+
+候選策略比較圖用來並列三種策略的主題數、noise ratio 與主題集中度；參數熱圖或選定設定比較圖則用來觀察不同 UMAP／HDBSCAN 組合對分群結果的影響。
 
 <div class="result-figure-scroller"><figure><img src="{{ '/assets/results/a04-6-repl-tok-para12-80/charts/best_three_comparison.png' | relative_url }}" alt="best_three_comparison"><figcaption>best three comparison</figcaption></figure><figure><img src="{{ '/assets/results/a04-6-repl-tok-para12-80/charts/best_three_topic_size_distribution.png' | relative_url }}" alt="best_three_topic_size_distribution"><figcaption>best three topic size distribution</figcaption></figure><figure><img src="{{ '/assets/results/a04-6-repl-tok-para12-80/charts/parameter_heatmap.png' | relative_url }}" alt="parameter_heatmap"><figcaption>parameter heatmap</figcaption></figure></div>
 
