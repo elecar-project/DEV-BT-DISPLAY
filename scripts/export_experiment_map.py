@@ -29,7 +29,10 @@ def label(value: str) -> str:
     text = html.unescape(value or "")
     text = re.sub(r"<br\s*/?>", "\n", text, flags=re.I)
     text = re.sub(r"</?(?:div|span)[^>]*>", "", text, flags=re.I)
-    return re.sub(r"<[^>]+>", "", text).strip()
+    text = re.sub(r"<[^>]+>", "", text).strip()
+    if text.startswith(("M0", "T0")) and "（" in text:
+        text = text.replace("（", "\n（", 1)
+    return text
 
 
 def point(node: dict, x_ratio: float, y_ratio: float) -> tuple[float, float]:
@@ -40,18 +43,53 @@ def escape(value: str) -> str:
     return html.escape(value, quote=True)
 
 
-def text_lines(value: str, width: float) -> list[str]:
+def text_width(value: str, font_size: float) -> float:
+    return sum(font_size * (0.96 if ord(char) > 127 else 0.68) for char in value)
+
+
+def text_lines(value: str, width: float, font_size: float) -> list[str]:
     explicit = value.splitlines()
-    max_chars = max(8, int(width / 8.3))
     lines: list[str] = []
     for part in explicit:
-        while len(part) > max_chars:
-            cut = part.rfind(" ", 0, max_chars)
-            cut = cut if cut > max_chars // 2 else max_chars
-            lines.append(part[:cut].strip())
-            part = part[cut:].strip()
+        current = ""
+        for char in part:
+            if current and text_width(current + char, font_size) > width:
+                lines.append(current)
+                current = char
+            else:
+                current += char
+        part = current
         lines.append(part)
     return lines or [""]
+
+
+def fitted_text(value: str, width: float, height: float, preferred: float) -> tuple[float, list[str]]:
+    font_size = preferred
+    while font_size > 10:
+        lines = text_lines(value, width, font_size)
+        if len(lines) * font_size * 1.16 <= height - 5:
+            return font_size, lines
+        font_size -= 0.5
+    return font_size, text_lines(value, width, font_size)
+
+
+def orthogonal_points(
+    start: tuple[float, float], end: tuple[float, float], anchors: list[tuple[float, float]]
+) -> list[tuple[float, float]]:
+    points = [start]
+    current = start
+    for anchor in anchors:
+        if current[0] != anchor[0] and current[1] != anchor[1]:
+            points.append((anchor[0], current[1]))
+        points.append(anchor)
+        current = anchor
+    if not anchors and current[0] != end[0] and current[1] != end[1]:
+        midpoint = (current[0] + end[0]) / 2
+        points.extend([(midpoint, current[1]), (midpoint, end[1])])
+    elif current[0] != end[0] and current[1] != end[1]:
+        points.append((current[0], end[1]))
+    points.append(end)
+    return points
 
 
 def main() -> None:
@@ -83,6 +121,7 @@ def main() -> None:
         }
 
     edge_paths: list[str] = []
+    seen_connections: set[tuple[str, str]] = set()
     for cell in cells:
         if cell.get("edge") != "1":
             continue
@@ -90,6 +129,10 @@ def main() -> None:
         target = nodes.get(cell.get("target", ""))
         if not source or not target:
             continue
+        connection = (source["id"], target["id"])
+        if connection in seen_connections:
+            continue
+        seen_connections.add(connection)
         style = cell.get("style", "")
         exit_x = float(style_value(style, "exitX", "1"))
         exit_y = float(style_value(style, "exitY", "0.5"))
@@ -97,51 +140,85 @@ def main() -> None:
         entry_y = float(style_value(style, "entryY", "0.5"))
         start = point(source, exit_x, exit_y)
         end = point(target, entry_x, entry_y)
-        points = [start]
+        anchors: list[tuple[float, float]] = []
         geometry = cell.find("mxGeometry")
         if geometry is not None:
             for item in geometry.findall(".//mxPoint"):
-                points.append((float(item.get("x", "0")), float(item.get("y", "0"))))
-        if len(points) == 1 and start[0] != end[0] and start[1] != end[1]:
-            points.append(((start[0] + end[0]) / 2, start[1]))
-            points.append(((start[0] + end[0]) / 2, end[1]))
-        points.append(end)
+                anchors.append((float(item.get("x", "0")), float(item.get("y", "0"))))
+        points = orthogonal_points(start, end, anchors)
         d = "M " + " L ".join(f"{x:.1f} {y:.1f}" for x, y in points)
         color = style_value(style, "strokeColor", "#475569")
-        edge_paths.append(f'<path d="{d}" class="edge" stroke="{escape(color)}" marker-end="url(#arrow)"/>')
+        edge_paths.append(
+            f'<path d="{d}" class="edge" data-source="{escape(source["id"])}" '
+            f'data-target="{escape(target["id"])}" data-color="{escape(color)}" marker-end="url(#arrow)"/>'
+        )
 
     node_shapes: list[str] = []
     for node in nodes.values():
         safe_label = escape(node["label"])
         classes = "node"
         href = LINKS.get(node["label"])
-        lines = text_lines(node["label"], node["w"] - 12)
-        line_height = node["font"] * 1.22
-        text_y = node["y"] + (node["h"] - line_height * len(lines)) / 2 + node["font"]
+        font_size, lines = fitted_text(node["label"], node["w"] - 12, node["h"], node["font"])
+        line_height = font_size * 1.16
+        text_y = node["y"] + (node["h"] - line_height * len(lines)) / 2 + font_size
         tspans = "".join(
             f'<tspan x="{node["x"] + node["w"] / 2:.1f}" dy="{0 if index == 0 else line_height:.1f}">{escape(line)}</tspan>'
             for index, line in enumerate(lines)
         )
         shape = (
-            f'<g class="{classes}" data-label="{safe_label}">'
+            f'<g class="{classes}" data-id="{escape(node["id"])}" data-label="{safe_label}">'
             f'<rect x="{node["x"]:.1f}" y="{node["y"]:.1f}" width="{node["w"]:.1f}" height="{node["h"]:.1f}" '
             f'fill="{escape(node["fill"])}" stroke="{escape(node["stroke"])}"/>'
             f'<text x="{node["x"] + node["w"] / 2:.1f}" y="{text_y:.1f}" fill="{escape(node["font_color"])}" '
-            f'font-size="{node["font"]:.1f}">{tspans}</text></g>'
+            f'font-size="{font_size:.1f}">{tspans}</text></g>'
         )
         node_shapes.append(f'<a href="{escape(href)}">{shape}</a>' if href else shape)
 
+    interaction_script = '''<script><![CDATA[
+    const edges = Array.from(document.querySelectorAll('.edge'));
+    const incoming = new Map();
+    edges.forEach((edge) => {
+      const key = edge.dataset.target;
+      incoming.set(key, [...(incoming.get(key) || []), edge]);
+    });
+    function clear() {
+      edges.forEach((edge) => { edge.classList.remove('active'); edge.style.stroke = ''; });
+    }
+    function highlight(nodeId) {
+      clear();
+      const seen = new Set();
+      function visit(id) {
+        (incoming.get(id) || []).forEach((edge) => {
+          if (seen.has(edge)) return;
+          seen.add(edge);
+          edge.classList.add('active');
+          edge.style.stroke = edge.dataset.color;
+          visit(edge.dataset.source);
+        });
+      }
+      visit(nodeId);
+    }
+    document.querySelectorAll('.node').forEach((node) => {
+      node.addEventListener('mouseenter', () => highlight(node.dataset.id));
+      node.addEventListener('mouseleave', clear);
+    });
+  ]]></script>'''
+
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1654 1169" role="img" aria-label="DEV-BT 完整實驗運行架構圖">
   <style>
-    .edge {{ fill: none; stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }}
+    .edge {{ fill: none; stroke: #a8b1c1; stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }}
+    .edge.active {{ stroke-width: 2.4; stroke-dasharray: 7 5; animation: flow 0.9s linear infinite; }}
     .node rect {{ stroke-width: 1.1; }}
     .node text {{ font-family: "Noto Serif TC", "PMingLiU", serif; text-anchor: middle; dominant-baseline: alphabetic; }}
     a .node:hover rect {{ stroke: #0f766e; stroke-width: 3; }}
     a .node:hover text {{ fill: #0f766e; font-weight: 700; }}
+    .node:hover rect {{ stroke-width: 2.6; }}
+    @keyframes flow {{ to {{ stroke-dashoffset: -12; }} }}
   </style>
   <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="context-stroke"/></marker></defs>
   {''.join(edge_paths)}
   {''.join(node_shapes)}
+  {interaction_script}
 </svg>'''
     OUTPUT.write_text(svg, encoding="utf-8")
     print(f"Wrote {OUTPUT} with {len(nodes)} nodes and {len(edge_paths)} edges")
