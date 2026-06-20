@@ -8,8 +8,8 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 本頁依實驗的資料血緣與處理順序呈現。可點擊的節點已有完整結果與設定摘要；其他節點保留在地圖中，待後續整理後開放。
 
 <div class="experiment-map-scroll" aria-label="DEV-BT 完整實驗地圖">
-    <object class="experiment-map-full" type="image/svg+xml" data="{{ '/assets/img/experiment-map-full.svg?v=20260620-full-map-v10' | relative_url }}">
-    <img src="{{ '/assets/img/experiment-map-full.svg?v=20260620-full-map-v10' | relative_url }}" alt="DEV-BT 完整實驗運行架構圖">
+    <object class="experiment-map-full" type="image/svg+xml" data="{{ '/assets/img/experiment-map-full.svg?v=20260620-full-map-v11' | relative_url }}">
+    <img src="{{ '/assets/img/experiment-map-full.svg?v=20260620-full-map-v11' | relative_url }}" alt="DEV-BT 完整實驗運行架構圖">
   </object>
 </div>
 
@@ -31,6 +31,7 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 
 | 節點 | 資料處理版本 | 目前狀態 |
 | --- | --- | --- |
+| [A03 整體比較]({{ '/results/a03-min-cluster-overview.html' | relative_url }}) | A03-2、3、5、5.1、6、6.1、7、8 的中英文掃描圖比較 | 可檢視 |
 | [A03-2]({{ '/results/a03-2-del-tok.html' | relative_url }}) | del + tok | 可檢視 |
 | [A03-3]({{ '/results/a03-3-del-tok-para12-80.html' | relative_url }}) | del + tok + 段落 12-80 | 可檢視 |
 | [A03-5]({{ '/results/a03-5-repl-tok.html' | relative_url }}) | repl + tok | 可檢視 |
