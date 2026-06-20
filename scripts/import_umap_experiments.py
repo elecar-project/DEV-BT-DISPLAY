@@ -80,6 +80,40 @@ def candidate_table(rows: list[dict[str, object]]) -> str:
 </table></div>""".format("".join(body))
 
 
+def download_table(copied: list[Path], asset_dir: Path, slug: str) -> str:
+    descriptions = {
+        "stage1": "第一階段 UMAP 與精簡 HDBSCAN 的廣泛搜尋結果",
+        "stage2": "第二階段候選 UMAP 的深入 HDBSCAN 搜尋結果",
+        "selected_configs": "三種候選策略的選定參數與指標",
+        "stability": "前段候選在不同 random state 下的穩定性結果",
+        "final_configs": "最終 BERTopic 訓練的設定檔",
+        "comparison_summary": "三種候選策略的最終比較摘要",
+        "run_log": "執行紀錄與資料統計",
+        "topic_info": "最終主題資訊摘要",
+        "topic_words": "主題關鍵詞輸出",
+        "representative_docs": "代表句輸出",
+        "brand_model": "品牌與車款詞彙影響檢查",
+    }
+    rows = []
+    for path in copied:
+        if path.suffix not in {".csv", ".json", ".md", ".py"} or path.parent != asset_dir:
+            continue
+        name = path.name
+        purpose = next((text for key, text in descriptions.items() if key in name), None)
+        if purpose is None:
+            if name.endswith(".py"):
+                purpose = "本次 UMAP + HDBSCAN 實驗的執行程式"
+            elif name.endswith(".md"):
+                purpose = "原始實驗報告"
+            elif name.endswith(".json"):
+                purpose = "設定或中間候選資料"
+            else:
+                purpose = "實驗輸出資料"
+        url = path.relative_to(asset_dir).as_posix()
+        rows.append(f'<tr><td><a href="{{{{ \'/assets/results/{slug}/{url}\' | relative_url }}}}">{html.escape(name)}</a></td><td>{purpose}</td></tr>')
+    return '<table class="output-table"><thead><tr><th>檔案</th><th>用途</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table>"
+
+
 def run() -> None:
     overview_links = []
     for folder_name, (slug, title) in EXPERIMENTS.items():
@@ -124,11 +158,6 @@ def run() -> None:
             for path in key_charts
         )
         figure_block = f'<div class="result-figure-scroller">{figures}</div>' if figures else ""
-        downloads = []
-        for path in copied:
-            if path.suffix in {".csv", ".json", ".md", ".py"} and ("stage" not in path.name or path.stat().st_size < 3_000_000):
-                downloads.append(f"[{path.name}]({{{{ '/assets/results/{slug}/{path.relative_to(asset_dir).as_posix()}' | relative_url }}}})")
-
         page = f'''---
 title: {title} UMAP 搜尋
 description: {title} 的 UMAP 與 HDBSCAN 聯合參數搜尋。
@@ -161,9 +190,34 @@ description: {title} 的 UMAP 與 HDBSCAN 聯合參數搜尋。
 <section markdown="1">
 ## UMAP 測試目的
 
-本測試在固定語意向量模型後，同時探索 UMAP 降維與 HDBSCAN 分群設定，尋找能兼顧主題區辨性、離群比例與主題大小分布的候選組合。UMAP 的 `n_neighbors` 調整局部與全域結構的取捨，`n_components` 決定降維後的維度數，`min_dist` 則控制群集在低維空間中的緊密程度；後續再搭配 HDBSCAN 的群集大小、保守程度與切分方式進行評估。
 
-所有候選皆使用 <code>all-MiniLM-L6-v2</code>、UMAP <code>metric=cosine</code> 與 <code>random_state=42</code>。第一階段進行廣泛搜尋，第二階段針對候選 UMAP 設定深入調整 HDBSCAN。
+本測試在固定語意向量模型後，同時探索 UMAP 降維與 HDBSCAN 分群設定，檢查目前資料版本能否比前一階段的 min_cluster_size 掃描取得更平衡的主題結構。UMAP 的 `n_neighbors` 調整局部與全域結構的取捨，`n_components` 決定降維後的維度數，`min_dist` 則控制群集在低維空間中的緊密程度；後續再搭配 HDBSCAN 的群集大小、保守程度與切分方式進行評估。
+
+## UMAP 參數設定
+
+### 共通設定
+
+<table class="umap-config-table"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>
+<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code>；每個資料集僅計算一次並快取</td></tr>
+<tr><td>距離度量</td><td>UMAP：<code>cosine</code>；HDBSCAN：<code>euclidean</code></td></tr>
+<tr><td>基準 random state</td><td><code>42</code></td></tr>
+<tr><td>穩定性檢測</td><td>前 10 組候選使用 <code>42</code>、<code>123</code>、<code>2026</code>、<code>3407</code>、<code>20240603</code></td></tr>
+</tbody></table>
+
+### 第一階段：廣泛搜尋
+
+<table class="umap-config-table"><thead><tr><th>模組</th><th>測試設定</th></tr></thead><tbody>
+<tr><td>UMAP</td><td><code>n_neighbors</code>：5、10、15、30、50、75、100；<code>n_components</code>：5、10、15；<code>min_dist</code>：0.0、0.05、0.1、0.25</td></tr>
+<tr><td>HDBSCAN</td><td><code>min_cluster_size</code>：50 至 300 的 10 組；<code>min_samples</code>：None、10、30；<code>method</code>：eom；<code>epsilon</code>：0.0</td></tr>
+</tbody></table>
+
+### 第二階段：候選深入搜尋
+
+<table class="umap-config-table"><thead><tr><th>模組</th><th>測試設定</th></tr></thead><tbody>
+<tr><td>UMAP</td><td>取第一階段前 10 組 UMAP 設定</td></tr>
+<tr><td>HDBSCAN</td><td><code>min_cluster_size</code>：50 至 1000 的 21 組；<code>min_samples</code>：None、5、10、15、30、50、75、100；<code>method</code>：eom、leaf；<code>epsilon</code>：0.0、0.05、0.1、0.2</td></tr>
+<tr><td>每組統計</td><td>UMAP／HDBSCAN 參數、主題數、noise ratio、離群筆數、最大主題比例、前三主題比例、entropy、balance score、狀態與備註</td></tr>
+</tbody></table>
 
 ## 三種候選策略
 
@@ -179,7 +233,7 @@ description: {title} 的 UMAP 與 HDBSCAN 聯合參數搜尋。
 
 ## 原始輸出
 
-可下載：{('、'.join(downloads)) if downloads else '此實驗未提供可公開的精簡輸出。'}
+{download_table(copied, asset_dir, slug)}
 </section>
 </div>
 '''
