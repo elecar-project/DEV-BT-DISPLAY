@@ -84,7 +84,7 @@
       node.addEventListener('mouseenter', () => highlight(node.dataset.id));
       node.addEventListener('mouseleave', clear);
       const destination = resultLinksById[node.dataset.id] || resultLinks[node.dataset.label];
-      if (emptyDatasetLabels.has(node.dataset.label)) node.classList.add('is-empty');
+      if (emptyDatasetLabels.has(node.dataset.label) && !destination) node.classList.add('is-empty');
       if (destination) {
         node.style.cursor = 'pointer';
         node.addEventListener('click', () => {

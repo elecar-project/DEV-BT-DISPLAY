@@ -208,7 +208,7 @@ def main() -> None:
         left_aligned = node["x"] == 47 and node["y"] < 550
         classes = "node dataset-node" if left_aligned else "node"
         href = NODE_LINKS.get(node["id"]) or LINKS.get(node["label"])
-        if node["label"] in EMPTY_NODE_LABELS:
+        if node["label"] in EMPTY_NODE_LABELS and not href:
             classes += " is-empty"
         font_size, lines = fitted_text(node["label"], node["w"] - 12, node["h"], node["font"])
         line_height = font_size * 1.16
