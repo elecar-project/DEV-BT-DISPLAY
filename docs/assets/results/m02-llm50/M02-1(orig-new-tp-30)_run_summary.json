@@ -1,0 +1,24 @@
+[
+  {
+    "selection_label": "M02-1(orig-new-tp-30)",
+    "report": "M02-1(orig-new-tp-30).md",
+    "n_clusters": 34,
+    "noise_ratio": 0.24766522988505746,
+    "topic_-1_count": 2758,
+    "topic_0_count": 2459,
+    "topic_1_count": 1272,
+    "largest_topic_count": 2459,
+    "largest_topic_ratio": 0.2208153735632184,
+    "top3_topic_ratio": 0.4211566091954023,
+    "topic_entropy": 0.755434342440232,
+    "balance_score": 0.7752244971264368,
+    "llm50_status": "ok",
+    "llm50_topics": 34,
+    "llm50_stable_topics": 20,
+    "llm50_successful_calls": 1700,
+    "llm50_requested_calls": 1700,
+    "llm50_missing_calls": 0,
+    "representation_errors": 0,
+    "llm_topic_label_errors": 0
+  }
+]

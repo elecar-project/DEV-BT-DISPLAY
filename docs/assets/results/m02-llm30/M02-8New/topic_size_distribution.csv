@@ -1,0 +1,26 @@
+Topic,Count,Name,ratio
+-1,2676,-1_car_new_vehicle_design,0.24030172413793102
+0,4697,0_new_car_design_electric,0.4217852011494253
+1,876,1_display_control_car_navigation,0.07866379310344827
+2,620,2_auto_happy_episode_season,0.05567528735632184
+3,203,3_ioniq_hyundai_charging_electric,0.018229166666666668
+4,200,4_sonata_accord_hyundai sonata_hyundai,0.017959770114942528
+5,187,5_charging_charge_level_stations,0.016792385057471264
+6,153,6_drive_driving_car_ride,0.013739224137931034
+7,137,7_polestar_car_electric_brand,0.012302442528735632
+8,132,8_prius_prius prime_hybrid_prime,0.011853448275862068
+9,116,9_steering_suspension_car_control,0.010416666666666666
+10,110,10_infiniti_q50_infinity_brand,0.009877873563218391
+11,106,11_eqs_eqe_eq_mercedes,0.00951867816091954
+12,101,12_president_vice_ladies_vice president,0.009069683908045977
+13,90,13_corolla_corolla hybrid_hybrid_toyota,0.008081896551724138
+14,89,14_crown_toyota crown_toyota_platinum,0.007992097701149425
+15,88,15_open_cover_door_hood,0.007902298850574713
+16,87,16_amg_gt_amg gt_door,0.0078125
+17,82,17_connect_audio_available_wireless,0.0073635057471264365
+18,75,18_highlander_grand highlander_hybrid_available,0.006734913793103448
+19,73,19_battery_lithium_lithium ion_ion,0.006555316091954023
+20,72,20_k27_america_auto evolution_electric,0.00646551724137931
+21,61,21_sound_quiet_noise_sounds,0.0054777298850574715
+22,54,22_air_temperature_degrees_turn,0.004849137931034483
+23,51,23_clarity_plug_series_fuel cell,0.0045797413793103444

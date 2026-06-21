@@ -688,6 +688,20 @@ code {
 .m01-topic-table th:nth-child(2) { width: 9%; }
 .m01-topic-table th:nth-child(3) { width: 34%; }
 .m01-topic-table th:nth-child(4), .m01-topic-table th:nth-child(5) { width: 24.5%; }
+.m02-validation-table { min-width: 1140px; table-layout: fixed; width: 100%; }
+.m02-validation-table th, .m02-validation-table td { overflow-wrap: anywhere; vertical-align: top; white-space: normal; }
+.m02-validation-table th:nth-child(1) { width: 6%; }
+.m02-validation-table th:nth-child(2) { width: 10%; }
+.m02-validation-table th:nth-child(3) { width: 18%; }
+.m02-validation-table th:nth-child(4) { width: 30%; }
+.m02-validation-table th:nth-child(5) { width: 10%; }
+.m02-validation-table th:nth-child(6) { width: 16%; }
+.m02-validation-table th:nth-child(7) { width: 10%; }
+.m02-validation-table .validation-stable td { background: #f1f8f4; }
+.m02-validation-table .validation-review td { background: #fff9ec; }
+.validation-badge { border-radius: 4px; display: inline-block; font-size: 0.8rem; font-weight: 800; padding: 3px 7px; }
+.validation-badge.stable { background: #d9ede2; color: #165f4d; }
+.validation-badge.review { background: #fcede0; color: #8a4e00; }
 
 .table-note {
   margin: 0.85rem 0 0;

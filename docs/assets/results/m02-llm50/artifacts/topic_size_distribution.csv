@@ -1,0 +1,36 @@
+Topic,Count,Name,ratio
+-1,2758,-1_car_new_vehicle_driving,0.24766522988505746
+0,2459,0_bmw_new_car_design,0.2208153735632184
+1,1272,1_charging_electric_kia_charge,0.11422413793103449
+2,959,2_steering_control_car_display,0.08611709770114942
+3,616,3_auto_episode_season_press,0.05531609195402299
+4,204,4_ioniq_hyundai_charging_electric,0.018318965517241378
+5,200,5_sonata_accord_hyundai sonata_hyundai,0.017959770114942528
+6,198,6_nissan_leaf_aria_nissan leaf,0.017780172413793104
+7,193,7_audi_tron_quattro_q8,0.01733117816091954
+8,169,8_elantra_hyundai_new elantra_elr,0.015176005747126436
+9,165,9_drive_driving_car_truck,0.014816810344827586
+10,136,10_polestar_car_brand_electric,0.01221264367816092
+11,128,11_prius_prius prime_prime_hybrid,0.011494252873563218
+12,108,12_infiniti_q50_infinity_brand,0.009698275862068966
+13,108,13_mustang_mach_mustang mach_ford,0.009698275862068966
+14,106,14_eqs_eqe_eq_mercedes,0.00951867816091954
+15,100,15_president_ladies_vice_vice president,0.008979885057471264
+16,90,16_corolla_corolla hybrid_hybrid_toyota,0.008081896551724138
+17,89,17_door_open_cover_tailgate,0.007992097701149425
+18,89,18_crown_toyota crown_toyota_platinum,0.007992097701149425
+19,82,19_connect_audio_wireless_available,0.0073635057471264365
+20,80,20_amg_gt_amg gt_door,0.007183908045977011
+21,79,21_taycan_porsche_turbo_electric,0.007094109195402299
+22,77,22_battery_lithium_ion_lithium ion,0.006914511494252874
+23,73,23_highlander_grand highlander_standard_hybrid,0.006555316091954023
+24,72,24_k27_america_auto evolution_ev,0.00646551724137931
+25,68,25_black_color_red_colors,0.00610632183908046
+26,65,26_nsx_acura_supercar_performance,0.005836925287356322
+27,61,27_sound_quiet_noise_sounds,0.0054777298850574715
+28,58,28_buick_brand_lacrosse_sportback,0.005208333333333333
+29,57,29_clarity_electrified_honda_fuel cell,0.0051185344827586205
+30,56,30_pedal_braking_brake_accelerator,0.005028735632183908
+31,56,31_air_turn_temperature_degrees,0.005028735632183908
+32,55,32_panamera_porsche_new panamera_wego,0.0049389367816091954
+33,50,33_pacifica_minivan_chrysler_segment,0.004489942528735632

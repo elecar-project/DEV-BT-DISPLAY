@@ -1,0 +1,282 @@
+[
+  {
+    "representation_model": "llm_openai_gpt_5_5",
+    "model": "openai/gpt-5.5",
+    "topic": "10",
+    "error": "'NoneType' object is not subscriptable",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspaces/Dev-BT/Result/.m06.05_Main02-single/M02-8New(orig)_tok(para12-80)/run_M02_8New_orig_tok_para12_80.py\", line 134, in extract_topics\n    label = (response.choices[0].message.content or \"\").strip()\n             ~~~~~~~~~~~~~~~~^^^\nTypeError: 'NoneType' object is not subscriptable\n"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "0",
+    "run": "5",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "0",
+    "run": "3",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "0",
+    "run": "6",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "0",
+    "run": "4",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "0",
+    "run": "10",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "0",
+    "run": "20",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "0",
+    "run": "19",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "0",
+    "run": "18",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "0",
+    "run": "21",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "0",
+    "run": "22",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "0",
+    "run": "24",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "0",
+    "run": "27",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "9",
+    "run": "7",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "10",
+    "run": "2",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "10",
+    "run": "6",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "10",
+    "run": "7",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "10",
+    "run": "8",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "10",
+    "run": "11",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "10",
+    "run": "16",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "10",
+    "run": "17",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "10",
+    "run": "23",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "10",
+    "run": "22",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "10",
+    "run": "20",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "10",
+    "run": "25",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "16",
+    "run": "1",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "16",
+    "run": "5",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "16",
+    "run": "6",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "16",
+    "run": "9",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "16",
+    "run": "14",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "16",
+    "run": "15",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "16",
+    "run": "16",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "16",
+    "run": "18",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "16",
+    "run": "19",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "16",
+    "run": "21",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned no choices"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "16",
+    "run": "22",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "16",
+    "run": "25",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "16",
+    "run": "27",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned no choices"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "16",
+    "run": "29",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  },
+  {
+    "representation_model": "llm30",
+    "topic": "16",
+    "run": "30",
+    "model": "openai/gpt-5.5",
+    "error": "OpenRouter returned an empty label"
+  }
+]

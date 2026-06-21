@@ -1,0 +1,2 @@
+selection_label,report,n_clusters,noise_ratio,topic_-1_count,topic_0_count,topic_1_count,largest_topic_count,largest_topic_ratio,top3_topic_ratio,topic_entropy,balance_score,llm50_status,llm50_topics,llm50_stable_topics,llm50_successful_calls,llm50_requested_calls,llm50_missing_calls,representation_errors,llm_topic_label_errors
+M02-1(orig-new-tp-30),M02-1(orig-new-tp-30).md,34,0.24766522988505746,2758,2459,1272,2459,0.2208153735632184,0.4211566091954023,0.755434342440232,0.7752244971264368,ok,34,20,1700,1700,0,0,0
