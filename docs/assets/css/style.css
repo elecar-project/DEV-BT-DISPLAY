@@ -558,6 +558,8 @@ code {
   grid-template-columns: 280px minmax(0, 1fr);
 }
 
+.result-detail-layout > * { min-width: 0; }
+
 .result-settings {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -572,10 +574,11 @@ code {
 
 .result-settings h2 { border: 0; font-size: 1rem; margin: 0 0 12px; padding: 0; }
 .result-settings h3 { color: var(--muted); font-size: 0.78rem; margin: 18px 0 8px; text-transform: uppercase; }
-.result-settings table { box-shadow: none; display: table; font-size: 0.8rem; margin: 0; table-layout: fixed; width: 100%; }
+.result-settings table { box-shadow: none; display: table; font-size: 0.8rem; margin: 0; min-width: 0; table-layout: fixed; width: 100%; }
 .result-settings th, .result-settings td { padding: 8px; white-space: normal; }
 .result-settings th:first-child, .result-settings td:first-child { width: 30%; }
 .result-settings td:last-child { overflow-wrap: anywhere; word-break: normal; }
+.result-settings code { overflow-wrap: anywhere; word-break: break-word; }
 .result-settings .settings-table { display: table; table-layout: fixed; width: 100%; }
 .result-settings .settings-table th:first-child,
 .result-settings .settings-table td:first-child { width: 30%; }
@@ -662,7 +665,7 @@ code {
 .candidate-table .candidate-best_balance td { background: #e2f0e5; }
 .candidate-table .candidate-best_balance td:first-child { color: #165f4d; font-weight: 800; }
 
-.m01-strategy-table { min-width: 1050px; }
+.m01-strategy-table { min-width: 1000px; }
 .m01-strategy-table th:nth-child(1) { width: 12%; }
 .m01-strategy-table th:nth-child(2) { width: 28%; }
 .m01-strategy-table th:nth-child(n + 3) { width: 10%; }
