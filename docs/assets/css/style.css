@@ -669,7 +669,7 @@ code {
 .m01-strategy-table th:nth-child(1) { width: 12%; }
 .m01-strategy-table th:nth-child(2) { width: 28%; }
 .m01-strategy-table th:nth-child(n + 3) { width: 10%; }
-.m01-strategy-table th:nth-child(n + 3), .m01-strategy-table td:nth-child(n + 3) { white-space: nowrap; }
+.m01-strategy-table td:nth-child(n + 3) { white-space: nowrap; }
 .m01-strategy-links {
   display: grid;
   gap: 14px;
@@ -771,13 +771,13 @@ code {
 
 .result-chart-details p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
 
-.umap-overview-table { min-width: 1060px; table-layout: fixed; width: 100%; }
+.umap-overview-table { min-width: 1000px; table-layout: fixed; width: 100%; }
 .umap-overview-table th, .umap-overview-table td { overflow-wrap: anywhere; white-space: normal; }
 .umap-overview-table th:nth-child(1) { width: 17%; }
 .umap-overview-table th:nth-child(2) { width: 20%; }
 .umap-overview-table th:nth-child(3) { width: 23%; }
 .umap-overview-table th:nth-child(4), .umap-overview-table th:nth-child(5), .umap-overview-table th:nth-child(6), .umap-overview-table th:nth-child(7) { width: 10%; }
-.umap-overview-table th:nth-child(n + 4), .umap-overview-table td:nth-child(n + 4) { white-space: nowrap; }
+.umap-overview-table td:nth-child(n + 4) { white-space: nowrap; }
 
 .workflow-table { min-width: 760px; table-layout: fixed; width: 100%; }
 .workflow-table th, .workflow-table td { overflow-wrap: anywhere; white-space: normal; }
