@@ -8,8 +8,8 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 本頁依實驗的資料血緣與處理順序呈現。可點擊的節點已有完整結果與設定摘要；其他節點保留在地圖中，待後續整理後開放。
 
 <div class="experiment-map-scroll" aria-label="DEV-BT 完整實驗地圖">
-    <object class="experiment-map-full" type="image/svg+xml" data="{{ '/assets/img/experiment-map-full.svg?v=20260620-full-map-v13' | relative_url }}">
-    <img src="{{ '/assets/img/experiment-map-full.svg?v=20260620-full-map-v13' | relative_url }}" alt="DEV-BT 完整實驗運行架構圖">
+    <object class="experiment-map-full" type="image/svg+xml" data="{{ '/assets/img/experiment-map-full.svg?v=20260621-a05-v14' | relative_url }}">
+    <img src="{{ '/assets/img/experiment-map-full.svg?v=20260621-a05-v14' | relative_url }}" alt="DEV-BT 完整實驗運行架構圖">
   </object>
 </div>
 
@@ -44,6 +44,10 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 ## A04 UMAP 搜尋
 
 可直接查看：[A04 整體比較]({{ '/results/a04-umap-overview.html' | relative_url }})、[A04-2]({{ '/results/a04-2-del-tok.html' | relative_url }})、[A04-3]({{ '/results/a04-3-del-tok-para12-80.html' | relative_url }})、[A04-5]({{ '/results/a04-5-repl-tok.html' | relative_url }})、[A04-6]({{ '/results/a04-6-repl-tok-para12-80.html' | relative_url }})、[A04-7]({{ '/results/a04-7-orig-tok.html' | relative_url }})、[A04-8]({{ '/results/a04-8-orig-tok-para12-80.html' | relative_url }})、[B01 2008-2019]({{ '/results/a04-b01-08-19.html' | relative_url }})、[B01 2020-2025]({{ '/results/a04-b01-20-25.html' | relative_url }})。
+
+## A05 停用詞設計
+
+[A05 停用詞總覽]({{ '/results/a05-stopwords-overview.html' | relative_url }})以三條版本線呈現 A05-6、A05-8 repl 與 A05-8 orig REV 的詞表迭代；每個節點均可查看分類、加入理由與原始檔，人工精選版為 [A05-8.4 human]({{ '/results/a05-8-orig-rev-human-stopwords.html' | relative_url }})。
 
 ## 年份切分 min_cluster_size 掃描
 

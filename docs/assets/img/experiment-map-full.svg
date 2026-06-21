@@ -48,6 +48,7 @@
     const resultLinks = {
       'A03：min_cluster_size': '../../results/a03-min-cluster-overview.html',
       'A04：UMAP': '../../results/a04-umap-overview.html',
+      'A05：停用詞': '../../results/a05-stopwords-overview.html',
       '2 (del)_tok': '../../results/a03-2-del-tok.html',
       '3 (del)_tok(para12-80)': '../../results/a03-3-del-tok-para12-80.html',
       '5 (repl)_tok': '../../results/a03-5-repl-tok.html',

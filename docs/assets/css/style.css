@@ -723,6 +723,63 @@ code {
 .umap-overview-table th:nth-child(3) { width: 23%; }
 .umap-overview-table th:nth-child(4), .umap-overview-table th:nth-child(5), .umap-overview-table th:nth-child(6), .umap-overview-table th:nth-child(7) { width: 10%; }
 
+.stopword-track {
+  border-top: 1px solid var(--line);
+  margin: 28px 0;
+  padding-top: 22px;
+}
+
+.stopword-track header { max-width: 760px; }
+.stopword-track h2 { border: 0; font-size: 1.18rem; margin: 0 0 7px; padding: 0; }
+.stopword-track header p { color: var(--muted); line-height: 1.7; margin: 0; }
+
+.stopword-line {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+  overflow-x: auto;
+  padding: 4px 2px 14px;
+}
+
+.stopword-step {
+  background: var(--panel);
+  border: 1px solid #9cb9dd;
+  border-radius: 6px;
+  color: inherit;
+  flex: 0 0 194px;
+  min-height: 132px;
+  padding: 14px;
+  position: relative;
+  text-decoration: none;
+}
+
+.stopword-step:not(:last-child)::after {
+  color: #6c8ebf;
+  content: "→";
+  font-size: 1.45rem;
+  position: absolute;
+  right: -22px;
+  top: calc(50% - 15px);
+  z-index: 1;
+}
+
+.stopword-step strong,
+.stopword-step span,
+.stopword-step small { display: block; }
+.stopword-step strong { color: #174c80; font-size: 1rem; }
+.stopword-step span { color: #477397; font-size: 0.82rem; font-weight: 800; margin-top: 6px; }
+.stopword-step small { color: var(--muted); font-size: 0.8rem; line-height: 1.55; margin-top: 8px; }
+.stopword-step:hover { border-color: #1768ac; box-shadow: 0 8px 20px rgba(31, 70, 110, 0.13); transform: translateY(-2px); }
+.stopword-step.is-final { background: #e2f0e5; border-color: #4d8b79; }
+.stopword-step.is-final strong { color: #165f4d; }
+.stopword-step.is-final span { color: #2d7461; }
+
+.stopword-table { min-width: 900px; table-layout: fixed; width: 100%; }
+.stopword-table th:nth-child(1) { width: 20%; }
+.stopword-table th:nth-child(2) { width: 31%; }
+.stopword-table th:nth-child(3) { width: 49%; }
+.stopword-table td { line-height: 1.68; overflow-wrap: anywhere; vertical-align: top; white-space: normal; }
+
 .umap-config-table,
 .output-table { display: table; table-layout: fixed; width: 100%; }
 .umap-config-table th:first-child,
@@ -1248,6 +1305,8 @@ code {
     max-height: none;
     position: static;
   }
+
+  .stopword-line { margin-right: -4px; }
 
   th,
   td {
