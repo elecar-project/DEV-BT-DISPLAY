@@ -1,0 +1,256 @@
+Topic,Count,Name,LLM,KeyBERT,POS,MMR,model,temperature,max_tokens,runs_requested,successful_runs,error_runs,unique_normalized_labels,mode_label,mode_ratio,avg_jaccard_to_mode,stable,keywords,prompt
+-1,2894,-1_car_new_drive_infiniti,Noise / Outlier,"toyota, vehicle, car, cars, vehicles, driver, infiniti, driving, drive","car, new, vehicle, cars, performance, system, fuel","of, car, new",openai/gpt-5.5,0.0,64,50,50,0,26,Infiniti Driving Performance,0.2,0.4033333333333334,False,"car, new, drive, infiniti, driving, vehicle, cars, performance, clarity, electric","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: -1
+Keywords: car, new, drive, infiniti, driving, vehicle, cars, performance, clarity, electric
+Representative snippets:
+- It'll help you stand out when you're ready to step up. Ready to see for yourself?
+- And you can really tell that the car's been designed around the driver.
+- The ride is very quick, very responsive, the steering is very sharp, plus with its lift electronic control you're getting more horsepower using less rpm so you're getting great fuel efficiency too.
+- Ready to see for yourself? Let's go. I need my car to look great.
+- I want the kind of automobile that when I walk out of the grocery store, I see it in the parking lot and I say, that's my car.
+- Speaking of super smart, how about a GPS linked solar sensing system that measures the sun's position and intensity to adjust cabin temperatures.
+
+Topic label:"
+0,3894,0_car_new_electric_hybrid,Hybrid Vehicle Design and Performance,"vehicle, car, driving, vehicles, cars, lexus, hyundai, drive, volvo, bmw","car, new, electric, vehicle, hybrid, engine, drive, first","new, electric, vehicle, hybrid",openai/gpt-5.5,0.0,64,50,50,0,8,Hybrid Vehicle Design and Performance,0.58,0.8343809523809524,True,"car, new, electric, hybrid, vehicle, engine, audi, drive, design, power","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 0
+Keywords: car, new, electric, hybrid, vehicle, engine, audi, drive, design, power
+Representative snippets:
+- Hey, I'm Bradley Hasenmaier, and I am thrilled to share a few highlights of the 2020 Acura ILX with incredible standard features and bold new styling.
+- Oh, this is great. start ignition standard active sound control standard multi-view rear camera standard and as if all that wasn't enough Acura went ahead and made its Acura watch advanced safety and driver assistance technology package standard huh standard that has a nice ring to it doesn't it this package includes forward collision warning collision mitigation braking lane departure warning lane keeping assist roa
+- The ILX has 201 horsepower, it's got an eight-speed dual clutch transmission and a 2.4 liter i-VTEC engine.
+- Hey I'm Bradley Hasenmaier and I am thrilled to give you a quick look at the 2020 Acura RLX Sport Hybrid.
+- With its refined styling, accelerated performance capabilities, and premium features, the RLX Sport Hybrid delivers the perfect balance of sophistication and muscle.
+- Bold, sophisticated styling Acura really found the balance there. You've got a sculpted hood, you've got a diamond pentagon grill, you've got the jewel eye LED lights, 19 inch wheels, and all of this greatness comes standard.
+
+Topic label:"
+1,824,1_president_auto_ladies_vice,EV Technology Showcase,"about, you, please, technology","show, president, auto, much, vice, new","for, show, please, president, auto",openai/gpt-5.5,0.0,64,50,50,0,22,EV Technology Showcase,0.14,0.4556666666666667,False,"president, auto, ladies, vice, vice president, new, safety, la, future, technology","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 1
+Keywords: president, auto, ladies, vice, vice president, new, safety, la, future, technology
+Representative snippets:
+- My weekend was absolutely fabulous. I felt like a celebrity. I don't want it to end.
+- He was having far too much fun. All the technology is easy to use.
+- First, it will have advanced technology that enhances fun-to-drive handling and performance.
+- Second, it will express our own core values to create and sustain a world where people can enjoy life.
+- This is a sponsored video, by the way. I'm just super excited.
+- They're gonna want to film later at night, so they can show off some LED lights 118 and we have to wait till sunset even have the show started We're out near Edwards Air Force Base Which is where Will Smith went in Independence Day and go see it and maybe even drive it An expensive car, but because of that it's really cool And I'm on board with this because it means I get to go check out all
+
+Topic label:"
+2,640,2_display_navigation_screen_voice,Infotainment Displays and Controls,"navigation, menu, settings, screen, displays, display, smartphone, android, buttons, audio","display, navigation, screen, voice, information, phone, system, available, control, car","display, navigation, screen, voice, information, button, phone, control",openai/gpt-5.5,0.0,64,50,50,0,3,Infotainment Displays and Controls,0.72,0.8360000000000001,True,"display, navigation, screen, voice, information, phone, button, control, available, select","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 2
+Keywords: display, navigation, screen, voice, information, phone, button, control, available, select
+Representative snippets:
+- You've got easy access buttons and knobs and an easy place to just plug your phone right in too so you can access the available Apple CarPlay and Android Auto integration and it pulls up using these dual screen displays.
+- No, you are. He gets to drive? They just switched he gets to drive after all that no You know what?
+- You don't get to drive it anymore, at all. That's, but if you take the keys, they might not notice.
+- This one places the touch pad right on top of the center knob right here.
+- Since most of the buttons and controls have been replaced with two large displays, the feature adds simplicity and minimalism to functionality.
+- The available Audi virtual cockpit with 12.3-inch high-resolution display offers two viewing modes, classic and infotainment, while the available head-up display projects relevant information onto the windscreen.
+
+Topic label:"
+3,535,3_interior_carbon_fiber_leather,Interior Materials Design,"interior, inside, wood, design, structural, materials, structure, material, craftsmanship","interior, carbon, leather, fiber, design, materials, panel, high","interior, in, carbon, leather, fiber, design, materials, panel",openai/gpt-5.5,0.0,64,50,50,0,7,Interior Materials Design,0.4,0.6859999999999999,True,"interior, carbon, fiber, leather, carbon fiber, materials, design, panel, high, beautiful","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 3
+Keywords: interior, carbon, fiber, leather, carbon fiber, materials, design, panel, high, beautiful
+Representative snippets:
+- And if you really want to up the the Annie, opt for the NSX inspired ultra suede trimmed sport seat on the a-spec package engineered with lateral grip to keep you firmly planted in your seat.
+- And then when you go to the interior it only gets better.
+- Where you're greeted with this premium cabin and precision craftsmanship. I mean take for instance the steering wheel.
+- Beautifully stitched, beautiful leather. These seats, 12-way adjustable, heated and ventilated, soft Milano leather.
+- the cool features of this car It's got like several different electric motors and all that dude Dude, this is a carbon, this is an indestructible roof. Dude, they got a carbon fiber engine? Wow.
+- That sounds like magic The floor plates under your feet are made out of carbon fiber I it I've never in my life heard of a car that's even remotely similar to this. Can I drive it? I just want to drive it.
+
+Topic label:"
+4,520,4_buick_customers_market_brand,Buick China Market Strategy,"products, industry, market, sales, customers, markets, product, buick, business","in, customers, market, brand, sales, products, new, model, product","buick, customers, brand, sales, products, model",openai/gpt-5.5,0.0,64,50,50,0,9,Buick China Market Strategy,0.46,0.7706666666666666,True,"buick, customers, market, brand, sales, products, model, product, new, china","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 4
+Keywords: buick, customers, market, brand, sales, products, model, product, new, china
+Representative snippets:
+- Yes, we have three models, which we think are the perfect blend of performance and efficiency. Nice.
+- What about this one over here? Yep. What we think is going to be our most popular model.
+- Yet, many global changes have affected the automobile industry since that time.
+- When they get to hit that button and it rolls off the end of the line, that's got to be amazing.
+- Then the people in the quality evaluation at the end of the line are making sure all that came together just perfectly.
+- And that's what it's all about. The fact that you can interface with people from executive level, sales, marketing, R&D, product planning.
+
+Topic label:"
+5,344,5_lane_assist_blind_traffic,Driver Assistance Safety Systems,"safety, alerts, detection, vehicle, detect, driver, alert, traffic, radar, steering","lane, assist, blind, traffic, braking, spot, collision, system, brake, camera","lane, assist, traffic, braking, collision, camera, detection, alert, safety, parking",openai/gpt-5.5,0.0,64,50,50,0,6,Driver Assistance Safety Systems,0.36,0.7193333333333334,True,"lane, assist, blind, traffic, braking, spot, blind spot, collision, brake, camera","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 5
+Keywords: lane, assist, blind, traffic, braking, spot, blind spot, collision, brake, camera
+Representative snippets:
+- This package includes forward collision warning, collision mitigation braking, lane departure warning, lane keeping assist, road departure mitigation and adaptive cruise control, standard across all trims.
+- Essentially, it projects information onto the windshield ahead of you, things like your speed or your turn-by-turn navigation.
+- I'll just walk. I never have before. So you brake going into the turn.
+- The available Adaptive Cruise Assist can help ease the stress of the road at normal highway speeds with active lane sensing, stop and go, and lane centering steering guidance.
+- The available Audi PreSense 360 Safety System helps detect collision hazards all around the car and can initiate specific preventive measures ranging from a full brake application to seat adjustments and pretensioning of the safety belts.
+- Intersection Assist brings the functionality of rear cross traffic to the front of the car and can provide warnings and braking if a hazard is detected when entering an intersection.
+
+Topic label:"
+6,225,6_seats_seat_cargo_space,Interior Space and Seating,"seats, seating, seat, passengers, passenger, cabin, spacious, sit, rear","seats, seat, cargo, space, rear, room, passenger, trunk, seating","seats, cargo, space, rear, four, trunk, seating, passengers, legroom, door",openai/gpt-5.5,0.0,64,50,50,0,8,Interior Space and Seating,0.6,0.8780000000000001,True,"seats, seat, cargo, space, rear, room, trunk, seating, passenger, comfortable","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 6
+Keywords: seats, seat, cargo, space, rear, room, trunk, seating, passenger, comfortable
+Representative snippets:
+- And it only gets better on the inside with paddle shifters and redesigned sports seats.
+- Ooh, it's very comfy. I've got fantastic leg room up here and leg room in the back for my friends and my passengers.
+- It's intuitive. Well, frankly, one of the best features is all the extra leg room in the back.
+- That was, I will be thinking about that ride for months. Thank you.
+- I think it would be a good fit for the test driver position. Can I sign up for that?
+- Your body is supported in the form-fitting seats, your hands a glove fit with the steering wheel, and the very thin A-pillar contributes to a clear view out the front as the interior just kind of disappears while you engage in the task of enjoying your drive.
+
+Topic label:"
+7,209,7_led_light_lights_grille,Exterior Lighting Design,"headlights, taillights, taillight, leds, lighting, led, lights","light, lights, grille, headlights, lighting, design","led, lights, grille, headlights, design, signature, tail, look",openai/gpt-5.5,0.0,64,50,50,0,10,Exterior Lighting Design,0.36,0.5192380952380953,False,"led, light, lights, grille, headlights, lighting, signature, shape, tail, design","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 7
+Keywords: led, light, lights, grille, headlights, lighting, signature, shape, tail, design
+Representative snippets:
+- Let's go. When you get to the ILX, you really see some style with these sharp July LED headlights and that bold pentagon grill.
+- I went and put them on brights. it was like full moon.
+- A lot more angular single frame grille in a lot more horizontal look.
+- You can also see the new LED headlights that are optional and also they portray a lot more angular and modern look.
+- Up front are standard automatic Xenon Plus headlights with LED daytime running lights.
+- The unmistakable low-slung single-frame grille with chrome trim, along with the focused headlights and powerfully contoured air inlets, exude both grace and strength.
+
+Topic label:"
+8,182,8_design_explain_studio_art,Vehicle Design Aesthetics,"designs, design, designers, designer, inspired, prototype, studio, engineering, art, model","design, studio, sketch, beautiful, end, new, own","design, how, they, about, studio",openai/gpt-5.5,0.0,64,50,50,0,11,Vehicle Design Aesthetics,0.3,0.5716666666666668,False,"design, explain, studio, art, designers, beautiful design, sketch, modern, look, engineering","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 8
+Keywords: design, explain, studio, art, designers, beautiful design, sketch, modern, look, engineering
+Representative snippets:
+- It is a beautiful design. Yes. John and Kate and his design team did an excellent job.
+- I think a lot of people probably don't realize that almost one year out that design gets locked in.
+- Many things have changed in our industry and in the marketplace since 1989, maybe more than just my hairstyle.
+- Every design element has a purpose, and that is to enhance performance.
+- So you read it as a really small object, but in the end it's a big one.
+- We're creating a living sculpture and that's the best thing in the world.
+
+Topic label:"
+9,166,9_polestar_electric_car_electric car,Polestar Electric Car Brand,"polestar, pole, brand, electric, volvo, performance, progressive, customers, design, customer","electric, car, brand, subscription, battery, performance, customer, plant, pure, heart","polestar, this, electric, car, brand, volvo, subscription, battery, performance",openai/gpt-5.5,0.0,64,50,50,0,2,Polestar Electric Car Brand,0.86,0.916,True,"polestar, electric, car, electric car, brand, car polestar, subscription, volvo, customer, battery","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 9
+Keywords: polestar, electric, car, electric car, brand, car polestar, subscription, volvo, customer, battery
+Representative snippets:
+- This plant, you may or may not know, was a 2011 JD Power Platinum Award winner.
+- So there are very, very few plants anywhere in the world that can achieve that level of significance.
+- I want to acknowledge the individual who has been leading the creation of this plant, Mr. Clement D'Souza.
+- Bye. Then we have shown some Ospha T4. I don't know how to say Ospha T2.
+- We think that's pretty cool. On the rear and the front of the vehicle, we have our Zenoit energy absorbers.
+- Right here, this is our Zenoit energy absorber. Historically, if a company wants to sell a vehicle in more than one part of the world, they have to design the front end differently.
+
+Topic label:"
+10,146,10_tailgate_door_open_trunk,Tailgate and Trunk Access,"lock, first, next, door, top, cover, tailgate","tailgate, door, open, trunk, top, release, hood, soft","tailgate, door, trunk, top, release, into, hood, soft",openai/gpt-5.5,0.0,64,50,50,0,8,Tailgate and Trunk Access,0.58,0.7853333333333333,True,"tailgate, door, open, trunk, release, hood, soft, unlock, lock, pull","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 10
+Keywords: tailgate, door, open, trunk, release, hood, soft, unlock, lock, pull
+Representative snippets:
+- Inside a very simple dashboard greets the eye. It kind of follows what Audi's been doing lately in some of its other cars, removing this gauge hood that would go all the way across the center part of the dashboard.
+- The Gorilla Glass separates this compartment from the passenger area. You can also see the exposed carbon fiber shell as you come around the threshold.
+- Underneath, there's a locking glove box with a modest amount of space, LED lit, and lined in velour.
+- Place your hands in the recessed grips on the bottom of the cover and push upwards until the cover comes free.
+- Next, remove the cover attached to the tailgate. Place your hands around the lower edge of the cover and pull to unclip.
+- Then slide the edge of the tailgate cover into position and pull it downwards to engage.
+
+Topic label:"
+11,133,11_charging_charge_vehicle_charger,Home EV Charging Setup,"charging, charger, charge, charged, battery, outlet, plug, red, car, vehicle","charging, charge, vehicle, light, charger, cable, plug, socket, car, port","charging, charge, charger, cable, plug, socket, car, level, indicator",openai/gpt-5.5,0.0,64,50,50,0,7,Home EV Charging Setup,0.44,0.8640000000000001,True,"charging, charge, vehicle, charger, light, cable, plug, setting, socket, charged","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 11
+Keywords: charging, charge, vehicle, charger, light, cable, plug, setting, socket, charged
+Representative snippets:
+- If you then look at the side, you can clearly see a little bit more power.
+- This is full throttled and fully connected. This is a new way to drive with high-speed charging capabilities and with the full backing of a global dealer network.
+- But in most cases of everyday life, you will not wait for a car to charge at all, because you will regain power at locations that you never filled up your gas tank, and that's at home and at work.
+- The e-tron comes with a charger that's included with the vehicle to allow you to charge at home overnight.
+- But if you don't have a high voltage charger in your garage, we've teamed up with Amazon to make it very easy to have an electrician come to your house and install that charging cable for you.
+- Once you press the brake, it pulsates brighter. Power on the car and it changes the color from red to blue.
+
+Topic label:"
+12,124,12_hour_seconds_meters_range,EV Range and Speed,"speed, fastest, kilometers, faster, kilometer, seconds, minutes, hour","hour, seconds, range, meters, speed, kilometers, weight, liters","seconds, range, meters, speed, kilometers, 60, weight, liters",openai/gpt-5.5,0.0,64,50,50,0,4,EV Range and Speed,0.76,0.939,True,"hour, seconds, meters, range, 100, speed, kilometers, 60, kilometers hour, liters","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 12
+Keywords: hour, seconds, meters, range, 100, speed, kilometers, 60, kilometers hour, liters
+Representative snippets:
+- It's huge because they know, essentially their name is on that engine.
+- At the speed range between 55 kilometers an hour and 160 kilometers an hour, we will shut down the engine every time the customer takes off his food from the accelerator.
+- And for me, on Long Island, New York, my father was actually one of those first customers behind the wheel of a 100 LS and ahead of a curve that would ultimately lead us to this very powerful moment.
+- In Europe, the results are in. The new and rather strict WLTP numbers give the e-tron a range of well over 400 kilometers.
+- On September 6th, we drove an e-tron prototype from sea level here at Craneway to South Lake Tahoe across 175 miles on just one full charge.
+- Arriving with 12 miles of estimated battery life left, a very respectable feat given that 7,000-foot climb.
+
+Topic label:"
+13,116,13_leaf_nissan_nissan leaf_new nissan,Nissan Leaf EV Features,"nissan, leaf, ev, evs, vehicle, car, leafs, electric, mobility, autonomous","leaf, nissan, new, in, driving, electric, technology, intelligent, world, technologies","leaf, nissan, ev, new, propilot, driving, electric, technology, intelligent",openai/gpt-5.5,0.0,64,50,50,0,5,Nissan Leaf EV Features,0.52,0.825,True,"leaf, nissan, nissan leaf, new nissan, ev, new, propilot, driving, nissan intelligent, intelligent","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 13
+Keywords: leaf, nissan, nissan leaf, new nissan, ev, new, propilot, driving, nissan intelligent, intelligent
+Representative snippets:
+- This is electric, engineered to shake up the world. You liked it?
+- Their levels of engagement depend on your driving mode and whether you're in full EV mode or a combination of gas and electricity.
+- In this case, we have to go to the lab in Germany and with one extract we have to use a leaf balm.
+- In my opinion, Hinderkopf is an electric car, but it's also a front-end car.
+- Yes, that was it. It was good. But when I talk about the Eitagstocke, I want to tell you something.
+- And also, it's green. This thing is electric. So I think we're looking to make a statement out of it to be very dynamic, to be very bold, which I think it is.
+
+Topic label:"
+14,108,14_bmw_i3_bmw i3_charging,BMW i3 Charging Features,"bmw, smartphone, iremote, app, i3, vehicle, charging, phone, monitor, ivehicle","charging, app, station, stations, vehicle, use, cable, level, battery, home","bmw, i3, charging, app, stations, monitor, cable, level, allows, public",openai/gpt-5.5,0.0,64,50,50,0,4,BMW i3 Charging Features,0.5,0.848,True,"bmw, i3, bmw i3, charging, using, app, station, iremote, iremote app, charging station","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 14
+Keywords: bmw, i3, bmw i3, charging, using, app, station, iremote, iremote app, charging station
+Representative snippets:
+- With the standard 120-volt household outlet, the battery can be fully charged in 3.5 hours, but with BMW's 220-volt charging station, time is significantly reduced to just 1.5 hours.
+- The ultimate driving machine meets the ultimate goal, sustainability. Meet the first ever BMW i3, designed from the ground up as an electric drive vehicle.
+- A new driving lifestyle begins when you touch the start-stop button of the BMW i3.
+- Renewable natural fibers and materials are applied throughout the compartment. Inside and out, we designed the BMW i3 with the conviction that saving our environment needn't be boring.
+- If you have a private parking space at home, we offer a home charging station that can fully recharge the BMW i3 in approximately three hours.
+- Connected drive enables you to locate the nearest available public charging stations as well as monitor your charging station remotely so you know when your BMW i vehicle is ready to drive.
+
+Topic label:"
+15,100,15_seat_airbags_cargo_storage,Interior Seating and Storage,"storage, compartment, place, seats, seat, backrest, cables, tunnel, space","seat, airbags, cargo, storage, center, rear, cover, console, airbag","seat, airbags, cargo, center, rear, console, airbag, compartment, passengers, standard",openai/gpt-5.5,0.0,64,50,50,0,20,Interior Seating and Storage,0.32,0.6986666666666668,True,"seat, airbags, cargo, storage, center, rear, cover, console, airbag, center console","SYSTEM:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+USER:
+Topic ID: 15
+Keywords: seat, airbags, cargo, storage, center, rear, cover, console, airbag, center console
+Representative snippets:
+- The dual action armrest opens for the driver, Opens for the passenger, one push button, slides all the way back, revealing a place to plug in your phone, that's super smart for your super smart phone.
+- It exposes a giant opening across, takes the center seat belt with it.
+- The back of the car, it's equivalent to the front row because we integrated the design of the front center console.
+- It's the screens, it's the sun shades, the seat heating, the cooling, the massages.
+- It's a part of the middle console. it's from the structure of the console, it's not a separate island.
+- So prismatic ones are like little boxes and then you have also the other version that are called pouch, that are little pouch bags we call it.
+
+Topic label:"

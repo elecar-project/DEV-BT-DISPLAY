@@ -1,0 +1,62 @@
+{
+  "finished_at": "2026-06-17T01:16:24.780706+00:00",
+  "dataset": "Result/06.13_[B]tok/06.13_[B]01-pre_LLM(orig)_20-25(194)_tok(para12-80)_dataset",
+  "output_dir": "Result/06.17_M03_split/06.17_M03-2(orig_20-25_tp-50)",
+  "rows": 10680,
+  "metrics": {
+    "n_clusters": 22,
+    "noise_ratio": 0.29447565543071164,
+    "topic_-1_count": 3145,
+    "topic_0_count": 994,
+    "topic_1_count": 775,
+    "largest_topic_count": 994,
+    "largest_topic_ratio": 0.09307116104868914,
+    "top3_topic_ratio": 0.2298689138576779,
+    "topic_entropy": 0.9355515328670944,
+    "balance_score": 0.8137621722846442
+  },
+  "llm50_summary": {
+    "status": "ok",
+    "topics": 22,
+    "calls": 1100,
+    "stable_topics": 17,
+    "llm_result_md": "06.17_M03-2(orig_20-25_tp-50)_LLM.md",
+    "llm_result_csv": "06.17_M03-2(orig_20-25_tp-50)_LLM.csv",
+    "llm_validation_csv": "06.17_M03-2(orig_20-25_tp-50)_LLM_validation.csv"
+  },
+  "representation_errors": 0,
+  "stopword_md": "Result/06.05_A05_stopword/A05-8(orig)REV_tok(para12-80)/A05-8.4(human)_stopword.md",
+  "custom_stopword_count": 170,
+  "total_stopword_count_with_english": 462,
+  "embedding_note": "使用 06.17_M03-2(orig_20-25_tp-50) 既有 embeddings 快取。",
+  "parameters": {
+    "selection_label": "06.17_M03-2(orig_20-25_tp-50)",
+    "report_name": "06.17_M03-2(orig_20-25_tp-50).md",
+    "selection_reason": "使用者指定單組參數，並以 BERTopic nr_topics='auto' 做 c-TF-IDF topic reduction。",
+    "nr_topics": "auto",
+    "umap": {
+      "n_neighbors": 10,
+      "n_components": 5,
+      "min_dist": 0.0,
+      "metric": "cosine",
+      "random_state": 42
+    },
+    "hdbscan": {
+      "min_cluster_size": 125,
+      "min_samples": 5,
+      "metric": "euclidean",
+      "cluster_selection_method": "eom",
+      "cluster_selection_epsilon": 0.0
+    }
+  },
+  "representation_models": [
+    "default",
+    "keybert",
+    "pos",
+    "mmr"
+  ],
+  "llm_model": "openai/gpt-5.5",
+  "llm_temperature": 0.0,
+  "llm_max_tokens": 64,
+  "errors": []
+}

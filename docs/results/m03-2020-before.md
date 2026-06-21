@@ -1,6 +1,6 @@
 ---
-title: 2020 前年份切分
-description: M03 年份切分後的 2008-2019 BERTopic 結果。
+title: 2020 前｜年份切分
+description: M03 年份切分後的 2008-2019 BERTopic 結果與 LLM50 命名驗證。
 ---
 
 # 2020 前｜年份切分
@@ -9,50 +9,57 @@ description: M03 年份切分後的 2008-2019 BERTopic 結果。
 <aside class="result-settings" markdown="1">
 ## 實驗設定
 
-### 資料血緣
+### 資料與模型
 
-| 項目 | 設定 |
-| --- | --- |
-| 資料集 | 2008-2019，240 份資料 |
-| 節點路徑 | 8New → M03 → T02 |
-| 自訂停用詞 | 170 個 |
+<table class="settings-table"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>
+<tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]01-pre_LLM(orig)_08-19(240)_tok(para12-80)_dataset</code></td></tr>
+<tr><td>可用句子</td><td>11,160</td></tr>
+<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>
+<tr><td>UMAP</td><td>neighbors 5 / components 10 / min dist 0.0 / cosine</td></tr>
+<tr><td>HDBSCAN</td><td>cluster 100 / samples 5 / eom / eps 0.0</td></tr>
+<tr><td>Topic reduction</td><td><code>nr_topics=auto</code></td></tr>
+</tbody></table>
 
-### 模型
+<table class="settings-table"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>
+<tr><td>停用詞</td><td><a href="{{ '/results/a05-8-orig-rev-human-stopwords.html' | relative_url }}">A05-8.4 human</a>，客製 170 個</td></tr>
+<tr><td>LLM</td><td>OpenRouter / <code>openai/gpt-5.5</code></td></tr>
+<tr><td>命名次數</td><td>每個 topic 50 次</td></tr>
+<tr><td>代表句</td><td>6 句 / topic</td></tr>
+</tbody></table>
 
-| 項目 | 設定 |
-| --- | --- |
-| Embedding | `all-MiniLM-L6-v2` |
-| UMAP | neighbors 5 / components 10 / cosine |
-| HDBSCAN | min cluster 100 / min samples 5 / eom |
-| Topic reduction | `nr_topics=auto` |
+### 來源資料夾
 
-### LLM 命名
+<p><code>#運行BERTopic整理/#8. M03主程式（切年份）（未整理）/06.17_M03-1(orig_08-19_tp-50)</code></p>
 
-<table>
-  <thead><tr><th>項目</th><th>設定</th></tr></thead>
-  <tbody>
-    <tr><td>Provider / model</td><td>OpenRouter / <code>openai/gpt-5.5</code></td></tr>
-    <tr><td>每個 topic 次數</td><td>50</td></tr>
-    <tr><td>代表句</td><td>6 句 / topic</td></tr>
-  </tbody>
-</table>
+<p><a href="{{ '/results/m03-2020-after.html' | relative_url }}">查看 2020 後 年份切分結果</a></p>
 </aside>
 
 <section markdown="1">
 <div class="run-summary">
-  <div class="run-stat"><strong>16</strong><span>主題群數</span></div>
-  <div class="run-stat"><strong>25.93%</strong><span>noise ratio</span></div>
-  <div class="run-stat"><strong>13 / 17</strong><span>穩定命名主題</span></div>
-  <div class="run-stat"><strong>0.650</strong><span>balance score</span></div>
+<div class="run-stat"><strong>16</strong><span>有效主題數</span></div>
+<div class="run-stat"><strong>25.93%</strong><span>noise ratio</span></div>
+<div class="run-stat"><strong>13 / 17</strong><span>穩定命名主題</span></div>
+<div class="run-stat"><strong>0.650</strong><span>balance score</span></div>
 </div>
 
 ## 結果摘要
 
-此節點用於與 2020 後資料比較，檢視年份切分後的主題結構是否產生可解釋的差異。
+此模型將資料依年份切為 2008-2019，用以比較不同時期的 EV 產品文本能否產生不同的主題結構。兩個年份分組各自使用選定的單一 UMAP／HDBSCAN 組合，因此主題數與集中度應搭配資料期間與參數共同判讀，而非只看單一分數。
 
-## 來源檔案
+<aside class="table-note"><strong>驗證範圍：</strong>包含 noise topic -1，故驗證 topic 數可能比有效主題數多 1。 A05-8.4 human 停用詞僅作用於 c-TF-IDF／主題表徵，不會改變 embedding 與 HDBSCAN 分群輸入。</aside>
 
-`Result/06.17_M03_split/06.17_M03-1(orig_08-19_tp-50)/`
+## LLM 命名穩定性
 
+<p class="section-intro">穩定判定規則為 <code>mode_ratio ≥ 0.70</code> 或 <code>avg_jaccard_to_mode ≥ 0.65</code>。mode ratio 表示最常出現名稱的比例；Jaccard 指標則衡量其餘命名與主要命名的詞彙重疊程度。</p>
+
+<div class="table-scroll"><table class="m02-validation-table"><thead><tr>
+<th>Topic</th><th>成功／要求</th><th>主要命名</th><th>代表詞</th><th>不同命名數</th><th>mode ratio / Jaccard</th><th>判定</th>
+</tr></thead><tbody><tr class="validation-review"><td>-1（noise）</td><td>50/50</td><td>Infiniti Driving Performance</td><td>car, new, drive, infiniti, driving, vehicle, cars, performance, clarity, electric</td><td>26</td><td>20.00% / 0.403</td><td><span class="validation-badge review">建議檢查</span></td></tr><tr class="validation-stable"><td>0</td><td>50/50</td><td>Hybrid Vehicle Design and Performance</td><td>car, new, electric, hybrid, vehicle, engine, audi, drive, design, power</td><td>8</td><td>58.00% / 0.834</td><td><span class="validation-badge stable">穩定</span></td></tr><tr class="validation-review"><td>1</td><td>50/50</td><td>EV Technology Showcase</td><td>president, auto, ladies, vice, vice president, new, safety, la, future, technology</td><td>22</td><td>14.00% / 0.456</td><td><span class="validation-badge review">建議檢查</span></td></tr><tr class="validation-stable"><td>2</td><td>50/50</td><td>Infotainment Displays and Controls</td><td>display, navigation, screen, voice, information, phone, button, control, available, select</td><td>3</td><td>72.00% / 0.836</td><td><span class="validation-badge stable">穩定</span></td></tr><tr class="validation-stable"><td>3</td><td>50/50</td><td>Interior Materials Design</td><td>interior, carbon, fiber, leather, carbon fiber, materials, design, panel, high, beautiful</td><td>7</td><td>40.00% / 0.686</td><td><span class="validation-badge stable">穩定</span></td></tr><tr class="validation-stable"><td>4</td><td>50/50</td><td>Buick China Market Strategy</td><td>buick, customers, market, brand, sales, products, model, product, new, china</td><td>9</td><td>46.00% / 0.771</td><td><span class="validation-badge stable">穩定</span></td></tr><tr class="validation-stable"><td>5</td><td>50/50</td><td>Driver Assistance Safety Systems</td><td>lane, assist, blind, traffic, braking, spot, blind spot, collision, brake, camera</td><td>6</td><td>36.00% / 0.719</td><td><span class="validation-badge stable">穩定</span></td></tr><tr class="validation-stable"><td>6</td><td>50/50</td><td>Interior Space and Seating</td><td>seats, seat, cargo, space, rear, room, trunk, seating, passenger, comfortable</td><td>8</td><td>60.00% / 0.878</td><td><span class="validation-badge stable">穩定</span></td></tr><tr class="validation-review"><td>7</td><td>50/50</td><td>Exterior Lighting Design</td><td>led, light, lights, grille, headlights, lighting, signature, shape, tail, design</td><td>10</td><td>36.00% / 0.519</td><td><span class="validation-badge review">建議檢查</span></td></tr><tr class="validation-review"><td>8</td><td>50/50</td><td>Vehicle Design Aesthetics</td><td>design, explain, studio, art, designers, beautiful design, sketch, modern, look, engineering</td><td>11</td><td>30.00% / 0.572</td><td><span class="validation-badge review">建議檢查</span></td></tr><tr class="validation-stable"><td>9</td><td>50/50</td><td>Polestar Electric Car Brand</td><td>polestar, electric, car, electric car, brand, car polestar, subscription, volvo, customer, battery</td><td>2</td><td>86.00% / 0.916</td><td><span class="validation-badge stable">穩定</span></td></tr><tr class="validation-stable"><td>10</td><td>50/50</td><td>Tailgate and Trunk Access</td><td>tailgate, door, open, trunk, release, hood, soft, unlock, lock, pull</td><td>8</td><td>58.00% / 0.785</td><td><span class="validation-badge stable">穩定</span></td></tr><tr class="validation-stable"><td>11</td><td>50/50</td><td>Home EV Charging Setup</td><td>charging, charge, vehicle, charger, light, cable, plug, setting, socket, charged</td><td>7</td><td>44.00% / 0.864</td><td><span class="validation-badge stable">穩定</span></td></tr><tr class="validation-stable"><td>12</td><td>50/50</td><td>EV Range and Speed</td><td>hour, seconds, meters, range, 100, speed, kilometers, 60, kilometers hour, liters</td><td>4</td><td>76.00% / 0.939</td><td><span class="validation-badge stable">穩定</span></td></tr><tr class="validation-stable"><td>13</td><td>50/50</td><td>Nissan Leaf EV Features</td><td>leaf, nissan, nissan leaf, new nissan, ev, new, propilot, driving, nissan intelligent, intelligent</td><td>5</td><td>52.00% / 0.825</td><td><span class="validation-badge stable">穩定</span></td></tr><tr class="validation-stable"><td>14</td><td>50/50</td><td>BMW i3 Charging Features</td><td>bmw, i3, bmw i3, charging, using, app, station, iremote, iremote app, charging station</td><td>4</td><td>50.00% / 0.848</td><td><span class="validation-badge stable">穩定</span></td></tr><tr class="validation-stable"><td>15</td><td>50/50</td><td>Interior Seating and Storage</td><td>seat, airbags, cargo, storage, center, rear, cover, console, airbag, center console</td><td>20</td><td>32.00% / 0.699</td><td><span class="validation-badge stable">穩定</span></td></tr></tbody></table></div>
+
+<aside class="table-note"><strong>呼叫狀態：</strong>850 / 850 次驗證呼叫成功；驗證 CSV 記錄的空白或失敗呼叫為 0 次。另有 0 筆表徵／命名錯誤紀錄，保留於 <code>representation_errors.json</code>。</aside>
+
+## 原始輸出
+
+<table class="output-table"><thead><tr><th>檔案</th><th>用途</th></tr></thead><tbody><tr><td><a href="{{ '/assets/results/m03-2020-before/06.17_M03-1(orig_08-19_tp-50).md' | relative_url }}">06.17_M03-1(orig_08-19_tp-50).md</a></td><td>原始實驗輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/06.17_M03-1(orig_08-19_tp-50)_LLM.csv' | relative_url }}">06.17_M03-1(orig_08-19_tp-50)_LLM.csv</a></td><td>原始實驗輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/06.17_M03-1(orig_08-19_tp-50)_LLM.md' | relative_url }}">06.17_M03-1(orig_08-19_tp-50)_LLM.md</a></td><td>LLM 命名輸出或驗證報告</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/06.17_M03-1(orig_08-19_tp-50)_LLM_detail.csv' | relative_url }}">06.17_M03-1(orig_08-19_tp-50)_LLM_detail.csv</a></td><td>原始實驗輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/06.17_M03-1(orig_08-19_tp-50)_LLM_validation.csv' | relative_url }}">06.17_M03-1(orig_08-19_tp-50)_LLM_validation.csv</a></td><td>LLM 50 次驗證結果與穩定性判定</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/06.17_M03-1(orig_08-19_tp-50)_LLM_validation.md' | relative_url }}">06.17_M03-1(orig_08-19_tp-50)_LLM_validation.md</a></td><td>LLM 50 次驗證結果與穩定性判定</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/06.17_M03-1(orig_08-19_tp-50)_combined_representations.csv' | relative_url }}">06.17_M03-1(orig_08-19_tp-50)_combined_representations.csv</a></td><td>Default、KeyBERT、POS、MMR 與 LLM 表徵對照</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/06.17_M03-1(orig_08-19_tp-50)_combined_representations.md' | relative_url }}">06.17_M03-1(orig_08-19_tp-50)_combined_representations.md</a></td><td>Default、KeyBERT、POS、MMR 與 LLM 表徵對照</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/06.17_M03-1(orig_08-19_tp-50)_combined_representations_with_docs.csv' | relative_url }}">06.17_M03-1(orig_08-19_tp-50)_combined_representations_with_docs.csv</a></td><td>Default、KeyBERT、POS、MMR 與 LLM 表徵對照</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/06.17_M03-1(orig_08-19_tp-50)_custom_stopwords_used.txt' | relative_url }}">06.17_M03-1(orig_08-19_tp-50)_custom_stopwords_used.txt</a></td><td>本次實際使用的客製停用詞</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/06.17_M03-1(orig_08-19_tp-50)_run_log.json' | relative_url }}">06.17_M03-1(orig_08-19_tp-50)_run_log.json</a></td><td>執行資料、停用詞與快取紀錄</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/06.17_M03-1(orig_08-19_tp-50)_run_summary.json' | relative_url }}">06.17_M03-1(orig_08-19_tp-50)_run_summary.json</a></td><td>模型量化結果摘要</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/06.17_M03-1(orig_08-19_tp-50)_summary.csv' | relative_url }}">06.17_M03-1(orig_08-19_tp-50)_summary.csv</a></td><td>模型量化結果摘要 CSV</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/final_config.json' | relative_url }}">artifacts/final_config.json</a></td><td>最終模型與 LLM 設定</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/representation_errors.json' | relative_url }}">artifacts/representation_errors.json</a></td><td>表徵與 LLM 命名錯誤紀錄</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/representative_docs.csv' | relative_url }}">artifacts/representative_docs.csv</a></td><td>各主題代表文本</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/topic_info.csv' | relative_url }}">artifacts/topic_info.csv</a></td><td>主題資訊與表徵輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/topic_info_default.csv' | relative_url }}">artifacts/topic_info_default.csv</a></td><td>主題資訊與表徵輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/topic_info_keybert.csv' | relative_url }}">artifacts/topic_info_keybert.csv</a></td><td>主題資訊與表徵輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/topic_info_llm_openai_gpt_5_5.csv' | relative_url }}">artifacts/topic_info_llm_openai_gpt_5_5.csv</a></td><td>主題資訊與表徵輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/topic_info_mmr.csv' | relative_url }}">artifacts/topic_info_mmr.csv</a></td><td>主題資訊與表徵輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/topic_info_pos.csv' | relative_url }}">artifacts/topic_info_pos.csv</a></td><td>主題資訊與表徵輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/topic_size_distribution.csv' | relative_url }}">artifacts/topic_size_distribution.csv</a></td><td>主題大小分布</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/topic_words.csv' | relative_url }}">artifacts/topic_words.csv</a></td><td>主題代表詞輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/topic_words_default.csv' | relative_url }}">artifacts/topic_words_default.csv</a></td><td>主題代表詞輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/topic_words_keybert.csv' | relative_url }}">artifacts/topic_words_keybert.csv</a></td><td>主題代表詞輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/topic_words_llm_openai_gpt_5_5.csv' | relative_url }}">artifacts/topic_words_llm_openai_gpt_5_5.csv</a></td><td>主題代表詞輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/topic_words_mmr.csv' | relative_url }}">artifacts/topic_words_mmr.csv</a></td><td>主題代表詞輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/artifacts/topic_words_pos.csv' | relative_url }}">artifacts/topic_words_pos.csv</a></td><td>主題代表詞輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/embeddings_all-MiniLM-L6-v2.meta.json' | relative_url }}">embeddings_all-MiniLM-L6-v2.meta.json</a></td><td>原始實驗輸出</td></tr><tr><td><a href="{{ '/assets/results/m03-2020-before/run_06_17_M03_1_orig_08_19_tp_50.py' | relative_url }}">run_06_17_M03_1_orig_08_19_tp_50.py</a></td><td>原始實驗輸出</td></tr></tbody></table>
 </section>
 </div>

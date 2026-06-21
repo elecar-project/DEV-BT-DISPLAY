@@ -1,0 +1,31 @@
+{
+  "finished_at": "2026-06-17T01:19:12.222211+00:00",
+  "dataset": "Result/06.13_[B]tok/06.13_[B]01-pre_LLM(orig)_08-19(240)_tok(para12-80)_dataset",
+  "output_dir": "Result/06.17_M03_split/06.17_M03-1(orig_08-19_tp-50)",
+  "stopword_md": "Result/06.05_A05_stopword/A05-8(orig)REV_tok(para12-80)/A05-8.4(human)_stopword.md",
+  "custom_stopword_count": 170,
+  "total_stopword_count_with_english": 462,
+  "embedding_note": "重新計算 embeddings 並建立 M02-1(orig-new-tp-30) 快取。",
+  "rows": 11160,
+  "configs": [
+    "06.17_M03-1(orig_08-19_tp-50)"
+  ],
+  "representation_models": [
+    "default",
+    "keybert",
+    "pos",
+    "mmr",
+    "llm_openai_gpt_5_5"
+  ],
+  "llm_provider": "OpenRouter",
+  "llm_model": "openai/gpt-5.5",
+  "llm_temperature": 0.0,
+  "llm_max_tokens": 64,
+  "llm50_runs_per_topic": 50,
+  "llm50_includes_outlier_topic": true,
+  "representative_docs_per_topic": 6,
+  "global_errors": [],
+  "llm50_successful_calls": "850 / 850",
+  "llm50_stable_topics": "13 / 17",
+  "final_report_refreshed_after_llm_retries": true
+}

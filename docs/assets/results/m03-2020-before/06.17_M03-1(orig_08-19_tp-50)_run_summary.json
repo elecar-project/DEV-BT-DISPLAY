@@ -1,0 +1,21 @@
+[
+  {
+    "selection_label": "06.17_M03-1(orig_08-19_tp-50)",
+    "report": "06.17_M03-1(orig_08-19_tp-50).md",
+    "n_clusters": 16,
+    "noise_ratio": 0.2593189964157706,
+    "topic_-1_count": 2894,
+    "topic_0_count": 3894,
+    "topic_1_count": 824,
+    "largest_topic_count": 3894,
+    "largest_topic_ratio": 0.3489247311827957,
+    "top3_topic_ratio": 0.4801075268817204,
+    "topic_entropy": 0.7178509486770517,
+    "balance_score": 0.649505376344086,
+    "llm50_status": "ok",
+    "llm50_topics": 17,
+    "llm50_stable_topics": 13,
+    "representation_errors": 0,
+    "llm_topic_label_errors": 0
+  }
+]
