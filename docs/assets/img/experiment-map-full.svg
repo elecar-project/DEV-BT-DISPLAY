@@ -11,17 +11,469 @@
     .node:hover rect { stroke-width: 2.6; }
     @keyframes flow { to { stroke-dashoffset: -12; } }
   </style>
-  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="context-stroke"/></marker></defs>
-  <path d="M 157.0 141.0 L 237.0 141.0 L 237.0 141.5 L 317.0 141.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-3" data-target="mRq0KLDsOoRAvhbJz9B0-19" data-color="#475569" marker-end="url(#arrow)"/><path d="M 237.0 186.0 L 277.0 186.0 L 277.0 186.5 L 317.0 186.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-5" data-target="mRq0KLDsOoRAvhbJz9B0-21" data-color="#475569" marker-end="url(#arrow)"/><path d="M 247.0 365.0 L 282.0 365.0 L 282.0 365.5 L 317.0 365.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-9" data-target="mRq0KLDsOoRAvhbJz9B0-23" data-color="#475569" marker-end="url(#arrow)"/><path d="M 167.0 500.5 L 242.0 500.5 L 242.0 501.0 L 317.0 501.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-11" data-target="mRq0KLDsOoRAvhbJz9B0-24" data-color="#475569" marker-end="url(#arrow)"/><path d="M 247.0 543.0 L 282.0 543.0 L 282.0 543.5 L 317.0 543.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-13" data-target="mRq0KLDsOoRAvhbJz9B0-26" data-color="#475569" marker-end="url(#arrow)"/><path d="M 167.0 276.0 L 242.0 276.0 L 242.0 276.5 L 317.0 276.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-17" data-target="mRq0KLDsOoRAvhbJz9B0-27" data-color="#475569" marker-end="url(#arrow)"/><path d="M 399.5 186.5 L 738.2 186.5 L 738.2 187.5 L 1077.0 187.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-21" data-target="mRq0KLDsOoRAvhbJz9B0-85" data-color="#9933FF" marker-end="url(#arrow)"/><path d="M 399.5 365.5 L 457.0 365.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-23" data-target="mRq0KLDsOoRAvhbJz9B0-29" data-color="#9933FF" marker-end="url(#arrow)"/><path d="M 399.5 543.5 L 457.0 543.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-26" data-target="mRq0KLDsOoRAvhbJz9B0-45" data-color="#9933FF" marker-end="url(#arrow)"/><path d="M 399.5 551.5 L 440.0 551.5 L 440.0 1080.0 L 1357.0 1080.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-26" data-target="mRq0KLDsOoRAvhbJz9B0-96" data-color="#FF0000" marker-end="url(#arrow)"/><path d="M 399.5 551.5 L 440.0 551.5 L 440.0 1126.0 L 1357.0 1126.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-26" data-target="mRq0KLDsOoRAvhbJz9B0-97" data-color="#FF0000" marker-end="url(#arrow)"/><path d="M 537.0 543.5 L 582.0 543.5 L 582.0 544.0 L 627.0 544.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-69" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 537.0 551.5 L 615.0 551.5 L 615.0 589.0 L 777.0 589.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-49" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 537.0 551.5 L 615.0 551.5 L 615.0 632.5 L 777.0 632.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-50" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 537.0 535.5 L 597.0 535.5 L 597.0 374.0 L 597.0 373.0 L 1077.0 373.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-86" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 497.0 559.5 L 550.0 559.5 L 550.0 717.5 L 927.0 717.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-82" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 497.0 559.5 L 550.0 559.5 L 550.0 670.5 L 927.0 670.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-81" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 537.0 535.5 L 597.0 535.5 L 597.0 196.0 L 597.0 195.5 L 1077.0 195.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-85" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 517.0 559.5 L 575.0 559.5 L 575.0 761.0 L 1217.0 761.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-89" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 517.0 559.5 L 575.0 559.5 L 575.0 806.0 L 1217.0 806.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-90" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 517.0 559.5 L 575.0 559.5 L 575.0 851.0 L 1217.0 851.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-92" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 517.0 559.5 L 575.0 559.5 L 575.0 897.0 L 1217.0 897.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-91" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 517.0 559.5 L 575.0 559.5 L 575.0 941.0 L 1217.0 941.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-93" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 517.0 559.5 L 575.0 559.5 L 575.0 983.0 L 1217.0 983.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-94" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 537.0 527.5 L 550.0 527.5 L 550.0 417.0 L 1497.0 417.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-108" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 537.0 527.5 L 550.0 527.5 L 550.0 330.0 L 1497.0 330.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-100" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 477.0 559.5 L 600.0 559.5 L 600.0 1096.0 L 1357.0 1096.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-96" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 477.0 559.5 L 600.0 559.5 L 600.0 1142.0 L 1357.0 1142.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-97" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 207.0 708.0 L 262.0 708.0 L 262.0 708.5 L 317.0 708.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-53" data-target="mRq0KLDsOoRAvhbJz9B0-80" data-color="#475569" marker-end="url(#arrow)"/><path d="M 207.0 753.0 L 1217.0 753.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-55" data-target="mRq0KLDsOoRAvhbJz9B0-89" data-color="#475569" marker-end="url(#arrow)"/><path d="M 207.0 798.0 L 1217.0 798.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-57" data-target="mRq0KLDsOoRAvhbJz9B0-90" data-color="#000000" marker-end="url(#arrow)"/><path d="M 207.0 889.0 L 1217.0 889.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-59" data-target="mRq0KLDsOoRAvhbJz9B0-91" data-color="#475569" marker-end="url(#arrow)"/><path d="M 207.0 933.0 L 1217.0 933.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-61" data-target="mRq0KLDsOoRAvhbJz9B0-93" data-color="#475569" marker-end="url(#arrow)"/><path d="M 207.0 975.0 L 1217.0 975.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-63" data-target="mRq0KLDsOoRAvhbJz9B0-94" data-color="#475569" marker-end="url(#arrow)"/><path d="M 207.0 843.0 L 1217.0 843.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-65" data-target="mRq0KLDsOoRAvhbJz9B0-92" data-color="#475569" marker-end="url(#arrow)"/><path d="M 207.0 662.0 L 262.0 662.0 L 262.0 662.5 L 317.0 662.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-67" data-target="mRq0KLDsOoRAvhbJz9B0-75" data-color="#475569" marker-end="url(#arrow)"/><path d="M 399.5 662.5 L 927.0 662.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-75" data-target="mRq0KLDsOoRAvhbJz9B0-81" data-color="#9933FF" marker-end="url(#arrow)"/><path d="M 337.6 678.5 L 777.3 678.5 L 777.3 745.0 L 1217.0 745.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-75" data-target="mRq0KLDsOoRAvhbJz9B0-89" data-color="#FF0000" marker-end="url(#arrow)"/><path d="M 337.6 678.5 L 777.3 678.5 L 777.3 835.0 L 1217.0 835.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-75" data-target="mRq0KLDsOoRAvhbJz9B0-92" data-color="#FF0000" marker-end="url(#arrow)"/><path d="M 337.6 678.5 L 777.3 678.5 L 777.3 925.0 L 1217.0 925.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-75" data-target="mRq0KLDsOoRAvhbJz9B0-93" data-color="#FF0000" marker-end="url(#arrow)"/><path d="M 399.5 708.5 L 663.2 708.5 L 663.2 709.5 L 927.0 709.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-80" data-target="mRq0KLDsOoRAvhbJz9B0-82" data-color="#9933FF" marker-end="url(#arrow)"/><path d="M 378.9 724.5 L 797.9 724.5 L 797.9 790.0 L 1217.0 790.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-80" data-target="mRq0KLDsOoRAvhbJz9B0-90" data-color="#9933FF" marker-end="url(#arrow)"/><path d="M 378.9 724.5 L 797.9 724.5 L 797.9 881.0 L 1217.0 881.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-80" data-target="mRq0KLDsOoRAvhbJz9B0-91" data-color="#9933FF" marker-end="url(#arrow)"/><path d="M 378.9 724.5 L 797.9 724.5 L 797.9 967.0 L 1217.0 967.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-80" data-target="mRq0KLDsOoRAvhbJz9B0-94" data-color="#9933FF" marker-end="url(#arrow)"/><path d="M 537.0 543.5 L 777.0 543.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-48" data-color="#3399FF" marker-end="url(#arrow)"/><path d="M 399.5 365.5 L 738.2 365.5 L 738.2 365.0 L 1077.0 365.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-23" data-target="mRq0KLDsOoRAvhbJz9B0-86" data-color="#9933FF" marker-end="url(#arrow)"/><path d="M 197.0 322.0 L 1497.0 322.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-99" data-target="mRq0KLDsOoRAvhbJz9B0-100" data-color="#475569" marker-end="url(#arrow)"/><path d="M 272.0 409.0 L 1497.0 409.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-103" data-target="mRq0KLDsOoRAvhbJz9B0-108" data-color="#475569" marker-end="url(#arrow)"/><path d="M 310.0 1134.0 L 1357.0 1134.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-118" data-target="mRq0KLDsOoRAvhbJz9B0-97" data-color="#475569" marker-end="url(#arrow)"/><path d="M 310.0 1088.0 L 1357.0 1088.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-119" data-target="mRq0KLDsOoRAvhbJz9B0-96" data-color="#475569" marker-end="url(#arrow)"/>
-  <g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-1" data-label="A03：min_cluster_size"><rect x="47.0" y="19.0" width="230.0" height="40.0" fill="#ff4d00" stroke="#FF0000"/><text x="65.0" y="45.5" fill="#ffffff" font-size="15.5"><tspan x="65.0" dy="0.0">A03：min_cluster_size</tspan></text></g><g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-3" data-label="2 (del)_tok"><rect x="47.0" y="125.0" width="110.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/><text x="65.0" y="146.5" fill="#1f2937" font-size="13.0"><tspan x="65.0" dy="0.0">2 (del)_tok</tspan></text></g><g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-5" data-label="3 (del)_tok(para12-80)"><rect x="47.0" y="170.0" width="190.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/><text x="65.0" y="190.8" fill="#1f2937" font-size="11.5"><tspan x="65.0" dy="0.0">3 (del)_tok(para12-80)</tspan></text></g><g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-6" data-label="4 (repl)"><rect x="47.0" y="215.0" width="90.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/><text x="65.0" y="236.9" fill="#1f2937" font-size="14.0"><tspan x="65.0" dy="0.0">4 (repl)</tspan></text></g><g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-9" data-label="6 (repl)_tok(para12-80)"><rect x="47.0" y="349.0" width="200.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/><text x="65.0" y="370.0" fill="#1f2937" font-size="12.0"><tspan x="65.0" dy="0.0">6 (repl)_tok(para12-80)</tspan></text></g><g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-11" data-label="7 (orig)_tok"><rect x="47.0" y="484.5" width="120.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/><text x="65.0" y="506.0" fill="#1f2937" font-size="13.0"><tspan x="65.0" dy="0.0">7 (orig)_tok</tspan></text></g><g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-13" data-label="8 (orig)_tok(para12-80)"><rect x="47.0" y="527.0" width="200.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/><text x="65.0" y="548.0" fill="#1f2937" font-size="12.0"><tspan x="65.0" dy="0.0">8 (orig)_tok(para12-80)</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-14" data-label="A04：UMAP"><rect x="317.0" y="19.0" width="100.0" height="40.5" fill="#6a00ff" stroke="#3700CC"/><text x="367.0" y="45.5" fill="#ffffff" font-size="15.0"><tspan x="367.0" dy="0.0">A04：UMAP</tspan></text></g><g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-17" data-label="5 (repl)_tok"><rect x="47.0" y="260.0" width="120.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/><text x="65.0" y="281.5" fill="#1f2937" font-size="13.0"><tspan x="65.0" dy="0.0">5 (repl)_tok</tspan></text></g><g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-18" data-label="1 (del)"><rect x="47.0" y="79.0" width="90.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/><text x="65.0" y="100.9" fill="#1f2937" font-size="14.0"><tspan x="65.0" dy="0.0">1 (del)</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-19" data-label="2"><rect x="317.0" y="125.5" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/><text x="358.2" y="147.4" fill="#1f2937" font-size="14.0"><tspan x="358.2" dy="0.0">2</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-21" data-label="3"><rect x="317.0" y="170.5" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/><text x="358.2" y="192.4" fill="#1f2937" font-size="14.0"><tspan x="358.2" dy="0.0">3</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-23" data-label="6"><rect x="317.0" y="349.5" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/><text x="358.2" y="371.4" fill="#1f2937" font-size="14.0"><tspan x="358.2" dy="0.0">6</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-24" data-label="7"><rect x="317.0" y="485.0" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/><text x="358.2" y="506.9" fill="#1f2937" font-size="14.0"><tspan x="358.2" dy="0.0">7</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-26" data-label="8"><rect x="317.0" y="527.5" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/><text x="358.2" y="549.4" fill="#1f2937" font-size="14.0"><tspan x="358.2" dy="0.0">8</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-27" data-label="5"><rect x="317.0" y="260.5" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/><text x="358.2" y="282.4" fill="#1f2937" font-size="14.0"><tspan x="358.2" dy="0.0">5</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-28" data-label="A05：停用詞"><rect x="457.0" y="20.0" width="130.0" height="39.5" fill="#0050ef" stroke="#001DBC"/><text x="522.0" y="46.5" fill="#ffffff" font-size="16.0"><tspan x="522.0" dy="0.0">A05：停用詞</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-29" data-label="6"><rect x="457.0" y="349.5" width="80.0" height="32.0" fill="#dae8fc" stroke="#6c8ebf"/><text x="497.0" y="371.4" fill="#1f2937" font-size="14.0"><tspan x="497.0" dy="0.0">6</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-45" data-label="8"><rect x="457.0" y="527.5" width="80.0" height="32.0" fill="#dae8fc" stroke="#6c8ebf"/><text x="497.0" y="549.4" fill="#1f2937" font-size="14.0"><tspan x="497.0" dy="0.0">8</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-46" data-label="M01：主程式
-（全參數）"><rect x="627.0" y="20.0" width="120.0" height="59.5" fill="#333333" stroke="#FFFFFF"/><text x="687.0" y="47.2" fill="#FFFFFF" font-size="16.0"><tspan x="687.0" dy="0.0">M01：主程式</tspan><tspan x="687.0" dy="18.6">（全參數）</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-47" data-label="M02：主程式
-（單一參數）"><rect x="777.0" y="19.0" width="120.0" height="59.5" fill="#e51400" stroke="#B20000"/><text x="837.0" y="46.2" fill="#FFFFFF" font-size="16.0"><tspan x="837.0" dy="0.0">M02：主程式</tspan><tspan x="837.0" dy="18.6">（單一參數）</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-48" data-label="8C"><rect x="777.0" y="527.5" width="80.0" height="32.0" fill="#f8cecc" stroke="#b85450"/><text x="817.0" y="549.4" fill="#1f2937" font-size="14.0"><tspan x="817.0" dy="0.0">8C</tspan></text></g><a href="../../results/m02-llm30.html" target="_top"><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-49" data-label="8New-LLM30"><rect x="777.0" y="573.0" width="100.0" height="32.0" fill="#f8cecc" stroke="#b85450"/><text x="827.0" y="594.2" fill="#1f2937" font-size="12.5"><tspan x="827.0" dy="0.0">8New-LLM30</tspan></text></g></a><a href="../../results/m02-llm50.html" target="_top"><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-50" data-label="8New-LLM50"><rect x="777.0" y="616.5" width="100.0" height="32.0" fill="#f8cecc" stroke="#b85450"/><text x="827.0" y="637.8" fill="#1f2937" font-size="12.5"><tspan x="827.0" dy="0.0">8New-LLM50</tspan></text></g></a><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-51" data-label="[C]_min"><rect x="47.0" y="586.0" width="230.0" height="40.0" fill="#f0a30a" stroke="#BD7000"/><text x="162.0" y="613.6" fill="#000000" font-size="18.0"><tspan x="162.0" dy="0.0">[C]_min</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-53" data-label="2020 後 (20-25)"><rect x="47.0" y="692.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/><text x="127.0" y="713.9" fill="#1f2937" font-size="14.0"><tspan x="127.0" dy="0.0">2020 後 (20-25)</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-55" data-label="2018 前 (08-17)"><rect x="47.0" y="737.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/><text x="127.0" y="758.9" fill="#1f2937" font-size="14.0"><tspan x="127.0" dy="0.0">2018 前 (08-17)</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-57" data-label="2018 後 (18-25)"><rect x="47.0" y="782.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/><text x="127.0" y="803.9" fill="#1f2937" font-size="14.0"><tspan x="127.0" dy="0.0">2018 後 (18-25)</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-59" data-label="2019 後 (19-25)"><rect x="47.0" y="873.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/><text x="127.0" y="894.9" fill="#1f2937" font-size="14.0"><tspan x="127.0" dy="0.0">2019 後 (19-25)</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-61" data-label="2021 前 (08-20)"><rect x="47.0" y="917.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/><text x="127.0" y="938.9" fill="#1f2937" font-size="14.0"><tspan x="127.0" dy="0.0">2021 前 (08-20)</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-63" data-label="2021 後 (21-25)"><rect x="47.0" y="959.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/><text x="127.0" y="980.9" fill="#1f2937" font-size="14.0"><tspan x="127.0" dy="0.0">2021 後 (21-25)</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-65" data-label="2019 前 (08-18)"><rect x="47.0" y="827.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/><text x="127.0" y="848.9" fill="#1f2937" font-size="14.0"><tspan x="127.0" dy="0.0">2019 前 (08-18)</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-67" data-label="2020 前 (08-19)"><rect x="47.0" y="646.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/><text x="127.0" y="667.9" fill="#1f2937" font-size="14.0"><tspan x="127.0" dy="0.0">2020 前 (08-19)</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-69" data-label="8"><rect x="627.0" y="528.0" width="80.0" height="32.0" fill="#CCCCCC" stroke="#6c8ebf"/><text x="667.0" y="549.9" fill="#1f2937" font-size="14.0"><tspan x="667.0" dy="0.0">8</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-70" data-label="M03：主程式
-（月份切分）"><rect x="927.0" y="19.0" width="120.0" height="59.5" fill="#e51400" stroke="#B20000"/><text x="987.0" y="46.2" fill="#FFFFFF" font-size="16.0"><tspan x="987.0" dy="0.0">M03：主程式</tspan><tspan x="987.0" dy="18.6">（月份切分）</tspan></text></g><a href="../../results/m03-2020-before.html" target="_top"><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-75" data-label="2020 前"><rect x="317.0" y="646.5" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/><text x="358.2" y="668.4" fill="#1f2937" font-size="14.0"><tspan x="358.2" dy="0.0">2020 前</tspan></text></g></a><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-80" data-label="2020 後"><rect x="317.0" y="692.5" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/><text x="358.2" y="714.4" fill="#1f2937" font-size="14.0"><tspan x="358.2" dy="0.0">2020 後</tspan></text></g><a href="../../results/m03-2020-before.html" target="_top"><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-81" data-label="2020 前"><rect x="927.0" y="646.5" width="100.0" height="32.0" fill="#f8cecc" stroke="#b85450"/><text x="977.0" y="668.4" fill="#1f2937" font-size="14.0"><tspan x="977.0" dy="0.0">2020 前</tspan></text></g></a><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-82" data-label="2020 後"><rect x="927.0" y="693.5" width="100.0" height="32.0" fill="#f8cecc" stroke="#b85450"/><text x="977.0" y="715.4" fill="#1f2937" font-size="14.0"><tspan x="977.0" dy="0.0">2020 後</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-84" data-label="T01：驗證
-（刪/移）"><rect x="1077.0" y="20.0" width="110.0" height="59.5" fill="#008a00" stroke="#005700"/><text x="1132.0" y="47.2" fill="#ffffff" font-size="16.0"><tspan x="1132.0" dy="0.0">T01：驗證</tspan><tspan x="1132.0" dy="18.6">（刪/移）</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-85" data-label="3"><rect x="1077.0" y="171.5" width="82.5" height="32.0" fill="#d5e8d4" stroke="#82b366"/><text x="1118.2" y="193.4" fill="#1f2937" font-size="14.0"><tspan x="1118.2" dy="0.0">3</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-86" data-label="6"><rect x="1077.0" y="349.0" width="82.5" height="32.0" fill="#d5e8d4" stroke="#82b366"/><text x="1118.2" y="370.9" fill="#1f2937" font-size="14.0"><tspan x="1118.2" dy="0.0">6</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-88" data-label="T02：驗證
-（月份切）"><rect x="1217.0" y="21.0" width="110.0" height="59.5" fill="#008a00" stroke="#005700"/><text x="1272.0" y="48.2" fill="#ffffff" font-size="16.0"><tspan x="1272.0" dy="0.0">T02：驗證</tspan><tspan x="1272.0" dy="18.6">（月份切）</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-89" data-label="2018 前"><rect x="1217.0" y="737.0" width="100.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/><text x="1267.0" y="758.9" fill="#1f2937" font-size="14.0"><tspan x="1267.0" dy="0.0">2018 前</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-90" data-label="2018 後"><rect x="1217.0" y="782.0" width="100.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/><text x="1267.0" y="803.9" fill="#1f2937" font-size="14.0"><tspan x="1267.0" dy="0.0">2018 後</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-91" data-label="2019 後"><rect x="1217.0" y="873.0" width="100.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/><text x="1267.0" y="894.9" fill="#1f2937" font-size="14.0"><tspan x="1267.0" dy="0.0">2019 後</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-92" data-label="2019 前"><rect x="1217.0" y="827.0" width="100.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/><text x="1267.0" y="848.9" fill="#1f2937" font-size="14.0"><tspan x="1267.0" dy="0.0">2019 前</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-93" data-label="2021 前"><rect x="1217.0" y="917.0" width="100.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/><text x="1267.0" y="938.9" fill="#1f2937" font-size="14.0"><tspan x="1267.0" dy="0.0">2021 前</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-94" data-label="2021 後"><rect x="1217.0" y="959.0" width="100.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/><text x="1267.0" y="980.9" fill="#1f2937" font-size="14.0"><tspan x="1267.0" dy="0.0">2021 後</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-95" data-label="T03：驗證
-（驗證切）"><rect x="1357.0" y="20.0" width="110.0" height="59.5" fill="#008a00" stroke="#005700"/><text x="1412.0" y="47.2" fill="#ffffff" font-size="16.0"><tspan x="1412.0" dy="0.0">T03：驗證</tspan><tspan x="1412.0" dy="18.6">（驗證切）</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-96" data-label="8New-影長1~35m"><rect x="1357.0" y="1072.0" width="123.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/><text x="1418.5" y="1093.2" fill="#1f2937" font-size="12.5"><tspan x="1418.5" dy="0.0">8New-影長1~35m</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-97" data-label="8New-去頭尾5廠"><rect x="1357.0" y="1118.0" width="123.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/><text x="1418.5" y="1139.9" fill="#1f2937" font-size="14.0"><tspan x="1418.5" dy="0.0">8New-去頭尾5廠</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-98" data-label="T04：驗證
-（repl停）"><rect x="1497.0" y="21.0" width="110.0" height="59.5" fill="#008a00" stroke="#005700"/><text x="1552.0" y="48.2" fill="#ffffff" font-size="16.0"><tspan x="1552.0" dy="0.0">T04：驗證</tspan><tspan x="1552.0" dy="18.6">（repl停）</tspan></text></g><g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-99" data-label="5.1 (repl-y)_tok"><rect x="47.0" y="306.0" width="150.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/><text x="65.0" y="327.2" fill="#1f2937" font-size="12.5"><tspan x="65.0" dy="0.0">5.1 (repl-y)_tok</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-100" data-label="5.1"><rect x="1497.0" y="306.0" width="110.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/><text x="1552.0" y="327.9" fill="#1f2937" font-size="14.0"><tspan x="1552.0" dy="0.0">5.1</tspan></text></g><g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-103" data-label="6.1 (repl-y)_tok(para12-80)"><rect x="47.0" y="393.0" width="225.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/><text x="65.0" y="413.8" fill="#1f2937" font-size="11.5"><tspan x="65.0" dy="0.0">6.1 (repl-y)_tok(para12-80)</tspan></text></g><g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-106" data-label="0 (orig)"><rect x="47.0" y="438.0" width="93.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/><text x="65.0" y="459.9" fill="#1f2937" font-size="14.0"><tspan x="65.0" dy="0.0">0 (orig)</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-108" data-label="6.1"><rect x="1497.0" y="393.0" width="110.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/><text x="1552.0" y="414.9" fill="#1f2937" font-size="14.0"><tspan x="1552.0" dy="0.0">6.1</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-114" data-label=""><rect x="1485.5" y="425.0" width="11.5" height="11.5" fill="#3399FF" stroke="#3399FF"/><text x="1491.2" y="434.9" fill="#1f2937" font-size="10.0"><tspan x="1491.2" dy="0.0"></tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-116" data-label=""><rect x="1485.5" y="338.0" width="11.5" height="11.5" fill="#3399FF" stroke="#3399FF"/><text x="1491.2" y="347.9" fill="#1f2937" font-size="10.0"><tspan x="1491.2" dy="0.0"></tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-117" data-label="[T3]_min"><rect x="47.0" y="1017.0" width="230.0" height="40.0" fill="#f0a30a" stroke="#BD7000"/><text x="162.0" y="1044.6" fill="#000000" font-size="18.0"><tspan x="162.0" dy="0.0">[T3]_min</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-118" data-label="8 (orig)_tok(para12-80)_去頭尾5廠"><rect x="47.0" y="1118.0" width="263.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/><text x="178.5" y="1139.0" fill="#1f2937" font-size="12.0"><tspan x="178.5" dy="0.0">8 (orig)_tok(para12-80)_去頭尾5廠</tspan></text></g><g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-119" data-label="8 (orig)_tok(para12-80)_影長1~35m"><rect x="47.0" y="1072.0" width="263.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/><text x="178.5" y="1092.8" fill="#1f2937" font-size="11.5"><tspan x="178.5" dy="0.0">8 (orig)_tok(para12-80)_影長1~35m</tspan></text></g>
-  <script><![CDATA[
+  <defs>
+<marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+<path d="M0,0 L8,4 L0,8 z" fill="context-stroke"/>
+</marker>
+</defs>
+  <path d="M 157.0 141.0 L 237.0 141.0 L 237.0 141.5 L 317.0 141.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-3" data-target="mRq0KLDsOoRAvhbJz9B0-19" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 237.0 186.0 L 277.0 186.0 L 277.0 186.5 L 317.0 186.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-5" data-target="mRq0KLDsOoRAvhbJz9B0-21" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 247.0 365.0 L 282.0 365.0 L 282.0 365.5 L 317.0 365.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-9" data-target="mRq0KLDsOoRAvhbJz9B0-23" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 167.0 500.5 L 242.0 500.5 L 242.0 501.0 L 317.0 501.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-11" data-target="mRq0KLDsOoRAvhbJz9B0-24" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 247.0 543.0 L 282.0 543.0 L 282.0 543.5 L 317.0 543.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-13" data-target="mRq0KLDsOoRAvhbJz9B0-26" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 167.0 276.0 L 242.0 276.0 L 242.0 276.5 L 317.0 276.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-17" data-target="mRq0KLDsOoRAvhbJz9B0-27" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 399.5 186.5 L 738.2 186.5 L 738.2 187.5 L 1077.0 187.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-21" data-target="mRq0KLDsOoRAvhbJz9B0-85" data-color="#9933FF" marker-end="url(#arrow)"/>
+<path d="M 399.5 365.5 L 457.0 365.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-23" data-target="mRq0KLDsOoRAvhbJz9B0-29" data-color="#9933FF" marker-end="url(#arrow)"/>
+<path d="M 399.5 543.5 L 457.0 543.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-26" data-target="mRq0KLDsOoRAvhbJz9B0-45" data-color="#9933FF" marker-end="url(#arrow)"/>
+<path d="M 399.5 551.5 L 440.0 551.5 L 440.0 1080.0 L 1357.0 1080.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-26" data-target="mRq0KLDsOoRAvhbJz9B0-96" data-color="#FF0000" marker-end="url(#arrow)"/>
+<path d="M 399.5 551.5 L 440.0 551.5 L 440.0 1126.0 L 1357.0 1126.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-26" data-target="mRq0KLDsOoRAvhbJz9B0-97" data-color="#FF0000" marker-end="url(#arrow)"/>
+<path d="M 537.0 543.5 L 582.0 543.5 L 582.0 544.0 L 627.0 544.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-69" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 537.0 551.5 L 615.0 551.5 L 615.0 589.0 L 777.0 589.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-49" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 537.0 551.5 L 615.0 551.5 L 615.0 632.5 L 777.0 632.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-50" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 537.0 535.5 L 597.0 535.5 L 597.0 374.0 L 597.0 373.0 L 1077.0 373.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-86" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 497.0 559.5 L 550.0 559.5 L 550.0 717.5 L 927.0 717.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-82" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 497.0 559.5 L 550.0 559.5 L 550.0 670.5 L 927.0 670.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-81" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 537.0 535.5 L 597.0 535.5 L 597.0 196.0 L 597.0 195.5 L 1077.0 195.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-85" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 517.0 559.5 L 575.0 559.5 L 575.0 761.0 L 1217.0 761.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-89" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 517.0 559.5 L 575.0 559.5 L 575.0 806.0 L 1217.0 806.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-90" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 517.0 559.5 L 575.0 559.5 L 575.0 851.0 L 1217.0 851.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-92" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 517.0 559.5 L 575.0 559.5 L 575.0 897.0 L 1217.0 897.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-91" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 517.0 559.5 L 575.0 559.5 L 575.0 941.0 L 1217.0 941.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-93" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 517.0 559.5 L 575.0 559.5 L 575.0 983.0 L 1217.0 983.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-94" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 537.0 527.5 L 550.0 527.5 L 550.0 417.0 L 1497.0 417.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-108" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 537.0 527.5 L 550.0 527.5 L 550.0 330.0 L 1497.0 330.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-100" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 477.0 559.5 L 600.0 559.5 L 600.0 1096.0 L 1357.0 1096.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-96" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 477.0 559.5 L 600.0 559.5 L 600.0 1142.0 L 1357.0 1142.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-97" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 207.0 708.0 L 262.0 708.0 L 262.0 708.5 L 317.0 708.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-53" data-target="mRq0KLDsOoRAvhbJz9B0-80" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 207.0 753.0 L 1217.0 753.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-55" data-target="mRq0KLDsOoRAvhbJz9B0-89" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 207.0 798.0 L 1217.0 798.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-57" data-target="mRq0KLDsOoRAvhbJz9B0-90" data-color="#000000" marker-end="url(#arrow)"/>
+<path d="M 207.0 889.0 L 1217.0 889.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-59" data-target="mRq0KLDsOoRAvhbJz9B0-91" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 207.0 933.0 L 1217.0 933.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-61" data-target="mRq0KLDsOoRAvhbJz9B0-93" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 207.0 975.0 L 1217.0 975.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-63" data-target="mRq0KLDsOoRAvhbJz9B0-94" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 207.0 843.0 L 1217.0 843.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-65" data-target="mRq0KLDsOoRAvhbJz9B0-92" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 207.0 662.0 L 262.0 662.0 L 262.0 662.5 L 317.0 662.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-67" data-target="mRq0KLDsOoRAvhbJz9B0-75" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 399.5 662.5 L 927.0 662.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-75" data-target="mRq0KLDsOoRAvhbJz9B0-81" data-color="#9933FF" marker-end="url(#arrow)"/>
+<path d="M 337.6 678.5 L 777.3 678.5 L 777.3 745.0 L 1217.0 745.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-75" data-target="mRq0KLDsOoRAvhbJz9B0-89" data-color="#FF0000" marker-end="url(#arrow)"/>
+<path d="M 337.6 678.5 L 777.3 678.5 L 777.3 835.0 L 1217.0 835.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-75" data-target="mRq0KLDsOoRAvhbJz9B0-92" data-color="#FF0000" marker-end="url(#arrow)"/>
+<path d="M 337.6 678.5 L 777.3 678.5 L 777.3 925.0 L 1217.0 925.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-75" data-target="mRq0KLDsOoRAvhbJz9B0-93" data-color="#FF0000" marker-end="url(#arrow)"/>
+<path d="M 399.5 708.5 L 663.2 708.5 L 663.2 709.5 L 927.0 709.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-80" data-target="mRq0KLDsOoRAvhbJz9B0-82" data-color="#9933FF" marker-end="url(#arrow)"/>
+<path d="M 378.9 724.5 L 797.9 724.5 L 797.9 790.0 L 1217.0 790.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-80" data-target="mRq0KLDsOoRAvhbJz9B0-90" data-color="#9933FF" marker-end="url(#arrow)"/>
+<path d="M 378.9 724.5 L 797.9 724.5 L 797.9 881.0 L 1217.0 881.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-80" data-target="mRq0KLDsOoRAvhbJz9B0-91" data-color="#9933FF" marker-end="url(#arrow)"/>
+<path d="M 378.9 724.5 L 797.9 724.5 L 797.9 967.0 L 1217.0 967.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-80" data-target="mRq0KLDsOoRAvhbJz9B0-94" data-color="#9933FF" marker-end="url(#arrow)"/>
+<path d="M 537.0 543.5 L 777.0 543.5" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-45" data-target="mRq0KLDsOoRAvhbJz9B0-48" data-color="#3399FF" marker-end="url(#arrow)"/>
+<path d="M 399.5 365.5 L 738.2 365.5 L 738.2 365.0 L 1077.0 365.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-23" data-target="mRq0KLDsOoRAvhbJz9B0-86" data-color="#9933FF" marker-end="url(#arrow)"/>
+<path d="M 197.0 322.0 L 1497.0 322.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-99" data-target="mRq0KLDsOoRAvhbJz9B0-100" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 272.0 409.0 L 1497.0 409.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-103" data-target="mRq0KLDsOoRAvhbJz9B0-108" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 310.0 1134.0 L 1357.0 1134.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-118" data-target="mRq0KLDsOoRAvhbJz9B0-97" data-color="#475569" marker-end="url(#arrow)"/>
+<path d="M 310.0 1088.0 L 1357.0 1088.0" class="edge" data-source="mRq0KLDsOoRAvhbJz9B0-119" data-target="mRq0KLDsOoRAvhbJz9B0-96" data-color="#475569" marker-end="url(#arrow)"/>
+  <g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-1" data-label="A03：min_cluster_size">
+<rect x="47.0" y="19.0" width="230.0" height="40.0" fill="#ff4d00" stroke="#FF0000"/>
+<text x="65.0" y="45.5" fill="#ffffff" font-size="15.5">
+<tspan x="65.0" dy="0.0">A03：min_cluster_size</tspan>
+</text>
+</g>
+<g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-3" data-label="2 (del)_tok">
+<rect x="47.0" y="125.0" width="110.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/>
+<text x="65.0" y="146.5" fill="#1f2937" font-size="13.0">
+<tspan x="65.0" dy="0.0">2 (del)_tok</tspan>
+</text>
+</g>
+<g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-5" data-label="3 (del)_tok(para12-80)">
+<rect x="47.0" y="170.0" width="190.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/>
+<text x="65.0" y="190.8" fill="#1f2937" font-size="11.5">
+<tspan x="65.0" dy="0.0">3 (del)_tok(para12-80)</tspan>
+</text>
+</g>
+<g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-6" data-label="4 (repl)">
+<rect x="47.0" y="215.0" width="90.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/>
+<text x="65.0" y="236.9" fill="#1f2937" font-size="14.0">
+<tspan x="65.0" dy="0.0">4 (repl)</tspan>
+</text>
+</g>
+<g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-9" data-label="6 (repl)_tok(para12-80)">
+<rect x="47.0" y="349.0" width="200.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/>
+<text x="65.0" y="370.0" fill="#1f2937" font-size="12.0">
+<tspan x="65.0" dy="0.0">6 (repl)_tok(para12-80)</tspan>
+</text>
+</g>
+<g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-11" data-label="7 (orig)_tok">
+<rect x="47.0" y="484.5" width="120.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/>
+<text x="65.0" y="506.0" fill="#1f2937" font-size="13.0">
+<tspan x="65.0" dy="0.0">7 (orig)_tok</tspan>
+</text>
+</g>
+<g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-13" data-label="8 (orig)_tok(para12-80)">
+<rect x="47.0" y="527.0" width="200.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/>
+<text x="65.0" y="548.0" fill="#1f2937" font-size="12.0">
+<tspan x="65.0" dy="0.0">8 (orig)_tok(para12-80)</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-14" data-label="A04：UMAP">
+<rect x="317.0" y="19.0" width="100.0" height="40.5" fill="#6a00ff" stroke="#3700CC"/>
+<text x="367.0" y="45.5" fill="#ffffff" font-size="15.0">
+<tspan x="367.0" dy="0.0">A04：UMAP</tspan>
+</text>
+</g>
+<g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-17" data-label="5 (repl)_tok">
+<rect x="47.0" y="260.0" width="120.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/>
+<text x="65.0" y="281.5" fill="#1f2937" font-size="13.0">
+<tspan x="65.0" dy="0.0">5 (repl)_tok</tspan>
+</text>
+</g>
+<g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-18" data-label="1 (del)">
+<rect x="47.0" y="79.0" width="90.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/>
+<text x="65.0" y="100.9" fill="#1f2937" font-size="14.0">
+<tspan x="65.0" dy="0.0">1 (del)</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-19" data-label="2">
+<rect x="317.0" y="125.5" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/>
+<text x="358.2" y="147.4" fill="#1f2937" font-size="14.0">
+<tspan x="358.2" dy="0.0">2</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-21" data-label="3">
+<rect x="317.0" y="170.5" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/>
+<text x="358.2" y="192.4" fill="#1f2937" font-size="14.0">
+<tspan x="358.2" dy="0.0">3</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-23" data-label="6">
+<rect x="317.0" y="349.5" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/>
+<text x="358.2" y="371.4" fill="#1f2937" font-size="14.0">
+<tspan x="358.2" dy="0.0">6</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-24" data-label="7">
+<rect x="317.0" y="485.0" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/>
+<text x="358.2" y="506.9" fill="#1f2937" font-size="14.0">
+<tspan x="358.2" dy="0.0">7</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-26" data-label="8">
+<rect x="317.0" y="527.5" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/>
+<text x="358.2" y="549.4" fill="#1f2937" font-size="14.0">
+<tspan x="358.2" dy="0.0">8</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-27" data-label="5">
+<rect x="317.0" y="260.5" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/>
+<text x="358.2" y="282.4" fill="#1f2937" font-size="14.0">
+<tspan x="358.2" dy="0.0">5</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-28" data-label="A05：停用詞">
+<rect x="457.0" y="20.0" width="130.0" height="39.5" fill="#0050ef" stroke="#001DBC"/>
+<text x="522.0" y="46.5" fill="#ffffff" font-size="16.0">
+<tspan x="522.0" dy="0.0">A05：停用詞</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-29" data-label="6">
+<rect x="457.0" y="349.5" width="80.0" height="32.0" fill="#dae8fc" stroke="#6c8ebf"/>
+<text x="497.0" y="371.4" fill="#1f2937" font-size="14.0">
+<tspan x="497.0" dy="0.0">6</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-45" data-label="8">
+<rect x="457.0" y="527.5" width="80.0" height="32.0" fill="#dae8fc" stroke="#6c8ebf"/>
+<text x="497.0" y="549.4" fill="#1f2937" font-size="14.0">
+<tspan x="497.0" dy="0.0">8</tspan>
+</text>
+</g>
+<a href="../../results/m01-8-historical.html" target="_top">
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-46" data-label="M01：主程式
+（全參數）">
+<rect x="627.0" y="20.0" width="120.0" height="59.5" fill="#333333" stroke="#FFFFFF"/>
+<text x="687.0" y="47.2" fill="#FFFFFF" font-size="16.0">
+<tspan x="687.0" dy="0.0">M01：主程式</tspan>
+<tspan x="687.0" dy="18.6">（全參數）</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-47" data-label="M02：主程式
+（單一參數）">
+<rect x="777.0" y="19.0" width="120.0" height="59.5" fill="#e51400" stroke="#B20000"/>
+<text x="837.0" y="46.2" fill="#FFFFFF" font-size="16.0">
+<tspan x="837.0" dy="0.0">M02：主程式</tspan>
+<tspan x="837.0" dy="18.6">（單一參數）</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-48" data-label="8C">
+<rect x="777.0" y="527.5" width="80.0" height="32.0" fill="#f8cecc" stroke="#b85450"/>
+<text x="817.0" y="549.4" fill="#1f2937" font-size="14.0">
+<tspan x="817.0" dy="0.0">8C</tspan>
+</text>
+</g>
+</a>
+<a href="../../results/m02-llm30.html" target="_top">
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-49" data-label="8New-LLM30">
+<rect x="777.0" y="573.0" width="100.0" height="32.0" fill="#f8cecc" stroke="#b85450"/>
+<text x="827.0" y="594.2" fill="#1f2937" font-size="12.5">
+<tspan x="827.0" dy="0.0">8New-LLM30</tspan>
+</text>
+</g>
+</a>
+<a href="../../results/m02-llm50.html" target="_top">
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-50" data-label="8New-LLM50">
+<rect x="777.0" y="616.5" width="100.0" height="32.0" fill="#f8cecc" stroke="#b85450"/>
+<text x="827.0" y="637.8" fill="#1f2937" font-size="12.5">
+<tspan x="827.0" dy="0.0">8New-LLM50</tspan>
+</text>
+</g>
+</a>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-51" data-label="[C]_min">
+<rect x="47.0" y="586.0" width="230.0" height="40.0" fill="#f0a30a" stroke="#BD7000"/>
+<text x="162.0" y="613.6" fill="#000000" font-size="18.0">
+<tspan x="162.0" dy="0.0">[C]_min</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-53" data-label="2020 後 (20-25)">
+<rect x="47.0" y="692.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/>
+<text x="127.0" y="713.9" fill="#1f2937" font-size="14.0">
+<tspan x="127.0" dy="0.0">2020 後 (20-25)</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-55" data-label="2018 前 (08-17)">
+<rect x="47.0" y="737.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/>
+<text x="127.0" y="758.9" fill="#1f2937" font-size="14.0">
+<tspan x="127.0" dy="0.0">2018 前 (08-17)</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-57" data-label="2018 後 (18-25)">
+<rect x="47.0" y="782.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/>
+<text x="127.0" y="803.9" fill="#1f2937" font-size="14.0">
+<tspan x="127.0" dy="0.0">2018 後 (18-25)</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-59" data-label="2019 後 (19-25)">
+<rect x="47.0" y="873.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/>
+<text x="127.0" y="894.9" fill="#1f2937" font-size="14.0">
+<tspan x="127.0" dy="0.0">2019 後 (19-25)</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-61" data-label="2021 前 (08-20)">
+<rect x="47.0" y="917.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/>
+<text x="127.0" y="938.9" fill="#1f2937" font-size="14.0">
+<tspan x="127.0" dy="0.0">2021 前 (08-20)</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-63" data-label="2021 後 (21-25)">
+<rect x="47.0" y="959.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/>
+<text x="127.0" y="980.9" fill="#1f2937" font-size="14.0">
+<tspan x="127.0" dy="0.0">2021 後 (21-25)</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-65" data-label="2019 前 (08-18)">
+<rect x="47.0" y="827.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/>
+<text x="127.0" y="848.9" fill="#1f2937" font-size="14.0">
+<tspan x="127.0" dy="0.0">2019 前 (08-18)</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-67" data-label="2020 前 (08-19)">
+<rect x="47.0" y="646.0" width="160.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/>
+<text x="127.0" y="667.9" fill="#1f2937" font-size="14.0">
+<tspan x="127.0" dy="0.0">2020 前 (08-19)</tspan>
+</text>
+</g>
+<a href="../../results/m01-8-historical.html" target="_top">
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-69" data-label="8">
+<rect x="627.0" y="528.0" width="80.0" height="32.0" fill="#CCCCCC" stroke="#6c8ebf"/>
+<text x="667.0" y="549.9" fill="#1f2937" font-size="14.0">
+<tspan x="667.0" dy="0.0">8</tspan>
+</text>
+</g>
+</a>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-70" data-label="M03：主程式
+（月份切分）">
+<rect x="927.0" y="19.0" width="120.0" height="59.5" fill="#e51400" stroke="#B20000"/>
+<text x="987.0" y="46.2" fill="#FFFFFF" font-size="16.0">
+<tspan x="987.0" dy="0.0">M03：主程式</tspan>
+<tspan x="987.0" dy="18.6">（月份切分）</tspan>
+</text>
+</g>
+<a href="../../results/m03-2020-before.html" target="_top">
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-75" data-label="2020 前">
+<rect x="317.0" y="646.5" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/>
+<text x="358.2" y="668.4" fill="#1f2937" font-size="14.0">
+<tspan x="358.2" dy="0.0">2020 前</tspan>
+</text>
+</g>
+</a>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-80" data-label="2020 後">
+<rect x="317.0" y="692.5" width="82.5" height="32.0" fill="#e1d5e7" stroke="#9673a6"/>
+<text x="358.2" y="714.4" fill="#1f2937" font-size="14.0">
+<tspan x="358.2" dy="0.0">2020 後</tspan>
+</text>
+</g>
+<a href="../../results/m03-2020-before.html" target="_top">
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-81" data-label="2020 前">
+<rect x="927.0" y="646.5" width="100.0" height="32.0" fill="#f8cecc" stroke="#b85450"/>
+<text x="977.0" y="668.4" fill="#1f2937" font-size="14.0">
+<tspan x="977.0" dy="0.0">2020 前</tspan>
+</text>
+</g>
+</a>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-82" data-label="2020 後">
+<rect x="927.0" y="693.5" width="100.0" height="32.0" fill="#f8cecc" stroke="#b85450"/>
+<text x="977.0" y="715.4" fill="#1f2937" font-size="14.0">
+<tspan x="977.0" dy="0.0">2020 後</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-84" data-label="T01：驗證
+（刪/移）">
+<rect x="1077.0" y="20.0" width="110.0" height="59.5" fill="#008a00" stroke="#005700"/>
+<text x="1132.0" y="47.2" fill="#ffffff" font-size="16.0">
+<tspan x="1132.0" dy="0.0">T01：驗證</tspan>
+<tspan x="1132.0" dy="18.6">（刪/移）</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-85" data-label="3">
+<rect x="1077.0" y="171.5" width="82.5" height="32.0" fill="#d5e8d4" stroke="#82b366"/>
+<text x="1118.2" y="193.4" fill="#1f2937" font-size="14.0">
+<tspan x="1118.2" dy="0.0">3</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-86" data-label="6">
+<rect x="1077.0" y="349.0" width="82.5" height="32.0" fill="#d5e8d4" stroke="#82b366"/>
+<text x="1118.2" y="370.9" fill="#1f2937" font-size="14.0">
+<tspan x="1118.2" dy="0.0">6</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-88" data-label="T02：驗證
+（月份切）">
+<rect x="1217.0" y="21.0" width="110.0" height="59.5" fill="#008a00" stroke="#005700"/>
+<text x="1272.0" y="48.2" fill="#ffffff" font-size="16.0">
+<tspan x="1272.0" dy="0.0">T02：驗證</tspan>
+<tspan x="1272.0" dy="18.6">（月份切）</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-89" data-label="2018 前">
+<rect x="1217.0" y="737.0" width="100.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/>
+<text x="1267.0" y="758.9" fill="#1f2937" font-size="14.0">
+<tspan x="1267.0" dy="0.0">2018 前</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-90" data-label="2018 後">
+<rect x="1217.0" y="782.0" width="100.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/>
+<text x="1267.0" y="803.9" fill="#1f2937" font-size="14.0">
+<tspan x="1267.0" dy="0.0">2018 後</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-91" data-label="2019 後">
+<rect x="1217.0" y="873.0" width="100.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/>
+<text x="1267.0" y="894.9" fill="#1f2937" font-size="14.0">
+<tspan x="1267.0" dy="0.0">2019 後</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-92" data-label="2019 前">
+<rect x="1217.0" y="827.0" width="100.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/>
+<text x="1267.0" y="848.9" fill="#1f2937" font-size="14.0">
+<tspan x="1267.0" dy="0.0">2019 前</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-93" data-label="2021 前">
+<rect x="1217.0" y="917.0" width="100.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/>
+<text x="1267.0" y="938.9" fill="#1f2937" font-size="14.0">
+<tspan x="1267.0" dy="0.0">2021 前</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-94" data-label="2021 後">
+<rect x="1217.0" y="959.0" width="100.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/>
+<text x="1267.0" y="980.9" fill="#1f2937" font-size="14.0">
+<tspan x="1267.0" dy="0.0">2021 後</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-95" data-label="T03：驗證
+（驗證切）">
+<rect x="1357.0" y="20.0" width="110.0" height="59.5" fill="#008a00" stroke="#005700"/>
+<text x="1412.0" y="47.2" fill="#ffffff" font-size="16.0">
+<tspan x="1412.0" dy="0.0">T03：驗證</tspan>
+<tspan x="1412.0" dy="18.6">（驗證切）</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-96" data-label="8New-影長1~35m">
+<rect x="1357.0" y="1072.0" width="123.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/>
+<text x="1418.5" y="1093.2" fill="#1f2937" font-size="12.5">
+<tspan x="1418.5" dy="0.0">8New-影長1~35m</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-97" data-label="8New-去頭尾5廠">
+<rect x="1357.0" y="1118.0" width="123.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/>
+<text x="1418.5" y="1139.9" fill="#1f2937" font-size="14.0">
+<tspan x="1418.5" dy="0.0">8New-去頭尾5廠</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-98" data-label="T04：驗證
+（repl停）">
+<rect x="1497.0" y="21.0" width="110.0" height="59.5" fill="#008a00" stroke="#005700"/>
+<text x="1552.0" y="48.2" fill="#ffffff" font-size="16.0">
+<tspan x="1552.0" dy="0.0">T04：驗證</tspan>
+<tspan x="1552.0" dy="18.6">（repl停）</tspan>
+</text>
+</g>
+<g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-99" data-label="5.1 (repl-y)_tok">
+<rect x="47.0" y="306.0" width="150.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/>
+<text x="65.0" y="327.2" fill="#1f2937" font-size="12.5">
+<tspan x="65.0" dy="0.0">5.1 (repl-y)_tok</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-100" data-label="5.1">
+<rect x="1497.0" y="306.0" width="110.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/>
+<text x="1552.0" y="327.9" fill="#1f2937" font-size="14.0">
+<tspan x="1552.0" dy="0.0">5.1</tspan>
+</text>
+</g>
+<g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-103" data-label="6.1 (repl-y)_tok(para12-80)">
+<rect x="47.0" y="393.0" width="225.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/>
+<text x="65.0" y="413.8" fill="#1f2937" font-size="11.5">
+<tspan x="65.0" dy="0.0">6.1 (repl-y)_tok(para12-80)</tspan>
+</text>
+</g>
+<g class="node dataset-node" data-id="mRq0KLDsOoRAvhbJz9B0-106" data-label="0 (orig)">
+<rect x="47.0" y="438.0" width="93.0" height="32.0" fill="#ffe6cc" stroke="#d79b00"/>
+<text x="65.0" y="459.9" fill="#1f2937" font-size="14.0">
+<tspan x="65.0" dy="0.0">0 (orig)</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-108" data-label="6.1">
+<rect x="1497.0" y="393.0" width="110.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/>
+<text x="1552.0" y="414.9" fill="#1f2937" font-size="14.0">
+<tspan x="1552.0" dy="0.0">6.1</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-114" data-label="">
+<rect x="1485.5" y="425.0" width="11.5" height="11.5" fill="#3399FF" stroke="#3399FF"/>
+<text x="1491.2" y="434.9" fill="#1f2937" font-size="10.0">
+<tspan x="1491.2" dy="0.0">
+</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-116" data-label="">
+<rect x="1485.5" y="338.0" width="11.5" height="11.5" fill="#3399FF" stroke="#3399FF"/>
+<text x="1491.2" y="347.9" fill="#1f2937" font-size="10.0">
+<tspan x="1491.2" dy="0.0">
+</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-117" data-label="[T3]_min">
+<rect x="47.0" y="1017.0" width="230.0" height="40.0" fill="#f0a30a" stroke="#BD7000"/>
+<text x="162.0" y="1044.6" fill="#000000" font-size="18.0">
+<tspan x="162.0" dy="0.0">[T3]_min</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-118" data-label="8 (orig)_tok(para12-80)_去頭尾5廠">
+<rect x="47.0" y="1118.0" width="263.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/>
+<text x="178.5" y="1139.0" fill="#1f2937" font-size="12.0">
+<tspan x="178.5" dy="0.0">8 (orig)_tok(para12-80)_去頭尾5廠</tspan>
+</text>
+</g>
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-119" data-label="8 (orig)_tok(para12-80)_影長1~35m">
+<rect x="47.0" y="1072.0" width="263.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/>
+<text x="178.5" y="1092.8" fill="#1f2937" font-size="11.5">
+<tspan x="178.5" dy="0.0">8 (orig)_tok(para12-80)_影長1~35m</tspan>
+</text>
+</g>
+  <script>
+<![CDATA[
     const edges = Array.from(document.querySelectorAll('.edge'));
     const incoming = new Map();
     edges.forEach((edge) => {
@@ -92,5 +544,6 @@
         });
       }
     });
-  ]]></script>
+  ]]>
+</script>
 </svg>

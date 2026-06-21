@@ -1,0 +1,50 @@
+[
+  {
+    "selection_label": "lowest_noise",
+    "report": "A06-8-REV_lowest_noise.md",
+    "n_clusters": 4,
+    "noise_ratio": 0.10290948275862069,
+    "topic_-1_count": 1146,
+    "topic_0_count": 8653,
+    "topic_1_count": 660,
+    "largest_topic_count": 8653,
+    "largest_topic_ratio": 0.7770294540229885,
+    "top3_topic_ratio": 0.8727550287356322,
+    "topic_entropy": 0.3837442944821078,
+    "balance_score": 0.3934673132183908,
+    "representation_errors": 1,
+    "llm_topic_label_errors": 1
+  },
+  {
+    "selection_label": "most_topics",
+    "report": "A06-8-REV_most_topics.md",
+    "n_clusters": 70,
+    "noise_ratio": 0.2974137931034483,
+    "topic_-1_count": 3312,
+    "topic_0_count": 374,
+    "topic_1_count": 245,
+    "largest_topic_count": 374,
+    "largest_topic_ratio": 0.03358477011494253,
+    "top3_topic_ratio": 0.07543103448275862,
+    "topic_entropy": 0.967329004304088,
+    "balance_score": 0.885614224137931,
+    "representation_errors": 7,
+    "llm_topic_label_errors": 7
+  },
+  {
+    "selection_label": "best_balance",
+    "report": "A06-8-REV_best_balance.md",
+    "n_clusters": 51,
+    "noise_ratio": 0.19576149425287356,
+    "topic_-1_count": 2180,
+    "topic_0_count": 2129,
+    "topic_1_count": 442,
+    "largest_topic_count": 2129,
+    "largest_topic_ratio": 0.19118175287356323,
+    "top3_topic_ratio": 0.26320043103448276,
+    "topic_entropy": 0.8658841921109278,
+    "balance_score": 0.8312769396551725,
+    "representation_errors": 4,
+    "llm_topic_label_errors": 4
+  }
+]

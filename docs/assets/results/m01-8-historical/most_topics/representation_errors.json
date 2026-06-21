@@ -1,0 +1,51 @@
+[
+  {
+    "representation_model": "llm_openai_gpt_5_5",
+    "model": "openai/gpt-5.5",
+    "topic": "8",
+    "error": "'NoneType' object is not subscriptable",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspaces/Dev-BT/Result/.m06.05_Main01-run/M01-8(orig)_tok(para12-80)/run_M01_8_orig_tok_para12_80_human_stopwords_repr.py\", line 193, in extract_topics\n    label = (response.choices[0].message.content or \"\").strip()\n             ~~~~~~~~~~~~~~~~^^^\nTypeError: 'NoneType' object is not subscriptable\n"
+  },
+  {
+    "representation_model": "llm_openai_gpt_5_5",
+    "model": "openai/gpt-5.5",
+    "topic": "9",
+    "error": "'NoneType' object is not subscriptable",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspaces/Dev-BT/Result/.m06.05_Main01-run/M01-8(orig)_tok(para12-80)/run_M01_8_orig_tok_para12_80_human_stopwords_repr.py\", line 193, in extract_topics\n    label = (response.choices[0].message.content or \"\").strip()\n             ~~~~~~~~~~~~~~~~^^^\nTypeError: 'NoneType' object is not subscriptable\n"
+  },
+  {
+    "representation_model": "llm_openai_gpt_5_5",
+    "model": "openai/gpt-5.5",
+    "topic": "31",
+    "error": "'NoneType' object is not subscriptable",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspaces/Dev-BT/Result/.m06.05_Main01-run/M01-8(orig)_tok(para12-80)/run_M01_8_orig_tok_para12_80_human_stopwords_repr.py\", line 193, in extract_topics\n    label = (response.choices[0].message.content or \"\").strip()\n             ~~~~~~~~~~~~~~~~^^^\nTypeError: 'NoneType' object is not subscriptable\n"
+  },
+  {
+    "representation_model": "llm_openai_gpt_5_5",
+    "model": "openai/gpt-5.5",
+    "topic": "42",
+    "error": "'NoneType' object is not subscriptable",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspaces/Dev-BT/Result/.m06.05_Main01-run/M01-8(orig)_tok(para12-80)/run_M01_8_orig_tok_para12_80_human_stopwords_repr.py\", line 193, in extract_topics\n    label = (response.choices[0].message.content or \"\").strip()\n             ~~~~~~~~~~~~~~~~^^^\nTypeError: 'NoneType' object is not subscriptable\n"
+  },
+  {
+    "representation_model": "llm_openai_gpt_5_5",
+    "model": "openai/gpt-5.5",
+    "topic": "46",
+    "error": "'NoneType' object is not subscriptable",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspaces/Dev-BT/Result/.m06.05_Main01-run/M01-8(orig)_tok(para12-80)/run_M01_8_orig_tok_para12_80_human_stopwords_repr.py\", line 193, in extract_topics\n    label = (response.choices[0].message.content or \"\").strip()\n             ~~~~~~~~~~~~~~~~^^^\nTypeError: 'NoneType' object is not subscriptable\n"
+  },
+  {
+    "representation_model": "llm_openai_gpt_5_5",
+    "model": "openai/gpt-5.5",
+    "topic": "50",
+    "error": "'NoneType' object is not subscriptable",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspaces/Dev-BT/Result/.m06.05_Main01-run/M01-8(orig)_tok(para12-80)/run_M01_8_orig_tok_para12_80_human_stopwords_repr.py\", line 193, in extract_topics\n    label = (response.choices[0].message.content or \"\").strip()\n             ~~~~~~~~~~~~~~~~^^^\nTypeError: 'NoneType' object is not subscriptable\n"
+  },
+  {
+    "representation_model": "llm_openai_gpt_5_5",
+    "model": "openai/gpt-5.5",
+    "topic": "57",
+    "error": "'NoneType' object is not subscriptable",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspaces/Dev-BT/Result/.m06.05_Main01-run/M01-8(orig)_tok(para12-80)/run_M01_8_orig_tok_para12_80_human_stopwords_repr.py\", line 193, in extract_topics\n    label = (response.choices[0].message.content or \"\").strip()\n             ~~~~~~~~~~~~~~~~^^^\nTypeError: 'NoneType' object is not subscriptable\n"
+  }
+]

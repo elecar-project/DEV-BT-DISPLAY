@@ -1,0 +1,53 @@
+Topic,Count,Name,ratio
+-1,2180,-1_car_new_vehicle_driving,0.19576149425287356
+0,2129,0_car_new_design_cars,0.19118175287356323
+1,442,1_interior_seat_seats_leather,0.03969109195402299
+2,360,2_charging_charge_range_charger,0.032327586206896554
+3,277,3_electric_torque_hybrid_motor,0.024874281609195404
+4,245,4_bmw_series_grand tour_tour,0.022000718390804596
+5,245,5_sonata_hyundai_hyundai sonata_safety,0.022000718390804596
+6,229,6_volvo_xc90_s60_new xc90,0.020563936781609195
+7,221,7_assist_parking_lane_spot,0.019845545977011495
+8,219,8_ioniq_hyundai_charging_electric,0.01966594827586207
+9,218,9_kia_ev6_ev_india,0.019576149425287355
+10,204,10_nissan_leaf_nissan leaf_aria,0.018318965517241378
+11,188,11_apple_carplay_android_apple carplay,0.016882183908045977
+12,186,12_audi_tron_quattro_q8,0.01670258620689655
+13,185,13_mbux_screen_display_console,0.01661278735632184
+14,182,14_lexus_nx_ux_ls,0.0163433908045977
+15,173,15_electric_cars_electric cars_ev,0.015535201149425287
+16,172,16_elantra_hyundai_new elantra_new,0.015445402298850575
+17,161,17_grille_hood_lines_car,0.014457614942528736
+18,160,18_mercedes_benz_mercedes benz_class,0.014367816091954023
+19,155,19_navigation_display_information_view,0.01391882183908046
+20,149,20_prius_prius prime_hybrid_prime,0.013380028735632184
+21,144,21_polestar_brand_volvo_electric,0.01293103448275862
+22,128,22_porsche_taycan_panamera_new panamera,0.011494252873563218
+23,123,23_door_trunk_meters_open,0.011045258620689655
+24,121,24_ferrari_race_mclaren_fiat,0.01086566091954023
+25,115,25_steering_suspension_control_sl,0.010326867816091954
+26,109,26_camry_trd_available_models,0.009788074712643677
+27,108,27_connect_audio_corolla_safety,0.009698275862068966
+28,108,28_rav4_rav4 prime_hybrid_prime,0.009698275862068966
+29,105,29_mustang_mach_mustang mach_ford,0.009428879310344827
+30,101,30_eqs_eqe_eq_mercedes,0.009069683908045977
+31,94,31_engine_horsepower_liter_cylinder,0.008441091954022989
+32,80,32_highlander_grand highlander_available_standard,0.007183908045977011
+33,80,33_light_lights_led_laser,0.007183908045977011
+34,79,34_amg_gt_amg gt_gt door,0.007094109195402299
+35,75,35_crown_toyota crown_toyota_japan,0.006734913793103448
+36,71,36_pacifica_rogue_minivan_chrysler,0.006375718390804598
+37,70,37_battery_lithium_lithium ion_ion,0.006285919540229885
+38,69,38_nsx_acura_supercar_ilx,0.006196120689655173
+39,68,39_k27_kandy_america_auto evolution,0.00610632183908046
+40,64,40_corolla_corolla hybrid_apex_hybrid,0.005747126436781609
+41,62,41_infiniti_infinity_brand_market,0.005567528735632184
+42,56,42_buick_brand_sportback_china,0.005028735632183908
+43,55,43_vancouver_co2_bc_city,0.0049389367816091954
+44,55,44_cover_console_center_storage,0.0049389367816091954
+45,55,45_kix_toyota_tax_federal,0.0049389367816091954
+46,54,46_key_digital key_digital_unlock,0.004849137931034483
+47,53,47_mode_comfort mode_mode comfort_comfort,0.00475933908045977
+48,52,48_charging_i3_bmw_cable,0.004669540229885058
+49,52,49_q50_infiniti_infiniti q50_infinity,0.004669540229885058
+50,50,50_bmw_new bmw_bmw series_series,0.004489942528735632

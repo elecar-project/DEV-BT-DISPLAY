@@ -657,6 +657,38 @@ code {
 .candidate-table .candidate-best_balance td { background: #e2f0e5; }
 .candidate-table .candidate-best_balance td:first-child { color: #165f4d; font-weight: 800; }
 
+.m01-strategy-table { min-width: 1050px; }
+.m01-strategy-table th:nth-child(1) { width: 12%; }
+.m01-strategy-table th:nth-child(2) { width: 28%; }
+.m01-strategy-table th:nth-child(n + 3) { width: 10%; }
+.m01-strategy-links {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 24px 0 30px;
+}
+.m01-strategy-link {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  padding: 16px;
+  text-decoration: none;
+}
+.m01-strategy-link strong { display: block; font-size: 1.06rem; }
+.m01-strategy-link span { color: var(--muted); display: block; font-size: 0.86rem; line-height: 1.55; margin-top: 7px; }
+.m01-strategy-link.candidate-lowest_noise { border-top: 4px solid #c37a17; }
+.m01-strategy-link.candidate-most_topics { border-top: 4px solid #24738c; }
+.m01-strategy-link.candidate-best_balance { border-top: 4px solid #35806d; }
+.m01-strategy-link:hover { box-shadow: 0 8px 20px rgba(31, 70, 110, 0.13); transform: translateY(-2px); }
+.m01-baseline-table, .m01-representation-table { min-width: 720px; table-layout: fixed; width: 100%; }
+.m01-baseline-table th:first-child { width: 34%; }
+.m01-topic-table { min-width: 1080px; }
+.m01-topic-table th:nth-child(1) { width: 8%; }
+.m01-topic-table th:nth-child(2) { width: 9%; }
+.m01-topic-table th:nth-child(3) { width: 34%; }
+.m01-topic-table th:nth-child(4), .m01-topic-table th:nth-child(5) { width: 24.5%; }
+
 .table-note {
   margin: 0.85rem 0 0;
   padding: 0.8rem 1rem;
@@ -1291,6 +1323,8 @@ code {
   .figure-gallery {
     grid-template-columns: 1fr;
   }
+
+  .m01-strategy-links { grid-template-columns: 1fr; }
 
   .hero {
     padding: 26px;

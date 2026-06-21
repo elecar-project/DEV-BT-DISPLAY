@@ -24,6 +24,7 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 | [A03-2：del + tok min_cluster_size 掃描]({{ '/results/a03-2-del-tok.html' | relative_url }}) | 21 組 HDBSCAN 最小群集大小的敏感度分析 | 可檢視 |
 | [8New-LLM30]({{ '/results/m02-llm30.html' | relative_url }}) | 最佳參數模型，LLM 命名 30 次驗證 | 可檢視 |
 | [8New-LLM50]({{ '/results/m02-llm50.html' | relative_url }}) | 同一路徑以 50 次命名驗證，資料夾名稱歷史上誤標為 tp-30 | 可檢視 |
+| [M01-8 三策略主程式]({{ '/results/m01-8-historical.html' | relative_url }}) | 歷史比較用途：A05-8.4 human 停用詞與三種候選策略的完整重跑 | 可檢視 |
 | [2020 前]({{ '/results/m03-2020-before.html' | relative_url }}) | 年份切分後的 2008-2019 主題模型 | 可檢視 |
 | 其他 T01-T04 節點 | 驗證與敏感度分析 | 待整理 |
 

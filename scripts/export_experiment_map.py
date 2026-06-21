@@ -30,6 +30,8 @@ LINKS = {
     "2020 前": "../../results/m03-2020-before.html",
 }
 NODE_LINKS = {
+    "mRq0KLDsOoRAvhbJz9B0-46": "../../results/m01-8-historical.html",
+    "mRq0KLDsOoRAvhbJz9B0-69": "../../results/m01-8-historical.html",
     "mRq0KLDsOoRAvhbJz9B0-19": "../../results/a04-2-del-tok.html",
     "mRq0KLDsOoRAvhbJz9B0-21": "../../results/a04-3-del-tok-para12-80.html",
     "mRq0KLDsOoRAvhbJz9B0-27": "../../results/a04-5-repl-tok.html",

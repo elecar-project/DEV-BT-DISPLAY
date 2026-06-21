@@ -1,0 +1,30 @@
+[
+  {
+    "representation_model": "llm_openai_gpt_5_5",
+    "model": "openai/gpt-5.5",
+    "topic": "20",
+    "error": "'NoneType' object is not subscriptable",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspaces/Dev-BT/Result/.m06.05_Main01-run/M01-8(orig)_tok(para12-80)/run_M01_8_orig_tok_para12_80_human_stopwords_repr.py\", line 193, in extract_topics\n    label = (response.choices[0].message.content or \"\").strip()\n             ~~~~~~~~~~~~~~~~^^^\nTypeError: 'NoneType' object is not subscriptable\n"
+  },
+  {
+    "representation_model": "llm_openai_gpt_5_5",
+    "model": "openai/gpt-5.5",
+    "topic": "26",
+    "error": "'NoneType' object is not subscriptable",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspaces/Dev-BT/Result/.m06.05_Main01-run/M01-8(orig)_tok(para12-80)/run_M01_8_orig_tok_para12_80_human_stopwords_repr.py\", line 193, in extract_topics\n    label = (response.choices[0].message.content or \"\").strip()\n             ~~~~~~~~~~~~~~~~^^^\nTypeError: 'NoneType' object is not subscriptable\n"
+  },
+  {
+    "representation_model": "llm_openai_gpt_5_5",
+    "model": "openai/gpt-5.5",
+    "topic": "33",
+    "error": "'NoneType' object is not subscriptable",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspaces/Dev-BT/Result/.m06.05_Main01-run/M01-8(orig)_tok(para12-80)/run_M01_8_orig_tok_para12_80_human_stopwords_repr.py\", line 193, in extract_topics\n    label = (response.choices[0].message.content or \"\").strip()\n             ~~~~~~~~~~~~~~~~^^^\nTypeError: 'NoneType' object is not subscriptable\n"
+  },
+  {
+    "representation_model": "llm_openai_gpt_5_5",
+    "model": "openai/gpt-5.5",
+    "topic": "48",
+    "error": "'NoneType' object is not subscriptable",
+    "traceback": "Traceback (most recent call last):\n  File \"/workspaces/Dev-BT/Result/.m06.05_Main01-run/M01-8(orig)_tok(para12-80)/run_M01_8_orig_tok_para12_80_human_stopwords_repr.py\", line 193, in extract_topics\n    label = (response.choices[0].message.content or \"\").strip()\n             ~~~~~~~~~~~~~~~~^^^\nTypeError: 'NoneType' object is not subscriptable\n"
+  }
+]
