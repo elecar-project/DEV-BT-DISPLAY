@@ -1,0 +1,358 @@
+Topic,Count,Name,LLM,KeyBERT,POS,MMR,LLM_Status,LLM_Model,Prompt_Status,Prompt
+-1,3894,-1_car_new_drive_driving,Noise / Outlier,"steering, driving, vehicle, driver, car, drive, road, toyota","car, new, drive, available, safety, control, standard, electric","car, new, drive",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: -1
+Keywords: -1_car_new_drive_driving
+Representative snippets:
+- In addition, wireless Android Auto compatibility makes it easy to stay connected to Android devices and access various apps and services from Google, including YouTube Music and Google Maps.
+- In addition, wireless Android Auto compatibility makes it easy to stay connected to Android devices and access various apps and services from Google, including YouTube Music and Google Maps.
+- Beyond comfort, Corolla's onboard technology puts a big emphasis on safety. Every Toyota Corolla comes with Toyota Safety Sense 3.0, which includes Pre-Collision System with Pedestrian Detection, Lane Departure Alert with Steering Assist, Automatic High Beams, Full-Speed Range Dynamic Radar Cruise Control, Lane Tracing Assist, Road Sign Assist, and Proactive Driving Assist.
+- It'll help you stand out when you're ready to step up. Ready to see for yourself?
+- Oh, this is great. start ignition standard active sound control standard multi-view rear camera standard and as if all that wasn't enough Acura went ahead and made its Acura watch advanced safety and driver assistance technology package standard huh standard that has a nice ring to it doesn't it this package includes forward collision warning collision mitigation braking lane departure warning lane keeping assist roa
+- Speaking of super smart, how about a GPS linked solar sensing system that measures the sun's position and intensity to adjust cabin temperatures.
+
+Topic label:
+"
+0,4852,0_car_new_vehicle_driving,,"vehicle, car, vehicles, cars, driving, audi, bmw, corolla, mercedes, kia","car, new, vehicle, electric, features, cars, available, driver, performance","car, new, vehicle, driving",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 0
+Keywords: 0_car_new_vehicle_driving
+Representative snippets:
+- But the Mercedes-Benz S-Class was always ahead with time. One more thing I really love about this car.
+- Additionally, the standard Blind Spot Monitor with Rear Cross Traffic Alert and Safe Exit Alert are designed to help warn drivers if a vehicle has entered a blind spot, while the available Front and Rear Parking Assist with Automatic Braking and Panoramic View Monitor are designed to help drivers maneuver in tight spaces.
+- Plus, driver assistance features like the standard Blind Spot Monitor with Rear Cross-Traffic Alert and Safe Exit Alert brings added convenience behind the wheel, while available technologies like the front and rear parking assist with automatic braking and the panoramic view monitor help enhance driver confidence when maneuvering in tight spaces.
+- Hey, I'm Bradley Hasenmaier, and I am thrilled to share a few highlights of the 2020 Acura ILX with incredible standard features and bold new styling.
+- Let's go. When you get to the ILX, you really see some style with these sharp July LED headlights and that bold pentagon grill.
+- And you can really tell that the car's been designed around the driver.
+
+Topic label:
+"
+1,970,1_world_product_customers_need,,filtered_topic_terms_unavailable,filtered_topic_terms_unavailable,filtered_topic_terms_unavailable,not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 1
+Keywords: 1_world_product_customers_need
+Representative snippets:
+- And we need to trust the people we hire and let them do the best work they can do.
+- Well, I know what we need you to do, and I'm here to make sure you see why.
+- We work a lot with freelancers, but... that is even make us a little bit more sometimes working with freelancers make a little bit more hard because you need to make they feel part of the company and understand the you know the culture of the company and your goals as a leader as well when is your team you're working.
+- This is a sponsored video, by the way. I'm just super excited.
+- They're gonna want to film later at night, so they can show off some LED lights 118 and we have to wait till sunset even have the show started We're out near Edwards Air Force Base Which is where Will Smith went in Independence Day and go see it and maybe even drive it An expensive car, but because of that it's really cool And I'm on board with this because it means I get to go check out all
+- But I'll take you for a spin. I'll settle for that. All right.
+
+Topic label:
+"
+2,756,2_charging_charge_battery_range,,"charging, charge, charger, charged, recharge, chargers, battery, electric, kilowatts, kilowatt","charging, charge, battery, range, fast, charger, minutes, level, kilowatt","charging, charge, battery, range, fast, charger, volt, kilowatt",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 2
+Keywords: 2_charging_charge_battery_range
+Representative snippets:
+- It will go 0 to 60 in just over seven seconds. After all that spirited driving, you can recharge to a 100-mile range in only 30 minutes, or climb back up to 80% charge in as little as 75 minutes using a DC fast charger, giving you the range and the charging speed you need where you want, when you want it.
+- But a new charging feature that's standard on Bolt EUV is a dual-level charge cord that offers both 120 volt and 240 volt options for fast and convenient charging without the need to buy a separate charging unit.
+- While many electrified vehicle owners opt to do most of their charging at home with either a Level 1 or professionally installed Level 2 charging unit, public charging stations are widely available for charging away from home, adding the peace of mind that comes with being able to replenish your battery charge whenever needed.
+- The ability to get a full tank or charge right at home is a feature where we'll one day think, wait, we used to regularly drive somewhere else for this?
+- Weird. and there are many home charging options to fit your needs.
+- There's the included 9.6 kilowatt mobile plug-in charger, an available home installation charger, or even an available 19.2 kilowatt charging capability that includes charge ports on both sides.
+
+Topic label:
+"
+3,481,3_interior_design_beautiful_modern,,"interior, design, inside, luxury, designers, materials, designer","interior, design, beautiful, modern, materials, designers, look, luxury, sculpture","interior, design, beautiful, modern, materials, designers, look",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 3
+Keywords: 3_interior_design_beautiful_modern
+Representative snippets:
+- Now as we head into the interior, I want you to really take a look at the driver-oriented structure of this interior design.
+- You know, of course I want to go on about the interior.
+- I like the side view here from the front. Let's talk about the interior design.
+- And then when you go to the interior it only gets better.
+- What we've done here is we've separated it now from the bonnet here and moved the whole thing down.
+- It's a little bit more sporty than before. We've got more integrated design elements and more athletic feeling.
+
+Topic label:
+"
+4,411,4_seats_seat_leather_space,,"seats, cargo, seating, spacious, seat, passengers, trunk, compartment, cabin, rear","seats, seat, space, leather, cargo, rear, heated, cubic, passengers","seats, seat, cargo, rear, passengers, row, fold, comfortable, trunk, seating",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 4
+Keywords: 4_seats_seat_leather_space
+Representative snippets:
+- Limited has ventilated front seats, available heated rear seats, along with a power back door.
+- and the rear seats are 60-40 split folding, so there's 57 cubic feet of max cargo space available for all your on-the-go needs.
+- I like it a lot. And also the seats are new, right?
+- And it only gets better on the inside with paddle shifters and redesigned sports seats.
+- And if you really want to up the the Annie, opt for the NSX inspired ultra suede trimmed sport seat on the a-spec package engineered with lateral grip to keep you firmly planted in your seat.
+- Beautifully stitched, beautiful leather. These seats, 12-way adjustable, heated and ventilated, soft Milano leather.
+
+Topic label:
+"
+5,335,5_display_navigation_screen_touchscreen,,"displays, screens, touchscreen, screen, display, hyperscreen, audio, navigation, digital, wireless","display, navigation, screen, touchscreen, information, center, console, digital, new","display, navigation, screen, touchscreen, information, console, digital, interface",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 5
+Keywords: 5_display_navigation_screen_touchscreen
+Representative snippets:
+- Plus, an available 12.3-inch digital gauge cluster and an available 10-inch head-up display help keep important information in the driver's line of sight.
+- What's more, an available 12.3-inch LCD multi-information display and an available 10-inch head-up display puts key information in the driver's line of sight, giving RAV4 a high-tech feel.
+- Plus, an available 12.3-inch digital multi-information display and an available 10-inch head-up display puts key information in the driver's line of sight.
+- Since most of the buttons and controls have been replaced with two large displays, the feature adds simplicity and minimalism to functionality.
+- The intuitive interface, inspired by typical smartphone navigation, optimizes the driver's control of settings and infotainment, as well as enhanced handwriting recognition.
+- The next generation of Audi Connect introduces connected navigation, 3D city models with predictive routing, and a more refined natural language selection system.
+
+Topic label:
+"
+6,222,6_horsepower_engine_torque_liter,,"horsepower, engine, turbocharged, v8, engines, powertrain, v6, turbo, motor, motors","horsepower, engine, torque, liter, power, motor, cylinder, electric, pound, transmission","horsepower, engine, torque, liter, motor, cylinder, electric, transmission, turbo, v6",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 6
+Keywords: 6_horsepower_engine_torque_liter
+Representative snippets:
+- This is through an intelligent variable transmission. Now for those who want to take their driving experience to the next level, the GT-Line Turbo model is available with a 1.6 liter turbocharged engine that cranks out 190 horsepower and 195 pound-feet of torque.
+- The 3.0-liter V6 engine in the Q8 boasts an impressive 335 horsepower, 369 pound-feet of torque, and can go from 0 to 60 in 5.6 seconds.
+- This particular engine is a 1.5 liter turbocharged three-cylinder when combined with a big traction motor puts out 536 horsepower and 550 pound-feet of torque.
+- The ILX has 201 horsepower, it's got an eight-speed dual clutch transmission and a 2.4 liter i-VTEC engine.
+- Now this thing is fun to drive. It has a whopping 377 total system horsepower.
+- a v6 engine in the back and then behind that v6 engine there's another direct drive motor and then so that electric motor is actually linked up to the crankshaft of this engine and then it's all sending all of that torque from the engine and the motor to the rear transmission and then splitting it to the two rear wheels.
+
+Topic label:
+"
+7,184,7_ioniq_hyundai_charging_safety,,"ioniq, hyundai, ev, hybrid, innovative, sonata, vehicle, modular, electric, egmp","charging, new, safety, electric, platform, assist, space, avoidance, features","ioniq, hyundai, charging, electric, assist, egmp, mirai, avoidance, ev, features",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 7
+Keywords: 7_ioniq_hyundai_charging_safety
+Representative snippets:
+- So there you have it, the first ever Hyundai IONIQ 6. With its bold new exterior design, truly innovative interior, premium tech, and advanced safety features, IONIQ 6 is a Hyundai unlike any you have ever seen.
+- We are thrilled to introduce you to Hyundai's first ever IONIQ 5.
+- Now, IONIQ 6 is the newest member of the IONIQ family of electric vehicles, and it's built on the same electric global modular platform as our immensely popular IONIQ 5.
+- And second, at our Mirafuri facility, another facility in Torino, we collect solar energy from the rooftop and that solar power charges every 500e that leaves the factory.
+- Today, our eco-friendly lineup includes the IONIQ family with hybrid, plug-in hybrid and electric variants.
+- That's why Hyundai expanded its SmartSense safety technologies on the new Elantra.
+
+Topic label:
+"
+8,166,8_rav4_rav4 prime_prime_hybrid,,"rav4, ev, hybrid, toyota, suv, vehicle, prime, rear, standard, lane","hybrid, available, road, standard, grade, plug, performance, safety","rav4, hybrid, prime, trd, toyota, standard, safety, woodland, seats",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 8
+Keywords: 8_rav4_rav4 prime_prime_hybrid
+Representative snippets:
+- And it quickly becomes clear that RAV4 Prime lives up to its name. Visit toyota.com slash RAV4 Prime to learn more.
+- Want to learn more? Discover RAV4 Prime Plug-in Hybrid EV today on toyota.com slash RAV4 Prime.
+- And now, let's just do it again. The 2021 RAV4 Prime is the most powerful RAV4 ever.
+- In addition, separated fog lights are no longer necessary. The new light signature with two upside down L's makes for a dynamic look.
+- cooling in the rear and everything developed bespokely for the Nevada. Here we can see one of the final pre-series cars and all of them have a planned life.
+- And what about the wheels? Now, they aren't bad. 18-inch wheels on the Camry.
+
+Topic label:
+"
+9,162,9_prius_prius prime_prime_hybrid,,"prius, toyota, hybrid, prime, innovative, convenience, efficiency, vehicle, drivers, driving","hybrid, efficiency, plug, efficient, fuel, drive, new, available","prius, prime, hybrid, toyota, efficiency, fuel, drive, le, estimated",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 9
+Keywords: 9_prius_prius prime_prime_hybrid
+Representative snippets:
+- Add all of that together, and it's clear that Prius Prime goes above and beyond, cementing Toyota's electrification leadership. Learn more today at toyota.com slash Prius Prime.
+- Stay tuned to learn more about Prius Prime later in the video, but for now, let's find out more about Prius.
+- And it's easy to see how Prius Prime is ready to take the lead. Learn more today at toyota.com slash Prius Prime.
+- The X-Pro adds LED lights, LED projector headlights, fog lights to illuminate the trail ahead.
+- More than 20 years ago, the Toyota Prius changed the automotive landscape when it introduced the world to modern hybrid technology.
+- In the years since it first hit the stage, Prius has grown through four generations, as well as the release of multiple related models.
+
+Topic label:
+"
+10,159,10_camry_toyota_safety_trd,,"camry, toyota, avalon, sedans, drivers, lane, safety, prius, sedan, drive","camry, safety, drive, new, available, features, sense, convenience","camry, toyota, safety, trd, drive, prius, convenience, standard",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 10
+Keywords: 10_camry_toyota_safety_trd
+Representative snippets:
+- and that goes beyond its array of 10 airbags. All 8th generation Camry models come standard with Toyota Safety Sense P, an advanced suite of active safety technologies like Pre-Collision System with Pedestrian Detection, Lane Departure Alert with Steering Assist, and more.
+- In addition, a handful of Camry Hybrid models rounds out the Camry family.
+- Yeah, that's the same system that we use in the Camry. And you know what?
+- One of those tools is our Ford Racing Simulator in North Carolina.
+- Camry is getting 39 mpg highway. It has a 2.5 liter engine putting out 203 horsepower.
+- And here's Camry mixing body color panels right into the black mesh inserts.
+
+Topic label:
+"
+11,146,11_mustang_mach_mustang mach_mustangs,,"mustang, mustangs, ford, mach, suv, vehicle, vehicles, car, electric","mustang, mustangs, vehicle, electric, architecture, design, new","mustang, mach, mustangs, vehicle, electric",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 11
+Keywords: 11_mustang_mach_mustang mach_mustangs
+Representative snippets:
+- So I'm always getting asked if the Mustang Mach-E handles like a Mustang, and I can definitely tell you yes.
+- Mustang is a me car. It's about me, it's indulgence. This is a we car.
+- That was Mustang. It was really a mandate of show us what you've got.
+- when you achieve something remarkable, you have caught lightning in a bottle.
+- Look, the Dodge name became known for standout design and performance. The name Dodge, your name 100 years from now, has become synonymous with baddest, quickest, fastest, dodgiest.
+- That's what Enzo Ferrari said. And that was the reason why we decided to celebrate this beautiful piece of engineering even more than normally also on the Spyder version.
+
+Topic label:
+"
+12,138,12_crown_toyota crown_toyota_japan,,"crown, toyota, flagship, electrified, powertrain, vehicle, performance, hybrid, platinum, driving","crown, sedan, performance, generation, new, story, chief, comfort, development","crown, toyota, japan, platinum, sedan, performance, comfort, development, standard, flagship",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 12
+Keywords: 12_crown_toyota crown_toyota_japan
+Representative snippets:
+- When all of these factors are taken together, it's clear that Toyota Crown is a leader, a uniquely electrified flagship with style, performance, and technology. Want to learn more? Discover Toyota Crown today on toyota.com.
+- I sincerely want the world to know what Japan's crown is all about.
+- Two years later, the crown team has manifested a crown for the coming era.
+- The result, frankly, is an epic growth story that rewrote the rule of three to include now four very recognizable rings.
+- The four rings stand for never standing still. Now it's time for you to take action.
+- Not many young engineers had such a huge influence that makes me every time proud.
+
+Topic label:
+"
+13,125,13_sound_quiet_noise_exhaust,,"exhaust, exhausts, acoustic, noise, engine, sound, silent, loud, quiet, car","sound, quiet, noise, exhaust, sounds, car, engine, wind, acoustic, silence","sound, quiet, noise, exhaust, car, engine, wind, acoustic, silence",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 13
+Keywords: 13_sound_quiet_noise_exhaust
+Representative snippets:
+- The exhaust, it doesn't sound like your typical four-cylinder. It has a very aggressive sound.
+- And it's interesting. It's a noise that's meant to sound like an AMG while not trying to sound like an internal combustion engine.
+- The sound of silence is actually a really important concept for us in air acoustics development for the e-tron because it doesn't have a combustion engine it's extremely quiet so that means that all other noise sources will be all the more prominent so we set ourselves the target of making a really really quiet vehicle for the e-tron.
+- to go because the motor has to like rev up and that's it.
+- Thanks to a bigger distance to the engine, the temperature window for exhaust gas processing is extended and that means emissions can, with continuously high exhaust temperatures, for example if you drive swiftly over the motorway, can be best reduced.
+- The Audi wind tunnel, when it was starting, it was an industrial wind tunnel with ground simulation, so a moving round underneath the car before only used in Formula One or because our wind tunnel is so silent we are able to develop more silent cars.
+
+Topic label:
+"
+14,112,14_warranty_maintenance_roadside_roadside assistance,,"mileage, warranty, toyotacare, warranties, hybrid, toyota, hyundai","warranty, maintenance, roadside, hybrid, assistance","warranty, roadside, hybrid, toyotacare, assistance, unlimited, mileage, hyundai",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 14
+Keywords: 14_warranty_maintenance_roadside_roadside assistance
+Representative snippets:
+- And two-year unlimited mileage of 24-hour roadside assistance. The strength of RAV4's value is further enhanced in its hybrid grades, which come with an 8-year or 100,000-mile hybrid system warranty, whichever comes first, and a 10-year or 150,000-mile hybrid battery warranty, whichever comes first, making them strong choices for long-term ownership.
+- Add in that every new Prius Prime includes ToyotaCare, which provides 2 years or 25,000 miles of scheduled maintenance, along with enhanced 3-year unlimited mileage of 24-hour roadside assistance, as well as exceptional hybrid warranty coverage like the 10-year, 150,000-mile Hybrid Battery Warranty.
+- along with enhanced three-year unlimited mileage of 24-hour roadside assistance, as well as exceptional hybrid warranty coverage like the 10-year, 150,000-mile hybrid battery warranty.
+- Ladies and gentlemen, in the United States, our first fully electric vehicle will start at an MSRP of $74,800 before any federal tax credits.
+- Even ownership is made easy with an 8-year, 100,000-mile limited warranty for your battery.
+- Even ownership is made easy with an 8-year, 100,000-mile limited warranty for your battery, and there's also less maintenance.
+
+Topic label:
+"
+15,112,15_20_19_black_18,,"rims, tires, standard, size","black, exhaust, available, designs","19, spoke, exhaust, designs, hybrid, standard",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 15
+Keywords: 15_20_19_black_18
+Representative snippets:
+- First, LE and XLE grades feature a unique front fascia shape and grille design, as well as alloy wheel designs on the gas and all-wheel drive grades, while SE and XSE grades boast their own distinct lower fascia shape, honeycomb grille, and either 18-inch or 19-inch wheels.
+- So these are our 20-inch multi-spoke wheels. The coupe over there, we have our 19 multi-spoke black wheels, so these are available in black as well.
+- Hybrid SE and XSE, on the other hand, feature 18-inch multi-spoke black sport alloy wheels.
+- And they also have a new wheel design so these are going to be 21 inch wheels front and rear.
+- A new rear bumper and wheel options up to 22 inches on the Q8 Sportback e-tron round out the exterior updates.
+- And what you can see here is the 19 inch M light alloy wheel double spoke styling 791M in bicolour jet black.
+
+Topic label:
+"
+16,109,16_grand tour_tour_grand_audi,,"tour, grand, bmw, mercedes, titled, volvo, series, enjoyed","manager, designer, responsible, episode, product, head, tron, new","tour, grand, audi, designer, responsible, bmw, episode, head, tron",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 16
+Keywords: 16_grand tour_tour_grand_audi
+Representative snippets:
+- of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of One of the most important things is to produce an aviancata with this particular form, which is particularly important.
+- We didn't think about making a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour
+- of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour of a Grand Tour
+- Are both of the other episodes going on your channel? They're gonna be on engineering explained.
+- Once again, my name is Tony Brown, Audi technologist, and I hope to hear from you soon.
+- My name is Cesar Montara, I'm the head of the light department at Audi.
+
+Topic label:
+"
+17,108,17_xc90_ex90_genesis_xc40,,"xc90, xe90, ex90, xc40, g90, ex30, volvo, x5, gv70, automotive","experience, new, electric, pure, car, cars, technology, true, luxury","xc90, ex90, genesis, xc40, g90, recharge, gv60, electric, use, suv",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 17
+Keywords: 17_xc90_ex90_genesis_xc40
+Representative snippets:
+- So now the XC90 gets the same new experience that we've brought to the XC90 or the EX90 and the EX30.
+- And the new XC90 is available to order starting today. This is a very important day for Volvo cars, the EX90 and the XC90 electric and hybrid, two flagships, the best of both worlds.
+- The XC90 is as safe as an XC90 has ever been. It's also more comfortable than ever before.
+- The X5 here that hosts a six-cylinder which is tremendously nicely but you combine this technology with quite a various of engines.
+- The compact vehicles start with a three-cylinder combustion engine, then we have four cylinders in the three, in the X3, and the six-cylinder in X5 and 7 series.
+- But now as a father of three kids, the X5 is my favorite for the moment.
+
+Topic label:
+"
+18,104,18_audio_jbl_speaker_premium,,"speakers, jbl, speaker, audio, subwoofer, soundbar, playlists, bose, bass, surround","audio, premium, speaker, sound, speakers, available, multimedia, experience, watts","audio, jbl, speaker, speakers, connect, watts, immersive, subwoofer, bose",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 18
+Keywords: 18_audio_jbl_speaker_premium
+Representative snippets:
+- And this can all be paired with available JBL Premium Audio with 11 speakers to make the most of these great services.
+- This audio multimedia experience is elevated even further by the available 11-speaker JBL premium audio system, which plays road trip playlists in high fidelity.
+- To make the most of these features, Crown can also be equipped with an 11-speaker JBL premium audio system.
+- And with the available 19 speaker Bang & Olufsen sound system, the A4 can be your own personal concert hall.
+- And you just see the music, you see these lines going up and down, so you can actually see sound.
+- Can you hear it? Extraction, reflect, rise, different angle. Be the clock, control time and space.
+
+Topic label:
+"
+19,101,19_climate_temperature_climate control_control,,"climate, heating, hvac, steering, vents, heated, controls, temperature, warm, automatic","climate, temperature, control, heated, cold, air, zone, automatic, hot, controls","climate, temperature, heated, zone, automatic, controls, vents, hvac, degrees, cabin",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 19
+Keywords: 19_climate_temperature_climate control_control
+Representative snippets:
+- Plus, the available dual-zone automatic climate control lets drivers and passengers dial in the ideal temperature.
+- Plus, standard dual-zone automatic climate control ensures that the cabin is set to the ideal temperature.
+- An available heated steering wheel, heated and ventilated seats, and dual climate control help keep you cozy no matter the temperature outside.
+- Oh, look at that heat exchange here. Back is so long, man. We're here at golden hour.
+- You can slide your finger up and down to get the temp a little bit faster and the same thing goes for your fan speed there as well.
+- The Q8 e-tron's climate control can be set and started remotely, right from the My Audi app or preset to turn on automatically any day and time of the week, even in your garage.
+
+Topic label:
+"

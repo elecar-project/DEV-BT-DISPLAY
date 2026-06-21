@@ -1,0 +1,103 @@
+Topic,Count,Name,LLM,KeyBERT,POS,MMR,LLM_Status,LLM_Model,Prompt_Status,Prompt
+-1,458,-1_polestar_clarity_accord_elantra,Noise / Outlier,"honda, vehicles, hybrid, vehicle, accord, car, electrified, clarity, elantra, brand","clarity, accord, new, car, brand, customers, fuel, series, cell","polestar, clarity, accord, elantra, prius, car, honda, brand",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: -1
+Keywords: -1_polestar_clarity_accord_elantra
+Representative snippets:
+- Today we introduce the Honda Clarity line. We have a fuel cell powered Clarity, a pure battery electric Clarity, and a plug-in hybrid.
+- The Clarity fuel cell, Clarity electric, and Clarity plug-in hybrid. Today, there are a lot of claims in this space, but no automaker knows more about customers of electrified vehicles than Honda.
+- The Clarity Fuel Cell, Clarity Electric, and Clarity Plug-in Hybrid. Today, there are a lot of claims in this space, but no automaker knows more about customers of electrified vehicles than Honda.
+- Along with the Accurate team and Global Honda, I am excited about this new model and I sincerely hope our customers around the world will share our passion. Thank you.
+- It also contains the battery pack, electronics, chassis and suspension components, and crash structures.
+- You can also visit all of them. You can find them in the article in the description box below, and you can also visit them on the website as well.
+
+Topic label:
+"
+0,6972,0_car_new_vehicle_electric,,"car, cars, vehicle, design, engine, rear, drive, hybrid, driving","car, new, vehicle, driving, design","car, new",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 0
+Keywords: 0_car_new_vehicle_electric
+Representative snippets:
+- It also happens to be electric. The new Leaf is the future of Nissan.
+- We'll have to make a new one soon because there's more to come.
+- Now our engine is mated with an all-new nine-speed dual-clutch transmission of our own design, which houses a electric motor at the rear, directly driving the rear wheels.
+- My weekend was absolutely fabulous. I felt like a celebrity. I don't want it to end.
+- The handling was spectacular, I thought. Handles really well. Like no money in my boxcar.
+- He was having far too much fun. All the technology is easy to use.
+
+Topic label:
+"
+1,224,1_hyundai_sonata_ioniq_kia,,"hyundai, sonata, kia, car, hybrid, vehicle, ioniq, drive, quality, powertrains","new, fleet, vehicle, better, features","hyundai, sonata, ioniq, kia, new, 2018, fleet, optima, vehicle",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 1
+Keywords: 1_hyundai_sonata_ioniq_kia
+Representative snippets:
+- It's a lot more fun to drive and it was just a great experience all around. The 2018 Hyundai Sonata, our best Sonata ever.
+- How can you beat that? The 2018 Hyundai Sonata, our best Sonata ever.
+- I had a really great time, and I can't wait to jump behind the wheel of one of these vehicles, hopefully very soon. The 2018 Hyundai Sonata, our best Sonata ever.
+- This plant, you may or may not know, was a 2011 JD Power Platinum Award winner.
+- With more than 120 industry accolades, it's the most awarded vehicle in the segment, including multiple JD Power Initial Quality Awards, a better IQS score than Honda or Toyota for three years running, and holding the IHS Award for Owner Loyalty for the last 14 straight years.
+- And when you're the most awarded vehicle in the entire category, you don't settle for anything but more.
+
+Topic label:
+"
+2,200,2_bmw_series_i8_new bmw,,"bmw, car, i3, hybrid, vehicle, engine, driving, ultimate, motor, standard","series, i8, new, car, driving, design, electric, carbon","bmw, series, i8, new, car, i3, driving, design, x6",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 2
+Keywords: 2_bmw_series_i8_new bmw
+Representative snippets:
+- Very impressive is also the way to interact with the all-new BMW 7 Series.
+- Just think of BMW i or BMW M. Now carbon fiber comes to the all-new BMW 7 Series.
+- Introducing the all-new BMW 7 Series, the flagship of BMW. It embodies everything BMW stands for and features a great deal of innovations you've never seen before.
+- Hey everyone, how's it going? For today's video let's take an up close and personal exclusive in-depth look at the all-new BMW i8.
+- And this is going to be a detailed in-depth review of the i8.
+- And before we begin I'd like to take a moment to extend a big thanks and special shout out to Flow BMW located in Winston-Salem, North Carolina for providing the i8 featured in today's in-depth review.
+
+Topic label:
+"
+3,174,3_infiniti_q50_infinity_new,,"q50, infiniti, q60, sedan, luxury, brand, hybrid, performance, car, cars","infinity, new, brand, performance, cancer, market, design, technology","infiniti, q50, infinity, brand, performance, cancer, johan, market",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 3
+Keywords: 3_infiniti_q50_infinity_new
+Representative snippets:
+- The Q50 is the latest premium performance sedan from Infiniti. The Q50 is longer, lower, and wider than Infiniti's previous G37 sedan, and it has world's first advances for the luxury market.
+- Hello, I'm Jane, a product specialist for Infiniti, and this is the all-new Infiniti Q50.
+- So ladies and gentlemen, please welcome the new Infiniti Q50. Here it is, the new Infiniti Q50.
+- Yeah, that's it. Now we come to the end. That's all I have to say about Schoen.
+- That is one of the things I really like about Captain Future.
+- Captain Future is the best. That's why it's so cool. And, yeah, I like that.
+
+Topic label:
+"
+4,165,4_volvo_xc90_new_new xc90,,"xc90, xc40, v90, s90, volvo, design, model, automotive, new, engine","new, design, safety, cars, car, world, seat, beginning, automotive","volvo, new, xc90, xc40, design, safety, cars, s90",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 4
+Keywords: 4_volvo_xc90_new_new xc90
+Representative snippets:
+- New intelligence, a new beginning. The all-new XC90 drives Volvo's impeccable speed.
+- The all-new XC90. A new design, a new beginning. The all-new XC90.
+- The all-new XC90. A new design, a new beginning. The all-new XC90.
+- Inside and out, we've taken a human-centered approach to design. And with me today from our Acura Design Studio in Torrance, California, is the NSX exterior design lead, Michelle Christiansen, and interior design lead, John Norman.
+- My name is Adrian van Hooydonk, and I'm the design director for the BMW Group.
+- As I said, I'm the leader of the dashboard. I'm a bit disappointed here.
+
+Topic label:
+"

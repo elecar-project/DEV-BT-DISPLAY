@@ -1,0 +1,171 @@
+Topic,Count,Name,LLM,KeyBERT,POS,MMR,LLM_Status,LLM_Model,Prompt_Status,Prompt
+-1,3216,-1_car_new_vehicle_driving,Noise / Outlier,"hybrid, car, electric, vehicle, bmw, performance, fuel, drive, power, driving","car, new, vehicle, fuel, power, design, performance, air","car, new",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: -1
+Keywords: -1_car_new_vehicle_driving
+Representative snippets:
+- And then as we get driving, I'll show you some three new modes that we have.
+- The Clarity Electric is an early part of that effort and is designed for the EV purists, customers who want the experience of an all-electric vehicle combined with the premium quality, five-passenger sedan space and affordability of a Clarity.
+- It will be available as a hybrid with a class-leading fuel economy, a plug-in hybrid that could travel more than 25 miles on electric power, and also provide the efficiency of a conventional hybrid and an electric vehicle that has a range of 110 miles, which is the highest of any compact electric vehicle that is currently in the marketplace.
+- The handling was spectacular, I thought. Handles really well. Like no money in my boxcar.
+- It is a beautiful design. Yes. John and Kate and his design team did an excellent job.
+- Yes, we have three models, which we think are the perfect blend of performance and efficiency. Nice.
+
+Topic label:
+"
+0,4130,0_new_car_design_cars,,"hyundai, hybrid, bmw, volvo, audi, cars, vehicle, car, nissan, lexus","new, car, cars, vehicle, hybrid, technology","new, car",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 0
+Keywords: 0_new_car_design_cars
+Representative snippets:
+- Hello and welcome wherever you are in the world to this very special occasion, the global livestream reveal of the Volvo S60, the new Volvo S60.
+- That's why the new LEAF is not only an EV. is the icon of Nissan Intelligent Mobility, our vision to move people to a better world.
+- The technologies of the new Nissan LEAF do not only offer driving pleasure and better convenience, but also contribute to safety performance.
+- My weekend was absolutely fabulous. I felt like a celebrity. I don't want it to end.
+- He was having far too much fun. All the technology is easy to use.
+- Absolutely. But what do you say we get inside the car and take it for a spin?
+
+Topic label:
+"
+1,1008,1_interior_rear_car_steering,,"interior, vehicle, headlights, car, rear, design, steering, roof","interior, rear, car, design, steering, dynamic, new","interior, rear, car, design, steering",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 1
+Keywords: 1_interior_rear_car_steering
+Representative snippets:
+- The roof pillars are slimmer and the headlights more streamlined, and the available LED headlamps and daytime running lights combine with a signature grille design to emphasize the front-end width and the very low hood.
+- So you have carbon fiber in the door panel, carbon fiber beams with aluminum panels.
+- Interior color combinations, full leather upholsteries, and decor of carbon fiber, walnut, birch, metal, and aluminium.
+- My wife was commenting on how nice the lighting system was in the car and how easy it was to see the road.
+- I went and put them on brights. it was like full moon.
+- Hopefully something for everybody. I noticed that the car definitely stays planted when I'm cornering like this.
+
+Topic label:
+"
+2,447,2_seat_seats_rear_storage,,"seats, seat, passengers, trunk, seating, cargo, passenger, rear, car, compartment","seat, seats, rear, space, storage, cargo, door, trunk","seat, seats, rear, space, storage, cargo, door, trunk, passenger",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 2
+Keywords: 2_seat_seats_rear_storage
+Representative snippets:
+- With this loading position, trunk space is maximized while still allowing for rear seat passengers.
+- First I'm going to start off with seats. So on the driver's side seat only, underneath the center of the seat, there's a latch that you can make the seat go forward or backwards so you can make the car fit for you.
+- The cabin provides ample legroom, rear seat room, both for rear seat passengers as well as great headroom in the front for front seat passengers.
+- It's intuitive. Well, frankly, one of the best features is all the extra leg room in the back.
+- Your body is supported in the form-fitting seats, your hands a glove fit with the steering wheel, and the very thin A-pillar contributes to a clear view out the front as the interior just kind of disappears while you engage in the task of enjoying your drive.
+- Headroom pretty tight here, I'm six feet tall, that's where I'd sit to drive.
+
+Topic label:
+"
+3,347,3_display_navigation_screen_information,,"navigation, mobile, touchscreen, smartphone, menu, audio, android, screen, displays, settings","display, navigation, screen, information, destination, smartphone, available, touch","display, navigation, screen, information, apple, smartphone, carplay",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 3
+Keywords: 3_display_navigation_screen_information
+Representative snippets:
+- All right. First question. In inches, what is the size display of the standard audio system featuring Apple CarPlay and Android Auto?
+- Apple CarPlay or Android Auto offer a more seamless integration of your personal smartphone.
+- An available 8-inch touchscreen navigation system ensures you're on the right route, or the available 7-inch display audio system with smartphone functionality keeps you connected.
+- It's a version of Audi's MMI touch used in other Audi vehicles of late.
+- This one places the touch pad right on top of the center knob right here.
+- The MMI touch response operating system is engineered to make interaction more intuitive, similar to that of a smartphone.
+
+Topic label:
+"
+4,279,4_horsepower_engine_torque_liter,,"horsepower, engine, turbocharged, v8, engines, v6, powertrains, turbo, motor, litre","horsepower, engine, torque, liter, cylinder, gallon, fuel, electric, power","horsepower, engine, torque, cylinder, gallon, motor, turbo, kilowatt, turbocharged",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 4
+Keywords: 4_horsepower_engine_torque_liter
+Representative snippets:
+- A spirited 2.0-liter, 147-horsepower, 4-cylinder comes standard under the hood. If you're looking for better fuel economy that doesn't come at the expense of power, there's an available EcoTrim with a 1.4-liter turbo GDI engine with 7-speed dual-clutch transmission.
+- This engine generates the performance of a V6 with the fuel economy of a 4-cylinder engine.
+- A spirited 2.0-liter, 147-horsepower, 4-cylinder comes standard under the hood. If you're looking for better fuel economy that doesn't come at the expense of power, there's an available EcoTrim with a 1.4-liter turbo GDI engine with 7-speed dual-clutch transmission that delivers 128 horsepower and up to an EPA-estimated 40 miles per gallon highway.
+- The black car is a 2.4 liter engine, putting out 201 horsepower, made it to a six-speed manual transmission. Nice. A little bit more sporty on this one.
+- It's a 2.0 liter engine, putting out 150 horsepower. It's made it to a five-speed automatic transmission.
+- This is a high, but it's not like the classic hybrid where you're saving gas mileage Let it in at home you press your foot down You get the immediate torque of the electric motors while that turbo engine is spooling up and then gives you full power Okay, so that's how it's like in my car Where it's like I'll be sitting at a stoplight and I'll slam the pedal down and like what happened Okay, now it's starting
+
+Topic label:
+"
+5,273,5_lane_blind_traffic_brake,,"safety, alerts, detection, detect, radar, driver, braking, alert, traffic, vehicle","lane, blind, traffic, brake, spot, braking, assist, collision, detection","lane, traffic, braking, assist, collision, detection, camera, safety, pedal, parking",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 5
+Keywords: 5_lane_blind_traffic_brake
+Representative snippets:
+- Automatic emergency braking with pedestrian detection, main departure warning system. along with blind spot detection and rear cross-traffic alert are offered on the vehicle.
+- Technology is also used to deliver comprehensive safety by offering an entire suite of advanced active safety features such as automatic emergency braking with pedestrian detection, lane departure warning, and blind spot detection with rear cross traffic alert.
+- Technology is also used to deliver comprehensive safety by offering an entire suite of advanced active safety features, such as automatic emergency braking with pedestrian detection, lane departure warning, and blind spot detection with rear cross traffic alert.
+- I'll just walk. I never have before. So you brake going into the turn.
+- The available Adaptive Cruise Assist can help ease the stress of the road at normal highway speeds with active lane sensing, stop and go, and lane centering steering guidance.
+- The available Audi PreSense 360 Safety System helps detect collision hazards all around the car and can initiate specific preventive measures ranging from a full brake application to seat adjustments and pretensioning of the safety belts.
+
+Topic label:
+"
+6,192,6_charging_charge_vehicle_stations,,"charging, charge, charger, charged, plug, outlet, battery, car, setting, cable","charging, charge, vehicle, stations, plug, car, cable, charger, display, light","charging, charge, stations, plug, car, indicates, cable, charger, display, left",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 6
+Keywords: 6_charging_charge_vehicle_stations
+Representative snippets:
+- You can turn on favorites and show charging stations. The charging stations will be displayed on the map along with a color-coded status, if the information is available.
+- Don't start or move the vehicle while it's charging. When the charge level display in the car, and often on the charger too, shows 100%, the battery is fully charged.
+- You'll find 240 volt charging at most public charging stations, and you might have had a 240 charging station professionally installed in your home.
+- If you then look at the side, you can clearly see a little bit more power.
+- This is full throttled and fully connected. This is a new way to drive with high-speed charging capabilities and with the full backing of a global dealer network.
+- But in most cases of everyday life, you will not wait for a car to charge at all, because you will regain power at locations that you never filled up your gas tank, and that's at home and at work.
+
+Topic label:
+"
+7,161,7_battery_lithium_batteries_pack,,"batteries, battery, lithium, vehicle, car, electricity, fuel, electric, generator","battery, lithium, batteries, pack, ion, energy, electric, car, iron, engine","battery, lithium, batteries, ion, energy, electric, iron, engine, accelerator",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 7
+Keywords: 7_battery_lithium_batteries_pack
+Representative snippets:
+- Okay, so we're looking up on the underside of the battery pack.
+- One is the high-density lithium-ion battery, which is a requirement of electric vehicles.
+- cars you know the battery race continues here you are breaking away with lithium iron yeah it's the same family of chemistry in the lithium chemistry but we're using lithium iron instead of lithium ion or lithium ion phosphate so we give up a little bit of power density but it's a much safer battery pack we don't have runaway thermal issues if you'll remember a few years ago there were laptop computers that were catc
+- Electricity is being taken from the braking of the motors. It's turning the wheel into an electric generator and capturing that energy which causes you to slow down.
+- The 48-volt mild hybrid system accomplishes this and more, such as a smoother start-stop system than previously possible.
+- We assist the engine every time we have enough energy in our battery.
+
+Topic label:
+"
+8,155,8_infiniti_q50_infinity_new,,"q50, infiniti, q60, sedan, luxury, hybrid, brand, premium, infinity, future","infinity, new, brand, performance, market, design, technology, premium","infiniti, q50, infinity, new, brand, performance, johan, market",not_used,not_used,LLM topic naming disabled by user request; no prompt was submitted.,"[NOT SENT]
+System:
+You label BERTopic topics for an electric vehicle research corpus. Return one concise English topic label, 2 to 6 words. Prefer EV meaning when present. Do not explain.
+
+User:
+Topic ID: 8
+Keywords: 8_infiniti_q50_infinity_new
+Representative snippets:
+- Hello, I'm Jane, a product specialist for Infiniti, and this is the all-new Infiniti Q50.
+- The Q50 is the latest premium performance sedan from Infiniti. The Q50 is longer, lower, and wider than Infiniti's previous G37 sedan, and it has world's first advances for the luxury market.
+- So ladies and gentlemen, please welcome the new Infiniti Q50. Here it is, the new Infiniti Q50.
+- And now it's time for the next game changer. It is the start of a new era and it's an Atron full stop.
+- Yeah, that's it. Now we come to the end. That's all I have to say about Schoen.
+- While Nissan has already had a hybrid on the market for a few years in the U.S., their upmarket Infiniti brand didn't have an alternative fuel vehicle of their own.
+
+Topic label:
+"

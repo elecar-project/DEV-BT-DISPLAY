@@ -1,0 +1,21 @@
+Topic,Count,Name,ratio
+-1,4223,-1_car_new_vehicle_driving,0.2899217355485377
+0,4058,0_new_car_bmw_design,0.27859398599478236
+1,785,1_rear_steering_suspension_speed,0.05389262666483592
+2,777,2_electric_engine_horsepower_torque,0.05334340244404778
+3,652,3_seat_seats_door_cargo,0.044761773994233145
+4,595,4_display_navigation_screen_voice,0.04084855142111767
+5,491,5_lane_assist_mode_braking,0.0337086365508719
+6,438,6_charging_charge_taycan_charger,0.030070026088150487
+7,366,7_led_grille_light_lights,0.025127008101057256
+8,348,8_interior_materials_design_colors,0.02389125360428395
+9,290,9_sonata_hyundai_kia_hyundai sonata,0.01990937800356996
+10,257,10_audi_tron_q5_a7,0.017643828092818892
+11,189,11_elantra_elr_new elantra_hyundai,0.01297542221611973
+12,187,12_hour_range_kilometers_seconds,0.012838116160922697
+13,178,13_nissan_leaf_nissan leaf_new nissan,0.012220238912536043
+14,154,14_polestar_electric_car_brand,0.010572566250171632
+15,151,15_nsx_acura_nx_supercar,0.010366607167376082
+16,150,16_infiniti_q50_infinity_brand,0.010297954139777564
+17,149,17_battery_lithium_temperature_cold,0.010229301112179047
+18,128,18_hybrid_plug_plug hybrid_hybrids,0.008787587532610188

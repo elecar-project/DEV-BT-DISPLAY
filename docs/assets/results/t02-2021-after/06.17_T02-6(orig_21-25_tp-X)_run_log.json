@@ -1,0 +1,46 @@
+{
+  "started_at": "2026-06-17T05:26:22.489897+00:00",
+  "finished_at": "2026-06-17T05:30:13.136555+00:00",
+  "dataset": "Result/06.13_[B]tok/06.13_[B]04-pre_LLM(orig)_21-25(146)_tok(para12-80)_dataset",
+  "output_dir": "Result/06.17_T02_year/06.17_T02-6(orig_21-25_tp-X)",
+  "rows": 7274,
+  "config": {
+    "selection_label": "06.17_T02-6(orig_21-25_tp-X)",
+    "selection_reason": "User-specified T02 2021-2025 BERTopic run with c-TF-IDF topic reduction.",
+    "umap": {
+      "n_neighbors": 5,
+      "n_components": 10,
+      "min_dist": 0.0,
+      "metric": "cosine",
+      "random_state": 42
+    },
+    "hdbscan": {
+      "min_cluster_size": 100,
+      "min_samples": 5,
+      "metric": "euclidean",
+      "cluster_selection_method": "eom",
+      "cluster_selection_epsilon": 0.0
+    },
+    "nr_topics": "auto",
+    "representation_models": {
+      "KeyBERT": "KeyBERTInspired(top_n_words=10, nr_repr_docs=6, random_state=42)",
+      "POS": "PartOfSpeech('en_core_web_sm', top_n_words=10)",
+      "MMR": "MaximalMarginalRelevance(diversity=0.3, top_n_words=10)"
+    },
+    "llm_topic_naming": "disabled"
+  },
+  "metrics": {
+    "n_topics_without_noise": 17,
+    "noise_ratio": 0.2679406103931812,
+    "topic_-1_count": 1949,
+    "topic_0_count": 1745,
+    "topic_1_count": 588,
+    "largest_topic_count": 1745,
+    "largest_topic_ratio": 0.23989551828430025,
+    "top3_topic_ratio": 0.37228485015122353,
+    "topic_entropy": 0.8491173487357738,
+    "balance_score": 0.7091921913665109
+  },
+  "embedding_note": "Computed embeddings and saved cache in this output folder.",
+  "errors": []
+}

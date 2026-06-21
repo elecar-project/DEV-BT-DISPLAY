@@ -44,6 +44,13 @@ NODE_LINKS = {
     "mRq0KLDsOoRAvhbJz9B0-84": "../../results/t01-overview.html",
     "mRq0KLDsOoRAvhbJz9B0-85": "../../results/t01-del.html",
     "mRq0KLDsOoRAvhbJz9B0-86": "../../results/t01-repl.html",
+    "mRq0KLDsOoRAvhbJz9B0-88": "../../results/t02-overview.html",
+    "mRq0KLDsOoRAvhbJz9B0-89": "../../results/t02-2018-before.html",
+    "mRq0KLDsOoRAvhbJz9B0-90": "../../results/t02-2018-after.html",
+    "mRq0KLDsOoRAvhbJz9B0-91": "../../results/t02-2019-after.html",
+    "mRq0KLDsOoRAvhbJz9B0-92": "../../results/t02-2019-before.html",
+    "mRq0KLDsOoRAvhbJz9B0-93": "../../results/t02-2021-before.html",
+    "mRq0KLDsOoRAvhbJz9B0-94": "../../results/t02-2021-after.html",
     "mRq0KLDsOoRAvhbJz9B0-29": "../../results/a05-6-overview.html",
     "mRq0KLDsOoRAvhbJz9B0-45": "../../results/a05-8-orig-rev-overview.html",
 }

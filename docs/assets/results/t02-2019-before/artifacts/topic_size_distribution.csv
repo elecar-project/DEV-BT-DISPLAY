@@ -1,0 +1,11 @@
+Topic,Count,Name,ratio
+-1,3216,-1_car_new_vehicle_driving,0.31504702194357365
+0,4130,0_new_car_design_cars,0.4045846394984326
+1,1008,1_interior_rear_car_steering,0.0987460815047022
+2,447,2_seat_seats_rear_storage,0.04378918495297806
+3,347,3_display_navigation_screen_information,0.03399294670846395
+4,279,4_horsepower_engine_torque_liter,0.027331504702194358
+5,273,5_lane_blind_traffic_brake,0.026743730407523512
+6,192,6_charging_charge_vehicle_stations,0.018808777429467086
+7,161,7_battery_lithium_batteries_pack,0.01577194357366771
+8,155,8_infiniti_q50_infinity_new,0.015184169278996865

@@ -1,0 +1,4 @@
+topic,model,temperature,max_tokens,runs_requested,successful_runs,error_runs,unique_normalized_labels,mode_label,mode_normalized_label,mode_count,mode_ratio,avg_jaccard_to_mode,stable,keywords,system_prompt,user_prompt,prompt,all_labels,status,error
+,not_used,,,0,0,0,0,,,0,0.0,0.0,False,,N/A - LLM disabled by user request.,N/A - LLM disabled by user request.,"N/A - LLM topic naming and LLM validation were disabled by user request. No prompt was sent.
+
+Requested setting: LLM 主題命名 = 不使用.",,skipped_by_request,
