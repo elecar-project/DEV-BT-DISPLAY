@@ -79,7 +79,7 @@ def settings(config: dict[str, object], run_log: dict[str, object]) -> str:
 
 <table class="settings-table"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>
 <tr><td>停用詞</td><td><a href="{{{{ '/results/a05-8-orig-rev-human-stopwords.html' | relative_url }}}}">A05-8.4 human</a>，客製 {config['custom_stopwords_count']} 個</td></tr>
-<tr><td>LLM 設計</td><td>{html.escape(str(config['llm_provider']))} / <code>{html.escape(str(config['llm_model']))}</code>，每 topic 50 次</td></tr>
+<tr><td>LLM 設計</td><td>未設定／未執行</td></tr>
 <tr><td>代表句</td><td>{config['representative_docs_per_topic']} 句 / topic</td></tr>
 </tbody></table>'''
 
