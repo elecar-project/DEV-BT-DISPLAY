@@ -22,9 +22,9 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 | 終點 | 實驗意義 | 目前狀態 |
 | --- | --- | --- |
 | [A03-2：del + tok min_cluster_size 掃描]({{ '/results/a03-2-del-tok.html' | relative_url }}) | 21 組 HDBSCAN 最小群集大小的敏感度分析 | 可檢視 |
-| 8New-LLM30 | 最佳參數模型，LLM 命名 30 次驗證 | 可檢視 |
-| 8New-LLM50 | 同一路徑以 50 次命名驗證，資料夾名稱歷史上誤標為 tp-30 | 可檢視 |
-| 2020 前 | 年份切分後的 2008-2019 主題模型 | 可檢視 |
+| [8New-LLM30]({{ '/results/m02-llm30.html' | relative_url }}) | 最佳參數模型，LLM 命名 30 次驗證 | 可檢視 |
+| [8New-LLM50]({{ '/results/m02-llm50.html' | relative_url }}) | 同一路徑以 50 次命名驗證，資料夾名稱歷史上誤標為 tp-30 | 可檢視 |
+| [2020 前]({{ '/results/m03-2020-before.html' | relative_url }}) | 年份切分後的 2008-2019 主題模型 | 可檢視 |
 | 其他 T01-T04 節點 | 驗證與敏感度分析 | 待整理 |
 
 ## A03 min_cluster_size 掃描
@@ -43,7 +43,7 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 
 ## A04 UMAP 搜尋
 
-可直接查看：[A04 整體比較]({{ '/results/a04-umap-overview.html' | relative_url }})、[A04-2]({{ '/results/a04-2-del-tok.html' | relative_url }})、[A04-3]({{ '/results/a04-3-del-tok-para12-80.html' | relative_url }})、[A04-5]({{ '/results/a04-5-repl-tok.html' | relative_url }})、[A04-6]({{ '/results/a04-6-repl-tok-para12-80.html' | relative_url }})、[A04-7]({{ '/results/a04-7-orig-tok.html' | relative_url }})、[A04-8]({{ '/results/a04-8-orig-tok-para12-80.html' | relative_url }})、[B01 2008-2019]({{ '/results/a04-b01-08-19.html' | relative_url }})、[B01 2020-2025]({{ '/results/a04-b01-20-25.html' | relative_url }})。
+可直接查看：[A04 整體比較]({{ '/results/a04-umap-overview.html' | relative_url }})、[A04-2]({{ '/results/a04-2-del-tok.html' | relative_url }})、[A04-3]({{ '/results/a04-3-del-tok-para12-80.html' | relative_url }})、[A04-5]({{ '/results/a04-5-repl-tok.html' | relative_url }})、[A04-6]({{ '/results/a04-6-repl-tok-para12-80.html' | relative_url }})、[A04-7]({{ '/results/a04-7-orig-tok.html' | relative_url }})、[A04-8]({{ '/results/a04-8-orig-tok-para12-80.html' | relative_url }})、[A04｜2020 前（2008-2019）]({{ '/results/a04-b01-08-19.html' | relative_url }})、[A04｜2020 後（2020-2025）]({{ '/results/a04-b01-20-25.html' | relative_url }})。
 
 ## A05 停用詞設計
 
