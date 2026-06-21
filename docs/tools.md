@@ -15,11 +15,11 @@ description: Release 檔案、工作流程分組與流程圖展示。
 
 ## 工作流程分組
 
-| 階段 | 對應工具 | 研究用途 |
-| --- | --- | --- |
-| A. 音檔與 ASR 處理 | Audio V2A、Audio-tran、ASR-result、ASR-analysis、TXT Compare、TXT Delete | 取得逐字稿、檢查 ASR 品質、整理可用文本 |
-| B. 資料清理與切分 | LLM Clean、TXTcp-2、TXT Filter、TXT Tokenizer、Pre-process Workbench | 清理逐字稿、建立資料集版本、切成 BERTopic 可用句子 |
-| C. BERTopic 處理 | BERTopic Workbench、BERTopic Deploy、Min & Elbow、Batch | 訓練 topic model、調整參數、匯出主題結果 |
+<div class="table-scroll"><table class="workflow-table"><thead><tr><th>階段</th><th>對應工具</th><th>研究用途</th></tr></thead><tbody>
+<tr><td>A. 音檔與 ASR 處理</td><td>Audio V2A、Audio-tran、ASR-result、ASR-analysis、TXT Compare、TXT Delete</td><td>取得逐字稿、檢查 ASR 品質、整理可用文本</td></tr>
+<tr><td>B. 資料清理與切分</td><td>LLM Clean、TXTcp-2、TXT Filter、TXT Tokenizer、Pre-process Workbench</td><td>清理逐字稿、建立資料集版本、切成 BERTopic 可用句子</td></tr>
+<tr><td>C. BERTopic 處理</td><td>BERTopic Workbench、BERTopic Deploy、Min &amp; Elbow、Batch</td><td>訓練 topic model、調整參數、匯出主題結果</td></tr>
+</tbody></table></div>
 
 ## 流程圖展示
 

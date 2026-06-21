@@ -610,10 +610,15 @@ code {
 
 .table-scroll { margin: 18px 0 28px; overflow-x: auto; }
 
-.table-scroll > table.scan-table,
-.table-scroll > table.topic-table {
+/* Keep research tables as tables inside their dedicated horizontal scroller.
+   The global table rule uses block display for simple Markdown tables. */
+.table-scroll > table {
   display: table;
   margin: 0;
+}
+
+.table-scroll > table.scan-table,
+.table-scroll > table.topic-table {
   table-layout: fixed;
 }
 
@@ -661,6 +666,7 @@ code {
 .m01-strategy-table th:nth-child(1) { width: 12%; }
 .m01-strategy-table th:nth-child(2) { width: 28%; }
 .m01-strategy-table th:nth-child(n + 3) { width: 10%; }
+.m01-strategy-table th:nth-child(n + 3), .m01-strategy-table td:nth-child(n + 3) { white-space: nowrap; }
 .m01-strategy-links {
   display: grid;
   gap: 14px;
@@ -768,6 +774,13 @@ code {
 .umap-overview-table th:nth-child(2) { width: 20%; }
 .umap-overview-table th:nth-child(3) { width: 23%; }
 .umap-overview-table th:nth-child(4), .umap-overview-table th:nth-child(5), .umap-overview-table th:nth-child(6), .umap-overview-table th:nth-child(7) { width: 10%; }
+.umap-overview-table th:nth-child(n + 4), .umap-overview-table td:nth-child(n + 4) { white-space: nowrap; }
+
+.workflow-table { min-width: 760px; table-layout: fixed; width: 100%; }
+.workflow-table th, .workflow-table td { overflow-wrap: anywhere; white-space: normal; }
+.workflow-table th:nth-child(1) { width: 17%; }
+.workflow-table th:nth-child(2) { width: 49%; }
+.workflow-table th:nth-child(3) { width: 34%; }
 
 .stopword-track {
   border-top: 1px solid var(--line);
@@ -792,7 +805,8 @@ code {
   border: 1px solid #9cb9dd;
   border-radius: 6px;
   color: inherit;
-  flex: 0 0 194px;
+  flex: 1 1 150px;
+  min-width: 150px;
   min-height: 132px;
   padding: 14px;
   position: relative;
