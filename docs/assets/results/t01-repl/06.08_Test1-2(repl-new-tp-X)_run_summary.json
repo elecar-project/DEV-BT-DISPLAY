@@ -1,0 +1,21 @@
+[
+  {
+    "selection_label": "06.08_Test1-2(repl-new-tp-X)",
+    "report": "06.08_Test1-2(repl-new-tp-X).md",
+    "n_clusters": 29,
+    "noise_ratio": 0.32018582619785024,
+    "topic_-1_count": 3515,
+    "topic_0_count": 886,
+    "topic_1_count": 833,
+    "largest_topic_count": 886,
+    "largest_topic_ratio": 0.08070686828201858,
+    "top3_topic_ratio": 0.20805246857351065,
+    "topic_entropy": 0.8972988534354208,
+    "balance_score": 0.8381216979413373,
+    "llm50_status": "skipped",
+    "llm50_topics": 0,
+    "llm50_stable_topics": 0,
+    "representation_errors": 2,
+    "llm_topic_label_errors": 0
+  }
+]

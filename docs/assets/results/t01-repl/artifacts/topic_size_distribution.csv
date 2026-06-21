@@ -1,0 +1,31 @@
+Topic,Count,Name,ratio
+-1,3515,-1_model_brand_car_new,0.32018582619785024
+0,886,0_brand_model_car_new,0.08070686828201858
+1,833,1_hybrid_engine_horsepower_electric,0.07587903078885043
+2,565,2_apple_audio_android_carplay,0.05146656950264165
+3,551,3_rear_grille_led_light,0.05019129167425761
+4,541,4_electric_brand_ev_vehicles,0.049280378939697576
+5,520,5_assist_safety_lane_parking,0.04736746219712151
+6,410,6_charging_charge_stations_fast,0.037347422116961196
+7,393,7_episode_everybody_talking_absolutely,0.03579887046820915
+8,340,8_seats_seat_space_rear,0.03097103297504099
+9,265,9_display_screen_mbux_information,0.02413918746584077
+10,229,10_steering_suspension_car_driving,0.02085990162142467
+11,182,11_drive_driving_car_driver,0.01657861176899253
+12,166,12_black_grade_19_hybrid,0.015121151393696484
+13,163,13_president_ladies_vice_vice president,0.014847877573328476
+14,154,14_interior_carbon_materials_fiber,0.014028056112224449
+15,143,15_model_brand model_brand_new,0.013026052104208416
+16,141,16_amg_gt_supercar_performance,0.012843869557296411
+17,133,17_pedal_mode_braking_brake,0.012115139369648387
+18,96,18_sound_noise_quiet_acoustic,0.00874476225177628
+19,91,19_door_tailgate_open_release,0.008289305884496265
+20,88,20_car_proud_brand_excited,0.008016032064128256
+21,88,21_auto_la_season_auto season,0.008016032064128256
+22,80,22_america_electric_auto evolution_ev,0.007287301876480233
+23,76,23_class_brand class_new class_new,0.006922936782656221
+24,71,24_china_brand_global_market,0.006467480415376207
+25,71,25_warranty_roadside assistance_roadside_maintenance,0.006467480415376207
+26,68,26_model_2025_530e_new,0.006194206595008198
+27,64,27_co2_climate_emissions_environment,0.005829841501184187
+28,55,28_temperature_console_turn_center console,0.00501002004008016

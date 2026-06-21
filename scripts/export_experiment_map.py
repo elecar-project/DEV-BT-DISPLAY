@@ -41,6 +41,9 @@ NODE_LINKS = {
     "mRq0KLDsOoRAvhbJz9B0-75": "../../results/a04-b01-08-19.html",
     "mRq0KLDsOoRAvhbJz9B0-80": "../../results/a04-b01-20-25.html",
     "mRq0KLDsOoRAvhbJz9B0-82": "../../results/m03-2020-after.html",
+    "mRq0KLDsOoRAvhbJz9B0-84": "../../results/t01-overview.html",
+    "mRq0KLDsOoRAvhbJz9B0-85": "../../results/t01-del.html",
+    "mRq0KLDsOoRAvhbJz9B0-86": "../../results/t01-repl.html",
     "mRq0KLDsOoRAvhbJz9B0-29": "../../results/a05-6-overview.html",
     "mRq0KLDsOoRAvhbJz9B0-45": "../../results/a05-8-orig-rev-overview.html",
 }

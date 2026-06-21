@@ -1,0 +1,31 @@
+{
+  "finished_at": "2026-06-08T20:20:47.723120+00:00",
+  "dataset": "Result/06.03_A02/R06.03_A02-pre_LLM(del)_tok(para12-80)_dataset",
+  "output_dir": "Result/M02_single/06.08_Test1-1(del-new-tp-X)",
+  "stopword_md": "Result/06.05_A05_stopword/A05-8(orig)REV_tok(para12-80)/A05-8.4(human)_stopword.md",
+  "custom_stopword_count": 170,
+  "total_stopword_count_with_english": 462,
+  "embedding_note": "使用 06.08_Test1-1(del-new-tp-X) 既有 embeddings 快取。",
+  "rows": 10945,
+  "configs": [
+    "06.08_Test1-1(del-new-tp-X)"
+  ],
+  "representation_models": [
+    "default",
+    "keybert",
+    "pos",
+    "mmr",
+    "llm_openai_gpt_5_5"
+  ],
+  "llm_provider": "OpenRouter",
+  "llm_model": "openai/gpt-5.5",
+  "llm50_runs_per_topic": 50,
+  "representative_docs_per_topic": 6,
+  "global_errors": [
+    {
+      "representation_model": "llm_openai_gpt_5_5",
+      "model": "openai/gpt-5.5",
+      "error": "OPENROUTER_API_KEY was not provided."
+    }
+  ]
+}

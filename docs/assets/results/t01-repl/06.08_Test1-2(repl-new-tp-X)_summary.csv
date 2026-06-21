@@ -1,0 +1,2 @@
+selection_label,report,n_clusters,noise_ratio,topic_-1_count,topic_0_count,topic_1_count,largest_topic_count,largest_topic_ratio,top3_topic_ratio,topic_entropy,balance_score,llm50_status,llm50_topics,llm50_stable_topics,representation_errors,llm_topic_label_errors
+06.08_Test1-2(repl-new-tp-X),06.08_Test1-2(repl-new-tp-X).md,29,0.32018582619785024,3515,886,833,886,0.08070686828201858,0.20805246857351065,0.8972988534354208,0.8381216979413373,skipped,0,0,2,0

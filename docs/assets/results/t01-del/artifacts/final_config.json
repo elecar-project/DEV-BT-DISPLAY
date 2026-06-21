@@ -1,0 +1,53 @@
+{
+  "selection_label": "06.08_Test1-1(del-new-tp-X)",
+  "report_name": "06.08_Test1-1(del-new-tp-X).md",
+  "selection_reason": "使用者指定 del-new-tp-X 單組參數，並以 BERTopic nr_topics='auto' 做 c-TF-IDF topic reduction。",
+  "umap": {
+    "n_neighbors": 10,
+    "n_components": 15,
+    "min_dist": 0.0,
+    "metric": "cosine",
+    "random_state": 42
+  },
+  "hdbscan": {
+    "min_cluster_size": 50,
+    "min_samples": 5,
+    "metric": "euclidean",
+    "cluster_selection_method": "eom",
+    "cluster_selection_epsilon": 0.2
+  },
+  "nr_topics": "auto",
+  "m02_metrics": {
+    "n_clusters": 14,
+    "noise_ratio": 0.30269529465509365,
+    "topic_-1_count": 3313,
+    "topic_0_count": 2521,
+    "topic_1_count": 1668,
+    "largest_topic_count": 2521,
+    "largest_topic_ratio": 0.23033348560986752,
+    "top3_topic_ratio": 0.525262677021471,
+    "topic_entropy": 0.7028933250454951,
+    "balance_score": 0.6470388305162175
+  },
+  "dataset": "Result/06.03_A02/R06.03_A02-pre_LLM(del)_tok(para12-80)_dataset",
+  "embedding_model": "all-MiniLM-L6-v2",
+  "custom_stopwords_count": 170,
+  "stopword_source": "Result/06.05_A05_stopword/A05-8(orig)REV_tok(para12-80)/A05-8.4(human)_stopword.md",
+  "representation_models": [
+    "default",
+    "keybert",
+    "pos",
+    "mmr",
+    "llm_openai_gpt_5_5"
+  ],
+  "llm_provider": "OpenRouter",
+  "llm_model": "openai/gpt-5.5",
+  "llm50_summary": {
+    "status": "skipped",
+    "topics": 0,
+    "calls": 0,
+    "stable_topics": 0,
+    "error": "OPENROUTER_API_KEY was not provided."
+  },
+  "representative_docs_per_topic": 6
+}

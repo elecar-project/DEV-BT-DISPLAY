@@ -27,6 +27,7 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 | [M01-8 三策略主程式]({{ '/results/m01-8-historical.html' | relative_url }}) | 歷史比較用途：A05-8.4 human 停用詞與三種候選策略的完整重跑 | 可檢視 |
 | [2020 前]({{ '/results/m03-2020-before.html' | relative_url }}) | 年份切分後的 2008-2019 主題模型 | 可檢視 |
 | [2020 後]({{ '/results/m03-2020-after.html' | relative_url }}) | 年份切分後的 2020-2025 主題模型 | 可檢視 |
+| [T01 刪除／替換驗證]({{ '/results/t01-overview.html' | relative_url }}) | 比較刪除品牌／車款與替換為 Brand／Model 的主題結構 | 可檢視 |
 | 其他 T01-T04 節點 | 驗證與敏感度分析 | 待整理 |
 
 ## A03 min_cluster_size 掃描
