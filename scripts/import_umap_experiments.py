@@ -58,7 +58,7 @@ def candidate_table(rows: list[dict[str, object]]) -> str:
     methods = {
         "lowest_noise": "有效結果中 noise ratio 最低；同分時優先較低最大主題比例與較多主題。",
         "most_topics": "在可接受離群比例下，保留有效主題數最多者。",
-        "best_balance": "在預設平衡條件下，選取 balance score 最高者。",
+        "best_balance": "在預設平衡條件下選取最高分：n_clusters ≥ 4、noise ≤ 0.35、最大主題比例 ≤ 0.65、前三主題比例 ≤ 0.85。<br>balance score = 0.30 × (1 − noise ratio) + 0.30 × (1 − 最大主題比例) + 0.20 × (1 − 前三主題比例) + 0.20 × min(主題數 / 25, 1)。",
     }
     body = []
     for row in rows:
