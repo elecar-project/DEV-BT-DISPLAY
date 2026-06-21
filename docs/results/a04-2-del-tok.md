@@ -69,11 +69,34 @@ description: A04-2｜del + tok 的 UMAP 與 HDBSCAN 聯合參數搜尋。
 </table></div>
 <aside class="table-note"><strong>註記｜最佳平衡的判定：</strong>先篩選 <code>n_clusters ≥ 4</code>、<code>noise ratio ≤ 0.35</code>、<code>最大主題比例 ≤ 0.65</code>、<code>前三主題比例 ≤ 0.85</code> 的組合；再以 <code>balance score = 0.30 × (1 − noise ratio) + 0.30 × (1 − 最大主題比例) + 0.20 × (1 − 前三主題比例) + 0.20 × min(主題數 / 25, 1)</code> 選取最高分。</aside>
 
+## 穩定性檢測
+
+<div class="stability-summary">
+<div><span>測試 seed</span><strong>5</strong></div>
+<div><span>主題數範圍</span><strong>147–165</strong></div>
+<div><span>noise ratio 範圍</span><strong>33.52%–37.75%</strong></div>
+<div><span>balance score 範圍</span><strong>0.863–0.880</strong></div>
+</div>
+<p class="stability-note">以最佳平衡參數在不同 random state 下重跑；範圍用於檢視分群結果對初始化的敏感程度。</p>
+
+## 最佳平衡的主題語意摘要
+
+<p class="section-intro">以下為最佳平衡結果的前 8 個有效主題；每列保留前 10 個代表詞與第一則代表句，供快速判讀語意品質。</p>
+<div class="table-scroll"><table class="semantic-table"><thead><tr><th>主題</th><th>代表詞（前 10）</th><th>代表句</th></tr></thead><tbody><tr><td>0</td><td>brand, customers, sales, product, products, market, customer, company, year, industry</td><td>And it&#x27;s due to how this brand does business.</td></tr><tr><td>1</td><td>driving, drive, fun, fun drive, experience, driving experience, driver, drivers, pleasure, dynamics</td><td>This is for serious driving.</td></tr><tr><td>2</td><td>design, designers, designer, art, design team, sketch, design language, team, language, studio</td><td>We will continue to introduce more ambitious models with new design language in the future.</td></tr><tr><td>3</td><td>electric, electric car, electric vehicle, electric cars, electric vehicles, electrified, vehicles, cars, electrified vehicles, electric mobility</td><td>It&#x27;s an all-electric car.</td></tr><tr><td>4</td><td>charging, charge, level, dc, charger, home, minutes, hours, fast, level charging</td><td>But it also features DC fast charging, which achieves an 80% charge in just 30 minutes.</td></tr><tr><td>5</td><td>thank, joining, thank joining, today, thanks, welcome, good, happy, live, news</td><td>Thank you for joining us.</td></tr><tr><td>6</td><td>cargo, seats, trunk, space, fold, cubic, cubic feet, row, seat, split</td><td>When it&#x27;s time to take your equipment on the road, has up to 37.6 cubic feet with the rear seats up, or an impressive 69.8 cubic feet behind the front seats when the standard 60-40 split fold-down rear seats are lower...</td></tr><tr><td>7</td><td>wheels, inch, black, alloy, alloy wheels, xse, trd, se, 19, 20 inch</td><td>Meanwhile, Limited comes standard with 19-inch Super Chrome alloy wheels, while TRD Off-Road offers its own aggressive flair through matte black alloy wheels.</td></tr></tbody></table></div>
+
+
+
 ## 圖表檢視
 
 候選策略比較圖用來並列三種策略的主題數、noise ratio 與主題集中度；參數熱圖或選定設定比較圖則用來觀察不同 UMAP／HDBSCAN 組合對分群結果的影響。
 
-<div class="result-figure-scroller"><figure><img src="{{ '/assets/results/a04-2-del-tok/charts/best_three_comparison.png' | relative_url }}" alt="best_three_comparison"><figcaption>best three comparison</figcaption></figure><figure><img src="{{ '/assets/results/a04-2-del-tok/charts/parameter_heatmap.png' | relative_url }}" alt="parameter_heatmap"><figcaption>parameter heatmap</figcaption></figure></div>
+<div class="result-figure-scroller"><figure><img src="{{ '/assets/results/a04-2-del-tok/charts/best_three_comparison.png' | relative_url }}" alt="三種候選策略比較"><figcaption>三種候選策略比較</figcaption></figure><figure><img src="{{ '/assets/results/a04-2-del-tok/charts/parameter_heatmap.png' | relative_url }}" alt="參數組合熱圖"><figcaption>參數組合熱圖</figcaption></figure></div>
+
+<details class="result-chart-details">
+<summary>完整參數圖表（5 張）</summary>
+<p>用於追查各 UMAP／HDBSCAN 參數與主題數、離群比例、主題集中度之間的關係。</p>
+<div class="result-figure-scroller"><figure><img src="{{ '/assets/results/a04-2-del-tok/charts/best_balance_topic_size_bar.png' | relative_url }}" alt="最佳平衡的主題規模分布"><figcaption>最佳平衡的主題規模分布</figcaption></figure><figure><img src="{{ '/assets/results/a04-2-del-tok/charts/min_cluster_size_dual_axis.png' | relative_url }}" alt="min_cluster_size 與主題數／noise ratio"><figcaption>min_cluster_size 與主題數／noise ratio</figcaption></figure><figure><img src="{{ '/assets/results/a04-2-del-tok/charts/min_samples_noise_ratio.png' | relative_url }}" alt="min_samples 與 noise ratio"><figcaption>min_samples 與 noise ratio</figcaption></figure><figure><img src="{{ '/assets/results/a04-2-del-tok/charts/n_components_n_clusters.png' | relative_url }}" alt="n_components 與主題數"><figcaption>n_components 與主題數</figcaption></figure><figure><img src="{{ '/assets/results/a04-2-del-tok/charts/n_neighbors_largest_topic_ratio.png' | relative_url }}" alt="n_neighbors 與最大主題比例"><figcaption>n_neighbors 與最大主題比例</figcaption></figure></div>
+</details>
 
 ## 原始輸出
 

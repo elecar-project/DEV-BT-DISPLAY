@@ -69,11 +69,34 @@ description: A04-6｜repl + tok + 段落 12-80 的 UMAP 與 HDBSCAN 聯合參數
 </table></div>
 <aside class="table-note"><strong>註記｜最佳平衡的判定：</strong>先篩選 <code>n_clusters ≥ 4</code>、<code>noise ratio ≤ 0.35</code>、<code>最大主題比例 ≤ 0.65</code>、<code>前三主題比例 ≤ 0.85</code> 的組合；再以 <code>balance score = 0.30 × (1 − noise ratio) + 0.30 × (1 − 最大主題比例) + 0.20 × (1 − 前三主題比例) + 0.20 × min(主題數 / 25, 1)</code> 選取最高分。</aside>
 
+## 穩定性檢測
+
+<div class="stability-summary">
+<div><span>測試 seed</span><strong>5</strong></div>
+<div><span>主題數範圍</span><strong>37–43</strong></div>
+<div><span>noise ratio 範圍</span><strong>27.59%–29.82%</strong></div>
+<div><span>balance score 範圍</span><strong>0.852–0.875</strong></div>
+</div>
+<p class="stability-note">以最佳平衡參數在不同 random state 下重跑；範圍用於檢視分群結果對初始化的敏感程度。</p>
+
+## 最佳平衡的主題語意摘要
+
+<p class="section-intro">以下為最佳平衡結果的前 8 個有效主題；每列保留前 10 個代表詞與第一則代表句，供快速判讀語意品質。</p>
+<div class="table-scroll"><table class="semantic-table"><thead><tr><th>主題</th><th>代表詞（前 10）</th><th>代表句</th></tr></thead><tbody><tr><td>0</td><td>seats, interior, seat, space, leather, rear, heated, inside, cargo, model</td><td>Model continues to strike the perfect balance between convenience and comfort for 2023, which can be seen in features like its available dual-zone climate control system, available heated and ventilated front seats, a...</td></tr><tr><td>1</td><td>brand, new, brand brand, market, year, customers, product, cars, welcome, sales</td><td>Those who got in early, like us, have benefited more than others. Brand, Brand, Brand, Brand and Brand are other brands with greater sales in China than here in the US. As we do in the US, we sell regional products fo...</td></tr><tr><td>2</td><td>assist, safety, lane, spot, alert, parking, blind, collision, blind spot, traffic</td><td>To that end, the latest Brand Safety Sense 3.0 Suite offers great peace of mind and confidence through features like a Pre-Collision System, Lane Departure Alert, Automatic High Beams, Full-Speed Range Dynamic Radar C...</td></tr><tr><td>3</td><td>grille, rear, led, light, design, headlights, look, car, lights, new</td><td>Elements like that elongated, wide, sporty front grille, that elegant swooping hood, and those stunning full LED headlights that include daytime running lights that I love. This seamlessly integrates into the main veh...</td></tr><tr><td>4</td><td>electric, ev, brand, vehicles, electric car, model, electrification, electric vehicle, new, electrified</td><td>We also know the transition to EV will be swift, as more people fully realize the benefits of an EV lifestyle. Let me be clear, electric vehicles are very good. And Brand &#x27;s electric vehicles are very, very good.</td></tr><tr><td>5</td><td>drive, don, know, right, let, yeah, going, don know, want, car</td><td>It produces the typical smooth and superior driving feeling that this car is known for. Let me just enjoy this, because you don&#x27;t get to do this every day, right? Okay, I didn&#x27;t just shut my mouth for a while because...</td></tr><tr><td>6</td><td>thank, good, today, bye, joining, doing, thanks, hope, welcome, great</td><td>Thank you.</td></tr><tr><td>7</td><td>charging, charge, stations, level, charging stations, home, plug, station, cable, public</td><td>There are several ways to charge your Brand Model &#x27;s high voltage battery, giving you a variety of convenient home and public charging options. Level 2 charging from a Level 2 home or public charging station, Level 1...</td></tr></tbody></table></div>
+
+
+
 ## 圖表檢視
 
 候選策略比較圖用來並列三種策略的主題數、noise ratio 與主題集中度；參數熱圖或選定設定比較圖則用來觀察不同 UMAP／HDBSCAN 組合對分群結果的影響。
 
-<div class="result-figure-scroller"><figure><img src="{{ '/assets/results/a04-6-repl-tok-para12-80/charts/best_three_comparison.png' | relative_url }}" alt="best_three_comparison"><figcaption>best three comparison</figcaption></figure><figure><img src="{{ '/assets/results/a04-6-repl-tok-para12-80/charts/best_three_topic_size_distribution.png' | relative_url }}" alt="best_three_topic_size_distribution"><figcaption>best three topic size distribution</figcaption></figure><figure><img src="{{ '/assets/results/a04-6-repl-tok-para12-80/charts/parameter_heatmap.png' | relative_url }}" alt="parameter_heatmap"><figcaption>parameter heatmap</figcaption></figure></div>
+<div class="result-figure-scroller"><figure><img src="{{ '/assets/results/a04-6-repl-tok-para12-80/charts/best_three_comparison.png' | relative_url }}" alt="三種候選策略比較"><figcaption>三種候選策略比較</figcaption></figure><figure><img src="{{ '/assets/results/a04-6-repl-tok-para12-80/charts/best_three_topic_size_distribution.png' | relative_url }}" alt="best three topic size distribution"><figcaption>best three topic size distribution</figcaption></figure><figure><img src="{{ '/assets/results/a04-6-repl-tok-para12-80/charts/parameter_heatmap.png' | relative_url }}" alt="參數組合熱圖"><figcaption>參數組合熱圖</figcaption></figure></div>
+
+<details class="result-chart-details">
+<summary>完整參數圖表（6 張）</summary>
+<p>用於追查各 UMAP／HDBSCAN 參數與主題數、離群比例、主題集中度之間的關係。</p>
+<div class="result-figure-scroller"><figure><img src="{{ '/assets/results/a04-6-repl-tok-para12-80/charts/best_balance_topic_size_bar.png' | relative_url }}" alt="最佳平衡的主題規模分布"><figcaption>最佳平衡的主題規模分布</figcaption></figure><figure><img src="{{ '/assets/results/a04-6-repl-tok-para12-80/charts/largest_topic_ratio_parameter_comparison.png' | relative_url }}" alt="largest topic ratio parameter comparison"><figcaption>largest topic ratio parameter comparison</figcaption></figure><figure><img src="{{ '/assets/results/a04-6-repl-tok-para12-80/charts/min_cluster_size_dual_axis.png' | relative_url }}" alt="min_cluster_size 與主題數／noise ratio"><figcaption>min_cluster_size 與主題數／noise ratio</figcaption></figure><figure><img src="{{ '/assets/results/a04-6-repl-tok-para12-80/charts/min_samples_noise_ratio.png' | relative_url }}" alt="min_samples 與 noise ratio"><figcaption>min_samples 與 noise ratio</figcaption></figure><figure><img src="{{ '/assets/results/a04-6-repl-tok-para12-80/charts/n_components_n_clusters.png' | relative_url }}" alt="n_components 與主題數"><figcaption>n_components 與主題數</figcaption></figure><figure><img src="{{ '/assets/results/a04-6-repl-tok-para12-80/charts/n_neighbors_largest_topic_ratio.png' | relative_url }}" alt="n_neighbors 與最大主題比例"><figcaption>n_neighbors 與最大主題比例</figcaption></figure></div>
+</details>
 
 ## 原始輸出
 

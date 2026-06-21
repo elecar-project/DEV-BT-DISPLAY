@@ -669,6 +669,60 @@ code {
 
 .table-note code { white-space: normal; }
 
+.stability-summary {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin: 18px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--line);
+}
+
+.stability-summary > div {
+  background: var(--panel);
+  padding: 14px;
+}
+
+.stability-summary span {
+  color: var(--muted);
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.stability-summary strong { color: #165f4d; font-size: 1rem; }
+.stability-note, .section-intro { color: var(--muted); font-size: 0.92rem; line-height: 1.7; }
+.result-empty { color: var(--muted); font-style: italic; }
+
+.semantic-table { min-width: 860px; table-layout: fixed; width: 100%; }
+.semantic-table th:nth-child(1) { width: 10%; }
+.semantic-table th:nth-child(2) { width: 37%; }
+.semantic-table th:nth-child(3) { width: 53%; }
+.semantic-table td { line-height: 1.65; overflow-wrap: anywhere; vertical-align: top; white-space: normal; }
+
+.result-chart-details {
+  border-top: 1px solid var(--line);
+  margin: 6px 0 28px;
+  padding-top: 16px;
+}
+
+.result-chart-details summary {
+  color: var(--accent-strong);
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.result-chart-details p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+
+.umap-overview-table { min-width: 1060px; table-layout: fixed; width: 100%; }
+.umap-overview-table th, .umap-overview-table td { overflow-wrap: anywhere; white-space: normal; }
+.umap-overview-table th:nth-child(1) { width: 17%; }
+.umap-overview-table th:nth-child(2) { width: 20%; }
+.umap-overview-table th:nth-child(3) { width: 23%; }
+.umap-overview-table th:nth-child(4), .umap-overview-table th:nth-child(5), .umap-overview-table th:nth-child(6), .umap-overview-table th:nth-child(7) { width: 10%; }
+
 .umap-config-table,
 .output-table { display: table; table-layout: fixed; width: 100%; }
 .umap-config-table th:first-child,
@@ -1169,6 +1223,7 @@ code {
   .results-layout,
   .result-detail-layout,
   .run-summary,
+  .stability-summary,
   .compare-controls,
   .compare-summary,
   .compare-output,

@@ -69,11 +69,34 @@ description: A04-7｜orig + tok 的 UMAP 與 HDBSCAN 聯合參數搜尋。
 </table></div>
 <aside class="table-note"><strong>註記｜最佳平衡的判定：</strong>先篩選 <code>n_clusters ≥ 4</code>、<code>noise ratio ≤ 0.35</code>、<code>最大主題比例 ≤ 0.65</code>、<code>前三主題比例 ≤ 0.85</code> 的組合；再以 <code>balance score = 0.30 × (1 − noise ratio) + 0.30 × (1 − 最大主題比例) + 0.20 × (1 − 前三主題比例) + 0.20 × min(主題數 / 25, 1)</code> 選取最高分。</aside>
 
+## 穩定性檢測
+
+<div class="stability-summary">
+<div><span>測試 seed</span><strong>5</strong></div>
+<div><span>主題數範圍</span><strong>130–138</strong></div>
+<div><span>noise ratio 範圍</span><strong>28.20%–31.48%</strong></div>
+<div><span>balance score 範圍</span><strong>0.879–0.887</strong></div>
+</div>
+<p class="stability-note">以最佳平衡參數在不同 random state 下重跑；範圍用於檢視分群結果對初始化的敏感程度。</p>
+
+## 最佳平衡的主題語意摘要
+
+<p class="section-intro">以下為最佳平衡結果的前 8 個有效主題；每列保留前 10 個代表詞與第一則代表句，供快速判讀語意品質。</p>
+<div class="table-scroll"><table class="semantic-table"><thead><tr><th>主題</th><th>代表詞（前 10）</th><th>代表句</th></tr></thead><tbody><tr><td>0</td><td>car, cars, vehicle, vehicles, car car, sports car, automotive, sports, car really, production</td><td>And the car I&#x27;m about to show you is one of those.</td></tr><tr><td>1</td><td>bmw, series, new bmw, bmw series, i3, bmw i3, i8, i5, new, i4</td><td>The 4 Series is the heart of BMW.</td></tr><tr><td>2</td><td>charging, charge, stations, charger, charging stations, level, station, dc, charging station, volt</td><td>Level 2 charging from a Level 2 home or public charging station, Level 1 charging from the occasional use cable, which comes with every BMW i3 vehicle, or DC charging from a DC charging station.</td></tr><tr><td>3</td><td>assist, blind, blind spot, lane, spot, alert, monitor, camera, view, traffic</td><td>When it comes to safety, both Elantra and Elantra Hybrid have a lot going on with a suite of standard and available SmartSense safety features, like forward collision avoidance assist with pedestrian detection, blind...</td></tr><tr><td>4</td><td>seats, seat, cargo, rear seats, rear, space, cubic, cubic feet, passengers, fold</td><td>And then we have the seats.</td></tr><tr><td>5</td><td>led, lights, grille, headlights, light, tail, signature, headlamps, grill, lamps</td><td>Like the LED headlights of Polestar 2.</td></tr><tr><td>6</td><td>apple, carplay, apple carplay, key, smartphone, iphone, android, phone, apps, android auto</td><td>In either case, the latest system includes standard wireless compatibility for Apple CarPlay, which connects drivers to the apps on their iPhone, including maps, messages, podcasts, and music subscriptions.</td></tr><tr><td>7</td><td>lexus, nsx, acura, nx, crossover, rogue, supercar, ux, brand, new</td><td>here, the all-new Acura NSX.</td></tr></tbody></table></div>
+
+
+
 ## 圖表檢視
 
 候選策略比較圖用來並列三種策略的主題數、noise ratio 與主題集中度；參數熱圖或選定設定比較圖則用來觀察不同 UMAP／HDBSCAN 組合對分群結果的影響。
 
-<div class="result-figure-scroller"><figure><img src="{{ '/assets/results/a04-7-orig-tok/charts/best_three_comparison.png' | relative_url }}" alt="best_three_comparison"><figcaption>best three comparison</figcaption></figure><figure><img src="{{ '/assets/results/a04-7-orig-tok/charts/best_three_topic_size_distribution.png' | relative_url }}" alt="best_three_topic_size_distribution"><figcaption>best three topic size distribution</figcaption></figure><figure><img src="{{ '/assets/results/a04-7-orig-tok/charts/parameter_heatmap.png' | relative_url }}" alt="parameter_heatmap"><figcaption>parameter heatmap</figcaption></figure></div>
+<div class="result-figure-scroller"><figure><img src="{{ '/assets/results/a04-7-orig-tok/charts/best_three_comparison.png' | relative_url }}" alt="三種候選策略比較"><figcaption>三種候選策略比較</figcaption></figure><figure><img src="{{ '/assets/results/a04-7-orig-tok/charts/best_three_topic_size_distribution.png' | relative_url }}" alt="best three topic size distribution"><figcaption>best three topic size distribution</figcaption></figure><figure><img src="{{ '/assets/results/a04-7-orig-tok/charts/parameter_heatmap.png' | relative_url }}" alt="參數組合熱圖"><figcaption>參數組合熱圖</figcaption></figure></div>
+
+<details class="result-chart-details">
+<summary>完整參數圖表（6 張）</summary>
+<p>用於追查各 UMAP／HDBSCAN 參數與主題數、離群比例、主題集中度之間的關係。</p>
+<div class="result-figure-scroller"><figure><img src="{{ '/assets/results/a04-7-orig-tok/charts/best_balance_topic_size_bar.png' | relative_url }}" alt="最佳平衡的主題規模分布"><figcaption>最佳平衡的主題規模分布</figcaption></figure><figure><img src="{{ '/assets/results/a04-7-orig-tok/charts/cluster_selection_method_comparison.png' | relative_url }}" alt="HDBSCAN 切分方式比較"><figcaption>HDBSCAN 切分方式比較</figcaption></figure><figure><img src="{{ '/assets/results/a04-7-orig-tok/charts/min_cluster_size_dual_axis.png' | relative_url }}" alt="min_cluster_size 與主題數／noise ratio"><figcaption>min_cluster_size 與主題數／noise ratio</figcaption></figure><figure><img src="{{ '/assets/results/a04-7-orig-tok/charts/min_samples_noise_ratio.png' | relative_url }}" alt="min_samples 與 noise ratio"><figcaption>min_samples 與 noise ratio</figcaption></figure><figure><img src="{{ '/assets/results/a04-7-orig-tok/charts/n_components_n_clusters.png' | relative_url }}" alt="n_components 與主題數"><figcaption>n_components 與主題數</figcaption></figure><figure><img src="{{ '/assets/results/a04-7-orig-tok/charts/n_neighbors_largest_topic_ratio.png' | relative_url }}" alt="n_neighbors 與最大主題比例"><figcaption>n_neighbors 與最大主題比例</figcaption></figure></div>
+</details>
 
 ## 原始輸出
 

@@ -69,11 +69,34 @@ description: A04-5｜repl + tok 的 UMAP 與 HDBSCAN 聯合參數搜尋。
 </table></div>
 <aside class="table-note"><strong>註記｜最佳平衡的判定：</strong>先篩選 <code>n_clusters ≥ 4</code>、<code>noise ratio ≤ 0.35</code>、<code>最大主題比例 ≤ 0.65</code>、<code>前三主題比例 ≤ 0.85</code> 的組合；再以 <code>balance score = 0.30 × (1 − noise ratio) + 0.30 × (1 − 最大主題比例) + 0.20 × (1 − 前三主題比例) + 0.20 × min(主題數 / 25, 1)</code> 選取最高分。</aside>
 
+## 穩定性檢測
+
+<div class="stability-summary">
+<div><span>測試 seed</span><strong>5</strong></div>
+<div><span>主題數範圍</span><strong>139–155</strong></div>
+<div><span>noise ratio 範圍</span><strong>32.05%–36.96%</strong></div>
+<div><span>balance score 範圍</span><strong>0.863–0.876</strong></div>
+</div>
+<p class="stability-note">以最佳平衡參數在不同 random state 下重跑；範圍用於檢視分群結果對初始化的敏感程度。</p>
+
+## 最佳平衡的主題語意摘要
+
+<p class="section-intro">以下為最佳平衡結果的前 8 個有效主題；每列保留前 10 個代表詞與第一則代表句，供快速判讀語意品質。</p>
+<div class="table-scroll"><table class="semantic-table"><thead><tr><th>主題</th><th>代表詞（前 10）</th><th>代表句</th></tr></thead><tbody><tr><td>0</td><td>model, brand model, new model, model model, allnew, allnew model, new, model new, brand, model brand</td><td>This is what the Brand Model is all about.</td></tr><tr><td>1</td><td>charging, charge, stations, charger, dc, charging stations, station, level, fast, hours</td><td>For Brand Model vehicles equipped with the DC fast charging SAE option, a DC public charging station will charge the Brand Model to an 80% state of charge in 20 to 30 minutes depending on the charging station.</td></tr><tr><td>2</td><td>brand, brand brand, year, products, company, brand thats, product, year brand, global, brand stands</td><td>Brand.</td></tr><tr><td>3</td><td>electric, electric car, electrification, electric vehicle, electrified, electric cars, electric vehicles, vehicles, allelectric, electrified vehicles</td><td>Now, what is the heart of an electric car?</td></tr><tr><td>4</td><td>cool, amazing, thats, awesome, oh, doing, sounds, good, pretty, great</td><td>Oh, cool.</td></tr><tr><td>5</td><td>horsepower, engine, torque, poundfeet, v6, turbo, liter, fourcylinder, poundfeet torque, engines</td><td>This starts with its two modern powertrains, a 203-horsepower, 2.5-liter, 4-cylinder engine on gas grades, and the available Brand Hybrid system with 219 net combined horsepower on hybrid grades.</td></tr><tr><td>6</td><td>hi, thank, hello, welcome, hey, andy, im, tom, alex, gian</td><td>Hi, Ede.</td></tr><tr><td>7</td><td>question, questions, answer, talk, little bit, bit, tell, say, question question, little</td><td>First question.</td></tr></tbody></table></div>
+
+
+
 ## 圖表檢視
 
 候選策略比較圖用來並列三種策略的主題數、noise ratio 與主題集中度；參數熱圖或選定設定比較圖則用來觀察不同 UMAP／HDBSCAN 組合對分群結果的影響。
 
-<div class="result-figure-scroller"><figure><img src="{{ '/assets/results/a04-5-repl-tok/plots/06_selected_configs_comparison.png' | relative_url }}" alt="06_selected_configs_comparison"><figcaption>06 selected configs comparison</figcaption></figure></div>
+<div class="result-figure-scroller"><figure><img src="{{ '/assets/results/a04-5-repl-tok/plots/06_selected_configs_comparison.png' | relative_url }}" alt="06 selected configs comparison"><figcaption>06 selected configs comparison</figcaption></figure></div>
+
+<details class="result-chart-details">
+<summary>完整參數圖表（5 張）</summary>
+<p>用於追查各 UMAP／HDBSCAN 參數與主題數、離群比例、主題集中度之間的關係。</p>
+<div class="result-figure-scroller"><figure><img src="{{ '/assets/results/a04-5-repl-tok/plots/01_min_cluster_size_dual_axis.png' | relative_url }}" alt="01 min cluster size dual axis"><figcaption>01 min cluster size dual axis</figcaption></figure><figure><img src="{{ '/assets/results/a04-5-repl-tok/plots/02_min_samples_noise_ratio.png' | relative_url }}" alt="02 min samples noise ratio"><figcaption>02 min samples noise ratio</figcaption></figure><figure><img src="{{ '/assets/results/a04-5-repl-tok/plots/03_n_neighbors_largest_topic_ratio.png' | relative_url }}" alt="03 n neighbors largest topic ratio"><figcaption>03 n neighbors largest topic ratio</figcaption></figure><figure><img src="{{ '/assets/results/a04-5-repl-tok/plots/04_n_components_n_clusters.png' | relative_url }}" alt="04 n components n clusters"><figcaption>04 n components n clusters</figcaption></figure><figure><img src="{{ '/assets/results/a04-5-repl-tok/plots/05_cluster_selection_method_comparison.png' | relative_url }}" alt="05 cluster selection method comparison"><figcaption>05 cluster selection method comparison</figcaption></figure></div>
+</details>
 
 ## 原始輸出
 

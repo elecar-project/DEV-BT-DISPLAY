@@ -27,6 +27,18 @@ EXPERIMENTS = {
     "[B]01-(orig)_20-25_tok(para12-80)": ("a04-b01-20-25", "A04 B01｜2020-2025"),
 }
 
+CHART_LABELS = {
+    "best_three_comparison": "三種候選策略比較",
+    "parameter_heatmap": "參數組合熱圖",
+    "best_balance_topic_size_bar": "最佳平衡的主題規模分布",
+    "cluster_selection_method_comparison": "HDBSCAN 切分方式比較",
+    "min_cluster_size_dual_axis": "min_cluster_size 與主題數／noise ratio",
+    "min_samples_noise_ratio": "min_samples 與 noise ratio",
+    "n_components_n_clusters": "n_components 與主題數",
+    "n_neighbors_largest_topic_ratio": "n_neighbors 與最大主題比例",
+    "selected_topic_size_distributions": "三種候選的主題規模分布",
+}
+
 
 def pct(value: object) -> str:
     return f"{float(value) * 100:.2f}%"
@@ -81,6 +93,126 @@ def candidate_table(rows: list[dict[str, object]]) -> str:
 <aside class="table-note"><strong>註記｜最佳平衡的判定：</strong>先篩選 <code>n_clusters ≥ 4</code>、<code>noise ratio ≤ 0.35</code>、<code>最大主題比例 ≤ 0.65</code>、<code>前三主題比例 ≤ 0.85</code> 的組合；再以 <code>balance score = 0.30 × (1 − noise ratio) + 0.30 × (1 − 最大主題比例) + 0.20 × (1 − 前三主題比例) + 0.20 × min(主題數 / 25, 1)</code> 選取最高分。</aside>""".format("".join(body))
 
 
+def best_balance(rows: list[dict[str, object]]) -> dict[str, object] | None:
+    return next((row for row in rows if val(row, "selection_label") == "best_balance"), None)
+
+
+def same_value(left: object, right: object) -> bool:
+    try:
+        return abs(float(left) - float(right)) < 1e-9
+    except (TypeError, ValueError):
+        return str(left) == str(right)
+
+
+def stability_summary(folder: Path, candidate: dict[str, object] | None) -> str:
+    if candidate is None:
+        return '<p class="result-empty">未找到最佳平衡候選設定，無法產生穩定性摘要。</p>'
+    required = (
+        "umap_n_neighbors", "umap_n_components", "umap_min_dist",
+        "hdbscan_min_cluster_size", "hdbscan_min_samples",
+        "hdbscan_cluster_selection_method", "hdbscan_cluster_selection_epsilon",
+        "n_clusters", "noise_ratio", "balance_score",
+    )
+    matching: list[dict[str, str]] = []
+    fields = required[:7]
+    for path in folder.glob("*stability*.csv"):
+        values = read_csv(path)
+        if not values or not all(key in values[0] for key in required):
+            continue
+        seed_key = "umap_random_state" if "umap_random_state" in values[0] else "random_state"
+        if seed_key not in values[0]:
+            continue
+        current = [row for row in values if all(same_value(row[key], candidate[key]) for key in fields)]
+        if len(current) > len(matching):
+            matching = current
+    if not matching:
+        return '<p class="result-empty">原始資料保留穩定性檔案，但沒有與最佳平衡設定完全對應的 seed 結果。</p>'
+    seed_key = "umap_random_state" if "umap_random_state" in matching[0] else "random_state"
+    seeds = {row[seed_key] for row in matching}
+    topics = [float(row["n_clusters"]) for row in matching]
+    noise = [float(row["noise_ratio"]) for row in matching]
+    scores = [float(row["balance_score"]) for row in matching]
+    return """<div class="stability-summary">
+<div><span>測試 seed</span><strong>{}</strong></div>
+<div><span>主題數範圍</span><strong>{}–{}</strong></div>
+<div><span>noise ratio 範圍</span><strong>{}–{}</strong></div>
+<div><span>balance score 範圍</span><strong>{:.3f}–{:.3f}</strong></div>
+</div>
+<p class="stability-note">以最佳平衡參數在不同 random state 下重跑；範圍用於檢視分群結果對初始化的敏感程度。</p>""".format(
+        len(seeds), int(min(topics)), int(max(topics)), pct(min(noise)), pct(max(noise)), min(scores), max(scores)
+    )
+
+
+def semantic_summary(folder: Path) -> str:
+    model_dir = folder / "final_models" / "best_balance"
+    word_path = model_dir / "topic_words.csv"
+    if not word_path.is_file():
+        return '<p class="result-empty">此實驗未保留最佳平衡的主題詞輸出。</p>'
+    representative_path = model_dir / "representative_docs.csv"
+    representative: dict[str, str] = {}
+    if representative_path.is_file():
+        for row in read_csv(representative_path):
+            topic = row.get("topic") or row.get("Topic") or ""
+            text = row.get("representative_text") or row.get("representative_doc") or ""
+            if topic not in representative and text:
+                representative[topic] = text
+    word_rows = read_csv(word_path)
+    rows = []
+    if word_rows and "words" in word_rows[0]:
+        grouped_words = [(row.get("topic", ""), row.get("words", "")) for row in word_rows]
+    else:
+        grouped: dict[str, list[tuple[int, str]]] = {}
+        for row in word_rows:
+            topic = row.get("topic") or row.get("Topic") or ""
+            word = row.get("word", "")
+            if topic and word:
+                grouped.setdefault(topic, []).append((int(row.get("rank", "999") or 999), word))
+        grouped_words = [(topic, ", ".join(word for _, word in sorted(words)[:10])) for topic, words in grouped.items()]
+    for topic, words in grouped_words:
+        if topic == "-1" or not words:
+            continue
+        text = representative.get(topic, "—")
+        if len(text) > 220:
+            text = text[:217].rstrip() + "..."
+        rows.append((int(topic) if topic.lstrip("-").isdigit() else 999999, topic, words, text))
+    rows.sort(key=lambda item: item[0])
+    body = "".join(
+        "<tr><td>{}</td><td>{}</td><td>{}</td></tr>".format(
+            html.escape(topic), html.escape(words), html.escape(text)
+        )
+        for _, topic, words, text in rows[:8]
+    )
+    if not body:
+        return '<p class="result-empty">最佳平衡結果沒有可顯示的有效主題詞。</p>'
+    return """<p class="section-intro">以下為最佳平衡結果的前 8 個有效主題；每列保留前 10 個代表詞與第一則代表句，供快速判讀語意品質。</p>
+<div class="table-scroll"><table class="semantic-table"><thead><tr><th>主題</th><th>代表詞（前 10）</th><th>代表句</th></tr></thead><tbody>{}</tbody></table></div>""".format(body)
+
+
+def brand_model_summary(folder: Path) -> str:
+    path = folder / "brand_model_topic_word_check.csv"
+    if not path.is_file():
+        return ""
+    rows = [row for row in read_csv(path) if row.get("selection_label") == "best_balance"]
+    if not rows:
+        return ""
+    hit_topics = sum(int(float(row.get("brand_model_hit_count", "0") or 0)) > 0 for row in rows)
+    total_hits = sum(int(float(row.get("brand_model_hit_count", "0") or 0)) for row in rows)
+    return """<h3>品牌／車款詞彙檢查</h3>
+<aside class="table-note">最佳平衡結果中，共檢查 {} 個主題的前 {} 個詞；{} 個主題含有品牌或車款詞彙（合計 {} 次）。此數字用來判讀主題是否仍可能被品牌／車款名稱主導。</aside>""".format(
+        len(rows), rows[0].get("top_word_count", "10"), hit_topics, total_hits
+    )
+
+
+def chart_figure(path: Path, asset_dir: Path, slug: str) -> str:
+    label = CHART_LABELS.get(path.stem, path.stem.replace("_", " "))
+    return (
+        '<figure><img src="{{{{ \'/assets/results/{}/{ }\' | relative_url }}}}" alt="{}">'
+        '<figcaption>{}</figcaption></figure>'
+    ).replace("{ }", path.relative_to(asset_dir).as_posix()).format(
+        slug, html.escape(label), html.escape(label)
+    )
+
+
 def download_table(copied: list[Path], asset_dir: Path, slug: str) -> str:
     descriptions = {
         "stage1": "第一階段 UMAP 與精簡 HDBSCAN 的廣泛搜尋結果",
@@ -117,9 +249,11 @@ def download_table(copied: list[Path], asset_dir: Path, slug: str) -> str:
 
 def run() -> None:
     overview_links = []
+    overview_rows = []
     for folder_name, (slug, title) in EXPERIMENTS.items():
         folder = SOURCE / folder_name
         rows = selected(folder)
+        balance_candidate = best_balance(rows)
         log_path = next(iter(folder.glob("*-run_log.json")), None)
         if log_path is None and (folder / "run_log.json").is_file():
             log_path = folder / "run_log.json"
@@ -153,12 +287,22 @@ def run() -> None:
         stage2 = next((path for path in copied if "stage2" in path.name and path.suffix == ".csv"), None)
         stage1_count = len(read_csv(stage1)) if stage1 else "-"
         stage2_count = len(read_csv(stage2)) if stage2 else "-"
-        key_charts = [p for p in copied if p.suffix == ".png" and any(x in p.name for x in ("best_three", "parameter_heatmap", "selected_configs"))][:3]
-        figures = "".join(
-            f'<figure><img src="{{{{ \'/assets/results/{slug}/{path.relative_to(asset_dir).as_posix()}\' | relative_url }}}}" alt="{html.escape(path.stem)}"><figcaption>{html.escape(path.stem.replace("_", " "))}</figcaption></figure>'
-            for path in key_charts
-        )
+        chart_paths = [path for path in copied if path.suffix.lower() == ".png"]
+        key_charts = [path for path in chart_paths if any(x in path.name for x in ("best_three", "parameter_heatmap", "selected_configs"))][:3]
+        figures = "".join(chart_figure(path, asset_dir, slug) for path in key_charts)
         figure_block = f'<div class="result-figure-scroller">{figures}</div>' if figures else ""
+        remaining_charts = [path for path in chart_paths if path not in key_charts]
+        full_chart_block = ""
+        if remaining_charts:
+            all_figures = "".join(chart_figure(path, asset_dir, slug) for path in remaining_charts)
+            full_chart_block = f'''<details class="result-chart-details">
+<summary>完整參數圖表（{len(remaining_charts)} 張）</summary>
+<p>用於追查各 UMAP／HDBSCAN 參數與主題數、離群比例、主題集中度之間的關係。</p>
+<div class="result-figure-scroller">{all_figures}</div>
+</details>'''
+        stability_block = stability_summary(folder, balance_candidate)
+        semantic_block = semantic_summary(folder)
+        brand_block = brand_model_summary(folder)
         page = f'''---
 title: {title} UMAP 搜尋
 description: {title} 的 UMAP 與 HDBSCAN 聯合參數搜尋。
@@ -226,11 +370,23 @@ description: {title} 的 UMAP 與 HDBSCAN 聯合參數搜尋。
 
 {candidate_table(rows)}
 
+## 穩定性檢測
+
+{stability_block}
+
+## 最佳平衡的主題語意摘要
+
+{semantic_block}
+
+{brand_block}
+
 ## 圖表檢視
 
 候選策略比較圖用來並列三種策略的主題數、noise ratio 與主題集中度；參數熱圖或選定設定比較圖則用來觀察不同 UMAP／HDBSCAN 組合對分群結果的影響。
 
 {figure_block}
+
+{full_chart_block}
 
 ## 原始輸出
 
@@ -240,12 +396,31 @@ description: {title} 的 UMAP 與 HDBSCAN 聯合參數搜尋。
 '''
         (PAGES / f"{slug}.md").write_text(page, encoding="utf-8")
         overview_links.append(f"[{title}]({{{{ '/results/{slug}.html' | relative_url }}}})")
+        if balance_candidate:
+            overview_rows.append(
+                "<tr><td><a href=\"{{{{ '/results/{}.html' | relative_url }}}}\">{}</a></td>"
+                "<td>neighbors {} / components {} / min dist {}</td>"
+                "<td>cluster {} / samples {} / {} / eps {}</td>"
+                "<td>{}</td><td>{}</td><td>{}</td><td>{}</td></tr>".format(
+                    slug, html.escape(title),
+                    val(balance_candidate, "umap_n_neighbors"), val(balance_candidate, "umap_n_components"), val(balance_candidate, "umap_min_dist"),
+                    val(balance_candidate, "hdbscan_min_cluster_size"), val(balance_candidate, "hdbscan_min_samples"),
+                    val(balance_candidate, "hdbscan_cluster_selection_method"), val(balance_candidate, "hdbscan_cluster_selection_epsilon"),
+                    val(balance_candidate, "n_clusters"), pct(val(balance_candidate, "noise_ratio", 0)),
+                    pct(val(balance_candidate, "largest_topic_ratio", 0)), val(balance_candidate, "balance_score"),
+                )
+            )
         print(f"Imported {folder_name}")
 
     (PAGES / "a04-umap-overview.md").write_text(
         "---\ntitle: A04 UMAP 整體比較\ndescription: A04 UMAP 與 HDBSCAN 聯合搜尋結果。\n---\n\n"
         "# A04｜UMAP 整體比較\n\n"
         "A04 階段同時探索 UMAP 降維與 HDBSCAN 分群設定；每個資料版本均保留最低雜訊、最多主題與最佳平衡三種候選策略。\n\n"
+        "## 最佳平衡跨資料集比較\n\n"
+        "此表將各資料版本的最佳平衡候選並列，便於比較資料處理策略與年份切分造成的差異；分數僅適合搭配 noise ratio、主題數與主題集中度共同解讀。\n\n"
+        "<div class=\"table-scroll\"><table class=\"umap-overview-table\"><thead><tr><th>資料版本</th><th>UMAP</th><th>HDBSCAN</th><th>主題數</th><th>noise ratio</th><th>最大主題比例</th><th>balance score</th></tr></thead><tbody>"
+        + "".join(overview_rows)
+        + "</tbody></table></div>\n\n"
         "## 個別實驗\n\n可直接查看：" + "、".join(overview_links) + "。\n",
         encoding="utf-8",
     )
