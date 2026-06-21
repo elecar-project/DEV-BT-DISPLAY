@@ -162,7 +162,27 @@ def track_html(track: tuple) -> str:
 
 
 def write_branch_overview(track: tuple) -> None:
-    track_id, title, dataset, description, _ = track
+    track_id, title, dataset, description, versions = track
+    final_block = ""
+    if track_id == "a05-8-orig-rev":
+        slug, label, relative, _, _ = versions[-1]
+        source = SOURCE / relative
+        text = source.read_text(encoding="utf-8")
+        docx = source.with_suffix(".docx")
+        downloads = (
+            f'<tr><td><a href="{{{{ \'/assets/results/{slug}/{source.name}\' | relative_url }}}}">{html.escape(source.name)}</a></td><td>人工精選版的完整停用詞與 CountVectorizer 清單</td></tr>'
+            f'<tr><td><a href="{{{{ \'/assets/results/{slug}/{docx.name}\' | relative_url }}}}">{html.escape(docx.name)}</a></td><td>人工審閱用 Word 版本</td></tr>'
+        )
+        final_block = f'''## 最終建議版｜{label}
+
+此版本為 A05-8 orig REV 版本線的人工精選結果。下表直接呈現 12 類最終保留的停用詞設計；完整單字清單可由下方原始輸出取得。
+
+{sections_html(table_sections(text))}
+
+### 原始輸出
+
+<table class="output-table"><thead><tr><th>檔案</th><th>用途</th></tr></thead><tbody>{downloads}</tbody></table>
+'''
     page = f'''---
 title: {title}
 description: {title} 的停用詞版本線。
@@ -175,6 +195,8 @@ description: {title} 的停用詞版本線。
 <aside class="table-note"><strong>資料版本：</strong><code>{dataset}</code>。每個節點均可查看停用詞分類、加入理由與原始檔。</aside>
 
 {track_html(track)}
+
+{final_block}
 
 <p><a href="{{{{ '/results/a05-stopwords-overview.html' | relative_url }}}}">回到 A05 停用詞總覽</a></p>
 '''
