@@ -8,8 +8,8 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 本頁依實驗的資料血緣與處理順序呈現。可點擊的節點已有完整結果與設定摘要；其他節點保留在地圖中，待後續整理後開放。
 
 <div class="experiment-map-scroll" aria-label="DEV-BT 完整實驗地圖">
-    <object class="experiment-map-full" type="image/svg+xml" data="{{ '/assets/img/experiment-map-full.svg?v=20260621-a05-v14' | relative_url }}">
-    <img src="{{ '/assets/img/experiment-map-full.svg?v=20260621-a05-v14' | relative_url }}" alt="DEV-BT 完整實驗運行架構圖">
+    <object class="experiment-map-full" type="image/svg+xml" data="{{ '/assets/img/experiment-map-full.svg?v=20260621-a05-v15' | relative_url }}">
+    <img src="{{ '/assets/img/experiment-map-full.svg?v=20260621-a05-v15' | relative_url }}" alt="DEV-BT 完整實驗運行架構圖">
   </object>
 </div>
 
@@ -47,7 +47,7 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 
 ## A05 停用詞設計
 
-[A05 停用詞總覽]({{ '/results/a05-stopwords-overview.html' | relative_url }})以三條版本線呈現 A05-6、A05-8 repl 與 A05-8 orig REV 的詞表迭代；每個節點均可查看分類、加入理由與原始檔，人工精選版為 [A05-8.4 human]({{ '/results/a05-8-orig-rev-human-stopwords.html' | relative_url }})。
+[A05 停用詞總覽]({{ '/results/a05-stopwords-overview.html' | relative_url }})呈現正確的 A05-6 與 A05-8 orig REV 詞表迭代；流程圖的 6、8 節點可分別進入其分支頁，人工精選版為 [A05-8.4 human]({{ '/results/a05-8-orig-rev-human-stopwords.html' | relative_url }})。
 
 ## 年份切分 min_cluster_size 掃描
 

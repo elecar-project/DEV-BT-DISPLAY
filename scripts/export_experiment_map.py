@@ -38,6 +38,8 @@ NODE_LINKS = {
     "mRq0KLDsOoRAvhbJz9B0-26": "../../results/a04-8-orig-tok-para12-80.html",
     "mRq0KLDsOoRAvhbJz9B0-75": "../../results/a04-b01-08-19.html",
     "mRq0KLDsOoRAvhbJz9B0-80": "../../results/a04-b01-20-25.html",
+    "mRq0KLDsOoRAvhbJz9B0-29": "../../results/a05-6-overview.html",
+    "mRq0KLDsOoRAvhbJz9B0-45": "../../results/a05-8-orig-rev-overview.html",
 }
 EMPTY_NODE_LABELS = {
     "1 (del)", "4 (repl)", "0 (orig)", "8C", "2020 後",
