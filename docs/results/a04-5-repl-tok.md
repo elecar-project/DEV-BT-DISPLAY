@@ -13,6 +13,7 @@ description: A04-5｜repl + tok 的 UMAP 與 HDBSCAN 聯合參數搜尋。
 
 <table class="settings-table"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>
 <tr><td>資料集</td><td><code>-</code></td></tr>
+<tr><td>來源資料夾</td><td><code>#運行BERTopic整理/#4. UMAP（未整理）/A04-5(repl)_tok</code></td></tr>
 <tr><td>可用句子</td><td>-</td></tr>
 <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>
 <tr><td>UMAP</td><td>cosine / random state 42</td></tr>

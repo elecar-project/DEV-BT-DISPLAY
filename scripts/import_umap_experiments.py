@@ -23,8 +23,8 @@ EXPERIMENTS = {
     "A04-6(repl)_tok(para12-80)": ("a04-6-repl-tok-para12-80", "A04-6｜repl + tok + 段落 12-80"),
     "A04-7(orig)_tok": ("a04-7-orig-tok", "A04-7｜orig + tok"),
     "A04-8(orig)_tok(para12-80)": ("a04-8-orig-tok-para12-80", "A04-8｜orig + tok + 段落 12-80"),
-    "[B]01-(orig)_08-19_tok(para12-80)": ("a04-b01-08-19", "A04 B01｜2008-2019"),
-    "[B]01-(orig)_20-25_tok(para12-80)": ("a04-b01-20-25", "A04 B01｜2020-2025"),
+    "[B]01-(orig)_08-19_tok(para12-80)": ("a04-b01-08-19", "A04｜2020 前（2008-2019）"),
+    "[B]01-(orig)_20-25_tok(para12-80)": ("a04-b01-20-25", "A04｜2020 後（2020-2025）"),
 }
 
 CHART_LABELS = {
@@ -47,6 +47,18 @@ def pct(value: object) -> str:
 def read_csv(path: Path) -> list[dict[str, str]]:
     with path.open(encoding="utf-8-sig", newline="") as handle:
         return list(csv.DictReader(handle))
+
+
+def report_used_rows(report_text: str) -> str | None:
+    lines = report_text.splitlines()
+    for index, line in enumerate(lines[:-2]):
+        if "used_rows" not in line or not line.startswith("|"):
+            continue
+        headers = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        values = [cell.strip() for cell in lines[index + 2].strip().strip("|").split("|")]
+        if len(headers) == len(values) and "used_rows" in headers:
+            return values[headers.index("used_rows")]
+    return None
 
 
 def selected(folder: Path) -> list[dict[str, object]]:
@@ -263,7 +275,7 @@ def run() -> None:
         report_text = report.read_text(encoding="utf-8") if report else ""
         match = re.search(r"(?:資料來源|dataset_dir)[：:]?\s*`?([^`\n|]+)", report_text)
         dataset = meta.get("dataset_dir") or payload.get("dataset") or (match.group(1).strip() if match else "-")
-        used_rows = meta.get("used_rows") or meta.get("source_rows") or "-"
+        used_rows = meta.get("used_rows") or meta.get("source_rows") or report_used_rows(report_text) or "-"
 
         asset_dir = ASSETS / slug
         asset_dir.mkdir(parents=True, exist_ok=True)
@@ -318,6 +330,7 @@ description: {title} 的 UMAP 與 HDBSCAN 聯合參數搜尋。
 
 <table class="settings-table"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>
 <tr><td>資料集</td><td><code>{html.escape(str(dataset))}</code></td></tr>
+<tr><td>來源資料夾</td><td><code>#運行BERTopic整理/#4. UMAP（未整理）/{html.escape(folder_name)}</code></td></tr>
 <tr><td>可用句子</td><td>{used_rows}</td></tr>
 <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>
 <tr><td>UMAP</td><td>cosine / random state 42</td></tr>
