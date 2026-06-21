@@ -54,11 +54,15 @@ NODE_LINKS = {
     "mRq0KLDsOoRAvhbJz9B0-29": "../../results/a05-6-overview.html",
     "mRq0KLDsOoRAvhbJz9B0-45": "../../results/a05-8-orig-rev-overview.html",
 }
+NODE_LABEL_OVERRIDES = {
+    "mRq0KLDsOoRAvhbJz9B0-70": "M03：主程式\n（年份切分）",
+    "mRq0KLDsOoRAvhbJz9B0-88": "T02：驗證\n（年份切）",
+    "mRq0KLDsOoRAvhbJz9B0-95": "T03：驗證\n（資料篩選）",
+}
 EMPTY_NODE_LABELS = {
-    "1 (del)", "4 (repl)", "0 (orig)", "8C", "2020 後",
+    "1 (del)", "4 (repl)", "0 (orig)", "8C",
     "2018 前 (08-17)", "2018 後 (18-25)", "2019 前 (08-18)",
     "2019 後 (19-25)", "2021 前 (08-20)", "2021 後 (21-25)",
-    "2018 前", "2018 後", "2019 前", "2019 後", "2021 前", "2021 後",
     "8 (orig)_tok(para12-80)_影長1~35m", "8 (orig)_tok(para12-80)_去頭尾5廠",
     "8New-影長1~35m", "8New-去頭尾5廠",
 }
@@ -155,7 +159,7 @@ def main() -> None:
         style = cell.get("style", "")
         nodes[cell.get("id", "")] = {
             "id": cell.get("id", ""),
-            "label": label(cell.get("value", "")),
+            "label": NODE_LABEL_OVERRIDES.get(cell.get("id", ""), label(cell.get("value", ""))),
             "x": float(geometry.get("x", "0")),
             "y": float(geometry.get("y", "0")),
             "w": float(geometry.get("width", "110")),

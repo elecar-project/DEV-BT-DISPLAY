@@ -24,12 +24,12 @@ description: DEV-BT 專案的內部研究展示站。
       <span>主要清理後逐字稿資料數</span>
     </div>
     <div class="metric">
-      <strong>26,978</strong>
-      <span>A06-A08 實驗的 BERTopic 輸入句數</span>
+      <strong>14 組</strong>
+      <span>已載入左右比對的資料集版本</span>
     </div>
     <div class="metric">
-      <strong>5 組</strong>
-      <span>已建立 topic_info CSV 的 BERTopic 結果</span>
+      <strong>8 條</strong>
+      <span>已整理的實驗與驗證路徑</span>
     </div>
   </aside>
 </section>
@@ -41,6 +41,6 @@ description: DEV-BT 專案的內部研究展示站。
 | 原始與清理後逐字稿 | 454 筆原始逐字稿、434 筆主要清理後逐字稿 | `#TXT_DATA/` |
 | 篩選資料集 | 600-2159 秒區間 103 筆、廠商去頭尾各 5 家 237 筆 | `#TXT_DATA/`、`Result/DB_Filter/` |
 | 前處理結果 | OpenRouter/LLM 清理 434 筆，成功 434 筆 | `Result/06.03_A02/` |
-| BERTopic 結果 | A06、A07、A08 topic_info 與試跑報告 | `Result/` |
+| BERTopic 結果 | A03-A05 探索、M01-M03 主程式、T01-T02 驗證結果與原始輸出 | `Result/`、`#運行BERTopic整理/` |
 | 時間切分比對 | 434 筆與資料庫 upload year 對齊的 match report | `Result/06.13_A02/` |
 | 工具與 App | Pre-process、BERTopic、A/B/C 系列工具 | 母倉庫各工具資料夾與 Release |

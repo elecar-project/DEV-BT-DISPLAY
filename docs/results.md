@@ -8,8 +8,8 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 本頁依實驗的資料血緣與處理順序呈現。可點擊的節點已有完整結果與設定摘要；其他節點保留在地圖中，待後續整理後開放。
 
 <div class="experiment-map-scroll" aria-label="DEV-BT 完整實驗地圖">
-    <object class="experiment-map-full" type="image/svg+xml" data="{{ '/assets/img/experiment-map-full.svg?v=20260621-t02-map-v23' | relative_url }}">
-    <img src="{{ '/assets/img/experiment-map-full.svg?v=20260621-t02-map-v23' | relative_url }}" alt="DEV-BT 完整實驗運行架構圖">
+    <object class="experiment-map-full" type="image/svg+xml" data="{{ '/assets/img/experiment-map-full.svg?v=20260621-audit-v24' | relative_url }}">
+    <img src="{{ '/assets/img/experiment-map-full.svg?v=20260621-audit-v24' | relative_url }}" alt="DEV-BT 完整實驗運行架構圖">
   </object>
 </div>
 
@@ -29,7 +29,7 @@ description: 以實驗路徑瀏覽 DEV-BT 的 BERTopic 結果與驗證分支。
 | [2020 後]({{ '/results/m03-2020-after.html' | relative_url }}) | 年份切分後的 2020-2025 主題模型 | 可檢視 |
 | [T01 刪除／替換驗證]({{ '/results/t01-overview.html' | relative_url }}) | 比較刪除品牌／車款與替換為 Brand／Model 的主題結構 | 可檢視 |
 | [T02 年份切分驗證]({{ '/results/t02-overview.html' | relative_url }}) | 以 2018、2019、2021 為界比較前後兩段資料 | 可檢視 |
-| 其他 T01-T04 節點 | 驗證與敏感度分析 | 待整理 |
+| T03-T04 節點 | 資料篩選與 repl 停用詞驗證 | 待整理 |
 
 ## A03 min_cluster_size 掃描
 
