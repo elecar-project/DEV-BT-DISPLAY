@@ -1,5 +1,5 @@
 (() => {
-  const selector = '.table-scroll, .experiment-map-scroll, .result-figure-scroller, .stopword-line';
+  const selector = 'table, .table-scroll, .experiment-map-scroll, .result-figure-scroller, .stopword-line';
 
   function headingFor(element) {
     const tableHeaders = [...element.querySelectorAll('thead th')]
@@ -27,7 +27,7 @@
 
       element.dataset.scrollA11yReady = 'true';
       element.tabIndex = 0;
-      element.setAttribute('role', 'group');
+      if (element.tagName !== 'TABLE') element.setAttribute('role', 'group');
       if (!element.hasAttribute('aria-label') && !element.hasAttribute('aria-labelledby')) {
         element.setAttribute('aria-label', `${headingFor(element)}，可使用方向鍵捲動`);
       }
