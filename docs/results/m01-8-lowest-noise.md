@@ -1,37 +1,13 @@
 ---
 title: M01-8 最低雜訊
 description: M01-8 歷史主程式的 最低雜訊 BERTopic 結果。
+experiment_id: m01-8-lowest-noise
 ---
 
 # M01-8｜最低雜訊
 
 <div class="result-detail-layout" markdown="1">
-<aside class="result-settings" markdown="1">
-## 實驗設定
-
-### 資料血緣
-
-<table class="settings-table"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>
-<tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(orig)_tok(para12-80)_dataset</code></td></tr>
-<tr><td>選擇依據</td><td>最低 noise_ratio，並以較低 largest_topic_ratio 與較高 n_clusters 作為 tie-break。</td></tr>
-<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>
-<tr><td>UMAP</td><td>neighbors 15 / components 10 / min dist 0.05 / cosine</td></tr>
-<tr><td>HDBSCAN</td><td>cluster 225 / samples 5 / eom / eps 0.0</td></tr>
-</tbody></table>
-
-### 停用詞與命名
-
-<table class="settings-table"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>
-<tr><td>停用詞來源</td><td><a href="{{ '/results/a05-8-orig-rev-human-stopwords.html' | relative_url }}">A05-8.4 human</a></td></tr>
-<tr><td>客製停用詞</td><td>170 個；合併英文停用詞共 462 個</td></tr>
-<tr><td>LLM Provider</td><td>OpenRouter</td></tr>
-<tr><td>LLM models</td><td>anthropic/claude-opus-4.7 / openai/gpt-5.5 / google/gemini-3.1-pro-preview</td></tr>
-</tbody></table>
-
-### 導覽
-
-<p><a href="{{ '/results/m01-8-historical.html' | relative_url }}">回到 M01 三策略總覽</a></p>
-</aside>
+{% include result-settings.html id=page.experiment_id %}
 
 <section markdown="1">
 <aside class="table-note"><strong>歷史比較用途：</strong>此頁對應資料夾「M01主程式（三參數-廢用）」。保留它是為了追溯三種策略與 A05-8.4 human 停用詞導入後的結果，不作為後續 M02 正式模型的唯一依據。</aside>

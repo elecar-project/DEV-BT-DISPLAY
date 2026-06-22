@@ -1,0 +1,12 @@
+{% assign experiment = site.data.experiments.experiments | where: "id", include.id | first %}
+<aside class="result-settings" markdown="1">
+{% if experiment and experiment.settings_lines %}
+{% for line in experiment.settings_lines %}
+{{ line }}
+{% endfor %}
+{% else %}
+## 實驗設定
+
+<p>此頁尚未登錄設定資料。</p>
+{% endif %}
+</aside>

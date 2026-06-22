@@ -1,29 +1,13 @@
 ---
 title: A05-6.1 停用詞設計
 description: A05-6｜初步停用詞迭代 的 A05-6.1 停用詞設計紀錄。
+experiment_id: a05-6-1-stopwords
 ---
 
 # A05-6.1｜停用詞設計
 
 <div class="result-detail-layout" markdown="1">
-<aside class="result-settings" markdown="1">
-## 版本設定
-
-<table class="settings-table"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>
-<tr><td>版本線</td><td>A05-6｜初步停用詞迭代</td></tr>
-<tr><td>資料版本</td><td>repl + tok + 段落 12-80</td></tr>
-<tr><td>版本定位</td><td>第一次增補</td></tr>
-<tr><td>分類筆數</td><td>14 類</td></tr>
-</tbody></table>
-
-### 核心原則
-
-<p>保留 EV 語意錨點：<code>electric、EV、charging、battery、range、motor、torque、hybrid、plug</code>。</p>
-
-### 導覽
-
-<p><a href="{{ '/results/a05-stopwords-overview.html' | relative_url }}">回到 A05 停用詞總覽</a></p>
-</aside>
+{% include result-settings.html id=page.experiment_id %}
 
 <section markdown="1">
 ## 本版目的

@@ -1,38 +1,13 @@
 ---
 title: 2020 前｜年份切分
 description: M03 年份切分後的 2008-2019 BERTopic 結果與 LLM50 命名驗證。
+experiment_id: m03-2020-before
 ---
 
 # 2020 前｜年份切分
 
 <div class="result-detail-layout" markdown="1">
-<aside class="result-settings" markdown="1">
-## 實驗設定
-
-### 資料與模型
-
-<table class="settings-table"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>
-<tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]01-pre_LLM(orig)_08-19(240)_tok(para12-80)_dataset</code></td></tr>
-<tr><td>可用句子</td><td>11,160</td></tr>
-<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>
-<tr><td>UMAP</td><td>neighbors 5 / components 10 / min dist 0.0 / cosine</td></tr>
-<tr><td>HDBSCAN</td><td>cluster 100 / samples 5 / eom / eps 0.0</td></tr>
-<tr><td>Topic reduction</td><td><code>nr_topics=auto</code></td></tr>
-</tbody></table>
-
-<table class="settings-table"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>
-<tr><td>停用詞</td><td><a href="{{ '/results/a05-8-orig-rev-human-stopwords.html' | relative_url }}">A05-8.4 human</a>，客製 170 個</td></tr>
-<tr><td>LLM</td><td>OpenRouter / <code>openai/gpt-5.5</code></td></tr>
-<tr><td>命名次數</td><td>每個 topic 50 次</td></tr>
-<tr><td>代表句</td><td>6 句 / topic</td></tr>
-</tbody></table>
-
-### 來源資料夾
-
-<p><code>#運行BERTopic整理/#8. M03主程式（切年份）（未整理）/06.17_M03-1(orig_08-19_tp-50)</code></p>
-
-<p><a href="{{ '/results/m03-2020-after.html' | relative_url }}">查看 2020 後 年份切分結果</a></p>
-</aside>
+{% include result-settings.html id=page.experiment_id %}
 
 <section markdown="1">
 <div class="run-summary">

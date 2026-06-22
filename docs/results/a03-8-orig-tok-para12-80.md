@@ -1,40 +1,13 @@
 ---
 title: A03-8｜orig + tok + 段落 12-80
 description: A03-8｜orig + tok + 段落 12-80 的 HDBSCAN min_cluster_size 敏感度分析。
+experiment_id: a03-8-orig-tok-para12-80
 ---
 
 # A03-8｜orig + tok + 段落 12-80
 
 <div class="result-detail-layout" markdown="1">
-<aside class="result-settings" markdown="1">
-## 實驗設定
-
-### 資料血緣
-
-<table class="settings-table">
-  <thead><tr><th>項目</th><th>設定</th></tr></thead>
-  <tbody>
-    <tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(orig)_tok(para12-80)_dataset</code></td></tr>
-    <tr><td>使用欄位</td><td><code>sentence</code></td></tr>
-    <tr><td>可用句子</td><td>11,136</td></tr>
-    <tr><td>短句</td><td>14 筆少於 3 words</td></tr>
-  </tbody>
-</table>
-
-### 固定模型設定
-
-
-
-<table class="settings-table">
-  <thead><tr><th>項目</th><th>設定</th></tr></thead>
-  <tbody>
-    <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>
-    <tr><td>UMAP</td><td>neighbors 15 / components 5 / min dist 0 / cosine</td></tr>
-    <tr><td>HDBSCAN</td><td>euclidean / eom / prediction data</td></tr>
-    <tr><td>Vectorizer</td><td>English stop words / ngram 1-2 / min df 2</td></tr>
-  </tbody>
-</table>
-</aside>
+{% include result-settings.html id=page.experiment_id %}
 
 <section markdown="1">
 <div class="run-summary">

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import html
+import json
 import re
 import xml.etree.ElementTree as ET
 from pathlib import Path
@@ -11,49 +12,7 @@ from pathlib import Path
 
 SOURCE = Path("/workspaces/Dev-BT/實存圖.drawio")
 OUTPUT = Path(__file__).resolve().parents[1] / "docs/assets/img/experiment-map-full.svg"
-LINKS = {
-    "A03：min_cluster_size": "../../results/a03-min-cluster-overview.html",
-    "A04：UMAP": "../../results/a04-umap-overview.html",
-    "A05：停用詞": "../../results/a05-stopwords-overview.html",
-    "2 (del)_tok": "../../results/a03-2-del-tok.html",
-    "3 (del)_tok(para12-80)": "../../results/a03-3-del-tok-para12-80.html",
-    "5 (repl)_tok": "../../results/a03-5-repl-tok.html",
-    "5.1 (repl-y)_tok": "../../results/a03-5-1-repl-y-tok.html",
-    "6 (repl)_tok(para12-80)": "../../results/a03-6-repl-tok-para12-80.html",
-    "6.1 (repl-y)_tok(para12-80)": "../../results/a03-6-1-repl-y-tok-para12-80.html",
-    "7 (orig)_tok": "../../results/a03-7-orig-tok.html",
-    "8 (orig)_tok(para12-80)": "../../results/a03-8-orig-tok-para12-80.html",
-    "2020 前 (08-19)": "../../results/b01-08-19-min-cluster.html",
-    "2020 後 (20-25)": "../../results/b01-20-25-min-cluster.html",
-    "8New-LLM30": "../../results/m02-llm30.html",
-    "8New-LLM50": "../../results/m02-llm50.html",
-    "2020 前": "../../results/m03-2020-before.html",
-}
-NODE_LINKS = {
-    "mRq0KLDsOoRAvhbJz9B0-46": "../../results/m01-8-historical.html",
-    "mRq0KLDsOoRAvhbJz9B0-69": "../../results/m01-8-historical.html",
-    "mRq0KLDsOoRAvhbJz9B0-19": "../../results/a04-2-del-tok.html",
-    "mRq0KLDsOoRAvhbJz9B0-21": "../../results/a04-3-del-tok-para12-80.html",
-    "mRq0KLDsOoRAvhbJz9B0-27": "../../results/a04-5-repl-tok.html",
-    "mRq0KLDsOoRAvhbJz9B0-23": "../../results/a04-6-repl-tok-para12-80.html",
-    "mRq0KLDsOoRAvhbJz9B0-24": "../../results/a04-7-orig-tok.html",
-    "mRq0KLDsOoRAvhbJz9B0-26": "../../results/a04-8-orig-tok-para12-80.html",
-    "mRq0KLDsOoRAvhbJz9B0-75": "../../results/a04-b01-08-19.html",
-    "mRq0KLDsOoRAvhbJz9B0-80": "../../results/a04-b01-20-25.html",
-    "mRq0KLDsOoRAvhbJz9B0-82": "../../results/m03-2020-after.html",
-    "mRq0KLDsOoRAvhbJz9B0-84": "../../results/t01-overview.html",
-    "mRq0KLDsOoRAvhbJz9B0-85": "../../results/t01-del.html",
-    "mRq0KLDsOoRAvhbJz9B0-86": "../../results/t01-repl.html",
-    "mRq0KLDsOoRAvhbJz9B0-88": "../../results/t02-overview.html",
-    "mRq0KLDsOoRAvhbJz9B0-89": "../../results/t02-2018-before.html",
-    "mRq0KLDsOoRAvhbJz9B0-90": "../../results/t02-2018-after.html",
-    "mRq0KLDsOoRAvhbJz9B0-91": "../../results/t02-2019-after.html",
-    "mRq0KLDsOoRAvhbJz9B0-92": "../../results/t02-2019-before.html",
-    "mRq0KLDsOoRAvhbJz9B0-93": "../../results/t02-2021-before.html",
-    "mRq0KLDsOoRAvhbJz9B0-94": "../../results/t02-2021-after.html",
-    "mRq0KLDsOoRAvhbJz9B0-29": "../../results/a05-6-overview.html",
-    "mRq0KLDsOoRAvhbJz9B0-45": "../../results/a05-8-orig-rev-overview.html",
-}
+REGISTRY = Path(__file__).resolve().parents[1] / "docs/_data/experiments.json"
 NODE_LABEL_OVERRIDES = {
     "mRq0KLDsOoRAvhbJz9B0-70": "M03：主程式\n（年份切分）",
     "mRq0KLDsOoRAvhbJz9B0-88": "T02：驗證\n（年份切）",
@@ -66,6 +25,21 @@ EMPTY_NODE_LABELS = {
     "8 (orig)_tok(para12-80)_影長1~35m", "8 (orig)_tok(para12-80)_去頭尾5廠",
     "8New-影長1~35m", "8New-去頭尾5廠",
 }
+
+
+def registry_links() -> tuple[dict[str, str], dict[str, str]]:
+    """Build map destinations from the single experiment registry."""
+    data = json.loads(REGISTRY.read_text(encoding="utf-8"))
+    by_label: dict[str, str] = {}
+    by_node_id: dict[str, str] = {}
+    for experiment in data["experiments"]:
+        destination = "../../" + experiment["page"].lstrip("/")
+        mapping = experiment.get("map", {})
+        for label in mapping.get("labels", []):
+            by_label[label] = destination
+        for node_id in mapping.get("node_ids", []):
+            by_node_id[node_id] = destination
+    return by_label, by_node_id
 
 
 def style_value(style: str, name: str, default: str = "") -> str:
@@ -144,6 +118,7 @@ def orthogonal_points(
 
 def main() -> None:
     root = ET.parse(SOURCE).getroot()
+    links, node_links = registry_links()
     model = root.find(".//mxGraphModel")
     if model is None:
         raise RuntimeError("mxGraphModel not found")
@@ -224,7 +199,7 @@ def main() -> None:
         # cleanly when every dataset number begins at the same left inset.
         left_aligned = node["x"] == 47 and node["y"] < 550
         classes = "node dataset-node" if left_aligned else "node"
-        href = NODE_LINKS.get(node["id"]) or LINKS.get(node["label"])
+        href = node_links.get(node["id"]) or links.get(node["label"])
         if node["label"] in EMPTY_NODE_LABELS and not href:
             classes += " is-empty"
         font_size, lines = fitted_text(node["label"], node["w"] - 12, node["h"], node["font"])

@@ -1,40 +1,13 @@
 ---
 title: B01｜2020-2025 min_cluster_size 掃描
 description: B01｜2020-2025 min_cluster_size 掃描 的 HDBSCAN min_cluster_size 敏感度分析。
+experiment_id: b01-20-25-min-cluster
 ---
 
 # B01｜2020-2025 min_cluster_size 掃描
 
 <div class="result-detail-layout" markdown="1">
-<aside class="result-settings" markdown="1">
-## 實驗設定
-
-### 資料血緣
-
-<table class="settings-table">
-  <thead><tr><th>項目</th><th>設定</th></tr></thead>
-  <tbody>
-    <tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]01-pre_LLM(orig)_20-25(194)_tok(para12-80)_dataset</code></td></tr>
-    <tr><td>使用欄位</td><td><code>sentence</code></td></tr>
-    <tr><td>可用句子</td><td>10,680</td></tr>
-    <tr><td>短句</td><td>0 筆少於 3 words</td></tr>
-  </tbody>
-</table>
-
-### 固定模型設定
-
-
-
-<table class="settings-table">
-  <thead><tr><th>項目</th><th>設定</th></tr></thead>
-  <tbody>
-    <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>
-    <tr><td>UMAP</td><td>neighbors 15 / components 5 / min dist 0 / cosine</td></tr>
-    <tr><td>HDBSCAN</td><td>euclidean / eom / prediction data</td></tr>
-    <tr><td>Vectorizer</td><td>English stop words / ngram 1-2 / min df 2</td></tr>
-  </tbody>
-</table>
-</aside>
+{% include result-settings.html id=page.experiment_id %}
 
 <section markdown="1">
 <div class="run-summary">

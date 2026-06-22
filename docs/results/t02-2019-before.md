@@ -1,35 +1,13 @@
 ---
 title: T02 2019 前 年份切分
 description: T02 年份切分驗證：2008-2018。
+experiment_id: t02-2019-before
 ---
 
 # T02｜2019 前（2008-2018）
 
 <div class="result-detail-layout" markdown="1">
-<aside class="result-settings" markdown="1">
-## 實驗設定
-
-### 資料與模型
-
-<table class="settings-table"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>
-<tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]03-pre_LLM(orig)_08-18(221)_tok(para12-80)_dataset</code></td></tr>
-<tr><td>可用句子</td><td>10,208</td></tr>
-<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>
-<tr><td>UMAP</td><td>neighbors 10 / components 5 / min dist 0.0 / cosine</td></tr>
-<tr><td>HDBSCAN</td><td>cluster 125 / samples 5 / eom / eps 0.0</td></tr>
-<tr><td>Topic reduction</td><td><code>nr_topics=auto</code></td></tr>
-</tbody></table>
-<table class="settings-table"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>
-<tr><td>停用詞</td><td><a href="{{ '/results/a05-8-orig-rev-human-stopwords.html' | relative_url }}">A05-8.4 human</a>，客製 170 個</td></tr>
-<tr><td>LLM 設計</td><td>未設定／未執行</td></tr>
-<tr><td>代表句</td><td>6 句 / topic</td></tr>
-</tbody></table>
-
-### 來源資料夾
-
-<p><code>#運行BERTopic整理/#8.1 T03不同年份切段/06.17_T02-3(orig_08-18_tp-X)</code></p>
-<p><a href="{{ '/results/t02-overview.html' | relative_url }}">回到 T02 年份切分驗證總覽</a></p>
-</aside>
+{% include result-settings.html id=page.experiment_id %}
 
 <section markdown="1">
 <div class="run-summary">

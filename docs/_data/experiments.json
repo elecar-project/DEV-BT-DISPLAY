@@ -1,0 +1,1905 @@
+{
+  "schema_version": 1,
+  "groups": [
+    {
+      "id": "a03",
+      "title": "A03 min_cluster_size 掃描",
+      "description": "固定其他設定，檢查資料處理版本與最小群集大小對主題結構的影響。"
+    },
+    {
+      "id": "a04",
+      "title": "A04 UMAP 搜尋",
+      "description": "聯合搜尋 UMAP 與 HDBSCAN 參數，保留不同研究取捨的候選策略。"
+    },
+    {
+      "id": "a05",
+      "title": "A05 停用詞設計",
+      "description": "記錄 A05-6 與 A05-8 orig REV 的停用詞版本線與人工收斂結果。"
+    },
+    {
+      "id": "b01",
+      "title": "年份切分 min_cluster_size 掃描",
+      "description": "分別以 2008-2019 與 2020-2025 資料進行最小群集大小掃描。"
+    },
+    {
+      "id": "m01",
+      "title": "M01 歷史主程式",
+      "description": "保留三種候選策略的歷史比較結果，供研究追溯。"
+    },
+    {
+      "id": "m02",
+      "title": "M02 單一參數主程式",
+      "description": "以選定參數進行 BERTopic 訓練與 LLM 命名穩定性驗證。"
+    },
+    {
+      "id": "m03",
+      "title": "M03 年份切分主程式",
+      "description": "以 2020 為界比較前後資料期間的主題結構。"
+    },
+    {
+      "id": "t01",
+      "title": "T01 刪除／替換驗證",
+      "description": "比較移除品牌／車款詞與替換為 Brand／Model 的差異。"
+    },
+    {
+      "id": "t02",
+      "title": "T02 年份切分驗證",
+      "description": "以 2018、2019、2021 為界檢查不同年份分段的穩定性。"
+    }
+  ],
+  "experiments": [
+    {
+      "id": "a03-2-del-tok",
+      "page": "/results/a03-2-del-tok.html",
+      "title": "A03-2｜min_cluster_size 掃描",
+      "description": "del + tokenizer 資料集的 HDBSCAN min_cluster_size 敏感度分析。",
+      "group": "a03",
+      "status": "可檢視",
+      "featured": true,
+      "map": {
+        "labels": [
+          "2 (del)_tok"
+        ],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 實驗目的",
+        "",
+        "固定語意向量與降維設定，僅調整 HDBSCAN 的 `min_cluster_size`，比較主題群數、離群比例與主題分布。",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>資料集</td><td><code>pre_LLM(del)_tok_dataset</code></td></tr>",
+        "    <tr><td>節點路徑</td><td>A03-2 → A04 → A05</td></tr>",
+        "    <tr><td>使用欄位</td><td><code>sentence</code></td></tr>",
+        "    <tr><td>可用句子</td><td>31,474</td></tr>",
+        "    <tr><td>短句</td><td>1,417 筆少於 3 words</td></tr>",
+        "  </tbody>",
+        "</table>",
+        "",
+        "### 固定模型設定",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "    <tr><td>UMAP</td><td>neighbors 15 / components 5 / min dist 0 / cosine</td></tr>",
+        "    <tr><td>HDBSCAN</td><td>euclidean / eom / prediction data</td></tr>",
+        "    <tr><td>Vectorizer</td><td>English stop words / ngram 1-2 / min df 2</td></tr>",
+        "  </tbody>",
+        "</table>",
+        "",
+        "### 掃描範圍",
+        "",
+        "`50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800, 900, 1000`"
+      ]
+    },
+    {
+      "id": "a03-3-del-tok-para12-80",
+      "page": "/results/a03-3-del-tok-para12-80.html",
+      "title": "A03-3｜del + tok + 段落 12-80",
+      "description": "A03-3｜del + tok + 段落 12-80 的 HDBSCAN min_cluster_size 敏感度分析。",
+      "group": "a03",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "3 (del)_tok(para12-80)"
+        ],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(del)_tok(para12-80)_dataset</code></td></tr>",
+        "    <tr><td>使用欄位</td><td><code>sentence</code></td></tr>",
+        "    <tr><td>可用句子</td><td>10,945</td></tr>",
+        "    <tr><td>短句</td><td>16 筆少於 3 words</td></tr>",
+        "  </tbody>",
+        "</table>",
+        "",
+        "### 固定模型設定",
+        "",
+        "",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "    <tr><td>UMAP</td><td>neighbors 15 / components 5 / min dist 0 / cosine</td></tr>",
+        "    <tr><td>HDBSCAN</td><td>euclidean / eom / prediction data</td></tr>",
+        "    <tr><td>Vectorizer</td><td>English stop words / ngram 1-2 / min df 2</td></tr>",
+        "  </tbody>",
+        "</table>"
+      ]
+    },
+    {
+      "id": "a03-5-1-repl-y-tok",
+      "page": "/results/a03-5-1-repl-y-tok.html",
+      "title": "A03-5.1｜repl-y + tok",
+      "description": "A03-5.1｜repl-y + tok 的 HDBSCAN min_cluster_size 敏感度分析。",
+      "group": "a03",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "5.1 (repl-y)_tok"
+        ],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(repl)_tok_dataset</code></td></tr>",
+        "    <tr><td>使用欄位</td><td><code>sentence</code></td></tr>",
+        "    <tr><td>可用句子</td><td>31,503</td></tr>",
+        "    <tr><td>短句</td><td>1,386 筆少於 3 words</td></tr>",
+        "  </tbody>",
+        "</table>",
+        "",
+        "### 固定模型設定",
+        "",
+        "",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "    <tr><td>UMAP</td><td>neighbors 15 / components 5 / min dist 0 / cosine</td></tr>",
+        "    <tr><td>HDBSCAN</td><td>euclidean / eom / prediction data</td></tr>",
+        "    <tr><td>Vectorizer</td><td>English stop words / ngram 1-2 / min df 2</td></tr>",
+        "  </tbody>",
+        "</table>"
+      ]
+    },
+    {
+      "id": "a03-5-repl-tok",
+      "page": "/results/a03-5-repl-tok.html",
+      "title": "A03-5｜repl + tok",
+      "description": "A03-5｜repl + tok 的 HDBSCAN min_cluster_size 敏感度分析。",
+      "group": "a03",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "5 (repl)_tok"
+        ],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(repl)_tok_dataset</code></td></tr>",
+        "    <tr><td>使用欄位</td><td><code>sentence</code></td></tr>",
+        "    <tr><td>可用句子</td><td>31,503</td></tr>",
+        "    <tr><td>短句</td><td>1,386 筆少於 3 words</td></tr>",
+        "  </tbody>",
+        "</table>",
+        "",
+        "### 固定模型設定",
+        "",
+        "",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "    <tr><td>UMAP</td><td>neighbors 15 / components 5 / min dist 0 / cosine</td></tr>",
+        "    <tr><td>HDBSCAN</td><td>euclidean / eom / prediction data</td></tr>",
+        "    <tr><td>Vectorizer</td><td>English stop words / ngram 1-2 / min df 2</td></tr>",
+        "  </tbody>",
+        "</table>"
+      ]
+    },
+    {
+      "id": "a03-6-1-repl-y-tok-para12-80",
+      "page": "/results/a03-6-1-repl-y-tok-para12-80.html",
+      "title": "A03-6.1｜repl-y + tok + 段落 12-80",
+      "description": "A03-6.1｜repl-y + tok + 段落 12-80 的 HDBSCAN min_cluster_size 敏感度分析。",
+      "group": "a03",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "6.1 (repl-y)_tok(para12-80)"
+        ],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(repl)_tok(para12-80)_dataset</code></td></tr>",
+        "    <tr><td>使用欄位</td><td><code>sentence</code></td></tr>",
+        "    <tr><td>可用句子</td><td>10,978</td></tr>",
+        "    <tr><td>短句</td><td>9 筆少於 3 words</td></tr>",
+        "  </tbody>",
+        "</table>",
+        "",
+        "### 固定模型設定",
+        "",
+        "",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "    <tr><td>UMAP</td><td>neighbors 15 / components 5 / min dist 0 / cosine</td></tr>",
+        "    <tr><td>HDBSCAN</td><td>euclidean / eom / prediction data</td></tr>",
+        "    <tr><td>Vectorizer</td><td>English stop words / ngram 1-2 / min df 2</td></tr>",
+        "  </tbody>",
+        "</table>"
+      ]
+    },
+    {
+      "id": "a03-6-repl-tok-para12-80",
+      "page": "/results/a03-6-repl-tok-para12-80.html",
+      "title": "A03-6｜repl + tok + 段落 12-80",
+      "description": "A03-6｜repl + tok + 段落 12-80 的 HDBSCAN min_cluster_size 敏感度分析。",
+      "group": "a03",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "6 (repl)_tok(para12-80)"
+        ],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(repl)_tok(para12-80)_dataset</code></td></tr>",
+        "    <tr><td>使用欄位</td><td><code>sentence</code></td></tr>",
+        "    <tr><td>可用句子</td><td>10,978</td></tr>",
+        "    <tr><td>短句</td><td>9 筆少於 3 words</td></tr>",
+        "  </tbody>",
+        "</table>",
+        "",
+        "### 固定模型設定",
+        "",
+        "",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "    <tr><td>UMAP</td><td>neighbors 15 / components 5 / min dist 0 / cosine</td></tr>",
+        "    <tr><td>HDBSCAN</td><td>euclidean / eom / prediction data</td></tr>",
+        "    <tr><td>Vectorizer</td><td>English stop words / ngram 1-2 / min df 2</td></tr>",
+        "  </tbody>",
+        "</table>"
+      ]
+    },
+    {
+      "id": "a03-7-orig-tok",
+      "page": "/results/a03-7-orig-tok.html",
+      "title": "A03-7｜orig + tok",
+      "description": "A03-7｜orig + tok 的 HDBSCAN min_cluster_size 敏感度分析。",
+      "group": "a03",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "7 (orig)_tok"
+        ],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(orig)_tok_dataset</code></td></tr>",
+        "    <tr><td>使用欄位</td><td><code>sentence</code></td></tr>",
+        "    <tr><td>可用句子</td><td>31,883</td></tr>",
+        "    <tr><td>短句</td><td>1,471 筆少於 3 words</td></tr>",
+        "  </tbody>",
+        "</table>",
+        "",
+        "### 固定模型設定",
+        "",
+        "",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "    <tr><td>UMAP</td><td>neighbors 15 / components 5 / min dist 0 / cosine</td></tr>",
+        "    <tr><td>HDBSCAN</td><td>euclidean / eom / prediction data</td></tr>",
+        "    <tr><td>Vectorizer</td><td>English stop words / ngram 1-2 / min df 2</td></tr>",
+        "  </tbody>",
+        "</table>"
+      ]
+    },
+    {
+      "id": "a03-8-orig-tok-para12-80",
+      "page": "/results/a03-8-orig-tok-para12-80.html",
+      "title": "A03-8｜orig + tok + 段落 12-80",
+      "description": "A03-8｜orig + tok + 段落 12-80 的 HDBSCAN min_cluster_size 敏感度分析。",
+      "group": "a03",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "8 (orig)_tok(para12-80)"
+        ],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(orig)_tok(para12-80)_dataset</code></td></tr>",
+        "    <tr><td>使用欄位</td><td><code>sentence</code></td></tr>",
+        "    <tr><td>可用句子</td><td>11,136</td></tr>",
+        "    <tr><td>短句</td><td>14 筆少於 3 words</td></tr>",
+        "  </tbody>",
+        "</table>",
+        "",
+        "### 固定模型設定",
+        "",
+        "",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "    <tr><td>UMAP</td><td>neighbors 15 / components 5 / min dist 0 / cosine</td></tr>",
+        "    <tr><td>HDBSCAN</td><td>euclidean / eom / prediction data</td></tr>",
+        "    <tr><td>Vectorizer</td><td>English stop words / ngram 1-2 / min df 2</td></tr>",
+        "  </tbody>",
+        "</table>"
+      ]
+    },
+    {
+      "id": "a03-min-cluster-overview",
+      "page": "/results/a03-min-cluster-overview.html",
+      "title": "A03｜min_cluster_size 整體比較",
+      "description": "A03 資料處理分支的 min_cluster_size 掃描比較。",
+      "group": "a03",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "A03：min_cluster_size"
+        ],
+        "node_ids": []
+      },
+      "kind": "overview"
+    },
+    {
+      "id": "a04-2-del-tok",
+      "page": "/results/a04-2-del-tok.html",
+      "title": "A04-2｜del + tok｜UMAP 搜尋",
+      "description": "A04-2｜del + tok 的 UMAP 與 HDBSCAN 聯合參數搜尋。",
+      "group": "a04",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-19"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(del)_tok_dataset</code></td></tr>",
+        "<tr><td>來源資料夾</td><td><code>#運行BERTopic整理/#4. UMAP（未整理）/A04-2(del)_tok</code></td></tr>",
+        "<tr><td>可用句子</td><td>31474</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>cosine / random state 42</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 搜尋流程",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>階段</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>第一階段</td><td>2520 組廣泛搜尋</td></tr>",
+        "<tr><td>第二階段</td><td>13440 組候選深入搜尋</td></tr>",
+        "<tr><td>候選策略</td><td>最低雜訊 / 最多主題 / 最佳平衡</td></tr>",
+        "</tbody></table>"
+      ]
+    },
+    {
+      "id": "a04-3-del-tok-para12-80",
+      "page": "/results/a04-3-del-tok-para12-80.html",
+      "title": "A04-3｜del + tok + 段落 12-80｜UMAP 搜尋",
+      "description": "A04-3｜del + tok + 段落 12-80 的 UMAP 與 HDBSCAN 聯合參數搜尋。",
+      "group": "a04",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-21"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(del)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>來源資料夾</td><td><code>#運行BERTopic整理/#4. UMAP（未整理）/A04-3(del)_tok(para12-80)</code></td></tr>",
+        "<tr><td>可用句子</td><td>10945</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>cosine / random state 42</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 搜尋流程",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>階段</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>第一階段</td><td>2520 組廣泛搜尋</td></tr>",
+        "<tr><td>第二階段</td><td>13440 組候選深入搜尋</td></tr>",
+        "<tr><td>候選策略</td><td>最低雜訊 / 最多主題 / 最佳平衡</td></tr>",
+        "</tbody></table>"
+      ]
+    },
+    {
+      "id": "a04-5-repl-tok",
+      "page": "/results/a04-5-repl-tok.html",
+      "title": "A04-5｜repl + tok｜UMAP 搜尋",
+      "description": "A04-5｜repl + tok 的 UMAP 與 HDBSCAN 聯合參數搜尋。",
+      "group": "a04",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-27"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>-</code></td></tr>",
+        "<tr><td>來源資料夾</td><td><code>#運行BERTopic整理/#4. UMAP（未整理）/A04-5(repl)_tok</code></td></tr>",
+        "<tr><td>可用句子</td><td>-</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>cosine / random state 42</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 搜尋流程",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>階段</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>第一階段</td><td>10 組廣泛搜尋</td></tr>",
+        "<tr><td>第二階段</td><td>13440 組候選深入搜尋</td></tr>",
+        "<tr><td>候選策略</td><td>最低雜訊 / 最多主題 / 最佳平衡</td></tr>",
+        "</tbody></table>"
+      ]
+    },
+    {
+      "id": "a04-6-repl-tok-para12-80",
+      "page": "/results/a04-6-repl-tok-para12-80.html",
+      "title": "A04-6｜repl + tok + 段落 12-80｜UMAP 搜尋",
+      "description": "A04-6｜repl + tok + 段落 12-80 的 UMAP 與 HDBSCAN 聯合參數搜尋。",
+      "group": "a04",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-23"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(repl)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>來源資料夾</td><td><code>#運行BERTopic整理/#4. UMAP（未整理）/A04-6(repl)_tok(para12-80)</code></td></tr>",
+        "<tr><td>可用句子</td><td>10978</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>cosine / random state 42</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 搜尋流程",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>階段</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>第一階段</td><td>2520 組廣泛搜尋</td></tr>",
+        "<tr><td>第二階段</td><td>13440 組候選深入搜尋</td></tr>",
+        "<tr><td>候選策略</td><td>最低雜訊 / 最多主題 / 最佳平衡</td></tr>",
+        "</tbody></table>"
+      ]
+    },
+    {
+      "id": "a04-7-orig-tok",
+      "page": "/results/a04-7-orig-tok.html",
+      "title": "A04-7｜orig + tok｜UMAP 搜尋",
+      "description": "A04-7｜orig + tok 的 UMAP 與 HDBSCAN 聯合參數搜尋。",
+      "group": "a04",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-24"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(orig)_tok_dataset</code></td></tr>",
+        "<tr><td>來源資料夾</td><td><code>#運行BERTopic整理/#4. UMAP（未整理）/A04-7(orig)_tok</code></td></tr>",
+        "<tr><td>可用句子</td><td>31883</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>cosine / random state 42</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 搜尋流程",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>階段</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>第一階段</td><td>2520 組廣泛搜尋</td></tr>",
+        "<tr><td>第二階段</td><td>13440 組候選深入搜尋</td></tr>",
+        "<tr><td>候選策略</td><td>最低雜訊 / 最多主題 / 最佳平衡</td></tr>",
+        "</tbody></table>"
+      ]
+    },
+    {
+      "id": "a04-8-orig-tok-para12-80",
+      "page": "/results/a04-8-orig-tok-para12-80.html",
+      "title": "A04-8｜orig + tok + 段落 12-80｜UMAP 搜尋",
+      "description": "A04-8｜orig + tok + 段落 12-80 的 UMAP 與 HDBSCAN 聯合參數搜尋。",
+      "group": "a04",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-26"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(orig)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>來源資料夾</td><td><code>#運行BERTopic整理/#4. UMAP（未整理）/A04-8(orig)_tok(para12-80)</code></td></tr>",
+        "<tr><td>可用句子</td><td>11136</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>cosine / random state 42</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 搜尋流程",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>階段</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>第一階段</td><td>2520 組廣泛搜尋</td></tr>",
+        "<tr><td>第二階段</td><td>13440 組候選深入搜尋</td></tr>",
+        "<tr><td>候選策略</td><td>最低雜訊 / 最多主題 / 最佳平衡</td></tr>",
+        "</tbody></table>"
+      ]
+    },
+    {
+      "id": "a04-b01-08-19",
+      "page": "/results/a04-b01-08-19.html",
+      "title": "A04｜2020 前（2008-2019）｜UMAP 搜尋",
+      "description": "A04｜2020 前（2008-2019） 的 UMAP 與 HDBSCAN 聯合參數搜尋。",
+      "group": "a04",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-75"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]01-pre_LLM(orig)_08-19(240)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>來源資料夾</td><td><code>#運行BERTopic整理/#4. UMAP（未整理）/[B]01-(orig)_08-19_tok(para12-80)</code></td></tr>",
+        "<tr><td>可用句子</td><td>11160</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>cosine / random state 42</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 搜尋流程",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>階段</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>第一階段</td><td>2520 組廣泛搜尋</td></tr>",
+        "<tr><td>第二階段</td><td>13440 組候選深入搜尋</td></tr>",
+        "<tr><td>候選策略</td><td>最低雜訊 / 最多主題 / 最佳平衡</td></tr>",
+        "</tbody></table>"
+      ]
+    },
+    {
+      "id": "a04-b01-20-25",
+      "page": "/results/a04-b01-20-25.html",
+      "title": "A04｜2020 後（2020-2025）｜UMAP 搜尋",
+      "description": "A04｜2020 後（2020-2025） 的 UMAP 與 HDBSCAN 聯合參數搜尋。",
+      "group": "a04",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-80"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]01-pre_LLM(orig)_20-25(194)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>來源資料夾</td><td><code>#運行BERTopic整理/#4. UMAP（未整理）/[B]01-(orig)_20-25_tok(para12-80)</code></td></tr>",
+        "<tr><td>可用句子</td><td>10680</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>cosine / random state 42</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 搜尋流程",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>階段</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>第一階段</td><td>2520 組廣泛搜尋</td></tr>",
+        "<tr><td>第二階段</td><td>13440 組候選深入搜尋</td></tr>",
+        "<tr><td>候選策略</td><td>最低雜訊 / 最多主題 / 最佳平衡</td></tr>",
+        "</tbody></table>"
+      ]
+    },
+    {
+      "id": "a04-umap-overview",
+      "page": "/results/a04-umap-overview.html",
+      "title": "A04｜UMAP 整體比較",
+      "description": "A04 UMAP 與 HDBSCAN 聯合搜尋結果。",
+      "group": "a04",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "A04：UMAP"
+        ],
+        "node_ids": []
+      },
+      "kind": "overview"
+    },
+    {
+      "id": "a05-6-1-stopwords",
+      "page": "/results/a05-6-1-stopwords.html",
+      "title": "A05-6.1｜停用詞設計",
+      "description": "A05-6｜初步停用詞迭代 的 A05-6.1 停用詞設計紀錄。",
+      "group": "a05",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 版本設定",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>版本線</td><td>A05-6｜初步停用詞迭代</td></tr>",
+        "<tr><td>資料版本</td><td>repl + tok + 段落 12-80</td></tr>",
+        "<tr><td>版本定位</td><td>第一次增補</td></tr>",
+        "<tr><td>分類筆數</td><td>14 類</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 核心原則",
+        "",
+        "<p>保留 EV 語意錨點：<code>electric、EV、charging、battery、range、motor、torque、hybrid、plug</code>。</p>",
+        "",
+        "### 導覽",
+        "",
+        "<p><a href=\"a05-stopwords-overview.html\">回到 A05 停用詞總覽</a></p>"
+      ]
+    },
+    {
+      "id": "a05-6-2-stopwords",
+      "page": "/results/a05-6-2-stopwords.html",
+      "title": "A05-6.2｜停用詞設計",
+      "description": "A05-6｜初步停用詞迭代 的 A05-6.2 停用詞設計紀錄。",
+      "group": "a05",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 版本設定",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>版本線</td><td>A05-6｜初步停用詞迭代</td></tr>",
+        "<tr><td>資料版本</td><td>repl + tok + 段落 12-80</td></tr>",
+        "<tr><td>版本定位</td><td>第二次增補</td></tr>",
+        "<tr><td>分類筆數</td><td>15 類</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 核心原則",
+        "",
+        "<p>保留 EV 語意錨點：<code>electric、EV、charging、battery、range、motor、torque、hybrid、plug</code>。</p>",
+        "",
+        "### 導覽",
+        "",
+        "<p><a href=\"a05-stopwords-overview.html\">回到 A05 停用詞總覽</a></p>"
+      ]
+    },
+    {
+      "id": "a05-6-3-stopwords",
+      "page": "/results/a05-6-3-stopwords.html",
+      "title": "A05-6.3｜停用詞設計",
+      "description": "A05-6｜初步停用詞迭代 的 A05-6.3 停用詞設計紀錄。",
+      "group": "a05",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 版本設定",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>版本線</td><td>A05-6｜初步停用詞迭代</td></tr>",
+        "<tr><td>資料版本</td><td>repl + tok + 段落 12-80</td></tr>",
+        "<tr><td>版本定位</td><td>積極版本</td></tr>",
+        "<tr><td>分類筆數</td><td>15 類</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 核心原則",
+        "",
+        "<p>保留 EV 語意錨點：<code>electric、EV、charging、battery、range、motor、torque、hybrid、plug</code>。</p>",
+        "",
+        "### 導覽",
+        "",
+        "<p><a href=\"a05-stopwords-overview.html\">回到 A05 停用詞總覽</a></p>"
+      ]
+    },
+    {
+      "id": "a05-6-overview",
+      "page": "/results/a05-6-overview.html",
+      "title": "A05-6｜初步停用詞迭代",
+      "description": "A05-6｜初步停用詞迭代 的停用詞版本線。",
+      "group": "a05",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-29"
+        ]
+      },
+      "kind": "overview"
+    },
+    {
+      "id": "a05-6-stopwords",
+      "page": "/results/a05-6-stopwords.html",
+      "title": "A05-6｜停用詞設計",
+      "description": "A05-6｜初步停用詞迭代 的 A05-6 停用詞設計紀錄。",
+      "group": "a05",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 版本設定",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>版本線</td><td>A05-6｜初步停用詞迭代</td></tr>",
+        "<tr><td>資料版本</td><td>repl + tok + 段落 12-80</td></tr>",
+        "<tr><td>版本定位</td><td>基礎詞表</td></tr>",
+        "<tr><td>分類筆數</td><td>27 類</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 核心原則",
+        "",
+        "<p>保留 EV 語意錨點：<code>electric、EV、charging、battery、range、motor、torque、hybrid、plug</code>。</p>",
+        "",
+        "### 導覽",
+        "",
+        "<p><a href=\"a05-stopwords-overview.html\">回到 A05 停用詞總覽</a></p>"
+      ]
+    },
+    {
+      "id": "a05-8-orig-rev-1-stopwords",
+      "page": "/results/a05-8-orig-rev-1-stopwords.html",
+      "title": "A05-8.1 REV｜停用詞設計",
+      "description": "A05-8｜orig REV 詞表收斂 的 A05-8.1 REV 停用詞設計紀錄。",
+      "group": "a05",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 版本設定",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>版本線</td><td>A05-8｜orig REV 詞表收斂</td></tr>",
+        "<tr><td>資料版本</td><td>orig REV + tok + 段落 12-80</td></tr>",
+        "<tr><td>版本定位</td><td>第一次增補</td></tr>",
+        "<tr><td>分類筆數</td><td>8 類</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 核心原則",
+        "",
+        "<p>保留 EV 語意錨點：<code>electric、EV、charging、battery、range、motor、torque、hybrid、plug</code>。</p>",
+        "",
+        "### 導覽",
+        "",
+        "<p><a href=\"a05-stopwords-overview.html\">回到 A05 停用詞總覽</a></p>"
+      ]
+    },
+    {
+      "id": "a05-8-orig-rev-2-stopwords",
+      "page": "/results/a05-8-orig-rev-2-stopwords.html",
+      "title": "A05-8.2 REV｜停用詞設計",
+      "description": "A05-8｜orig REV 詞表收斂 的 A05-8.2 REV 停用詞設計紀錄。",
+      "group": "a05",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 版本設定",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>版本線</td><td>A05-8｜orig REV 詞表收斂</td></tr>",
+        "<tr><td>資料版本</td><td>orig REV + tok + 段落 12-80</td></tr>",
+        "<tr><td>版本定位</td><td>第二次增補</td></tr>",
+        "<tr><td>分類筆數</td><td>8 類</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 核心原則",
+        "",
+        "<p>保留 EV 語意錨點：<code>electric、EV、charging、battery、range、motor、torque、hybrid、plug</code>。</p>",
+        "",
+        "### 導覽",
+        "",
+        "<p><a href=\"a05-stopwords-overview.html\">回到 A05 停用詞總覽</a></p>"
+      ]
+    },
+    {
+      "id": "a05-8-orig-rev-3-stopwords",
+      "page": "/results/a05-8-orig-rev-3-stopwords.html",
+      "title": "A05-8.3 REV｜停用詞設計",
+      "description": "A05-8｜orig REV 詞表收斂 的 A05-8.3 REV 停用詞設計紀錄。",
+      "group": "a05",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 版本設定",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>版本線</td><td>A05-8｜orig REV 詞表收斂</td></tr>",
+        "<tr><td>資料版本</td><td>orig REV + tok + 段落 12-80</td></tr>",
+        "<tr><td>版本定位</td><td>第三次增補</td></tr>",
+        "<tr><td>分類筆數</td><td>6 類</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 核心原則",
+        "",
+        "<p>保留 EV 語意錨點：<code>electric、EV、charging、battery、range、motor、torque、hybrid、plug</code>。</p>",
+        "",
+        "### 導覽",
+        "",
+        "<p><a href=\"a05-stopwords-overview.html\">回到 A05 停用詞總覽</a></p>"
+      ]
+    },
+    {
+      "id": "a05-8-orig-rev-all-stopwords",
+      "page": "/results/a05-8-orig-rev-all-stopwords.html",
+      "title": "A05-8.4 all｜停用詞設計",
+      "description": "A05-8｜orig REV 詞表收斂 的 A05-8.4 all 停用詞設計紀錄。",
+      "group": "a05",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 版本設定",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>版本線</td><td>A05-8｜orig REV 詞表收斂</td></tr>",
+        "<tr><td>資料版本</td><td>orig REV + tok + 段落 12-80</td></tr>",
+        "<tr><td>版本定位</td><td>完整彙整</td></tr>",
+        "<tr><td>分類筆數</td><td>36 類</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 核心原則",
+        "",
+        "<p>保留 EV 語意錨點：<code>electric、EV、charging、battery、range、motor、torque、hybrid、plug</code>。</p>",
+        "",
+        "### 導覽",
+        "",
+        "<p><a href=\"a05-stopwords-overview.html\">回到 A05 停用詞總覽</a></p>"
+      ]
+    },
+    {
+      "id": "a05-8-orig-rev-human-stopwords",
+      "page": "/results/a05-8-orig-rev-human-stopwords.html",
+      "title": "A05-8.4 human｜停用詞設計",
+      "description": "A05-8｜orig REV 詞表收斂 的 A05-8.4 human 停用詞設計紀錄。",
+      "group": "a05",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 版本設定",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>版本線</td><td>A05-8｜orig REV 詞表收斂</td></tr>",
+        "<tr><td>資料版本</td><td>orig REV + tok + 段落 12-80</td></tr>",
+        "<tr><td>版本定位</td><td>人工精選</td></tr>",
+        "<tr><td>分類筆數</td><td>12 類</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 核心原則",
+        "",
+        "<p>保留 EV 語意錨點：<code>electric、EV、charging、battery、range、motor、torque、hybrid、plug</code>。</p>",
+        "",
+        "### 導覽",
+        "",
+        "<p><a href=\"a05-stopwords-overview.html\">回到 A05 停用詞總覽</a></p>"
+      ]
+    },
+    {
+      "id": "a05-8-orig-rev-overview",
+      "page": "/results/a05-8-orig-rev-overview.html",
+      "title": "A05-8｜orig REV 詞表收斂",
+      "description": "A05-8｜orig REV 詞表收斂 的停用詞版本線。",
+      "group": "a05",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-45"
+        ]
+      },
+      "kind": "overview"
+    },
+    {
+      "id": "a05-8-orig-rev-stopwords",
+      "page": "/results/a05-8-orig-rev-stopwords.html",
+      "title": "A05-8 REV｜停用詞設計",
+      "description": "A05-8｜orig REV 詞表收斂 的 A05-8 REV 停用詞設計紀錄。",
+      "group": "a05",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 版本設定",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>版本線</td><td>A05-8｜orig REV 詞表收斂</td></tr>",
+        "<tr><td>資料版本</td><td>orig REV + tok + 段落 12-80</td></tr>",
+        "<tr><td>版本定位</td><td>基礎詞表</td></tr>",
+        "<tr><td>分類筆數</td><td>14 類</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 核心原則",
+        "",
+        "<p>保留 EV 語意錨點：<code>electric、EV、charging、battery、range、motor、torque、hybrid、plug</code>。</p>",
+        "",
+        "### 導覽",
+        "",
+        "<p><a href=\"a05-stopwords-overview.html\">回到 A05 停用詞總覽</a></p>"
+      ]
+    },
+    {
+      "id": "a05-stopwords-overview",
+      "page": "/results/a05-stopwords-overview.html",
+      "title": "A05｜停用詞設計",
+      "description": "A05-6 與 A05-8 orig REV 的客製停用詞版本線。",
+      "group": "a05",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "A05：停用詞"
+        ],
+        "node_ids": []
+      },
+      "kind": "overview"
+    },
+    {
+      "id": "b01-08-19-min-cluster",
+      "page": "/results/b01-08-19-min-cluster.html",
+      "title": "B01｜2008-2019 min_cluster_size 掃描",
+      "description": "B01｜2008-2019 min_cluster_size 掃描 的 HDBSCAN min_cluster_size 敏感度分析。",
+      "group": "b01",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "2020 前 (08-19)"
+        ],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]01-pre_LLM(orig)_08-19(240)_tok(para12-80)_dataset</code></td></tr>",
+        "    <tr><td>使用欄位</td><td><code>sentence</code></td></tr>",
+        "    <tr><td>可用句子</td><td>11,160</td></tr>",
+        "    <tr><td>短句</td><td>0 筆少於 3 words</td></tr>",
+        "  </tbody>",
+        "</table>",
+        "",
+        "### 固定模型設定",
+        "",
+        "",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "    <tr><td>UMAP</td><td>neighbors 15 / components 5 / min dist 0 / cosine</td></tr>",
+        "    <tr><td>HDBSCAN</td><td>euclidean / eom / prediction data</td></tr>",
+        "    <tr><td>Vectorizer</td><td>English stop words / ngram 1-2 / min df 2</td></tr>",
+        "  </tbody>",
+        "</table>"
+      ]
+    },
+    {
+      "id": "b01-20-25-min-cluster",
+      "page": "/results/b01-20-25-min-cluster.html",
+      "title": "B01｜2020-2025 min_cluster_size 掃描",
+      "description": "B01｜2020-2025 min_cluster_size 掃描 的 HDBSCAN min_cluster_size 敏感度分析。",
+      "group": "b01",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "2020 後 (20-25)"
+        ],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]01-pre_LLM(orig)_20-25(194)_tok(para12-80)_dataset</code></td></tr>",
+        "    <tr><td>使用欄位</td><td><code>sentence</code></td></tr>",
+        "    <tr><td>可用句子</td><td>10,680</td></tr>",
+        "    <tr><td>短句</td><td>0 筆少於 3 words</td></tr>",
+        "  </tbody>",
+        "</table>",
+        "",
+        "### 固定模型設定",
+        "",
+        "",
+        "",
+        "<table class=\"settings-table\">",
+        "  <thead><tr><th>項目</th><th>設定</th></tr></thead>",
+        "  <tbody>",
+        "    <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "    <tr><td>UMAP</td><td>neighbors 15 / components 5 / min dist 0 / cosine</td></tr>",
+        "    <tr><td>HDBSCAN</td><td>euclidean / eom / prediction data</td></tr>",
+        "    <tr><td>Vectorizer</td><td>English stop words / ngram 1-2 / min df 2</td></tr>",
+        "  </tbody>",
+        "</table>"
+      ]
+    },
+    {
+      "id": "m01-8-best-balance",
+      "page": "/results/m01-8-best-balance.html",
+      "title": "M01-8｜最佳平衡",
+      "description": "M01-8 歷史主程式的 最佳平衡 BERTopic 結果。",
+      "group": "m01",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(orig)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>選擇依據</td><td>符合指定最佳平衡條件後取最高 balance_score。</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>neighbors 5 / components 5 / min dist 0.0 / cosine</td></tr>",
+        "<tr><td>HDBSCAN</td><td>cluster 50 / samples 5 / eom / eps 0.2</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 停用詞與命名",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>停用詞來源</td><td><a href=\"a05-8-orig-rev-human-stopwords.html\">A05-8.4 human</a></td></tr>",
+        "<tr><td>客製停用詞</td><td>170 個；合併英文停用詞共 462 個</td></tr>",
+        "<tr><td>LLM Provider</td><td>OpenRouter</td></tr>",
+        "<tr><td>LLM models</td><td>anthropic/claude-opus-4.7 / openai/gpt-5.5 / google/gemini-3.1-pro-preview</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 導覽",
+        "",
+        "<p><a href=\"m01-8-historical.html\">回到 M01 三策略總覽</a></p>"
+      ]
+    },
+    {
+      "id": "m01-8-historical",
+      "page": "/results/m01-8-historical.html",
+      "title": "M01-8｜三策略主程式",
+      "description": "M01-8 歷史主程式的三種 BERTopic 策略比較。",
+      "group": "m01",
+      "status": "可檢視",
+      "featured": true,
+      "map": {
+        "labels": [
+          "M01：主程式\n（全參數）",
+          "8"
+        ],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-46",
+          "mRq0KLDsOoRAvhbJz9B0-69"
+        ]
+      },
+      "kind": "overview"
+    },
+    {
+      "id": "m01-8-lowest-noise",
+      "page": "/results/m01-8-lowest-noise.html",
+      "title": "M01-8｜最低雜訊",
+      "description": "M01-8 歷史主程式的 最低雜訊 BERTopic 結果。",
+      "group": "m01",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(orig)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>選擇依據</td><td>最低 noise_ratio，並以較低 largest_topic_ratio 與較高 n_clusters 作為 tie-break。</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>neighbors 15 / components 10 / min dist 0.05 / cosine</td></tr>",
+        "<tr><td>HDBSCAN</td><td>cluster 225 / samples 5 / eom / eps 0.0</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 停用詞與命名",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>停用詞來源</td><td><a href=\"a05-8-orig-rev-human-stopwords.html\">A05-8.4 human</a></td></tr>",
+        "<tr><td>客製停用詞</td><td>170 個；合併英文停用詞共 462 個</td></tr>",
+        "<tr><td>LLM Provider</td><td>OpenRouter</td></tr>",
+        "<tr><td>LLM models</td><td>anthropic/claude-opus-4.7 / openai/gpt-5.5 / google/gemini-3.1-pro-preview</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 導覽",
+        "",
+        "<p><a href=\"m01-8-historical.html\">回到 M01 三策略總覽</a></p>"
+      ]
+    },
+    {
+      "id": "m01-8-most-topics",
+      "page": "/results/m01-8-most-topics.html",
+      "title": "M01-8｜最多主題",
+      "description": "M01-8 歷史主程式的 最多主題 BERTopic 結果。",
+      "group": "m01",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [],
+        "node_ids": []
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料血緣",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(orig)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>選擇依據</td><td>在可接受 noise_ratio 下保留最多有效主題。</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>neighbors 5 / components 5 / min dist 0.0 / cosine</td></tr>",
+        "<tr><td>HDBSCAN</td><td>cluster 50 / samples 5 / leaf / eps 0.0</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 停用詞與命名",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>停用詞來源</td><td><a href=\"a05-8-orig-rev-human-stopwords.html\">A05-8.4 human</a></td></tr>",
+        "<tr><td>客製停用詞</td><td>170 個；合併英文停用詞共 462 個</td></tr>",
+        "<tr><td>LLM Provider</td><td>OpenRouter</td></tr>",
+        "<tr><td>LLM models</td><td>anthropic/claude-opus-4.7 / openai/gpt-5.5 / google/gemini-3.1-pro-preview</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 導覽",
+        "",
+        "<p><a href=\"m01-8-historical.html\">回到 M01 三策略總覽</a></p>"
+      ]
+    },
+    {
+      "id": "m02-llm30",
+      "page": "/results/m02-llm30.html",
+      "title": "8New-LLM30",
+      "description": "M02 單一參數主程式的 LLM 30 次命名驗證。",
+      "group": "m02",
+      "status": "可檢視",
+      "featured": true,
+      "map": {
+        "labels": [
+          "8New-LLM30"
+        ],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-49"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料與模型",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(orig)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>可用句子</td><td>11,136</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>neighbors 10 / components 15 / min dist 0.0 / cosine</td></tr>",
+        "<tr><td>HDBSCAN</td><td>cluster 50 / samples 5 / eom / eps 0.2</td></tr>",
+        "<tr><td>Topic reduction</td><td><code>nr_topics=auto</code></td></tr>",
+        "</tbody></table>",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>停用詞</td><td><a href=\"a05-8-orig-rev-human-stopwords.html\">A05-8.4 human</a>，客製 170 個</td></tr>",
+        "<tr><td>LLM</td><td>OpenRouter / <code>openai/gpt-5.5</code></td></tr>",
+        "<tr><td>命名次數</td><td>每個非 noise topic 30 次</td></tr>",
+        "<tr><td>代表句</td><td>6 句 / topic</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 來源資料夾",
+        "",
+        "<p><code>#運行BERTopic整理/#7. M02主程式（實主程式-單參數）（未整理）/M02-8New(orig)_tok(para12-80)</code></p>"
+      ]
+    },
+    {
+      "id": "m02-llm50",
+      "page": "/results/m02-llm50.html",
+      "title": "8New-LLM50",
+      "description": "M02 單一參數主程式的 LLM 50 次命名驗證。",
+      "group": "m02",
+      "status": "可檢視",
+      "featured": true,
+      "map": {
+        "labels": [
+          "8New-LLM50"
+        ],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-50"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料與模型",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(orig)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>可用句子</td><td>11,136</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>neighbors 10 / components 15 / min dist 0.0 / cosine</td></tr>",
+        "<tr><td>HDBSCAN</td><td>cluster 50 / samples 5 / eom / eps 0.2</td></tr>",
+        "<tr><td>Topic reduction</td><td><code>nr_topics=auto</code></td></tr>",
+        "</tbody></table>",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>停用詞</td><td><a href=\"a05-8-orig-rev-human-stopwords.html\">A05-8.4 human</a>，客製 170 個</td></tr>",
+        "<tr><td>LLM</td><td>OpenRouter / <code>openai/gpt-5.5</code></td></tr>",
+        "<tr><td>命名次數</td><td>每個非 noise topic 50 次</td></tr>",
+        "<tr><td>代表句</td><td>6 句 / topic</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 來源資料夾",
+        "",
+        "<p><code>#運行BERTopic整理/#7. M02主程式（實主程式-單參數）（未整理）/M02-1(orig-new-tp-30)-實為LLM50</code></p>"
+      ]
+    },
+    {
+      "id": "m03-2020-after",
+      "page": "/results/m03-2020-after.html",
+      "title": "2020 後｜年份切分",
+      "description": "M03 年份切分後的 2020-2025 BERTopic 結果與 LLM50 命名驗證。",
+      "group": "m03",
+      "status": "可檢視",
+      "featured": true,
+      "map": {
+        "labels": [
+          "2020 後"
+        ],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-82"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料與模型",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]01-pre_LLM(orig)_20-25(194)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>可用句子</td><td>10,680</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>neighbors 10 / components 5 / min dist 0.0 / cosine</td></tr>",
+        "<tr><td>HDBSCAN</td><td>cluster 125 / samples 5 / eom / eps 0.0</td></tr>",
+        "<tr><td>Topic reduction</td><td><code>nr_topics=auto</code></td></tr>",
+        "</tbody></table>",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>停用詞</td><td><a href=\"a05-8-orig-rev-human-stopwords.html\">A05-8.4 human</a>，客製 170 個</td></tr>",
+        "<tr><td>LLM</td><td>OpenRouter / <code>openai/gpt-5.5</code></td></tr>",
+        "<tr><td>命名次數</td><td>每個 topic 50 次</td></tr>",
+        "<tr><td>代表句</td><td>6 句 / topic</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 來源資料夾",
+        "",
+        "<p><code>#運行BERTopic整理/#8. M03主程式（切年份）（未整理）/06.17_M03-2(orig_20-25_tp-50)</code></p>",
+        "",
+        "<p><a href=\"m03-2020-before.html\">查看 2020 前 年份切分結果</a></p>"
+      ]
+    },
+    {
+      "id": "m03-2020-before",
+      "page": "/results/m03-2020-before.html",
+      "title": "2020 前｜年份切分",
+      "description": "M03 年份切分後的 2008-2019 BERTopic 結果與 LLM50 命名驗證。",
+      "group": "m03",
+      "status": "可檢視",
+      "featured": true,
+      "map": {
+        "labels": [
+          "2020 前"
+        ],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-75",
+          "mRq0KLDsOoRAvhbJz9B0-81"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料與模型",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]01-pre_LLM(orig)_08-19(240)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>可用句子</td><td>11,160</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>neighbors 5 / components 10 / min dist 0.0 / cosine</td></tr>",
+        "<tr><td>HDBSCAN</td><td>cluster 100 / samples 5 / eom / eps 0.0</td></tr>",
+        "<tr><td>Topic reduction</td><td><code>nr_topics=auto</code></td></tr>",
+        "</tbody></table>",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>停用詞</td><td><a href=\"a05-8-orig-rev-human-stopwords.html\">A05-8.4 human</a>，客製 170 個</td></tr>",
+        "<tr><td>LLM</td><td>OpenRouter / <code>openai/gpt-5.5</code></td></tr>",
+        "<tr><td>命名次數</td><td>每個 topic 50 次</td></tr>",
+        "<tr><td>代表句</td><td>6 句 / topic</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 來源資料夾",
+        "",
+        "<p><code>#運行BERTopic整理/#8. M03主程式（切年份）（未整理）/06.17_M03-1(orig_08-19_tp-50)</code></p>",
+        "",
+        "<p><a href=\"m03-2020-after.html\">查看 2020 後 年份切分結果</a></p>"
+      ]
+    },
+    {
+      "id": "t01-del",
+      "page": "/results/t01-del.html",
+      "title": "T01-3｜刪除品牌／車款",
+      "description": "T01 品牌與車款文字處理驗證：del。",
+      "group": "t01",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "3"
+        ],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-85"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料與模型",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(del)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>可用句子</td><td>10,945</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>neighbors 10 / components 15 / min dist 0.0 / cosine</td></tr>",
+        "<tr><td>HDBSCAN</td><td>cluster 50 / samples 5 / eom / eps 0.2</td></tr>",
+        "<tr><td>Topic reduction</td><td><code>nr_topics=auto</code></td></tr>",
+        "</tbody></table>",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>停用詞</td><td><a href=\"a05-8-orig-rev-human-stopwords.html\">A05-8.4 human</a>，客製 170 個</td></tr>",
+        "<tr><td>LLM 設計</td><td>未設定／未執行</td></tr>",
+        "<tr><td>代表句</td><td>6 句 / topic</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 來源資料夾",
+        "",
+        "<p><code>#運行BERTopic整理/#7.1 T01刪&移廠商、模型與原版的比較（未整理）/06.08_Test1-1(del-new-tp-X)</code></p>",
+        "",
+        "<p><a href=\"t01-overview.html\">回到 T01 刪除／替換驗證總覽</a></p>"
+      ]
+    },
+    {
+      "id": "t01-overview",
+      "page": "/results/t01-overview.html",
+      "title": "T01｜刪除與替換品牌／車款驗證",
+      "description": "比較刪除與替換品牌／車款名稱對 BERTopic 主題結構的影響。",
+      "group": "t01",
+      "status": "可檢視",
+      "featured": true,
+      "map": {
+        "labels": [
+          "T01：驗證\n（刪/移）"
+        ],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-84"
+        ]
+      },
+      "kind": "overview"
+    },
+    {
+      "id": "t01-repl",
+      "page": "/results/t01-repl.html",
+      "title": "T01-6｜替換品牌／車款",
+      "description": "T01 品牌與車款文字處理驗證：repl。",
+      "group": "t01",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "6"
+        ],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-86"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料與模型",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.03_A02/R06.03_A02-pre_LLM(repl)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>可用句子</td><td>10,978</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>neighbors 10 / components 15 / min dist 0.0 / cosine</td></tr>",
+        "<tr><td>HDBSCAN</td><td>cluster 50 / samples 5 / eom / eps 0.2</td></tr>",
+        "<tr><td>Topic reduction</td><td><code>nr_topics=auto</code></td></tr>",
+        "</tbody></table>",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>停用詞</td><td><a href=\"a05-8-orig-rev-human-stopwords.html\">A05-8.4 human</a>，客製 170 個</td></tr>",
+        "<tr><td>LLM 設計</td><td>未設定／未執行</td></tr>",
+        "<tr><td>代表句</td><td>6 句 / topic</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 來源資料夾",
+        "",
+        "<p><code>#運行BERTopic整理/#7.1 T01刪&移廠商、模型與原版的比較（未整理）/06.08_Test1-2(repl-new-tp-X)</code></p>",
+        "",
+        "<p><a href=\"t01-overview.html\">回到 T01 刪除／替換驗證總覽</a></p>"
+      ]
+    },
+    {
+      "id": "t02-2018-after",
+      "page": "/results/t02-2018-after.html",
+      "title": "T02｜2018 後（2018-2025）",
+      "description": "T02 年份切分驗證：2018-2025。",
+      "group": "t02",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "2018 後"
+        ],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-90"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料與模型",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]02-pre_LLM(orig)_18-25(257)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>可用句子</td><td>13,647</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>neighbors 5 / components 10 / min dist 0.0 / cosine</td></tr>",
+        "<tr><td>HDBSCAN</td><td>cluster 100 / samples 5 / eom / eps 0.0</td></tr>",
+        "<tr><td>Topic reduction</td><td><code>nr_topics=auto</code></td></tr>",
+        "</tbody></table>",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>停用詞</td><td><a href=\"a05-8-orig-rev-human-stopwords.html\">A05-8.4 human</a>，客製 170 個</td></tr>",
+        "<tr><td>LLM 設計</td><td>未設定／未執行</td></tr>",
+        "<tr><td>代表句</td><td>6 句 / topic</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 來源資料夾",
+        "",
+        "<p><code>#運行BERTopic整理/#8.1 T03不同年份切段/06.17_T02-2(orig_18-25_tp-X)</code></p>",
+        "<p><a href=\"t02-overview.html\">回到 T02 年份切分驗證總覽</a></p>"
+      ]
+    },
+    {
+      "id": "t02-2018-before",
+      "page": "/results/t02-2018-before.html",
+      "title": "T02｜2018 前（2008-2017）",
+      "description": "T02 年份切分驗證：2008-2017。",
+      "group": "t02",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "2018 前"
+        ],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-89"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料與模型",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]02-pre_LLM(orig)_08-17(177)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>可用句子</td><td>8,193</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>neighbors 10 / components 5 / min dist 0.0 / cosine</td></tr>",
+        "<tr><td>HDBSCAN</td><td>cluster 125 / samples 5 / eom / eps 0.0</td></tr>",
+        "<tr><td>Topic reduction</td><td><code>nr_topics=auto</code></td></tr>",
+        "</tbody></table>",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>停用詞</td><td><a href=\"a05-8-orig-rev-human-stopwords.html\">A05-8.4 human</a>，客製 170 個</td></tr>",
+        "<tr><td>LLM 設計</td><td>未設定／未執行</td></tr>",
+        "<tr><td>代表句</td><td>6 句 / topic</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 來源資料夾",
+        "",
+        "<p><code>#運行BERTopic整理/#8.1 T03不同年份切段/06.17_T02-1(orig_08-17_tp-X)</code></p>",
+        "<p><a href=\"t02-overview.html\">回到 T02 年份切分驗證總覽</a></p>"
+      ]
+    },
+    {
+      "id": "t02-2019-after",
+      "page": "/results/t02-2019-after.html",
+      "title": "T02｜2019 後（2019-2025）",
+      "description": "T02 年份切分驗證：2019-2025。",
+      "group": "t02",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "2019 後"
+        ],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-91"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料與模型",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]03-pre_LLM(orig)_19-25(213)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>可用句子</td><td>11,632</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>neighbors 5 / components 10 / min dist 0.0 / cosine</td></tr>",
+        "<tr><td>HDBSCAN</td><td>cluster 100 / samples 5 / eom / eps 0.0</td></tr>",
+        "<tr><td>Topic reduction</td><td><code>nr_topics=auto</code></td></tr>",
+        "</tbody></table>",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>停用詞</td><td><a href=\"a05-8-orig-rev-human-stopwords.html\">A05-8.4 human</a>，客製 170 個</td></tr>",
+        "<tr><td>LLM 設計</td><td>未設定／未執行</td></tr>",
+        "<tr><td>代表句</td><td>6 句 / topic</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 來源資料夾",
+        "",
+        "<p><code>#運行BERTopic整理/#8.1 T03不同年份切段/06.17_T02-4(orig_19-25_tp-X)</code></p>",
+        "<p><a href=\"t02-overview.html\">回到 T02 年份切分驗證總覽</a></p>"
+      ]
+    },
+    {
+      "id": "t02-2019-before",
+      "page": "/results/t02-2019-before.html",
+      "title": "T02｜2019 前（2008-2018）",
+      "description": "T02 年份切分驗證：2008-2018。",
+      "group": "t02",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "2019 前"
+        ],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-92"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料與模型",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]03-pre_LLM(orig)_08-18(221)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>可用句子</td><td>10,208</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>neighbors 10 / components 5 / min dist 0.0 / cosine</td></tr>",
+        "<tr><td>HDBSCAN</td><td>cluster 125 / samples 5 / eom / eps 0.0</td></tr>",
+        "<tr><td>Topic reduction</td><td><code>nr_topics=auto</code></td></tr>",
+        "</tbody></table>",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>停用詞</td><td><a href=\"a05-8-orig-rev-human-stopwords.html\">A05-8.4 human</a>，客製 170 個</td></tr>",
+        "<tr><td>LLM 設計</td><td>未設定／未執行</td></tr>",
+        "<tr><td>代表句</td><td>6 句 / topic</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 來源資料夾",
+        "",
+        "<p><code>#運行BERTopic整理/#8.1 T03不同年份切段/06.17_T02-3(orig_08-18_tp-X)</code></p>",
+        "<p><a href=\"t02-overview.html\">回到 T02 年份切分驗證總覽</a></p>"
+      ]
+    },
+    {
+      "id": "t02-2021-after",
+      "page": "/results/t02-2021-after.html",
+      "title": "T02｜2021 後（2021-2025）",
+      "description": "T02 年份切分驗證：2021-2025。",
+      "group": "t02",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "2021 後"
+        ],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-94"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料與模型",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]04-pre_LLM(orig)_21-25(146)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>可用句子</td><td>7,274</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>neighbors 5 / components 10 / min dist 0.0 / cosine</td></tr>",
+        "<tr><td>HDBSCAN</td><td>cluster 100 / samples 5 / eom / eps 0.0</td></tr>",
+        "<tr><td>Topic reduction</td><td><code>nr_topics=auto</code></td></tr>",
+        "</tbody></table>",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>停用詞</td><td><a href=\"a05-8-orig-rev-human-stopwords.html\">A05-8.4 human</a>，客製 170 個</td></tr>",
+        "<tr><td>LLM 設計</td><td>未設定／未執行</td></tr>",
+        "<tr><td>代表句</td><td>6 句 / topic</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 來源資料夾",
+        "",
+        "<p><code>#運行BERTopic整理/#8.1 T03不同年份切段/06.17_T02-6(orig_21-25_tp-X)</code></p>",
+        "<p><a href=\"t02-overview.html\">回到 T02 年份切分驗證總覽</a></p>"
+      ]
+    },
+    {
+      "id": "t02-2021-before",
+      "page": "/results/t02-2021-before.html",
+      "title": "T02｜2021 前（2008-2020）",
+      "description": "T02 年份切分驗證：2008-2020。",
+      "group": "t02",
+      "status": "可檢視",
+      "featured": false,
+      "map": {
+        "labels": [
+          "2021 前"
+        ],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-93"
+        ]
+      },
+      "kind": "detail",
+      "settings_lines": [
+        "## 實驗設定",
+        "",
+        "### 資料與模型",
+        "",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>資料集</td><td><code>Result/06.13_[B]tok/06.13_[B]04-pre_LLM(orig)_08-20(288)_tok(para12-80)_dataset</code></td></tr>",
+        "<tr><td>可用句子</td><td>14,566</td></tr>",
+        "<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>",
+        "<tr><td>UMAP</td><td>neighbors 10 / components 5 / min dist 0.0 / cosine</td></tr>",
+        "<tr><td>HDBSCAN</td><td>cluster 125 / samples 5 / eom / eps 0.0</td></tr>",
+        "<tr><td>Topic reduction</td><td><code>nr_topics=auto</code></td></tr>",
+        "</tbody></table>",
+        "<table class=\"settings-table\"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>",
+        "<tr><td>停用詞</td><td><a href=\"a05-8-orig-rev-human-stopwords.html\">A05-8.4 human</a>，客製 170 個</td></tr>",
+        "<tr><td>LLM 設計</td><td>未設定／未執行</td></tr>",
+        "<tr><td>代表句</td><td>6 句 / topic</td></tr>",
+        "</tbody></table>",
+        "",
+        "### 來源資料夾",
+        "",
+        "<p><code>#運行BERTopic整理/#8.1 T03不同年份切段/06.17_T02-5(orig_08-20_tp-X)</code></p>",
+        "<p><a href=\"t02-overview.html\">回到 T02 年份切分驗證總覽</a></p>"
+      ]
+    },
+    {
+      "id": "t02-overview",
+      "page": "/results/t02-overview.html",
+      "title": "T02｜年份切分驗證",
+      "description": "以 2018、2019、2021 為界的年份切分 BERTopic 驗證。",
+      "group": "t02",
+      "status": "可檢視",
+      "featured": true,
+      "map": {
+        "labels": [
+          "T02：驗證\n（年份切）"
+        ],
+        "node_ids": [
+          "mRq0KLDsOoRAvhbJz9B0-88"
+        ]
+      },
+      "kind": "overview"
+    }
+  ],
+  "pending": [
+    {
+      "label": "T03-T04 節點",
+      "description": "資料篩選與 repl 停用詞驗證",
+      "status": "待整理"
+    }
+  ]
+}

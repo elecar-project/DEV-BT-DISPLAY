@@ -1,32 +1,13 @@
 ---
 title: A04-5｜repl + tok UMAP 搜尋
 description: A04-5｜repl + tok 的 UMAP 與 HDBSCAN 聯合參數搜尋。
+experiment_id: a04-5-repl-tok
 ---
 
 # A04-5｜repl + tok｜UMAP 搜尋
 
 <div class="result-detail-layout" markdown="1">
-<aside class="result-settings" markdown="1">
-## 實驗設定
-
-### 資料血緣
-
-<table class="settings-table"><thead><tr><th>項目</th><th>設定</th></tr></thead><tbody>
-<tr><td>資料集</td><td><code>-</code></td></tr>
-<tr><td>來源資料夾</td><td><code>#運行BERTopic整理/#4. UMAP（未整理）/A04-5(repl)_tok</code></td></tr>
-<tr><td>可用句子</td><td>-</td></tr>
-<tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>
-<tr><td>UMAP</td><td>cosine / random state 42</td></tr>
-</tbody></table>
-
-### 搜尋流程
-
-<table class="settings-table"><thead><tr><th>階段</th><th>設定</th></tr></thead><tbody>
-<tr><td>第一階段</td><td>10 組廣泛搜尋</td></tr>
-<tr><td>第二階段</td><td>13440 組候選深入搜尋</td></tr>
-<tr><td>候選策略</td><td>最低雜訊 / 最多主題 / 最佳平衡</td></tr>
-</tbody></table>
-</aside>
+{% include result-settings.html id=page.experiment_id %}
 
 <section markdown="1">
 ## UMAP 測試目的

@@ -1,47 +1,13 @@
 ---
 title: A03-2 del tok min_cluster_size 掃描
 description: del + tokenizer 資料集的 HDBSCAN min_cluster_size 敏感度分析。
+experiment_id: a03-2-del-tok
 ---
 
 # A03-2｜min_cluster_size 掃描
 
 <div class="result-detail-layout" markdown="1">
-<aside class="result-settings" markdown="1">
-## 實驗設定
-
-### 實驗目的
-
-固定語意向量與降維設定，僅調整 HDBSCAN 的 `min_cluster_size`，比較主題群數、離群比例與主題分布。
-
-### 資料血緣
-
-<table class="settings-table">
-  <thead><tr><th>項目</th><th>設定</th></tr></thead>
-  <tbody>
-    <tr><td>資料集</td><td><code>pre_LLM(del)_tok_dataset</code></td></tr>
-    <tr><td>節點路徑</td><td>A03-2 → A04 → A05</td></tr>
-    <tr><td>使用欄位</td><td><code>sentence</code></td></tr>
-    <tr><td>可用句子</td><td>31,474</td></tr>
-    <tr><td>短句</td><td>1,417 筆少於 3 words</td></tr>
-  </tbody>
-</table>
-
-### 固定模型設定
-
-<table class="settings-table">
-  <thead><tr><th>項目</th><th>設定</th></tr></thead>
-  <tbody>
-    <tr><td>Embedding</td><td><code>all-MiniLM-L6-v2</code></td></tr>
-    <tr><td>UMAP</td><td>neighbors 15 / components 5 / min dist 0 / cosine</td></tr>
-    <tr><td>HDBSCAN</td><td>euclidean / eom / prediction data</td></tr>
-    <tr><td>Vectorizer</td><td>English stop words / ngram 1-2 / min df 2</td></tr>
-  </tbody>
-</table>
-
-### 掃描範圍
-
-`50, 75, 100, 125, 150, 175, 200, 225, 250, 275, 300, 325, 350, 375, 400, 500, 600, 700, 800, 900, 1000`
-</aside>
+{% include result-settings.html id=page.experiment_id %}
 
 <section markdown="1">
 <div class="run-summary">
