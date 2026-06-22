@@ -396,13 +396,13 @@ def validate(registry: dict[str, object]) -> list[str]:
 
     for path in RESULTS.glob("*.md"):
         source = path.read_text(encoding="utf-8")
+        if ASIDE_RE.search(source):
+            errors.append(f"Inline settings panel remains in {path.name}; run with --migrate")
         if "experiment_id:" not in source:
             continue
         match = re.search(r"^experiment_id:\s*(\S+)\s*$", source, re.MULTILINE)
         if not match or match.group(1) not in ids:
             errors.append(f"Unknown experiment_id in {path.name}")
-        if ASIDE_RE.search(source):
-            errors.append(f"Inline settings panel remains in {path.name}")
     return errors
 
 

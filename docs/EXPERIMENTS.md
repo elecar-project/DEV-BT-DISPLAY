@@ -23,6 +23,13 @@ python3 scripts/build_experiment_registry.py --check
 
 第一個指令會同步結果索引、公開 JSON 與既有 SVG 地圖中的連結；第二個指令會檢查頁面與登錄資料是否對得上。
 
+若是先執行舊的匯入腳本，而它重新產生了內嵌設定側欄，改用以下指令做一次遷移，再執行檢查：
+
+~~~~bash
+python3 scripts/build_experiment_registry.py --migrate
+python3 scripts/build_experiment_registry.py --check
+~~~~
+
 ## 設定面板
 
 詳細頁使用共用樣板 _includes/result-settings.html。settings_lines 的每一個陣列元素就是面板的一行 Markdown 或 HTML，因此可沿用既有的 settings-table 表格格式。
