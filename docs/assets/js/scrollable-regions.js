@@ -33,18 +33,19 @@
       }
       element.addEventListener('keydown', (event) => {
         const step = Math.max(80, Math.round(element.clientWidth * 0.65));
+        const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
         if (event.key === 'ArrowRight') {
           event.preventDefault();
-          element.scrollBy({ left: step, behavior: 'smooth' });
+          element.scrollBy({ left: step, behavior });
         } else if (event.key === 'ArrowLeft') {
           event.preventDefault();
-          element.scrollBy({ left: -step, behavior: 'smooth' });
+          element.scrollBy({ left: -step, behavior });
         } else if (event.key === 'Home') {
           event.preventDefault();
-          element.scrollTo({ left: 0, behavior: 'smooth' });
+          element.scrollTo({ left: 0, behavior });
         } else if (event.key === 'End') {
           event.preventDefault();
-          element.scrollTo({ left: element.scrollWidth, behavior: 'smooth' });
+          element.scrollTo({ left: element.scrollWidth, behavior });
         }
       });
     });
