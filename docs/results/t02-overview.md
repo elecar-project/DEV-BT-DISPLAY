@@ -7,7 +7,7 @@ description: 以 2018、2019、2021 為界的年份切分 BERTopic 驗證。
 
 T02 分別以 2018、2019、2021 為切點，將同一資料脈絡分成前後兩段，檢查不同年份劃分下的主題結構是否穩定。各組使用原始輸出記錄的單一模型設定，因此比較時需同時閱讀切分期間與 UMAP／HDBSCAN 參數。
 
-<aside class="table-note"><strong>LLM 狀態：</strong>這六份原始輸出未保留可用的 LLM 命名驗證結果。網站保留既有 BERTopic 與非 LLM 表徵結果，並一律標示為「未設定／未執行」。</aside>
+<div class="table-note" role="note"><strong>LLM 狀態：</strong>這六份原始輸出未保留可用的 LLM 命名驗證結果。網站保留既有 BERTopic 與非 LLM 表徵結果，並一律標示為「未設定／未執行」。</div>
 
 ## 六種年份分段比較
 

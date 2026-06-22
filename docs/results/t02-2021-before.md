@@ -21,7 +21,7 @@ experiment_id: t02-2021-before
 
 以 2021 為切點的前段資料。 此頁用於與同一年度切點的另一側資料比較，檢查不同年份界線是否改變主題結構、離群比例或主題集中度。
 
-<aside class="table-note"><strong>LLM 狀態：</strong>原始輸出未保留可用的 LLM 命名驗證結果，因此本頁標示為「未設定／未執行」。Default、KeyBERT、POS 與 MMR 的主題表徵輸出均已保留。</aside>
+<div class="table-note" role="note"><strong>LLM 狀態：</strong>原始輸出未保留可用的 LLM 命名驗證結果，因此本頁標示為「未設定／未執行」。Default、KeyBERT、POS 與 MMR 的主題表徵輸出均已保留。</div>
 
 ## 預設主題語意摘要
 

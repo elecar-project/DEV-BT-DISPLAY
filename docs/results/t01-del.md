@@ -21,7 +21,7 @@ experiment_id: t01-del
 
 將品牌與車款名稱從資料集中刪除，檢查移除專有名詞後主題結構的變化。 此頁用來與原始語料及另一種處理方式比較，判讀品牌／車款名稱是否主導主題結構。
 
-<aside class="table-note"><strong>LLM50 未執行：</strong>本次分群與 Default、KeyBERT、POS、MMR 表徵皆已輸出；但當時未提供 <code>OPENROUTER_API_KEY</code>，因此 LLM topic label 與 50 次穩定性驗證被跳過。這不是「0 個穩定主題」，而是沒有可判定的 LLM 驗證結果。</aside>
+<div class="table-note" role="note"><strong>LLM50 未執行：</strong>本次分群與 Default、KeyBERT、POS、MMR 表徵皆已輸出；但當時未提供 <code>OPENROUTER_API_KEY</code>，因此 LLM topic label 與 50 次穩定性驗證被跳過。這不是「0 個穩定主題」，而是沒有可判定的 LLM 驗證結果。</div>
 
 ## 預設主題語意摘要
 

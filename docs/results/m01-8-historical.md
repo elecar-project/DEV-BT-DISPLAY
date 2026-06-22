@@ -5,7 +5,7 @@ description: M01-8 歷史主程式的三種 BERTopic 策略比較。
 
 # M01-8｜三策略主程式
 
-<aside class="table-note"><strong>歷史比較用途：</strong>本頁整理「M01主程式（三參數-廢用）」中唯一完整的 M01-8 實驗。保留其資料來源、三種策略、停用詞與 LLM 命名結果，供研究追溯；它不取代後續 M02 的正式單一參數模型。</aside>
+<div class="table-note" role="note"><strong>歷史比較用途：</strong>本頁整理「M01主程式（三參數-廢用）」中唯一完整的 M01-8 實驗。保留其資料來源、三種策略、停用詞與 LLM 命名結果，供研究追溯；它不取代後續 M02 的正式單一參數模型。</div>
 
 <div class="m01-strategy-links"><a class="m01-strategy-link candidate-lowest_noise" href="{{ '/results/m01-8-lowest-noise.html' | relative_url }}"><strong>最低雜訊</strong><span>以最低 noise ratio 為優先，觀察離群句是否最少。</span></a><a class="m01-strategy-link candidate-most_topics" href="{{ '/results/m01-8-most-topics.html' | relative_url }}"><strong>最多主題</strong><span>以保留最多有效主題為優先，保留較細的主題切分。</span></a><a class="m01-strategy-link candidate-best_balance" href="{{ '/results/m01-8-best-balance.html' | relative_url }}"><strong>最佳平衡</strong><span>依既定平衡條件與 balance score 選取，兼顧離群、集中度與主題數。</span></a></div>
 
@@ -26,7 +26,7 @@ description: M01-8 歷史主程式的三種 BERTopic 策略比較。
 <th>策略</th><th>選擇方式</th><th>主題數</th><th>noise ratio</th><th>最大主題比例</th><th>前三主題比例</th><th>balance score</th><th>LLM 命名失敗</th>
 </tr></thead><tbody><tr class="candidate-lowest_noise"><td><a href="{{ '/results/m01-8-lowest-noise.html' | relative_url }}">最低雜訊</a></td><td>以最低 noise ratio 為優先，觀察離群句是否最少。</td><td>4</td><td>10.29%</td><td>77.70%</td><td>87.28%</td><td>0.3935</td><td>1</td></tr><tr class="candidate-most_topics"><td><a href="{{ '/results/m01-8-most-topics.html' | relative_url }}">最多主題</a></td><td>以保留最多有效主題為優先，保留較細的主題切分。</td><td>70</td><td>29.74%</td><td>3.36%</td><td>7.54%</td><td>0.8856</td><td>7</td></tr><tr class="candidate-best_balance"><td><a href="{{ '/results/m01-8-best-balance.html' | relative_url }}">最佳平衡</a></td><td>依既定平衡條件與 balance score 選取，兼顧離群、集中度與主題數。</td><td>51</td><td>19.58%</td><td>19.12%</td><td>26.32%</td><td>0.8313</td><td>4</td></tr></tbody></table></div>
 
-<aside class="table-note"><strong>如何判讀：</strong>最低雜訊策略雖使離群句較少，但最大主題高度集中；最多主題策略的 balance score 最高，但 LLM 命名失敗也較多；最佳平衡策略則在較低雜訊與 51 個主題之間取得另一種取捨。三者均保留，供語意品質的人工檢閱。</aside>
+<div class="table-note" role="note"><strong>如何判讀：</strong>最低雜訊策略雖使離群句較少，但最大主題高度集中；最多主題策略的 balance score 最高，但 LLM 命名失敗也較多；最佳平衡策略則在較低雜訊與 51 個主題之間取得另一種取捨。三者均保留，供語意品質的人工檢閱。</div>
 
 ## 資料與原始輸出
 

@@ -7,7 +7,7 @@ description: A05-6 與 A05-8 orig REV 的客製停用詞版本線。
 
 A05 依 A06 BERTopic representation 的殘留詞反覆修訂客製停用詞。本站僅保留 A05-6 與 A05-8 orig REV 兩條正確資料分支；A05-8 repl 為錯誤運行產生的資料，不納入呈現。
 
-<aside class="table-note"><strong>共同保留原則：</strong>不將 <code>electric</code>、<code>EV</code>、<code>charging</code>、<code>battery</code>、<code>range</code>、<code>motor</code>、<code>torque</code>、<code>hybrid</code>、<code>plug</code> 等 EV 語意錨點納入停用詞。</aside>
+<div class="table-note" role="note"><strong>共同保留原則：</strong>不將 <code>electric</code>、<code>EV</code>、<code>charging</code>、<code>battery</code>、<code>range</code>、<code>motor</code>、<code>torque</code>、<code>hybrid</code>、<code>plug</code> 等 EV 語意錨點納入停用詞。</div>
 
 ## 版本線
 

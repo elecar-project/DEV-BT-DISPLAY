@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=20260621-audit-v25' | relative_url }}">
   </head>
   <body>
+    <a class="skip-link" href="#main-content">跳至主要內容</a>
     <header class="site-header">
       <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}首頁">
         <span class="brand-mark">DB</span>
@@ -27,7 +28,7 @@
       </nav>
     </header>
 
-    <main class="page-shell">
+    <main id="main-content" class="page-shell" tabindex="-1">
       {{ content }}
     </main>
 
@@ -37,5 +38,6 @@
       <a href="https://github.com/elecar-project/DEV-BT">母倉庫</a>
     </footer>
     <script src="{{ '/assets/js/responsive-tables.js?v=20260622-ui-audit-v1' | relative_url }}" defer></script>
+    <script src="{{ '/assets/js/scrollable-regions.js?v=20260622-a11y-v1' | relative_url }}" defer></script>
   </body>
 </html>
