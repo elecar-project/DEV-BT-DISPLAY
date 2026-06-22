@@ -116,9 +116,7 @@ a:hover {
 }
 
 .hero {
-  background:
-    linear-gradient(135deg, rgba(19, 124, 114, 0.94), rgba(24, 33, 47, 0.92)),
-    radial-gradient(circle at 82% 20%, rgba(185, 130, 23, 0.42), transparent 32%);
+  background: #176f69;
   border-radius: 8px;
   box-shadow: var(--shadow);
   color: #fff;
@@ -1372,6 +1370,62 @@ code {
   }
 
   .stopword-line { margin-right: -4px; }
+
+  .mobile-card-table {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    display: block;
+    margin: 18px 0 28px;
+    min-width: 0;
+    overflow: visible;
+    width: 100%;
+  }
+
+  .mobile-card-table > thead {
+    display: none;
+  }
+
+  .mobile-card-table > tbody {
+    display: grid;
+    gap: 12px;
+  }
+
+  .mobile-card-table tr {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    display: block;
+    overflow: hidden;
+  }
+
+  .mobile-card-table td {
+    align-items: start;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    gap: 12px;
+    grid-template-columns: minmax(82px, 0.72fr) minmax(0, 1.5fr);
+    padding: 12px 14px;
+    white-space: normal;
+  }
+
+  .mobile-card-table td:last-child {
+    border-bottom: 0;
+  }
+
+  .mobile-card-table td::before {
+    color: var(--muted);
+    content: attr(data-label);
+    font-size: 0.8rem;
+    font-weight: 800;
+    line-height: 1.45;
+  }
+
+  .mobile-card-table code {
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
 
   th,
   td {
