@@ -416,21 +416,34 @@ def write_registry(registry: dict[str, object]) -> None:
     write_include()
 
 
+def sync_registry(*, migrate: bool = False) -> dict[str, object]:
+    """Refresh every registry-derived surface after an experiment import."""
+    registry = build_registry(migrate=migrate)
+    errors = validate(registry)
+    if errors:
+        raise RuntimeError("\n".join(errors))
+    write_registry(registry)
+    sync_map(registry)
+    return registry
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--migrate", action="store_true", help="move existing setting panels into the registry")
     parser.add_argument("--check", action="store_true", help="validate the existing registry without writing")
     args = parser.parse_args()
 
-    registry = build_registry(migrate=args.migrate)
-    errors = validate(registry)
-    if errors:
-        raise SystemExit("\n".join(errors))
     if args.check:
+        registry = build_registry(migrate=False)
+        errors = validate(registry)
+        if errors:
+            raise SystemExit("\n".join(errors))
         print(f"Registry valid: {len(registry['experiments'])} published records")
         return
-    write_registry(registry)
-    sync_map(registry)
+    try:
+        registry = sync_registry(migrate=args.migrate)
+    except RuntimeError as error:
+        raise SystemExit(str(error)) from error
     print(f"Wrote registry, shared setting panel, result index, and map links for {len(registry['experiments'])} records")
 
 

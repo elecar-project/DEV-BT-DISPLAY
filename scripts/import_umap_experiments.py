@@ -441,3 +441,5 @@ description: {title} 的 UMAP 與 HDBSCAN 聯合參數搜尋。
 
 if __name__ == "__main__":
     run()
+    from build_experiment_registry import sync_registry
+    sync_registry(migrate=True)

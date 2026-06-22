@@ -235,3 +235,5 @@ description: {title} 的 HDBSCAN min_cluster_size 敏感度分析。
 
 if __name__ == "__main__":
     run()
+    from build_experiment_registry import sync_registry
+    sync_registry(migrate=True)

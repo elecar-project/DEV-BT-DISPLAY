@@ -23,7 +23,9 @@ python3 scripts/build_experiment_registry.py --check
 
 第一個指令會同步結果索引、公開 JSON 與既有 SVG 地圖中的連結；第二個指令會檢查頁面與登錄資料是否對得上。
 
-若是先執行舊的匯入腳本，而它重新產生了內嵌設定側欄，改用以下指令做一次遷移，再執行檢查：
+既有的 BERTopic 匯入腳本已在完成後自動執行此同步，因此正常重新匯入 A03、A04、A05、M01-M03、T01 或 T02 時，不需要另外執行指令。
+
+若手動建立的舊式頁面仍含內嵌設定側欄，改用以下指令做一次遷移，再執行檢查：
 
 ~~~~bash
 python3 scripts/build_experiment_registry.py --migrate

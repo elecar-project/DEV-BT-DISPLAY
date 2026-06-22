@@ -221,3 +221,5 @@ def run() -> None:
 
 if __name__ == "__main__":
     run()
+    from build_experiment_registry import sync_registry
+    sync_registry(migrate=True)
