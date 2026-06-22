@@ -8,7 +8,7 @@ description: DEV-BT 實驗資料血緣、處理順序與已整理結果。
 本頁依實驗的資料血緣與處理順序呈現。可點擊的節點已有完整結果與設定摘要；其他節點保留在地圖中，待後續整理後開放。
 
 <div class="experiment-map-scroll" aria-label="DEV-BT 完整實驗地圖">
-  <object class="experiment-map-full" type="image/svg+xml" data="{{ '/assets/img/experiment-map-full.svg?v=registry-v1' | relative_url }}">
+  <object class="experiment-map-full" type="image/svg+xml" data="{{ '/assets/img/experiment-map-full.svg?v=registry-v1' | relative_url }}" aria-label="DEV-BT 完整實驗運行架構圖">
     <img src="{{ '/assets/img/experiment-map-full.svg?v=registry-v1' | relative_url }}" alt="DEV-BT 完整實驗運行架構圖">
   </object>
 </div>

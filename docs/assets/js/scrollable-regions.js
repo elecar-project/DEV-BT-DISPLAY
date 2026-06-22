@@ -31,6 +31,22 @@
       if (!element.hasAttribute('aria-label') && !element.hasAttribute('aria-labelledby')) {
         element.setAttribute('aria-label', `${headingFor(element)}，可使用方向鍵捲動`);
       }
+      element.addEventListener('keydown', (event) => {
+        const step = Math.max(80, Math.round(element.clientWidth * 0.65));
+        if (event.key === 'ArrowRight') {
+          event.preventDefault();
+          element.scrollBy({ left: step, behavior: 'smooth' });
+        } else if (event.key === 'ArrowLeft') {
+          event.preventDefault();
+          element.scrollBy({ left: -step, behavior: 'smooth' });
+        } else if (event.key === 'Home') {
+          event.preventDefault();
+          element.scrollTo({ left: 0, behavior: 'smooth' });
+        } else if (event.key === 'End') {
+          event.preventDefault();
+          element.scrollTo({ left: element.scrollWidth, behavior: 'smooth' });
+        }
+      });
     });
   }
 
