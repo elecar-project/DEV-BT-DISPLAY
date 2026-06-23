@@ -1,0 +1,19 @@
+{
+  "nr_topics": "auto",
+  "umap_n_neighbors": 10,
+  "umap_n_components": 15,
+  "umap_min_dist": 0.0,
+  "hdbscan_min_cluster_size": 50,
+  "hdbscan_min_samples": 5,
+  "hdbscan_cluster_selection_method": "eom",
+  "hdbscan_cluster_selection_epsilon": 0.2,
+  "nr_repr_docs": 6,
+  "llm_topic_naming": "disabled",
+  "metrics": {
+    "documents": 5016,
+    "topics_excluding_noise": 23,
+    "noise_documents": 1331,
+    "noise_ratio": 0.265351
+  },
+  "errors": []
+}
