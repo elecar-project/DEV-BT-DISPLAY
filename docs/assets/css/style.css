@@ -743,9 +743,9 @@ code {
 .result-empty { color: var(--muted); font-style: italic; }
 
 .semantic-table { min-width: 860px; table-layout: fixed; width: 100%; }
-.semantic-table th:nth-child(1) { width: 10%; }
-.semantic-table th:nth-child(2) { width: 37%; }
-.semantic-table th:nth-child(3) { width: 53%; }
+.semantic-table th:nth-child(1) { width: 88px; }
+.semantic-table th:nth-child(2) { width: 112px; }
+.semantic-table th:nth-child(3) { width: auto; }
 .semantic-table td { line-height: 1.65; overflow-wrap: anywhere; vertical-align: top; white-space: normal; }
 
 .result-chart-details {
