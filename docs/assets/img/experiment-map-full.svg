@@ -189,6 +189,7 @@
 <tspan x="687.0" dy="18.6">（全參數）</tspan>
 </text>
 </g>
+</a>
 <g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-47" data-label="M02：主程式
 （單一參數）">
 <rect x="777.0" y="19.0" width="120.0" height="59.5" fill="#e51400" stroke="#B20000"/>
@@ -197,6 +198,7 @@
 <tspan x="837.0" dy="18.6">（單一參數）</tspan>
 </text>
 </g>
+<a href="../../results/m01-8-best-balance.html" target="_top">
 <g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-48" data-label="8C">
 <rect x="777.0" y="527.5" width="80.0" height="32.0" fill="#f8cecc" stroke="#b85450"/>
 <text x="817.0" y="549.4" fill="#1f2937" font-size="14.0">
@@ -566,10 +568,11 @@
       'mRq0KLDsOoRAvhbJz9B0-96': '../../results/t03-duration-1-35m.html',
       'mRq0KLDsOoRAvhbJz9B0-97': '../../results/t03-trimmed-manufacturers.html',
       'mRq0KLDsOoRAvhbJz9B0-29': '../../results/a05-6-overview.html',
-      'mRq0KLDsOoRAvhbJz9B0-45': '../../results/a05-8-orig-rev-overview.html'
+      'mRq0KLDsOoRAvhbJz9B0-45': '../../results/a05-8-orig-rev-overview.html',
+      'mRq0KLDsOoRAvhbJz9B0-48': '../../results/m01-8-best-balance.html'
     };
     const emptyDatasetLabels = new Set([
-      '1 (del)', '4 (repl)', '0 (orig)', '8C', '2020 後',
+      '1 (del)', '4 (repl)', '0 (orig)', '2020 後',
       '2018 前 (08-17)', '2018 後 (18-25)', '2019 前 (08-18)',
       '2019 後 (19-25)', '2021 前 (08-20)', '2021 後 (21-25)',
       '2018 前', '2018 後', '2019 前', '2019 後', '2021 前', '2021 後',
