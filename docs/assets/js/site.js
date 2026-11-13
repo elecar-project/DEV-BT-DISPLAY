@@ -52,7 +52,9 @@
       const heading = wrapper.closest('section')?.querySelector('h2') || wrapper.previousElementSibling;
       wrapper.setAttribute('role', 'region');
       wrapper.setAttribute('aria-label', `${heading?.textContent?.trim()?.slice(0, 60) || '資料'}表格，可左右捲動`);
-      wrapper.tabIndex = wrapper.scrollWidth > wrapper.clientWidth + 2 ? 0 : -1;
+      const overflowing = wrapper.scrollWidth > wrapper.clientWidth + 2;
+      wrapper.dataset.overflow = String(overflowing);
+      wrapper.tabIndex = overflowing ? 0 : -1;
     });
     document.querySelectorAll('.result-figure-scroller').forEach((scroller) => {
       scroller.setAttribute('role', 'region');
@@ -62,6 +64,7 @@
   }
   prepareTables();
   window.addEventListener('resize', prepareTables);
+  document.addEventListener('toggle', prepareTables, true);
   // The dataset comparer inserts its tables after asynchronous text requests.
   const compareOutput = document.querySelector('#dataset-compare-output');
   if (compareOutput) new MutationObserver(prepareTables).observe(compareOutput, {childList: true});

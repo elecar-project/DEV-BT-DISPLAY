@@ -1640,3 +1640,16 @@ tbody tr:hover td { background: #f4f7f0; }
   .settings-disclosure > aside { border: 0; border-top: 1px solid var(--line); border-radius: 0; }
 }
 @media print { .settings-disclosure { display: none; } }
+.table-scroll[data-overflow="true"]::before {
+  content: '↔ 左右滑動，或聚焦後使用方向鍵，查看完整表格';
+  display: block;
+  position: sticky;
+  left: 0;
+  width: 100%;
+  padding: 8px 12px;
+  background: #e8eee3;
+  color: #35553d;
+  font-size: .7rem;
+  line-height: 1.7;
+}
+@media print { .table-scroll::before { display: none !important; } }
