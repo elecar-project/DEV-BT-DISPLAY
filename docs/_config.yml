@@ -1,5 +1,5 @@
 title: DEV-BT 研究展示站
-description: DEV-BT 專案的內部研究展示網站。
+description: 電動車產業逐字稿、資料處理方法與 BERTopic 實驗結果的研究展示站。
 baseurl: "/DEV-BT-DISPLAY"
 url: "https://elecar-project.github.io"
 

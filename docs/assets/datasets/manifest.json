@@ -4096,7 +4096,8 @@
           "lines": 1,
           "sha1": "61389169d68243951316b9d838c49aeb82e10a84"
         }
-      ]
+      ],
+      "current_source": "#運行BERTopic整理/#1. 原始文本/01-初始 txt/2. 文字稿－txt"
     },
     {
       "id": "deleted-20-no-voice",
@@ -8012,7 +8013,8 @@
           "lines": 2,
           "sha1": "c9c446af8cd272c9a7e09f6e1d4208cd5aa4c614"
         }
-      ]
+      ],
+      "current_source": "#運行BERTopic整理/#2.1 清理後輸入資料集（dataset）/02.0-刪除 20 份無人聲 dataset/05.24_txt-test_deleted(434)_dataset"
     },
     {
       "id": "llm-del",
@@ -11928,7 +11930,8 @@
           "lines": 1,
           "sha1": "e868c6f6f5e91c70566d91face471d1ed8182780"
         }
-      ]
+      ],
+      "current_source": "Result/06.03_A02/R06.03_A02-pre_LLM(del)_dataset"
     },
     {
       "id": "llm-repl",
@@ -15844,7 +15847,8 @@
           "lines": 1,
           "sha1": "b48aaa3814569f4ca8a6c3aacea3e93360eb8783"
         }
-      ]
+      ],
+      "current_source": "Result/06.03_A02/R06.03_A02-pre_LLM(repl)_dataset"
     },
     {
       "id": "year-08-19",
@@ -18014,7 +18018,8 @@
           "lines": 2,
           "sha1": "c9c446af8cd272c9a7e09f6e1d4208cd5aa4c614"
         }
-      ]
+      ],
+      "current_source": "Result/06.13_[A]/06.13_[A]-01-pre_LLM(orig)_08-19(240)_dataset"
     },
     {
       "id": "year-20-25",
@@ -19770,7 +19775,8 @@
           "lines": 27,
           "sha1": "1821b73fe20c061637707e008d67f2ab6a172e20"
         }
-      ]
+      ],
+      "current_source": "Result/06.13_[A]/06.13_[A]-01-pre_LLM(orig)_20-25(194)_dataset"
     },
     {
       "id": "validation-08-17",
@@ -21373,7 +21379,8 @@
           "lines": 2,
           "sha1": "c9c446af8cd272c9a7e09f6e1d4208cd5aa4c614"
         }
-      ]
+      ],
+      "current_source": "Result/06.13_[A]/06.13_[A]-02-pre_LLM(orig)_08-17(177)_dataset"
     },
     {
       "id": "validation-18-25",
@@ -23696,7 +23703,8 @@
           "lines": 27,
           "sha1": "1821b73fe20c061637707e008d67f2ab6a172e20"
         }
-      ]
+      ],
+      "current_source": "Result/06.13_[A]/06.13_[A]-02-pre_LLM(orig)_18-25(257)_dataset"
     },
     {
       "id": "validation-08-18",
@@ -25695,7 +25703,8 @@
           "lines": 2,
           "sha1": "c9c446af8cd272c9a7e09f6e1d4208cd5aa4c614"
         }
-      ]
+      ],
+      "current_source": "Result/06.13_[A]/06.13_[A]-03-pre_LLM(orig)_08-18(221)_dataset"
     },
     {
       "id": "validation-19-25",
@@ -27622,7 +27631,8 @@
           "lines": 27,
           "sha1": "1821b73fe20c061637707e008d67f2ab6a172e20"
         }
-      ]
+      ],
+      "current_source": "Result/06.13_[A]/06.13_[A]-03-pre_LLM(orig)_19-25(213)_dataset"
     },
     {
       "id": "validation-08-20",
@@ -30224,7 +30234,8 @@
           "lines": 2,
           "sha1": "c9c446af8cd272c9a7e09f6e1d4208cd5aa4c614"
         }
-      ]
+      ],
+      "current_source": "Result/06.13_[A]/06.13_[A]-04-pre_LLM(orig)_08-20(288)_dataset"
     },
     {
       "id": "validation-21-25",
@@ -31548,12 +31559,13 @@
           "lines": 27,
           "sha1": "1821b73fe20c061637707e008d67f2ab6a172e20"
         }
-      ]
+      ],
+      "current_source": "Result/06.13_[A]/06.13_[A]-04-pre_LLM(orig)_21-25(146)_dataset"
     },
     {
       "id": "duration-600-2159",
-      "label": "驗證集2 1-35 分鐘",
-      "description": "只使用 1-35 分鐘影片。",
+      "label": "驗證集2：600–2159 秒",
+      "description": "篩選範圍 600–2159 秒（10:00–35:59）；103 部實際樣本 602–2122 秒。",
       "kind": "txt_folder",
       "source": "#TXT_DATA/06.03_600-2159sec(103)",
       "count": 103,
@@ -32485,7 +32497,8 @@
           "lines": 38,
           "sha1": "6b3a0f5c313b17eb6613137a1d83cfc1f2bc9ebe"
         }
-      ]
+      ],
+      "current_source": "#運行BERTopic整理/#2.1 清理後輸入資料集（dataset）/02.1-驗證集2 1-35 分鐘_(103)/06.03_600-2159sec(103)"
     },
     {
       "id": "manufacturer-trimmed",
@@ -34628,7 +34641,8 @@
           "lines": 28,
           "sha1": "0d0a43c24a97cc1db6a4188a189f52afc86f3669"
         }
-      ]
+      ],
+      "current_source": "#運行BERTopic整理/#2.1 清理後輸入資料集（dataset）/02.2-驗證集3 刪除頭尾各五家廠商_(237)/06.03_廠商去頭尾各5家(237)"
     }
   ]
 }

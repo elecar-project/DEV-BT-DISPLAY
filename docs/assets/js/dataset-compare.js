@@ -1,5 +1,5 @@
 (function () {
-  const ASSET_VERSION = "20260618-dataset-keyfix";
+  const ASSET_VERSION = "20261113";
 
   const state = {
     manifest: null,
@@ -7,6 +7,8 @@
     right: null,
     rows: [],
     selectedKey: null,
+    requestVersion: 0,
+    textCache: new Map(),
   };
 
   const els = {};
@@ -112,11 +114,12 @@
 
   function renderFileList() {
     const rows = filteredRows();
+    const focusedKey = els.fileList.contains(document.activeElement) ? document.activeElement.dataset.key : null;
     els.fileList.innerHTML = rows
       .map((row) => {
         const active = row.key === state.selectedKey ? " active" : "";
         return `
-          <button class="file-row${active}" data-key="${escapeHtml(row.key)}">
+          <button type="button" class="file-row${active}" data-key="${escapeHtml(row.key)}" aria-pressed="${row.key === state.selectedKey}">
             <span>
               <strong>${escapeHtml(row.displayName)}</strong>
               <small>${escapeHtml(row.key)}</small>
@@ -125,15 +128,21 @@
           </button>
         `;
       })
-      .join("");
+      .join("") || '<p class="loading-text">沒有符合條件的檔案，請調整搜尋文字或狀態。</p>';
     els.fileCount.textContent = `顯示 ${rows.length} / ${state.rows.length} 筆`;
+    if (focusedKey) [...els.fileList.querySelectorAll('[data-key]')].find((button) => button.dataset.key === focusedKey)?.focus({preventScroll: true});
   }
 
   async function loadText(file) {
     if (!file) return null;
-    const response = await fetch(normalizeBase(file.url));
-    if (!response.ok) throw new Error(`無法載入 ${file.name}`);
-    return response.text();
+    if (!state.textCache.has(file.url)) {
+      const request = fetch(normalizeBase(file.url)).then((response) => {
+        if (!response.ok) throw new Error(`無法載入 ${file.name}，請稍後重新選取。`);
+        return response.text();
+      }).catch((error) => { state.textCache.delete(file.url); throw error; });
+      state.textCache.set(file.url, request);
+    }
+    return state.textCache.get(file.url);
   }
 
   function isPunctuation(value) {
@@ -371,8 +380,8 @@
         <section class="diff-paragraph">
           <div class="paragraph-label">段落 ${index + 1}</div>
           <div class="diff-columns">
-            <div class="diff-text">${inlineColumn(paragraph, "a")}</div>
-            <div class="diff-text">${inlineColumn(paragraph, "b")}</div>
+            <div class="diff-text"><span class="mobile-side-label">A · ${escapeHtml(state.left.label)}</span>${inlineColumn(paragraph, "a")}</div>
+            <div class="diff-text"><span class="mobile-side-label">B · ${escapeHtml(state.right.label)}</span>${inlineColumn(paragraph, "b")}</div>
           </div>
         </section>
       `)
@@ -429,14 +438,14 @@
     if (!file) {
       return `
         <section class="compare-pane is-missing">
-          <h3>${side}</h3>
+          <h3>${escapeHtml(side)}</h3>
           <p>此資料集中沒有這個檔案。</p>
         </section>
       `;
     }
     return `
       <section class="compare-pane">
-        <h3>${side}</h3>
+        <h3>${escapeHtml(side)}</h3>
         <dl>
           <dt>檔名</dt><dd>${escapeHtml(file.name)}</dd>
           <dt>字元</dt><dd>${file.chars.toLocaleString()}</dd>
@@ -447,30 +456,39 @@
   }
 
   async function selectFile(key) {
+    const requestVersion = ++state.requestVersion;
     state.selectedKey = key;
     renderFileList();
     const row = state.rows.find((item) => item.key === key);
     if (!row) return;
+    els.compareOutput.setAttribute('aria-busy', 'true');
     els.compareOutput.innerHTML = "<p class=\"loading-text\">載入文字內容中...</p>";
     try {
       const [leftText, rightText] = await Promise.all([loadText(row.left), loadText(row.right)]);
+      // A slower earlier selection must never overwrite the current file or dataset.
+      if (requestVersion !== state.requestVersion) return;
       if (!row.left || !row.right) {
-        els.compareOutput.innerHTML = `${sourceCard(row.left, state.left.label)}${sourceCard(row.right, state.right.label)}`;
+        els.compareOutput.innerHTML = `${sourceCard(row.left, state.left.label)}${sourceCard(row.right, state.right.label)}<section class="diff-report"><h3>${row.left ? 'A' : 'B'} · 單側原文</h3><div class="single-text">${escapeHtml(leftText ?? rightText ?? '')}</div></section>`;
         return;
       }
       els.compareOutput.innerHTML = diffReport(row, leftText, rightText);
     } catch (error) {
+      if (requestVersion !== state.requestVersion) return;
       els.compareOutput.innerHTML = `<p class="error-text">${escapeHtml(error.message)}</p>`;
+    } finally {
+      if (requestVersion === state.requestVersion) els.compareOutput.setAttribute('aria-busy', 'false');
     }
   }
 
   function refreshComparison() {
+    state.requestVersion += 1;
     state.left = getDataset(els.leftSelect.value);
     state.right = getDataset(els.rightSelect.value);
     state.selectedKey = null;
     buildRows();
     renderSummary();
     renderFileList();
+    els.compareOutput.setAttribute('aria-busy', 'false');
     els.compareOutput.innerHTML = "<p class=\"loading-text\">請從上方清單選擇一個檔案進行左右對比。</p>";
   }
 
@@ -490,14 +508,24 @@
     if (!els.leftSelect) return;
 
     const response = await fetch(normalizeBase(`assets/datasets/manifest.json?v=${ASSET_VERSION}`));
+    if (!response.ok) throw new Error('無法載入資料集清單，請重新整理頁面。');
     state.manifest = await response.json();
     renderDatasetOptions();
     refreshComparison();
 
     els.leftSelect.addEventListener("change", refreshComparison);
     els.rightSelect.addEventListener("change", refreshComparison);
-    els.search.addEventListener("input", renderFileList);
-    els.statusFilter.addEventListener("change", renderFileList);
+    function updateFilter() {
+      if (state.selectedKey && !filteredRows().some((row) => row.key === state.selectedKey)) {
+        state.requestVersion += 1;
+        state.selectedKey = null;
+        els.compareOutput.setAttribute('aria-busy', 'false');
+        els.compareOutput.innerHTML = '<p class="loading-text">請從符合條件的清單中選擇一個檔案。</p>';
+      }
+      renderFileList();
+    }
+    els.search.addEventListener("input", updateFilter);
+    els.statusFilter.addEventListener("change", updateFilter);
     els.previewMode.addEventListener("change", () => {
       if (state.selectedKey) selectFile(state.selectedKey);
     });
@@ -515,6 +543,9 @@
 
   init().catch((error) => {
     const output = $("dataset-compare-output");
-    if (output) output.innerHTML = `<p class="error-text">${escapeHtml(error.message)}</p>`;
+    if (output) {
+      output.setAttribute('aria-busy', 'false');
+      output.innerHTML = `<p role="alert" class="error-text">${escapeHtml(error.message)}</p>`;
+    }
   });
 })();

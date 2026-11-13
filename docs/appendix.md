@@ -38,11 +38,11 @@ description: 延伸紀錄、實驗筆記與歷史脈絡。
 | `Result/` | BERTopic 試跑報告、topic_info、資料篩選、品質檢查、年份比對 | 結果、資料集 |
 | `docs/REPO_ORGANIZATION_PLAN.md` | 倉庫分工與發布規劃 | 首頁與附錄 |
 
-## 目前不直接搬進本站的大型或衍生資料
+## 資料與附件的存放方式
 
 | 類型 | 原因 | 建議處理 |
 | --- | --- | --- |
-| `.txt` 逐字稿全集 | 數量多，會讓展示 repo 逐漸膨脹 | 放 Hugging Face Dataset、Release 或母倉庫 |
+| `.txt` 逐字稿 | 本站已保存 14 個版本的 3,832 筆文本供比對；同一影片可出現在不同版本 | 未來大型新增資料另評估 Dataset 或 Release |
 | `.db` SQLite | 不適合直接作為 GitHub Pages 展示內容 | 保留下載連結與版本說明 |
 | `.arrow` Dataset | 靜態網站無法直接查詢 | 放 Hugging Face Dataset 或 Release |
 | 完整 CSV 結果 | 有些表格很長，不適合直接塞進頁面 | 摘要放本站，完整檔案用外部連結 |

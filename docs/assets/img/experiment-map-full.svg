@@ -417,10 +417,10 @@
 </g>
 </a>
 <a href="../../results/t03-duration-1-35m.html" target="_top">
-<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-96" data-label="8New-影長1~35m">
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-96" data-label="8New-影長600–2159s">
 <rect x="1357.0" y="1072.0" width="123.0" height="32.0" fill="#d5e8d4" stroke="#82b366"/>
 <text x="1418.5" y="1093.2" fill="#1f2937" font-size="12.5">
-<tspan x="1418.5" dy="0.0">8New-影長1~35m</tspan>
+<tspan x="1418.5" dy="0.0">8New-影長600–2159s</tspan>
 </text>
 </g>
 </a>
@@ -496,10 +496,10 @@
 <tspan x="178.5" dy="0.0">8 (orig)_tok(para12-80)_去頭尾5廠</tspan>
 </text>
 </g>
-<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-119" data-label="8 (orig)_tok(para12-80)_影長1~35m">
+<g class="node" data-id="mRq0KLDsOoRAvhbJz9B0-119" data-label="8 (orig)_tok(para12-80)_影長600–2159s">
 <rect x="47.0" y="1072.0" width="263.0" height="32.0" fill="#fff2cc" stroke="#d6b656"/>
 <text x="178.5" y="1092.8" fill="#1f2937" font-size="11.5">
-<tspan x="178.5" dy="0.0">8 (orig)_tok(para12-80)_影長1~35m</tspan>
+<tspan x="178.5" dy="0.0">8 (orig)_tok(para12-80)_影長600–2159s</tspan>
 </text>
 </g>
   <script>
@@ -576,8 +576,8 @@
       '2018 前 (08-17)', '2018 後 (18-25)', '2019 前 (08-18)',
       '2019 後 (19-25)', '2021 前 (08-20)', '2021 後 (21-25)',
       '2018 前', '2018 後', '2019 前', '2019 後', '2021 前', '2021 後',
-      '8 (orig)_tok(para12-80)_影長1~35m', '8 (orig)_tok(para12-80)_去頭尾5廠',
-      '8New-影長1~35m', '8New-去頭尾5廠'
+      '8 (orig)_tok(para12-80)_影長600–2159s', '8 (orig)_tok(para12-80)_去頭尾5廠',
+      '8New-影長600–2159s', '8New-去頭尾5廠'
     ]);
     document.querySelectorAll('.node').forEach((node) => {
       node.addEventListener('mouseenter', () => highlight(node.dataset.id));

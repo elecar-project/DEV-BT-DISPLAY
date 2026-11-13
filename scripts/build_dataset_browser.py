@@ -16,6 +16,24 @@ SOURCE_ROOT = Path("/workspaces/Dev-BT")
 DOCS_ROOT = Path(__file__).resolve().parents[1] / "docs"
 OUTPUT_ROOT = DOCS_ROOT / "assets" / "datasets"
 
+# Preserve the historical export paths while resolving the research repo's layout.
+SOURCE_RELOCATIONS = {
+    "#TXT_DATA/2. 文字稿－txt": "#運行BERTopic整理/#1. 原始文本/01-初始 txt/2. 文字稿－txt",
+    "#TXT_DATA/05.24_txt-test_deleted(434)_dataset": "#運行BERTopic整理/#2.1 清理後輸入資料集（dataset）/02.0-刪除 20 份無人聲 dataset/05.24_txt-test_deleted(434)_dataset",
+    "#TXT_DATA/06.03_600-2159sec(103)": "#運行BERTopic整理/#2.1 清理後輸入資料集（dataset）/02.1-驗證集2 1-35 分鐘_(103)/06.03_600-2159sec(103)",
+    "#TXT_DATA/06.03_廠商去頭尾各5家(237)": "#運行BERTopic整理/#2.1 清理後輸入資料集（dataset）/02.2-驗證集3 刪除頭尾各五家廠商_(237)/06.03_廠商去頭尾各5家(237)",
+}
+
+
+def resolve_source(path: Path) -> Path:
+    if path.exists():
+        return path
+    relative = str(path.relative_to(SOURCE_ROOT))
+    relocated = SOURCE_ROOT / SOURCE_RELOCATIONS.get(relative, relative)
+    if not relocated.exists():
+        raise FileNotFoundError(f"Source dataset is missing: {relative}")
+    return relocated
+
 DATASETS = [
     {
         "id": "initial-txt",
@@ -103,9 +121,9 @@ DATASETS = [
     },
     {
         "id": "duration-600-2159",
-        "label": "驗證集2 1-35 分鐘",
+        "label": "驗證集2：600–2159 秒",
         "source": SOURCE_ROOT / "#TXT_DATA/06.03_600-2159sec(103)",
-        "description": "只使用 1-35 分鐘影片。",
+        "description": "篩選範圍 600–2159 秒（10:00–35:59）；103 部實際樣本 602–2122 秒。",
         "kind": "txt_folder",
     },
     {
@@ -129,7 +147,7 @@ def collect_brand_prefixes() -> list[str]:
     for dataset in DATASETS:
         if dataset.get("kind") != "txt_folder":
             continue
-        source = dataset["source"]
+        source = resolve_source(dataset["source"])
         if not source.exists():
             continue
         for source_file in source.rglob("*.txt"):
@@ -220,7 +238,7 @@ def iter_hf_dataset(dataset_path: Path):
 
 def iter_dataset_records(dataset: dict):
     kind = dataset.get("kind", "txt_folder")
-    source = dataset["source"]
+    source = resolve_source(dataset["source"])
     if kind == "hf_dataset":
         return iter_hf_dataset(source)
     return iter_txt_folder(source)
@@ -274,6 +292,7 @@ def main() -> None:
                 "description": dataset["description"],
                 "kind": dataset.get("kind", "txt_folder"),
                 "source": str(dataset["source"].relative_to(SOURCE_ROOT)),
+                "current_source": str(resolve_source(dataset["source"]).relative_to(SOURCE_ROOT)),
                 "count": len(files),
                 "files": files,
             }

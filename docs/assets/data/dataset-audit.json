@@ -1,0 +1,119 @@
+{
+  "status": "passed",
+  "dataset_versions": 14,
+  "published_version_records": 3832,
+  "checks": [
+    {
+      "id": "initial-txt",
+      "published_records": 454,
+      "source_records": 454,
+      "missing_or_different_records": 0,
+      "duplicate_match_keys": 0,
+      "passed": true
+    },
+    {
+      "id": "deleted-20-no-voice",
+      "published_records": 434,
+      "source_records": 434,
+      "missing_or_different_records": 0,
+      "duplicate_match_keys": 0,
+      "passed": true
+    },
+    {
+      "id": "llm-del",
+      "published_records": 434,
+      "source_records": 434,
+      "missing_or_different_records": 0,
+      "duplicate_match_keys": 0,
+      "passed": true
+    },
+    {
+      "id": "llm-repl",
+      "published_records": 434,
+      "source_records": 434,
+      "missing_or_different_records": 0,
+      "duplicate_match_keys": 0,
+      "passed": true
+    },
+    {
+      "id": "year-08-19",
+      "published_records": 240,
+      "source_records": 240,
+      "missing_or_different_records": 0,
+      "duplicate_match_keys": 0,
+      "passed": true
+    },
+    {
+      "id": "year-20-25",
+      "published_records": 194,
+      "source_records": 194,
+      "missing_or_different_records": 0,
+      "duplicate_match_keys": 0,
+      "passed": true
+    },
+    {
+      "id": "validation-08-17",
+      "published_records": 177,
+      "source_records": 177,
+      "missing_or_different_records": 0,
+      "duplicate_match_keys": 0,
+      "passed": true
+    },
+    {
+      "id": "validation-18-25",
+      "published_records": 257,
+      "source_records": 257,
+      "missing_or_different_records": 0,
+      "duplicate_match_keys": 0,
+      "passed": true
+    },
+    {
+      "id": "validation-08-18",
+      "published_records": 221,
+      "source_records": 221,
+      "missing_or_different_records": 0,
+      "duplicate_match_keys": 0,
+      "passed": true
+    },
+    {
+      "id": "validation-19-25",
+      "published_records": 213,
+      "source_records": 213,
+      "missing_or_different_records": 0,
+      "duplicate_match_keys": 0,
+      "passed": true
+    },
+    {
+      "id": "validation-08-20",
+      "published_records": 288,
+      "source_records": 288,
+      "missing_or_different_records": 0,
+      "duplicate_match_keys": 0,
+      "passed": true
+    },
+    {
+      "id": "validation-21-25",
+      "published_records": 146,
+      "source_records": 146,
+      "missing_or_different_records": 0,
+      "duplicate_match_keys": 0,
+      "passed": true
+    },
+    {
+      "id": "duration-600-2159",
+      "published_records": 103,
+      "source_records": 103,
+      "missing_or_different_records": 0,
+      "duplicate_match_keys": 0,
+      "passed": true
+    },
+    {
+      "id": "manufacturer-trimmed",
+      "published_records": 237,
+      "source_records": 237,
+      "missing_or_different_records": 0,
+      "duplicate_match_keys": 0,
+      "passed": true
+    }
+  ]
+}

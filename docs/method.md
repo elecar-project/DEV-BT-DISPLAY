@@ -29,9 +29,11 @@ description: DEV-BT 的研究流程與處理管線。
 | BERTopic 實驗 | `BERTopic/app.py`、C 系列工具 | A06、A07、A08 試跑報告與 topic_info |
 | 時間/年份對照 | `Result/06.13_A02/` | 434 筆 match report 與不同年份切分版本 |
 
-## 目前採用的 BERTopic 設定摘要
+## A06–A08 歷史試跑設定摘要
 
-| 參數 | 目前紀錄中的設定 |
+以下只適用於早期 A06–A08，不代表 M01–M03 或各驗證實驗共用同一組參數。Embedding、UMAP、HDBSCAN、分段方式及 LLM 命名設定，請以各結果頁的設定與原始輸出為準。
+
+| 參數 | A06–A08 的紀錄設定 |
 | --- | --- |
 | Embedding | `sentence-transformers/all-MiniLM-L6-v2` |
 | UMAP | `n_neighbors=15`、`n_components=5`、`min_dist=0.0`、`metric=cosine`、`random_state=42` |
@@ -40,14 +42,14 @@ description: DEV-BT 的研究流程與處理管線。
 | Topic label | OpenRouter / `openai/gpt-4o-mini` |
 | 實驗變化 | A07 固定 `min_cluster_size=200`；A08 固定 `min_cluster_size=150` |
 
-## 待搬移內容
+## 後續整理項目
 
 - 母倉庫中的 ASR 與逐字稿處理筆記。
 - Pre-process App 的使用方式與資料匯出規則。
 - BERTopic App 的參數設定與實驗預設值。
 - 停用詞、品牌移除、句子切分、主題標籤等研究決策。
 - A06、A07、A08 的完整圖表與互動式 HTML 輸出。
-- 06.13 年份切分後是否有進一步 BERTopic 結果。
+- 補齊尚未整理的 T04 分支。M03 與 T02 年份切分結果已可由[實驗結果]({{ '/results.html' | relative_url }})查看。
 
 ## 待確認事項
 

@@ -1,0 +1,10 @@
+{
+  "metric_values_checked": 50,
+  "topic_counts_checked": 91,
+  "local_links_checked": 984,
+  "errors": [],
+  "source_commit": "725a372",
+  "display_base_commit": "e81bd933ee05c7ced19ca3f5c5a1820770a52c27",
+  "checked_at": "2026-11-13",
+  "status": "passed"
+}

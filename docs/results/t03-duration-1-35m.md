@@ -1,9 +1,9 @@
 ---
-title: T03 影長 1-35 分鐘驗證
-description: 僅使用 1 至 35 分鐘影片的 BERTopic 驗證結果。
+title: T03 影長 600–2159 秒驗證
+description: 使用 600–2159 秒（10:00–35:59）範圍影片的 BERTopic 驗證結果。
 ---
 
-# T03｜影長 1-35 分鐘
+# T03｜影長 600–2159 秒
 
 <div class="result-detail-layout" markdown="1">
 <aside class="result-settings" markdown="1">
@@ -36,12 +36,14 @@ description: 僅使用 1 至 35 分鐘影片的 BERTopic 驗證結果。
 <div class="run-stat"><strong>23</strong><span>有效主題數</span></div>
 <div class="run-stat"><strong>26.54%</strong><span>noise ratio</span></div>
 <div class="run-stat"><strong>11.86%</strong><span>最大主題比例</span></div>
-<div class="run-stat"><strong>1-35 分鐘</strong><span>影片長度篩選</span></div>
+<div class="run-stat"><strong>600–2159 秒</strong><span>影片長度篩選</span></div>
 </div>
+
+<aside class="table-note"><strong>篩選標示校正：</strong>原資料夾及舊網址保留「1-35 分鐘」的歷史名稱。依 DB Filter 複製清單，篩選範圍應為 600–2159 秒；103 部樣本的實際時長為 602–2122 秒。本次只校正說明，未重新篩選或重跑模型。</aside>
 
 ## 結果摘要
 
-本實驗僅使用長度 1 至 35 分鐘的 103 部影片，檢查移除極短與極長影片後的主題結構。結果保留 23 個有效主題；最大主題占比為 11.86%，可用於和完整資料或其他篩選條件比較。
+本實驗使用 600–2159 秒（10:00–35:59）篩選範圍內的 103 部影片，檢查移除極短與極長影片後的主題結構。結果保留 23 個有效主題；最大主題占比為 11.86%，可用於和完整資料或其他篩選條件比較。
 
 <aside class="table-note"><strong>LLM 狀態：</strong>本次設定明確停用 LLM 主題命名。<code>_LLM.md</code> 與 <code>_LLM.csv</code> 僅記錄該設定，並非 LLM 模型輸出。</aside>
 

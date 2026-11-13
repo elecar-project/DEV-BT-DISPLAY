@@ -4,37 +4,51 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <meta name="description" content="{{ page.description | default: site.description }}">
+    <meta name="description" content="{{ page.description | default: site.description | escape }}">
     <meta name="site-baseurl" content="{{ site.baseurl }}">
-    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=20260623-semantic-table-v25' | relative_url }}">
+    <meta name="theme-color" content="#12665b">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=20261113' | relative_url }}">
+    <script defer src="{{ '/assets/js/site.js?v=20261113' | relative_url }}"></script>
   </head>
   <body>
+    <a class="skip-link" href="#main-content">跳到主要內容</a>
     <header class="site-header">
       <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }}首頁">
         <span class="brand-mark">DB</span>
         <span>
           <strong>DEV-BT</strong>
-          <small>研究展示站</small>
+          <small>EV DISCOURSE · RESEARCH ARCHIVE</small>
         </span>
       </a>
-      <nav class="site-nav" aria-label="主要導覽">
-        <a href="{{ '/' | relative_url }}">總覽</a>
-        <a href="{{ '/method.html' | relative_url }}">方法</a>
-        <a href="{{ '/datasets.html' | relative_url }}">資料集</a>
-        <a href="{{ '/tools.html' | relative_url }}">工具</a>
-        <a href="{{ '/results.html' | relative_url }}">結果</a>
-        <a href="{{ '/appendix.html' | relative_url }}">附錄</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" hidden>開啟導覽 <span aria-hidden="true">☰</span></button>
+      <nav id="site-navigation" class="site-nav" aria-label="主要導覽">
+        <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}aria-current="page"{% endif %}>總覽</a>
+        <a href="{{ '/method.html' | relative_url }}" {% if page.url == '/method.html' %}aria-current="page"{% endif %}>研究方法</a>
+        <a href="{{ '/datasets.html' | relative_url }}" {% if page.url == '/datasets.html' %}aria-current="page"{% endif %}>資料集</a>
+        <a href="{{ '/results.html' | relative_url }}" {% if page.url contains '/results' %}aria-current="page"{% endif %}>實驗結果</a>
+        <a href="{{ '/tools.html' | relative_url }}" {% if page.url == '/tools.html' %}aria-current="page"{% endif %}>工具</a>
+        <a href="{{ '/appendix.html' | relative_url }}" {% if page.url == '/appendix.html' or page.url == '/data-notes.html' %}aria-current="page"{% endif %}>附錄</a>
       </nav>
     </header>
 
-    <main class="page-shell">
+    <main id="main-content" class="page-shell" tabindex="-1">
+      {% unless page.url == '/' %}
+      <nav class="breadcrumbs" aria-label="所在位置">
+        <a href="{{ '/' | relative_url }}">研究總覽</a><span aria-hidden="true">/</span>
+        {% if page.url contains '/results/' %}<a href="{{ '/results.html' | relative_url }}">實驗結果</a><span aria-hidden="true">/</span>{% endif %}
+        <span aria-current="page">{{ page.title }}</span>
+      </nav>
+      {% endunless %}
       {{ content }}
     </main>
 
     <footer class="site-footer">
-      <span>DEV-BT 內部研究展示站。</span>
-      <a href="https://github.com/elecar-project/DEV-BT/releases">Release 檔案</a>
-      <a href="https://github.com/elecar-project/DEV-BT">母倉庫</a>
+      <div><strong>DEV-BT</strong><span>電動車產業文本與主題模型研究</span></div>
+      <nav aria-label="延伸資源">
+        <a href="{{ '/data-notes.html' | relative_url }}">資料口徑與核對</a>
+        <a href="https://github.com/elecar-project/DEV-BT-DISPLAY">網站原始碼</a>
+        <a href="https://github.com/elecar-project/DEV-BT/releases">成果下載</a>
+      </nav>
     </footer>
   </body>
 </html>
